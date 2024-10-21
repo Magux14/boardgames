@@ -256,7 +256,7 @@ export const lstGames = [
         desc: 'Compra gemas y hazte rico antes que los demás.',
         minPlayers: 2,
         maxPlayers: 4,
-        difficulty: 1,
+        difficulty: 2,
         img: 'https://m.media-amazon.com/images/I/8127PSclV9S._AC_UF894,1000_QL80_.jpg',
     },
     {
@@ -303,7 +303,7 @@ export const lstGames = [
     {
         name: 'The Resistance',
         desc: 'La resistencia no puede ser vencida... sabemos que tenemos espías infiltrados, ¡hay que encontrarlos!',
-        minPlayers: 2,
+        minPlayers: 5,
         maxPlayers: 10,
         difficulty: 2,
         img: 'https://m.media-amazon.com/images/S/aplus-media/sota/43ff6aae-059f-450d-aba6-ae0c64087653.__CR0,0,300,300_PT0_SX300_V1___.jpg',
