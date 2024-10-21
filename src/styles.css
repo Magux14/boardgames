@@ -1,0 +1,38 @@
+.text-center {
+    text-align: center;
+}
+
+html,
+body {
+    height: auto;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.align-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.copy-to-clipboard {
+    cursor: pointer;
+}
+
+.main-info-container {
+    background: #1BC5C1;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
