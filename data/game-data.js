@@ -12,7 +12,7 @@ export const lstGames = [
         name: 'Cartoon Network Crossover Crisis',
         desc: 'Un juego de contrucción de mazos, compra cartas, activa efectos para conseguir cartas más poderosas, al final quien consiga más puntos gana.',
         minPlayers: 2,
-        maxPlayers: 2,
+        maxPlayers: 5,
         difficulty: 3,
         lang: 'ENG',
         img: 'https://m.media-amazon.com/images/I/51gUTDgHTiL._AC_.jpg',
@@ -174,7 +174,7 @@ export const lstGames = [
     {
         name: 'No Mames',
         desc: 'Juego de cartas para una peda, elige quien de la mesa es el más probable a hacer algo.',
-        minPlayers: 2,
+        minPlayers: 5,
         maxPlayers: 10,
         difficulty: 1,
         img: 'https://amigoscool.casa/cdn/shop/products/image_11f44043-09bc-4ae1-a9d6-b17b2f9acc9d.jpg?v=1690531701&width=1445',
@@ -182,7 +182,7 @@ export const lstGames = [
     {
         name: 'Papas Traidoras',
         desc: 'Cambia de equipo, traiciona a tus compañeros de equipo, ¡el punto es juntar papitas!',
-        minPlayers: 2,
+        minPlayers: 3,
         maxPlayers: 6,
         difficulty: 2,
         img: 'https://m.media-amazon.com/images/I/61ZMSoTwYfL._AC_UF894,1000_QL80_.jpg',
@@ -222,7 +222,7 @@ export const lstGames = [
     {
         name: 'Saboteur',
         desc: 'Tenemos que encontrar el oro, pero cuidado hay traidores entre nososotros que nos pueden bloquear el camino, ¡hay que encontrarlos!',
-        minPlayers: 2,
+        minPlayers: 3,
         maxPlayers: 8,
         difficulty: 2,
         img: 'https://http2.mlstatic.com/D_NQ_NP_700954-MLU73417025269_122023-O.webp',
@@ -368,7 +368,7 @@ export const lstGames = [
     {
         name: 'Yo Nunca Nunca',
         desc: 'Juego para beber, cartas de yo nunca nunca.',
-        minPlayers: 2,
+        minPlayers: 5,
         maxPlayers: 10,
         difficulty: 1,
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlJTbmAO2DoXZVkXoSCaaOHqa-xen9ogDClg&s',

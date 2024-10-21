@@ -3,8 +3,13 @@
 }
 
 html,
+body,
+#root {
+    height: 100%;
+}
+
 body {
-    height: auto;
+    background: rgba(126, 127, 129, 0.466);
 }
 
 .no-padding {
