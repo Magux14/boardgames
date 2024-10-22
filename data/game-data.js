@@ -28,7 +28,7 @@ export const lstGames = [
     },
     {
         name: 'Baraja española',
-        desc: 'Comente utilizada para jugar "Conquian".',
+        desc: 'Comúnmente utilizada para jugar "Conquian".',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
@@ -78,7 +78,7 @@ export const lstGames = [
         img: 'https://http2.mlstatic.com/D_NQ_NP_787931-MLM54764320687_032023-O.webp',
     },
     {
-        name: 'Head Banz',
+        name: 'HeadBanz',
         desc: 'Te ponen una carta en la cabeza la cual tu no sabes que contiene, debes hacer preguntas para adivinar que contiene tu carta.',
         minPlayers: 2,
         maxPlayers: 6,
