@@ -30,7 +30,7 @@ export const GameListPage = () => {
     };
 
     const applyFilters = () => {
-        let lstFiltered = [...lstGames];
+        let lstFiltered = [...lstGames.sort((a, b) => a.name > b.name ? 1 : 0)];
         if (filters.searchTerm) {
             lstFiltered = lstFiltered.filter(item => item.name.toLowerCase().includes(filters.searchTerm));
         }
@@ -57,7 +57,7 @@ export const GameListPage = () => {
 
                     <div className="select">
                         <label>
-                            Juego
+                            <br />
                         </label>
                         <input
                             type="text"

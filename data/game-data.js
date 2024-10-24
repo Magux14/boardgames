@@ -37,7 +37,7 @@ export const lstGames = [
     },
     {
         name: 'Coup',
-        desc: 'Conviertete en el último sobreviviente a base de engaños y estrategia.',
+        desc: 'En Coup, los jugadores compiten por el control de una ciudad-estado corrupta en la Italia del Renacimiento. A través de tu influencia en la corte (las cartas de personaje en tu mano), farolea, roba y asesina a tus oponentes para convertirte en el último jugador en pie y subir al poder.',
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 2,
@@ -46,7 +46,7 @@ export const lstGames = [
     },
     {
         name: 'Disney trivia',
-        desc: 'Contesta preguntas de tus personajes favoritos de Disney, más de 1600 preguntas.',
+        desc: 'En Coup, los jugadores compiten por el control de una ciudad-estado corrupta en la Italia del Renacimiento. A través de tu influencia en la corte (las cartas de personaje en tu mano), farolea, roba y asesina a tus oponentes para convertirte en el último jugador en pie y subir al poder.',
         minPlayers: 2,
         maxPlayers: 8,
         difficulty: 1,
@@ -55,7 +55,7 @@ export const lstGames = [
     },
     {
         name: 'Dominó',
-        desc: 'El clásico juego para conectar fichas',
+        desc: 'Juego de mesa que se lleva a cabo con 28 fichas rectangulares que se van colocando por turnos según ciertas reglas y en el que gana quien primero coloca todas sus fichas o quien menos puntos tiene en ellas si se cierra el juego.',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 1,
@@ -63,7 +63,7 @@ export const lstGames = [
     },
     {
         name: 'Dos',
-        desc: 'El hermano aburrido del UNO... DOS... está feo, no lo juegen.',
+        desc: 'El clásico juego de cartas UNO ahora tiene un nuevo mejor amigo, DOS. El objetivo del juego es ser el primer jugador en deshacerse de sus cartas y ser el primero en anotar 200 puntos.',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
@@ -78,8 +78,8 @@ export const lstGames = [
         img: 'https://http2.mlstatic.com/D_NQ_NP_787931-MLM54764320687_032023-O.webp',
     },
     {
-        name: 'HeadBanz',
-        desc: 'Te ponen una carta en la cabeza la cual tu no sabes que contiene, debes hacer preguntas para adivinar que contiene tu carta.',
+        name: 'Headbanz',
+        desc: 'Divertido juego de preguntas de ritmo rápido de "¿Qué soy?" ¡Cada jugador usa una diadema con una tarjeta y hace tantas preguntas de "sí" o "no" como pueda en 90 segundos para tratar de averiguar qué hay en su cabeza!',
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 1,
@@ -88,7 +88,7 @@ export const lstGames = [
     },
     {
         name: 'Here To Slay',
-        desc: 'Un juego donde debes derrotar monstruos por medio de cartas y dados',
+        desc: 'Here to Slay es un juego de cartas de estrategia y fantasía en el que los jugadores tendremos que competir reuniendo al mejor grupo de Héroes y matando todos los monstruos que sea posible… bueno, a veces también tendremos que dedicarnos a sabotear a nuestros adversarios… ¡Mata monstruos y defiéndete de tus ¿amigos?!',
         minPlayers: 2,
         maxPlayers: 6,
         lang: 'ENG',
@@ -97,7 +97,7 @@ export const lstGames = [
     },
     {
         name: 'Jaipur',
-        desc: 'Compra las cosas del mercado y genera más riqueza que tu oponente',
+        desc: 'Sutil juego de comercio: en Jaipur, los jugadores asumen los papeles de dos de los comerciantes más poderosos de la ciudad que buscan convertirse en el comerciante personal del Maharaja acumulando más riquezas que su oponente.',
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 1,
@@ -105,7 +105,7 @@ export const lstGames = [
     },
     {
         name: 'La Isla Prohibida',
-        desc: 'Un juego cooperativo donde debes recuperar los 4 tesoros antes de que la isla se hunda.',
+        desc: 'En La Isla Prohibida, los jugadores deberán trabajar juntos para salvar todos los tesoros de la isla, ¡antes que se hunda! Cada jugador toma el papel de un aventurero (piloto, explorador, ingeniero, etc.) y tiene que usar su poder especial para ayudar a su equipo.',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
@@ -114,7 +114,7 @@ export const lstGames = [
     },
     {
         name: 'La Polilla Tramposa',
-        desc: 'Deshazte de las cartas haciendo trampas, quien se acabe las cartas primero gana.',
+        desc: 'La polilla tramposa es el juego donde hay que hacer trampas para ganar. Aprovecha los despistes del vigilante para esconder cartas, lanzarlas o guardártelas en el bolsillo…. El juego donde hay que hacer trampas para ganar.',
         minPlayers: 3,
         maxPlayers: 8,
         difficulty: 2,
@@ -130,7 +130,7 @@ export const lstGames = [
     },
     {
         name: 'Mini Torre del beber',
-        desc: 'Mini Jenga para beber',
+        desc: 'Emocionante y divertida mini torre con 48 bloques de madera y desafiantes retos para vivir en pareja o con amigos. Un juego para mayores de 18 años. ¿Te atreves a vivirlo? ¡No dejes caer la torre o perderás!',
         minPlayers: 2,
         maxPlayers: 8,
         difficulty: 1,
@@ -138,7 +138,7 @@ export const lstGames = [
     },
     {
         name: 'Monopoly Fornite',
-        desc: 'Variante del monópoly donde tu objetivo en ser el último en pie matando a los demás jugadores.',
+        desc: 'En esta emocionante edición Fortnite del juego Monopoly, los jugadores reclaman ubicaciones, luchan contra los oponentes y evitan que la Tormenta sobreviva. El juego, el diseño y los componentes del juego de mesa incluyen elementos inspirados en el videojuego incluyendo ubicaciones Fortnite y cartas de botín.',
         minPlayers: 2,
         maxPlayers: 10,
         difficulty: 2,
@@ -146,7 +146,7 @@ export const lstGames = [
     },
     {
         name: 'Monopoly Game of Thrones',
-        desc: 'Monopoly clásico versión game of thrones',
+        desc: 'Muévete por el tablero comprando tantas propiedades de Juego de Tronos como puedas. Cuanto más poseas, más alquiler se puede recoger de los oponentes. El último con dinero cuando todos los demás jugadores han ido a la quiebra, gana.',
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
@@ -155,7 +155,7 @@ export const lstGames = [
     },
     {
         name: 'Monopoly Pokémon',
-        desc: 'Monopoly clásico versión pokémon',
+        desc: 'En Monopoly Pokémon: Johto Edition, te embarcarás en una búsqueda estilo Pokemon para poseer todos tus personajes favoritos como Chikorita, Cyndaquil, Totodile, Pikachu, Pichu, Togepi, y más.',
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
@@ -164,7 +164,7 @@ export const lstGames = [
     },
     {
         name: 'Happy Little Dinosaur',
-        desc: 'Aquí ocurren desgracias a las cuales debes de sobrevivir con cartas, el más débil irá muriendo.',
+        desc: 'En Happy Little Dinosaurs, la primera persona en alcanzar los 50 puntos, o ser el último dinosaurio en pie, ¡gana el juego! Durante cada ronda, volcarás una carta de desastre con un desastre natural, depredador o emocional.',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
@@ -229,7 +229,7 @@ export const lstGames = [
     },
     {
         name: 'Sin memoria',
-        desc: 'Resuelve puzzles en equipo y toma decisiones',
+        desc: 'Sin Memoria es una historia independiente que se puede disfrutar sin estar familiarizado con el juego de mesa Escape Tales El Despertar. Prepárate para vivir tres historias absorbentes mezcladas con unas inesperadas vueltas de tuerca que harán que la trama se convierta en un ser vivo casi impredecible.',
         minPlayers: 1,
         maxPlayers: 4,
         difficulty: 5,
@@ -237,7 +237,7 @@ export const lstGames = [
     },
     {
         name: 'Skull King',
-        desc: 'Juego de cartas donde predices si ganarás esta ronda o no y vas acumulando puntos',
+        desc: 'Skull King, de Devir, es un emocionante juego de cartas pirata. Los jugadores deben hacer predicciones sobre cuántas bazas ganarán en cada ronda y luego jugar estratégicamente para lograrlo. Con cartas especiales y una ronda final llena de sorpresas, este juego desafía tu astucia y capacidad para leer a tus oponentes.',
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 3,
@@ -245,7 +245,7 @@ export const lstGames = [
     },
     {
         name: 'Sleeping Queens',
-        desc: 'Juego de cartas, gana quien llegue al puntaje establecido, capturando y robando reinas',
+        desc: 'El objetivo es muy simple: despertar 5 reinas de su sueño profundo. Para ello, deberás usar las cartas de reyes que hay en el mazo.',
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
@@ -253,7 +253,7 @@ export const lstGames = [
     },
     {
         name: 'Splendor',
-        desc: 'Compra gemas y hazte rico antes que los demás.',
+        desc: 'Experimenta las riquezas de esta era en Splendor, un juego rápido, elegante e intuitivo en el que los jugadores compiten por el control de las minas de gemas, las rutas comerciales y las escaparates para dominar el comercio de gemas y atraer la atención de los nobles.',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
@@ -261,7 +261,7 @@ export const lstGames = [
     },
     {
         name: 'Stratego Star Wars',
-        desc: 'Haz una estrategia para obtener el sable laser de tu oponente, pero cuidado cada personaje tiene habilidades especiales.',
+        desc: 'El objetivo del juego es capturar la bandera del oponente o capturar todas sus piezas con posibilidad de movimiento, de forma que el oponente no tenga piezas que poder mover.',
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 5,
@@ -269,7 +269,7 @@ export const lstGames = [
     },
     {
         name: 'Sushi Go!',
-        desc: 'Consigue sushi y arma combos y haz más puntos que los demás',
+        desc: 'Sushi Go! es un divertido y rápido juego de cartas en el que los jugadores tratan de comer el menú perfecto de su comida favorita.',
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
@@ -277,7 +277,7 @@ export const lstGames = [
     },
     {
         name: 'Taco Gato Cabra Queso Pizza',
-        desc: 'En este juego frenético darás manotazo cuando lo que digas coincida con la carta.',
+        desc: 'En el juego de cartas Taco Gato Cabra Queso Pizza, debes ser el más rápido. Cuando un jugador se descarte de una carta que coincida con la palabra que dice, coloca tu mano sobre el montón central. ¡El último en poner la mano se queda con todas las cartas del montón!',
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 1,
@@ -285,7 +285,7 @@ export const lstGames = [
     },
     {
         name: 'That time you killed me',
-        desc: 'Aniquila a tu oponente con estrategia y viajes en el tiempo.',
+        desc: 'That Time You Killed Me es un juego abstracto para dos personas que introduce nuevos escenarios con reglas y componentes únicos a medida que juegas. Como en cualquier otro juego que trata de traspasar el tiempo, debes jugar con este contenido en un orden estricto e inalterable.Elimina a tu rival de la historia.',
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 4,
