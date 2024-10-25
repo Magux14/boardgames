@@ -93,7 +93,7 @@ export const GameListPage = () => {
 
                 {lstFilteredItems.map(item =>
                     <div key={item.name} className='game'>
-                        <img src={item.img}
+                        <img src={`/img/games/${item.img}`}
                             alt={item.name}
                             className='image'
                             onError={(e) => {
