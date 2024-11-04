@@ -5,9 +5,11 @@ import { DicePage } from './pages/DicePage'
 
 
 export const RouterManagement = () => {
+
+    const prod = true;
     return (
         <div id="main-container">
-            <BrowserRouter>
+            <BrowserRouter basename={prod ? 'boardgames' : ''}>
                 <Routes>
                     <Route path="/" element={<GameListPage />} />
                     <Route path="/dice" element={<DicePage />} />

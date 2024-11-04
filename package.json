@@ -1,6 +1,7 @@
 {
   "name": "cv",
   "private": true,
+  "homepage": "https://magux14.github.io/boardgames",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
