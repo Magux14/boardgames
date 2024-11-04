@@ -206,6 +206,14 @@ export const lstGames = [
         img: 'Papas Traidoras.jpg',
     },
     {
+        name: 'Patchwork',
+        desc: 'Patchwork es una forma de arte, en la que los diseñadores usan telas preciosas para crear hermosos textiles. Los jugadores trabajan para crear una hermosa colcha, que requiere esfuerzo y tiempo, pero los parches disponibles simplemente no quieren encajar juntos!',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 3,
+        img: 'patchwork.webp',
+    },
+    {
         name: 'Pixar el legado',
         desc: 'Contesta preguntas de tus personajes favoritos de pixar.',
         minPlayers: 2,
@@ -415,5 +423,13 @@ export const lstGames = [
         difficulty: 3,
         lang: 'ENG',
         img: 'Zombie Kittens.png',
+    },
+    {
+        name: 'Virus Halloween',
+        desc: 'es un juego de corte familiar en el que nuestro objetivo es conseguir aislar un cuerpo sano y erradicar el virus antes de que cualquier otra persona lo consiga.Consigue cuatro órganos sanos de distinto color.Elimina los virus e inmuniza tus órganos para que no se puedan contagiar.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'virus halloween.webp',
     }
 ]
