@@ -1,0 +1,9 @@
+#dices-container {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .dice-container {
+        flex: 0 0 50%;
+    }
+}

@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { GameListPage } from './pages/GameListPage'
 import './styles.css'
+import { RouterManagement } from './Router'
 
 const logExtraData = () => {
   const text = `⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -46,8 +45,8 @@ logExtraData();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <GameListPage />
-    </BrowserRouter>
+    <>
+      <RouterManagement />
+    </>
   </React.StrictMode>,
 )

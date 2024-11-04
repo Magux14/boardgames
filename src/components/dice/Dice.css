@@ -1,0 +1,44 @@
+.dice-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    label {
+        font-weight: bold;
+    }
+
+    .dice {
+        display: flex;
+        font-size: 4em;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border: 3px solid black;
+        background: rgb(84, 52, 160);
+        border-radius: 10px;
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+    }
+
+    .dice.animate {
+        transition: transform 1s ease, background-color 1s ease;
+        animation: colorAndSize 0.3s forwards;
+    }
+}
+
+@keyframes colorAndSize {
+    0% {
+        transform: scale(1);
+        background: rgb(125, 94, 199);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        background: rgb(125, 94, 199);
+    }
+}

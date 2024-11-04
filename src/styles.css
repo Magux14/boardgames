@@ -6,6 +6,7 @@ html,
 body,
 #root {
     height: 100%;
+    --header-background-color: rgb(49, 49, 49);
 }
 
 body {
@@ -40,4 +41,14 @@ img {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+
+#main-container {
+    margin-top: 44px;
+    background: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
