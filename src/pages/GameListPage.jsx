@@ -43,6 +43,7 @@ export const GameListPage = () => {
         }
 
         setlstFilteredItems(lstFiltered);
+        console.log('import.meta.env.VITE_PUBLIC_URL', import.meta.env.VITE_PUBLIC_URL);
     }
 
     useEffect(() => {
@@ -99,7 +100,7 @@ export const GameListPage = () => {
 
                     {lstFilteredItems.map(item =>
                         <div key={item.name} className='game'>
-                            <img src={`./img/games/${item.img}`}
+                            <img src={`${import.meta.env.VITE_PUBLIC_URL}/img/games/${item.img}`}
                                 alt={item.name}
                                 className='image'
                                 onError={(e) => {

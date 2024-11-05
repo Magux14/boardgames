@@ -426,7 +426,7 @@ export const lstGames = [
     },
     {
         name: 'Virus Halloween',
-        desc: 'es un juego de corte familiar en el que nuestro objetivo es conseguir aislar un cuerpo sano y erradicar el virus antes de que cualquier otra persona lo consiga.Consigue cuatro órganos sanos de distinto color.Elimina los virus e inmuniza tus órganos para que no se puedan contagiar.',
+        desc: 'Es un juego de corte familiar en el que nuestro objetivo es conseguir aislar un cuerpo sano y erradicar el virus antes de que cualquier otra persona lo consiga.Consigue cuatro órganos sanos de distinto color.Elimina los virus e inmuniza tus órganos para que no se puedan contagiar.',
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 2,

@@ -25,9 +25,9 @@ export const Dice = ({ initialDiceNumbers, diceName }) => {
     return (
         <div className='dice-container'>
             <label>{diceName}</label>
-            <div className={`dice ${isAnimating ? 'animate' : ''}`} onClick={() => getRandomNum()}>
+            <button className={`dice ${isAnimating ? 'animate' : ''}`} onClick={() => getRandomNum()}>
                 {num}
-            </div>
+            </button>
         </div>
     )
 }

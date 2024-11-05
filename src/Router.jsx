@@ -6,10 +6,9 @@ import { DicePage } from './pages/DicePage'
 
 export const RouterManagement = () => {
 
-    const prod = true;
     return (
         <div id="main-container">
-            <BrowserRouter basename={prod ? 'boardgames' : ''}>
+            <BrowserRouter basename={import.meta.env.VITE_PUBLIC_URL}>
                 <Routes>
                     <Route path="/" element={<GameListPage />} />
                     <Route path="/dice" element={<DicePage />} />
