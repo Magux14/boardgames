@@ -1,9 +1,50 @@
-import React from 'react'
-import { phasmophobiaEquipmentName, phasmophobiaGhostList } from '../../data/phasmophobia-data';
+import React, { useEffect, useState } from 'react'
+import { phasmophobiaEquipmentName, phasmophobiaEquipmentTests, phasmophobiaGhostList } from '../../data/phasmophobia-data';
 import './PhasmophobiaFilterPage.css';
 import { Header } from './../components/header/Header'
 
 export const PhasmophobiaFilterPage = () => {
+
+    const [filters, setFilters] = useState(phasmophobiaEquipmentTests);
+    const [ghostListFiltered, setGhostListFiltered] = useState(phasmophobiaGhostList);
+
+    const handleChenbox = (property, value) => {
+        setFilters({
+            ...filters,
+            [property]: value
+        });
+    }
+
+    const filterList = () => {
+        const lstConditionKeys = Object.keys(filters);
+        for (let ghost of ghostListFiltered) {
+            ghost.match = true;
+            for (let key of lstConditionKeys) {
+                if (filters[key] == true) {
+                    if (!ghost[key]) {
+                        ghost.match = false;
+                    }
+                }
+            }
+        }
+        setGhostListFiltered([...ghostListFiltered]);
+    }
+
+    const handleSelected = (selectedIndex) => {
+        for (let i = 0; i < ghostListFiltered.length; i++) {
+            ghostListFiltered[i].selected = false
+            if (i == selectedIndex) {
+                ghostListFiltered[i].selected = true;
+            }
+        }
+
+        setGhostListFiltered([...ghostListFiltered]);
+    }
+
+    useEffect(() => {
+        filterList();
+    }, [filters]);
+
     return (
         <>
             <Header />
@@ -15,20 +56,27 @@ export const PhasmophobiaFilterPage = () => {
                         {
                             phasmophobiaEquipmentName.map((equipment =>
                                 <div key={equipment.name} className="test-item">
-                                    <input type="checkbox"></input>
+                                    <input type="checkbox" value={filters[equipment.property]}
+                                        onChange={(ev) => handleChenbox(equipment.property, ev.target.checked)
+                                        }></input>
                                     <label>{equipment.name}</label>
                                 </div>
                             ))
                         }
                     </div>
 
-                    <div>
+                    <div id="filtered-container">
 
                         <label>Con las pruebas halladas, creemos que el fantasma es:</label>
-
                         {
-                            phasmophobiaGhostList.map((ghost =>
-                                <div key={ghost.name}> {ghost.name}</div>
+                            ghostListFiltered.map(((ghost, index) =>
+                                <div
+                                    key={ghost.name}
+                                    className={`ghost-item ${!ghost.match ? 'no-match' : ''}`}
+                                    onClick={(() => handleSelected(index))}
+                                >
+                                    <label className={`${ghost.selected ? 'selected' : ''}`}>{ghost.name}</label>
+                                </div>
                             ))
                         }
                     </div>

@@ -3,7 +3,7 @@
 
 export const phasmophobiaEquipmentName = [
     {
-        name: 'Medido EMF 5',
+        name: 'Medidor EMF 5',
         property: 'emf5'
     },
     {
@@ -32,7 +32,7 @@ export const phasmophobiaEquipmentName = [
     },
 ]
 
-export const PhasmophobiaEquipmentTests = {
+export const phasmophobiaEquipmentTests = {
     emf5: false,
     dots: false,
     ultraviolet: false,
@@ -40,17 +40,6 @@ export const PhasmophobiaEquipmentTests = {
     ghostWriting: false,
     spiritBox: false,
     freezing: false
-}
-
-
-export const defaultPhasmophobiaTests2 = {
-    emf5: true,
-    dots: true,
-    ultraviolet: true,
-    orbs: true,
-    ghostWriting: true,
-    spiritBox: true,
-    freezing: true
 }
 
 export const phasmophobiaGhostList = [
