@@ -1,6 +1,6 @@
 @font-face {
     font-family: "tragicMarker";
-    src: url('../assets/fonts/TragicMarker.otf');
+    src: url('../public/fonts/TragicMarker.otf');
 }
 
 .text-center {
