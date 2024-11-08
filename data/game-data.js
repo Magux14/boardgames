@@ -88,6 +88,14 @@ export const lstGames = [
         img: 'Dos.jpeg',
     },
     {
+        name: 'el señor de los anillos - duelo por la tierra media',
+        desc: 'El Señor de los Anillos: Duelo por la Tierra Media es un juego de estrategia para dos jugadores que se desarrolla en el universo de J.R.R. Tolkien. En este juego, los jugadores deben elegir un bando y luchar por el destino de la Tierra Media. Sauron: El jugador que elija este bando debe extender sus hordas sobre las ciudades enemigas. La Comunidad del Anillo: El jugador que elija este bando debe evitar que el enemigo avance y destruir el Anillo Único.',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 4,
+        img: 'el señor de los anillos - duelo por la tierra media.jpg',
+    },
+    {
         name: 'Hanabi',
         desc: 'En este juego los jugadores, que pueden ver las cartas de otros jugadores pero no las propias, intentan jugar una serie de cartas en un orden concreto para simular un espectáculo de fuegos artificiales. Los jugadores están limitados en los tipos de información que pueden dar a otros jugadores, y en la cantidad total de información que pueden dar durante el juego.',
         minPlayers: 2,
