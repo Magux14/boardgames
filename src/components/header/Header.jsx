@@ -3,6 +3,7 @@ import './Header.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChecklistIcon from '@mui/icons-material/Checklist';
 import CasinoIcon from '@mui/icons-material/Casino';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
@@ -37,6 +38,10 @@ export const Header = () => {
                         </li>
                         <li onClick={() => goTo('/dice')}>
                             <span>Dados</span> <CasinoIcon />
+                        </li>
+
+                        <li onClick={() => goTo('/phasmophobia-filter')}>
+                            <span>Phasmophobia Pruebas</span> <MenuBookIcon />
                         </li>
                     </ul>
                 </div>
