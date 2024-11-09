@@ -13,7 +13,7 @@
             border-bottom: 3px solid black;
 
             >label {
-                font-size: 1.5em;
+                font-size: 7vw;
                 flex-basis: 100%;
                 margin-top: 10px;
                 margin-bottom: 10px;
@@ -22,8 +22,9 @@
 
             .test-item {
                 display: flex;
-                font-size: 1.1em;
+                font-size: 5vw;
                 flex-basis: 50%;
+                align-items: center;
                 padding-bottom: 10px;
 
                 input {
@@ -39,7 +40,7 @@
         }
 
         #filtered-container {
-            font-size: 1.1em;
+            font-size: 5vw;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;

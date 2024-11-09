@@ -52,48 +52,49 @@ export const GameListPage = () => {
     return (
         <>
             <Header />
-            <div id='main-container'>
-                <div id="filter-container">
-                    <div id="input-container">
+            <div id="filter-container">
+                <div id="input-container">
 
-                        <div className="select">
-                            <label>
-                                <SearchIcon /> Nombre
-                            </label>
-                            <input
-                                type="text"
-                                placeholder="Buscar..."
-                                value={filters.searchTerm}
-                                onChange={handleSearchWordChange}
-                                className="select"
-                            />
-                        </div>
+                    <div className="select">
+                        <label>
+                            <SearchIcon /> Nombre
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="Buscar..."
+                            value={filters.searchTerm}
+                            onChange={handleSearchWordChange}
+                            className="select"
+                        />
+                    </div>
 
-                        <div className="select">
-                            <label>
-                                <PersonIcon /> Jugadores
-                            </label>
-                            <select name="Máximo de jugadores" value={filters.selectedPlayers} onChange={handlePlayersChanged}>
-                                <option value="-1">-</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </div>
-                        <div className="select">
-                            <label>
-                                <FilterAltIcon /> {lstFilteredItems.length}
-                            </label>
-                        </div>
+                    <div className="select">
+                        <label>
+                            <PersonIcon /> Jugadores
+                        </label>
+                        <select name="Máximo de jugadores" value={filters.selectedPlayers} onChange={handlePlayersChanged}>
+                            <option value="-1">-</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <div className="select">
+                        <label>
+                            <FilterAltIcon /> {lstFilteredItems.length}
+                        </label>
                     </div>
                 </div>
+            </div>
+            <div id="game-list-container">
+
 
                 <div className='list-container'>
 

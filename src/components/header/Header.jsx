@@ -47,6 +47,7 @@ export const Header = () => {
                 </div>
                 <div className={`overlay ${isOpen ? 'active' : ''}`} onClick={toggleMenu}></div>
             </div>
+            <div id="header-space"></div>
         </>
     )
 }

@@ -5,8 +5,10 @@
     width: 100%;
     color: white;
     padding: 10px;
-    margin-top: -44px;
+}
 
+#header-space {
+    padding-bottom: 34px;
 }
 
 #side-menu-container {

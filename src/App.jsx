@@ -5,7 +5,7 @@ import { DicePage } from './pages/DicePage'
 import { PhasmophobiaFilterPage } from './pages/PhasmophobiaFilterPage'
 
 
-export const RouterManagement = () => {
+export const App = () => {
 
     return (
         <BrowserRouter basename={import.meta.env.VITE_PUBLIC_URL}>
