@@ -8,14 +8,12 @@ import { PhasmophobiaFilterPage } from './pages/PhasmophobiaFilterPage'
 export const RouterManagement = () => {
 
     return (
-        <div id="main-container">
-            <BrowserRouter basename={import.meta.env.VITE_PUBLIC_URL}>
-                <Routes>
-                    <Route path="/" element={<GameListPage />} />
-                    <Route path="/dice" element={<DicePage />} />
-                    <Route path="/phasmophobia-filter" element={<PhasmophobiaFilterPage />} />
-                </Routes>
-            </BrowserRouter>
-        </div>
+        <BrowserRouter basename={import.meta.env.VITE_PUBLIC_URL}>
+            <Routes>
+                <Route path="/" element={<GameListPage />} />
+                <Route path="/dice" element={<DicePage />} />
+                <Route path="/phasmophobia-filter" element={<PhasmophobiaFilterPage />} />
+            </Routes>
+        </BrowserRouter>
     )
 }

@@ -45,8 +45,6 @@ logExtraData();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <>
-      <RouterManagement />
-    </>
+    <RouterManagement />
   </React.StrictMode>,
 )

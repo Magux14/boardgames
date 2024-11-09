@@ -41,7 +41,7 @@ export const Header = () => {
                         </li>
 
                         <li onClick={() => goTo('/phasmophobia-filter')}>
-                            <span>Phasmophobia Pruebas</span> <MenuBookIcon />
+                            <span>Phasmophobia</span> <MenuBookIcon />
                         </li>
                     </ul>
                 </div>
