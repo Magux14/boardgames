@@ -1,11 +1,10 @@
 #phasmophobia-game-container {
-    height: 100%;
     display: flex;
     flex-direction: column;
     /* background: #17171f; */
     color: white;
     background: linear-gradient(180deg, #17171f 57%, rgba(63, 62, 88, 1) 94%);
-    font-size: 8vw;
+    font-size: 6vw;
     font-family: 'tragicMarker';
     align-items: center;
     align-content: center;
@@ -28,4 +27,45 @@
             width: 20%;
         }
     }
+
+    #test-buttons-container {
+        padding-top: 20px;
+        border-top: 3px solid white;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+
+        div {
+            display: flex;
+            justify-content: center;
+            flex-basis: 50%;
+        }
+    }
+
+    .phasmo-button {
+        width: 100%;
+        border: 3px solid white;
+        border-radius: 8px;
+        color: white;
+        background: transparent;
+        margin: 10px;
+    }
+
+    .current-test {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .positive {
+        color: rgb(87, 194, 87);
+
+    }
+
+    .negative {
+        color: rgb(143, 34, 34);
+    }
+
 }

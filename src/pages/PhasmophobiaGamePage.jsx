@@ -4,6 +4,7 @@ import { usePhasmophobiaGame } from '../hooks/usePhasmophobiaGame'
 import { Dice } from '../components/dice/Dice';
 import './PhasmophobiaGamePage.css'
 import ConfirmationModal from '../components/confirmation-modal/ConfirmationModal';
+import { phasmophobiaEquipmentName } from '../../data/phasmophobia-data';
 
 export const PhasmophobiaGamePage = () => {
 
@@ -11,13 +12,14 @@ export const PhasmophobiaGamePage = () => {
     const { prepareGame, getCurrentGhost } = usePhasmophobiaGame();
     const [showGhost, setShowGhost] = useState(false)
     const [showAlertFinishGame, setShowAlertFinishGame] = useState(false)
+    const [currentTest, setCurrentTest] = useState(null)
+    const [testResult, setTestResult] = useState({ result: false })
 
     useEffect(() => {
         prepareGame();
     }, [])
 
     const handleSetPlayersNum = (playersNum) => {
-        console.log('playersNum', playersNum);
         if (isNaN(playersNum)) {
             return;
         }
@@ -29,6 +31,24 @@ export const PhasmophobiaGamePage = () => {
         setShowGhost(true);
     }
 
+    const handleTestSelect = (equipment) => {
+        setTestResult(null);
+        setCurrentTest(equipment)
+    }
+
+    const handleTestResult = () => {
+        const ghost = getCurrentGhost();
+        let positive = false;
+
+        console.log(ghost[currentTest.property]);
+        console.log(currentTest.property);
+        if (ghost[currentTest.property] == true) {
+            positive = true;
+        }
+
+        setTestResult({ result: positive });
+    }
+
     return (
         <div id="phasmophobia-game-container">
             <div className="title">Phasmophobia</div>
@@ -37,7 +57,6 @@ export const PhasmophobiaGamePage = () => {
                 <label>Players: </label>
                 <input type="number" value={playersNum.max} onChange={(ev) => handleSetPlayersNum(ev.target.value)}></input>
             </div>
-            <br />
 
             <div>Fantasma:</div>
             {
@@ -53,9 +72,48 @@ export const PhasmophobiaGamePage = () => {
                     </ConfirmationModal>
             }
 
-            <br />
-            <br />
             <Dice diceName="Dado selección de Jugador" initialDiceNumbers={playersNum} />
+
+            <div id="test-buttons-container">
+                {
+                    phasmophobiaEquipmentName.map((equipment) =>
+                        <div key={equipment.name}>
+                            <button className="phasmo-button" onClick={() => handleTestSelect(equipment)}>{equipment.name}</button>
+                        </div>
+                    )
+                }
+            </div>
+
+            <br />
+            {
+                currentTest != null ?
+                    <div className="current-test">
+                        Prueba:
+                        <br />
+                        <label>
+                            {currentTest.name}
+                        </label>
+                        <button className="phasmo-button" onClick={() => handleTestResult()}>Probar</button>
+                        <br />
+                        <label>Resultado:</label>
+                        {testResult != null ?
+                            (
+                                testResult.result == true ?
+                                    <label className="positive ghost-title">Positivo</label>
+                                    : <label className="negative ghost-title">Negativo</label>
+                            ) : null
+                        }
+                    </div>
+                    : null
+            }
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
 
         </div>
     )
