@@ -1,0 +1,30 @@
+#phasmophobia-game-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #17171f;
+    color: white;
+    font-size: 8vw;
+    font-family: 'tragicMarker';
+    align-items: center;
+    align-content: center;
+    padding: 20px;
+
+    .title {
+        font-size: 10vw;
+    }
+
+    .ghost-title {
+        font-size: 15vw;
+    }
+
+    #form-container {
+        display: flex;
+        justify-content: center;
+
+        input {
+            margin-left: 20px;
+            width: 20%;
+        }
+    }
+}

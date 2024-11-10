@@ -70,4 +70,28 @@
 
         }
     }
+
+    #new-game-container {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 50px 50px 50px;
+
+        input {
+            width: 20%;
+            margin-left: 10px;
+        }
+
+        #button-footer-container {
+            font-family: 'tragicMarker';
+            display: flex;
+            border: 3px solid black;
+
+            button {
+                flex-basis: 100%;
+                background: transparent;
+            }
+        }
+    }
+
+
 }

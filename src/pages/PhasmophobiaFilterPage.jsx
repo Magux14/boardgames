@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { phasmophobiaEquipmentName, phasmophobiaEquipmentTests, phasmophobiaGhostList } from '../../data/phasmophobia-data';
 import './PhasmophobiaFilterPage.css';
 import { Header } from './../components/header/Header'
+import { useNavigate } from 'react-router-dom';
 
 export const PhasmophobiaFilterPage = () => {
 
     const [filters, setFilters] = useState(phasmophobiaEquipmentTests);
     const [ghostListFiltered, setGhostListFiltered] = useState(phasmophobiaGhostList);
+    const navigation = useNavigate();
 
     const handleChenbox = (property, value) => {
         setFilters({
@@ -39,6 +41,10 @@ export const PhasmophobiaFilterPage = () => {
         }
 
         setGhostListFiltered([...ghostListFiltered]);
+    }
+
+    const handleGoToNewGame = () => {
+        navigation('/phasmophobia-game');
     }
 
     useEffect(() => {
@@ -81,7 +87,25 @@ export const PhasmophobiaFilterPage = () => {
                         }
                     </div>
                 </div>
-            </div>
+
+                {
+                    filters.dots &&
+                        filters.emf5 &&
+                        filters.freezing &&
+                        filters.ghostWriting &&
+                        filters.orbs &&
+                        filters.spiritBox &&
+                        filters.ultraviolet || true ?
+                        <div id="new-game-container">
+                            <div id="button-footer-container" onClick={(() => handleGoToNewGame())}>
+                                <button>New Game</button>
+                            </div>
+                        </div>
+                        :
+                        null
+                }
+
+            </div >
         </>
     )
 }
