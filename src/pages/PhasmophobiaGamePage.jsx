@@ -55,7 +55,7 @@ export const PhasmophobiaGamePage = () => {
 
             <br />
             <br />
-            <Dice diceName="Jugador" initialDiceNumbers={playersNum} />
+            <Dice diceName="Dado selección de Jugador" initialDiceNumbers={playersNum} />
 
         </div>
     )

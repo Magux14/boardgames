@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Dice.css'
 
-export const Dice = ({ initialDiceNumbers, diceName }) => {
+export const Dice = ({ initialDiceNumbers, diceName, porcentajeWidth }) => {
 
     const [diceNumbers, setDiceNumbers] = useState(initialDiceNumbers || {
         min: 1,
