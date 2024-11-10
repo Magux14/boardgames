@@ -4,6 +4,7 @@
     /* background: #17171f; */
     color: white;
     background: linear-gradient(180deg, #17171f 57%, rgba(63, 62, 88, 1) 94%);
+    background-attachment: fixed;
     font-size: 6vw;
     font-family: 'tragicMarker';
     align-items: center;
