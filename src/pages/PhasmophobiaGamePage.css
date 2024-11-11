@@ -51,13 +51,21 @@
         color: white;
         background: transparent;
         margin: 10px;
+
+        &&.selected-button {
+            border: 3px solid rgb(172, 166, 92);
+            color: rgb(172, 166, 92);
+        }
     }
+
+
 
     .current-test {
         width: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        border-bottom: 3px solid white;
     }
 
     .positive {

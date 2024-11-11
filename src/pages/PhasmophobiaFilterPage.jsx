@@ -95,7 +95,7 @@ export const PhasmophobiaFilterPage = () => {
                         filters.ghostWriting &&
                         filters.orbs &&
                         filters.spiritBox &&
-                        filters.ultraviolet || true ?
+                        filters.ultraviolet ?
                         <div id="new-game-container">
                             <div id="button-footer-container" onClick={(() => handleGoToNewGame())}>
                                 <button>New Game</button>
