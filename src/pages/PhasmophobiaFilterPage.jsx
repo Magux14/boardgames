@@ -10,10 +10,10 @@ export const PhasmophobiaFilterPage = () => {
     const [ghostListFiltered, setGhostListFiltered] = useState(phasmophobiaGhostList);
     const navigation = useNavigate();
 
-    const handleChenbox = (property, value) => {
+    const handleCheckbox = (property) => {
         setFilters({
             ...filters,
-            [property]: value
+            [property]: !filters[property]
         });
     }
 
@@ -61,10 +61,8 @@ export const PhasmophobiaFilterPage = () => {
                         <label>Pruebas</label>
                         {
                             phasmophobiaEquipmentName.map((equipment =>
-                                <div key={equipment.name} className="test-item">
-                                    <input type="checkbox" value={filters[equipment.property]}
-                                        onChange={(ev) => handleChenbox(equipment.property, ev.target.checked)
-                                        }></input>
+                                <div key={equipment.name} className="test-item" onClick={() => handleCheckbox(equipment.property)}>
+                                    <input type="checkbox" value={filters[equipment.property]} checked={filters[equipment.property]} onChange={(() => { })}></input>
                                     <label>{equipment.name}</label>
                                 </div>
                             ))

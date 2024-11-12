@@ -10,7 +10,7 @@
 
     .dice {
         display: flex;
-        font-size: 4em;
+        font-size: 2em;
         justify-content: center;
         align-items: center;
         color: white;

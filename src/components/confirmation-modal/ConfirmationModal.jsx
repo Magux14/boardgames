@@ -13,26 +13,19 @@ export default function ConfirmationModal({ description, acceptCallback, closeCa
         closeCallback();
     };
 
-    const handleAccept = () => {
-        callback();
-        handleClose();
-    }
-
     React.useEffect(() => {
         setOpen(showAlert);
     }, [showAlert])
 
     return (
-        <React.Fragment>
+        <>
             {children}
             <Dialog
                 open={showAlert}
                 onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
             >
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
+                <DialogContent id="confirmation-modal">
+                    <DialogContentText>
                         {description}
                     </DialogContentText>
                 </DialogContent>
@@ -43,6 +36,6 @@ export default function ConfirmationModal({ description, acceptCallback, closeCa
                     </Button>
                 </DialogActions>
             </Dialog>
-        </React.Fragment>
+        </>
     );
 }
