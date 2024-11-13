@@ -1,7 +1,7 @@
 
 
 
-export const phasmophobiaEquipmentName = [
+export const phasmophobiaEquipment = [
     {
         name: 'Medidor EMF 5',
         property: 'emf5'

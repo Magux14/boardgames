@@ -44,6 +44,19 @@
                 &&:last-child {
                     flex-basis: 100%;
                 }
+
+                .equipment-name {
+                    margin-left: 1vw;
+                }
+            }
+
+            .discarded::before {
+                content: "";
+                position: absolute;
+                width: 40%;
+                height: 2.5px;
+                background-color: black;
+                transform: translateY(-50%);
             }
         }
 

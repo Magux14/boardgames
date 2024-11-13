@@ -4,7 +4,7 @@ import { usePhasmophobiaGame } from '../hooks/usePhasmophobiaGame'
 import { Dice } from '../components/dice/Dice';
 import './PhasmophobiaGamePage.css'
 import ConfirmationModal from '../components/confirmation-modal/ConfirmationModal';
-import { phasmophobiaEquipmentName } from '../../data/phasmophobia-data';
+import { phasmophobiaEquipment } from '../../data/phasmophobia-data';
 import { Header } from '../components/header/Header';
 
 export const PhasmophobiaGamePage = () => {
@@ -76,7 +76,7 @@ export const PhasmophobiaGamePage = () => {
                 <label className="test-title">Pruebas</label>
                 <div id="test-buttons-container">
                     {
-                        phasmophobiaEquipmentName.map((equipment) =>
+                        phasmophobiaEquipment.map((equipment) =>
                             <div key={equipment.name}>
                                 <button className={`phasmo-button ${equipment.name == currentTest?.name ? 'selected-button' : ''}`} onClick={() => handleTestSelect(equipment)}>{equipment.name}</button>
                             </div>

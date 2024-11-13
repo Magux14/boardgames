@@ -1,31 +1,46 @@
 import React, { useEffect, useState } from 'react'
-import { phasmophobiaEquipmentName, phasmophobiaEquipmentTests, phasmophobiaGhostList } from '../../data/phasmophobia-data';
+import { phasmophobiaEquipment, phasmophobiaEquipmentTests, phasmophobiaGhostList } from '../../data/phasmophobia-data';
 import './PhasmophobiaFilterPage.css';
 import { Header } from './../components/header/Header'
 import { useNavigate } from 'react-router-dom';
-
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 export const PhasmophobiaFilterPage = () => {
 
-    const [filters, setFilters] = useState(phasmophobiaEquipmentTests);
+    const [filters, setFilters] = useState(() => {
+
+        const equipmentFilters = [
+            ...phasmophobiaEquipment
+        ]
+        equipmentFilters.forEach(item => {
+            item.status = 'unselected'
+        });
+
+        return equipmentFilters;
+    });
+
     const [ghostListFiltered, setGhostListFiltered] = useState(phasmophobiaGhostList);
     const navigation = useNavigate();
 
-    const handleCheckbox = (property) => {
-        setFilters({
-            ...filters,
-            [property]: !filters[property]
-        });
+    const handleCheckbox = (equipmentIndex) => {
+        switch (filters[equipmentIndex].status) {
+            case 'unselected': filters[equipmentIndex].status = 'selected'; break;
+            case 'selected': filters[equipmentIndex].status = 'discarded'; break;
+            case 'discarded': filters[equipmentIndex].status = 'unselected'; break;
+        }
+        setFilters([
+            ...filters
+        ]);
     }
 
     const filterList = () => {
-        const lstConditionKeys = Object.keys(filters);
         for (let ghost of ghostListFiltered) {
             ghost.match = true;
-            for (let key of lstConditionKeys) {
-                if (filters[key] == true) {
-                    if (!ghost[key]) {
-                        ghost.match = false;
-                    }
+            for (let filter of filters) {
+                if (filter.status == 'selected' && !ghost[filter.property]) {
+                    ghost.match = false;
+                } else if (filter.status == 'discarded' && ghost[filter.property] == true) {
+                    ghost.match = false;
                 }
             }
         }
@@ -51,6 +66,7 @@ export const PhasmophobiaFilterPage = () => {
         filterList();
     }, [filters]);
 
+
     return (
         <>
             <Header />
@@ -60,10 +76,14 @@ export const PhasmophobiaFilterPage = () => {
                     <div id="test-selection-container">
                         <label>Pruebas</label>
                         {
-                            phasmophobiaEquipmentName.map((equipment =>
-                                <div key={equipment.name} className="test-item" onClick={() => handleCheckbox(equipment.property)}>
-                                    <input type="checkbox" value={filters[equipment.property]} checked={filters[equipment.property]} onChange={(() => { })}></input>
-                                    <label>{equipment.name}</label>
+                            filters.map(((equipment, index) =>
+                                <div key={equipment.name} className={`test-item ${equipment.status == 'discarded' ? 'discarded' : ''}`} onClick={() => handleCheckbox(index)}>
+                                    {
+                                        equipment.status == 'unselected' || equipment.status == 'discarded' ?
+                                            <CheckBoxOutlineBlankIcon />
+                                            : <CheckBoxIcon />
+                                    }
+                                    <label className='equipment-name'>{equipment.name}</label>
                                 </div>
                             ))
                         }
@@ -87,20 +107,12 @@ export const PhasmophobiaFilterPage = () => {
                 </div>
 
                 {
-                    filters.dots &&
-                        filters.emf5 &&
-                        filters.freezing &&
-                        filters.ghostWriting &&
-                        filters.orbs &&
-                        filters.spiritBox &&
-                        filters.ultraviolet ?
-                        <div id="new-game-container">
-                            <div id="button-footer-container" onClick={(() => handleGoToNewGame())}>
-                                <button>New Game</button>
-                            </div>
+                    !filters.find(item => item.status != 'selected') &&
+                    <div id="new-game-container">
+                        <div id="button-footer-container" onClick={(() => handleGoToNewGame())}>
+                            <button>New Game</button>
                         </div>
-                        :
-                        null
+                    </div>
                 }
 
             </div >
