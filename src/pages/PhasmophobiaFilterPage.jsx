@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { phasmophobiaEquipment, phasmophobiaEquipmentTests, phasmophobiaGhostList } from '../../data/phasmophobia-data';
+import { phasmophobiaEquipment, phasmophobiaGhostList } from '../../data/phasmophobia-data';
 import './PhasmophobiaFilterPage.css';
 import { Header } from './../components/header/Header'
 import { useNavigate } from 'react-router-dom';
@@ -78,7 +78,7 @@ export const PhasmophobiaFilterPage = () => {
                         <div className='controllers'>
                             <button onClick={(() => cordura > 0 ? setCordura(cordura - 1) : null)}>-</button>
                             <label className="cordura-amount">{cordura > 0 ? cordura : 'MUERTO'}</label>
-                            <button onClick={(() => setCordura(cordura + 1))}>+</button>
+                            <button onClick={(() => cordura < 99 ? setCordura(cordura + 1) : null)}>+</button>
                         </div>
 
                     </div>
