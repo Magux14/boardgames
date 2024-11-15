@@ -20,6 +20,7 @@ export const PhasmophobiaFilterPage = () => {
     });
 
     const [ghostListFiltered, setGhostListFiltered] = useState(phasmophobiaGhostList);
+    const [cordura, setCordura] = useState(10);
     const navigation = useNavigate();
 
     const handleCheckbox = (equipmentIndex) => {
@@ -72,6 +73,15 @@ export const PhasmophobiaFilterPage = () => {
             <Header />
             <div id="notebook-container">
                 <div id="test-container">
+                    <div id="cordura-container">
+                        <label className="cordura-title">Cordura</label>
+                        <div className='controllers'>
+                            <button onClick={(() => cordura > 0 ? setCordura(cordura - 1) : null)}>-</button>
+                            <label className="cordura-amount">{cordura > 0 ? cordura : 'MUERTO'}</label>
+                            <button onClick={(() => setCordura(cordura + 1))}>+</button>
+                        </div>
+
+                    </div>
 
                     <div id="test-selection-container">
                         <label>Pruebas</label>
@@ -106,6 +116,7 @@ export const PhasmophobiaFilterPage = () => {
                     </div>
                 </div>
 
+
                 {
                     !filters.find(item => item.status != 'selected') &&
                     <div id="new-game-container">
@@ -114,6 +125,14 @@ export const PhasmophobiaFilterPage = () => {
                         </div>
                     </div>
                 }
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 
             </div >
         </>

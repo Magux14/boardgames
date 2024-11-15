@@ -1,10 +1,35 @@
 #notebook-container {
-    height: 100%;
     background-color: #d6d3aa;
     background-attachment: fixed;
     font-family: 'tragicMarker';
 
     #test-container {
+
+        #cordura-container {
+            width: 100%;
+
+            .cordura-title {
+                margin-left: 5%;
+                margin-top: 20px;
+                font-size: 1.5em;
+            }
+
+            .controllers {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+
+                button {
+                    width: 20%;
+                    font-size: 2em;
+                }
+
+                .cordura-amount {
+                    font-size: 2em;
+                }
+            }
+        }
+
         #test-selection-container {
             display: flex;
             flex-wrap: wrap;
