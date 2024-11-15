@@ -1,101 +1,136 @@
-#notebook-container {
-    background-color: #d6d3aa;
-    background-attachment: fixed;
+#folder-container {
     font-family: 'tragicMarker';
 
-    #test-container {
+    .folder-options-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
 
-        #cordura-container {
-            width: 100%;
+        .empty {
+            flex-basis: 33.33%;
+        }
 
-            .cordura-title {
-                margin-left: 5%;
-                margin-top: 20px;
-                font-size: 6vw;
-            }
+        .folder-option {
+            background-color: #9e9c7e;
+            text-align: center;
+            flex-basis: 33.33%;
+            border: 1px solid rgb(124, 102, 73);
+            border-bottom: 0;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
 
-            .controllers {
+        .folder-selected {
+            background-color: #d6d3aa;
+        }
+    }
+
+    .equipment-ghost-info-container {
+        margin-left: 10%;
+    }
+
+    #notebook-container {
+        background-color: #d6d3aa;
+        background-attachment: fixed;
+        font-family: 'tragicMarker';
+
+        #test-container {
+
+            #cordura-container {
                 width: 100%;
-                display: flex;
-                justify-content: space-around;
 
-                button {
-                    width: 20%;
-                    font-size: 2em;
-                    border-radius: 15px;
+                .cordura-title {
+                    margin-left: 5%;
+                    margin-top: 20px;
+                    font-size: 6vw;
                 }
 
-                button:active {
-                    background: rgb(219, 219, 219);
-                }
+                .controllers {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
 
-                .cordura-amount {
-                    font-size: 2em;
+                    button {
+                        width: 20%;
+                        font-size: 2em;
+                        border-radius: 15px;
+                    }
+
+                    button:active {
+                        background: rgb(219, 219, 219);
+                    }
+
+                    .cordura-amount {
+                        font-size: 2em;
+                    }
                 }
             }
-        }
 
-        #test-selection-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-items: center;
-            margin: 10px 5% 10px 5%;
-            padding-bottom: 10px;
-            border-bottom: 3px solid black;
-
-            >label {
-                font-size: 6vw;
-                flex-basis: 100%;
-                margin-top: 10px;
-                margin-bottom: 10px;
+            #test-selection-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-items: center;
+                margin: 10px 5% 10px 5%;
+                padding-bottom: 10px;
                 border-bottom: 3px solid black;
-            }
 
-            .test-item {
-                display: flex;
-                font-size: 4vw;
-                flex-basis: 50%;
-                align-items: center;
-                align-content: center;
-                margin-bottom: 10px;
-
-                &:active {
-                    background-color: #c9c6a0;
-                    border-radius: 5px;
-                }
-
-                input[type="checkbox"] {
-                    margin-right: 1vw;
-                    width: 3vw;
-                    height: 3vw;
-                    accent-color: black;
-                }
-
-                &&:last-child {
+                >label {
+                    font-size: 6vw;
                     flex-basis: 100%;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    border-bottom: 3px solid black;
                 }
 
-                .equipment-name {
-                    margin-left: 1vw;
+                .test-item {
+                    display: flex;
+                    font-size: 4vw;
+                    flex-basis: 50%;
+                    align-items: center;
+                    align-content: center;
+                    margin-bottom: 10px;
+
+                    &:active {
+                        background-color: #c9c6a0;
+                        border-radius: 5px;
+                    }
+
+                    input[type="checkbox"] {
+                        margin-right: 1vw;
+                        width: 3vw;
+                        height: 3vw;
+                        accent-color: black;
+                    }
+
+                    &&:last-child {
+                        flex-basis: 100%;
+                    }
+
+                    .equipment-name {
+                        margin-left: 1vw;
+                    }
+                }
+
+                .discarded::before {
+                    content: "";
+                    position: absolute;
+                    width: 40%;
+                    height: 2.5px;
+                    background-color: black;
+                    transform: translateY(-50%);
                 }
             }
 
-            .discarded::before {
-                content: "";
-                position: absolute;
-                width: 40%;
-                height: 2.5px;
-                background-color: black;
-                transform: translateY(-50%);
-            }
+
         }
 
-        #filtered-container {
+        .filtered-container {
             font-size: 4vw;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin: 10px 5% 10px 5%;
+            background-color: inherit;
 
             >label {
                 text-align: center;
@@ -121,33 +156,31 @@
             }
 
         }
-    }
 
-    #new-game-container {
-        display: flex;
-        flex-direction: column;
-        margin: 20px 50px 50px 50px;
-
-        input {
-            width: 20%;
-            margin-left: 10px;
-        }
-
-        #button-footer-container {
-            font-family: 'tragicMarker';
+        #new-game-container {
             display: flex;
-            justify-content: center;
-            padding: 20px;
+            flex-direction: column;
+            margin: 20px 50px 50px 50px;
 
-            button {
-                flex-basis: 50%;
-                border-radius: 5px;
-                border: 3px solid black;
-                background: transparent;
+            input {
+                width: 20%;
+                margin-left: 10px;
+            }
+
+            #button-footer-container {
+                font-family: 'tragicMarker';
+                display: flex;
+                justify-content: center;
                 padding: 20px;
+
+                button {
+                    flex-basis: 50%;
+                    border-radius: 5px;
+                    border: 3px solid black;
+                    background: transparent;
+                    padding: 20px;
+                }
             }
         }
     }
-
-
 }
