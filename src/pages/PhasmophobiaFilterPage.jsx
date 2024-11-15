@@ -144,9 +144,9 @@ export const PhasmophobiaFilterPage = () => {
 
                     }
 
-                    <div className="manual-ghost-container">
-                        {
-                            folderSelected == 'ghosts' &&
+                    {
+                        folderSelected == 'ghosts' &&
+                        <div className="manual-ghost-container">
                             <div className="filtered-container">
                                 {
                                     ghostListFiltered.map(((ghost, index) =>
@@ -160,20 +160,22 @@ export const PhasmophobiaFilterPage = () => {
                                     ))
                                 }
                             </div>
-                        }
 
-                        <div className='equipment-ghost-info-container'>
-                            {
-                                phasmophobiaEquipment.map((equipment) => {
-                                    if (selectedGhost && selectedGhost[equipment.property] == true) {
-                                        return <div>
-                                            {equipment.name}
-                                        </div>
-                                    }
-                                })
-                            }
+                            <div className='equipment-ghost-info-container'>
+                                {
+                                    phasmophobiaEquipment.map((equipment) => {
+                                        if (selectedGhost && selectedGhost[equipment.property] == true) {
+                                            return <div>
+                                                {equipment.name}
+                                            </div>
+                                        }
+                                    })
+                                }
+                            </div>
                         </div>
-                    </div>
+
+                    }
+
 
                     <br />
                     <br />
