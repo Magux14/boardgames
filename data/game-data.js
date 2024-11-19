@@ -45,6 +45,15 @@ export const lstGames = [
         img: 'Baraja española.png',
     },
     {
+        name: 'Catán',
+        desc: 'El objetivo del juego es construir pueblos, ciudades y caminos sobre un tablero que es distinto en cada partida, mientras se van acumulando varios tipos de cartas que hacen posible realizar diferentes construcciones con las que conseguir puntos. El primer jugador que llega a los diez puntos resulta el ganador.',
+        minPlayers: 3,
+        maxPlayers: 4,
+        difficulty: 3,
+        lang: '',
+        img: 'catan.webp',
+    },
+    {
         name: 'Coup',
         desc: 'En Coup, los jugadores compiten por el control de una ciudad-estado corrupta en la Italia del Renacimiento. A través de tu influencia en la corte (las cartas de personaje en tu mano), farolea, roba y asesina a tus oponentes para convertirte en el último jugador en pie y subir al poder.',
         minPlayers: 2,
@@ -222,6 +231,14 @@ export const lstGames = [
         img: 'patchwork.webp',
     },
     {
+        name: 'Phasmophobia',
+        desc: 'Un juego donde deberás encontrar que tipo de fantasma asecha una casa, necesitarás sacar pruebas mientras intentas no morir...',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 3,
+        img: 'Phasmophobia.png',
+    },
+    {
         name: 'Pixar el legado',
         desc: 'Contesta preguntas de tus personajes favoritos de pixar.',
         minPlayers: 2,
@@ -252,6 +269,14 @@ export const lstGames = [
         difficulty: 3,
         lang: 'ENG',
         img: 'Rick y Morty Total Rickall.webp',
+    },
+    {
+        name: 'Risk',
+        desc: 'El RISK es un juego de grandes números, y por tanto cuando un jugador controla el suficiente número de territorios y continentes obtiene un continuo flujo de tropas en cada turno. Cuando esto sucede, existe poco que se pueda hacer estratégicamente para pararlo.',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 4,
+        img: 'risk.jpg',
     },
     {
         name: 'Saboteur',

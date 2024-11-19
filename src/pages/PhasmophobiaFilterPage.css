@@ -1,5 +1,6 @@
 #folder-container {
     font-family: 'tragicMarker';
+    height: 100%;
 
     .folder-options-container {
         display: flex;
@@ -26,13 +27,18 @@
     }
 
     .equipment-ghost-info-container {
-        margin-left: 10%;
+        display: flex;
+        flex-direction: column;
+        font-size: 8vw;
+        padding-left: 10%;
     }
 
     #notebook-container {
         background-color: #d6d3aa;
         background-attachment: fixed;
         font-family: 'tragicMarker';
+        padding-top: 10px;
+        height: 100%;
 
         #test-container {
 
@@ -41,7 +47,6 @@
 
                 .cordura-title {
                     margin-left: 5%;
-                    margin-top: 20px;
                     font-size: 6vw;
                 }
 
@@ -70,7 +75,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-items: center;
-                margin: 10px 5% 10px 5%;
+                margin: 0 5% 10px 5%;
                 padding-bottom: 10px;
                 border-bottom: 3px solid black;
 
@@ -129,7 +134,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 10px 5% 10px 5%;
+            margin: 0 5% 10px 5%;
             background-color: inherit;
 
             >label {

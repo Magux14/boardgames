@@ -96,7 +96,6 @@ export const PhasmophobiaFilterPage = () => {
                                     <label className="cordura-amount">{cordura > 0 ? cordura : 'MUERTO'}</label>
                                     <button onClick={(() => cordura < 99 ? setCordura(cordura + 1) : null)}>+</button>
                                 </div>
-
                             </div>
 
                             <div id="test-selection-container">
@@ -166,7 +165,7 @@ export const PhasmophobiaFilterPage = () => {
                                     phasmophobiaEquipment.map((equipment) => {
                                         if (selectedGhost && selectedGhost[equipment.property] == true) {
                                             return <div>
-                                                {equipment.name}
+                                                - {equipment.name}
                                             </div>
                                         }
                                     })
