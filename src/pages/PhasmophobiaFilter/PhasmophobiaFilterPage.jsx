@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { phasmophobiaEquipment, phasmophobiaGhostList } from '../../data/phasmophobia-data';
+import { phasmophobiaEquipment, phasmophobiaGhostList } from '../../../data/phasmophobia-data';
 import './PhasmophobiaFilterPage.css';
-import { Header } from './../components/header/Header'
+import { Header } from '../../components/header/Header'
 import { useNavigate } from 'react-router-dom';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
@@ -78,14 +78,14 @@ export const PhasmophobiaFilterPage = () => {
                     <div className="empty">
 
                     </div>
-                    <div className={`folder-option ${folderSelected == 'ghosts' ? 'folder-selected' : ''}`} onClick={(() => setFolderSelected('ghosts'))}>
+                    <div className={`folder-option ${folderSelected == 'ghosts' ? 'folder-selected' : ''} ${cordura == 0 ? 'dead' : ''}`} onClick={(() => setFolderSelected('ghosts'))}>
                         Fantasmas
                     </div>
-                    <div className={`folder-option ${folderSelected == 'tests' ? 'folder-selected' : ''}`} onClick={(() => setFolderSelected('tests'))}>
+                    <div className={`folder-option ${folderSelected == 'tests' ? 'folder-selected' : ''}  ${cordura == 0 ? 'dead' : ''}`} onClick={(() => setFolderSelected('tests'))}>
                         Pruebas
                     </div>
                 </div>
-                <div id="notebook-container">
+                <div id="notebook-container" className={`${cordura == 0 ? 'dead' : ''}`}>
                     {
                         folderSelected == 'tests' &&
                         <div id="test-container">
@@ -174,15 +174,6 @@ export const PhasmophobiaFilterPage = () => {
                         </div>
 
                     }
-
-
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
 
                 </div >
             </div >

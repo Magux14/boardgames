@@ -3,8 +3,8 @@ import './GameListPage.css';
 import PersonIcon from '@mui/icons-material/Person';
 import TranslateIcon from '@mui/icons-material/Translate';
 import PsychologyIcon from '@mui/icons-material/Psychology';
-import { lstGames } from '../../data/game-data';
-import { Header } from './../components/header/Header'
+import { lstGames } from '../../../data/game-data';
+import { Header } from '../../components/header/Header'
 import SearchIcon from '@mui/icons-material/Search';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 

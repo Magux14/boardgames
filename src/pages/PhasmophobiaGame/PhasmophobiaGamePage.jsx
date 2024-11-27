@@ -1,11 +1,11 @@
 
 import React, { useEffect, useState } from 'react'
-import { usePhasmophobiaGame } from '../hooks/usePhasmophobiaGame'
-import { Dice } from '../components/dice/Dice';
+import { usePhasmophobiaGame } from '../../hooks/usePhasmophobiaGame'
+import { Dice } from '../../components/dice/Dice';
 import './PhasmophobiaGamePage.css'
-import ConfirmationModal from '../components/confirmation-modal/ConfirmationModal';
-import { phasmophobiaEquipment } from '../../data/phasmophobia-data';
-import { Header } from '../components/header/Header';
+import ConfirmationModal from '../../components/confirmation-modal/ConfirmationModal';
+import { phasmophobiaEquipment } from '../../../data/phasmophobia-data';
+import { Header } from '../../components/header/Header';
 
 export const PhasmophobiaGamePage = () => {
 

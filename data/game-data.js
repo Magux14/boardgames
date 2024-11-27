@@ -303,6 +303,14 @@ export const lstGames = [
         img: 'Skull King.jpg',
     },
     {
+        name: 'Slamwich',
+        desc: 'Uno por uno, cada jugador toma la carta superior de su mazo y la voltea en una pila central. Bajo ciertas condiciones, los jugadores corren para abofetear la pila - creando un "slamwich", si así lo desea, y normalmente quien sea el primero en hacerlo reclama todas las cartas en la pila.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 1,
+        img: 'Slamwich.jpg',
+    },
+    {
         name: 'Sleeping Queens',
         desc: 'El objetivo es muy simple: despertar 5 reinas de su sueño profundo. Para ello, deberás usar las cartas de reyes que hay en el mazo.',
         minPlayers: 2,

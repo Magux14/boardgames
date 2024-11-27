@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { GameListPage } from './pages/GameListPage'
-import { DicePage } from './pages/DicePage'
-import { PhasmophobiaFilterPage } from './pages/PhasmophobiaFilterPage'
-import { PhasmophobiaGamePage } from './pages/PhasmophobiaGamePage'
+import { GameListPage } from './pages/GameList/GameListPage'
+import { DicePage } from './pages/Dice/DicePage'
+import { PhasmophobiaGamePage } from './pages/PhasmophobiaGame/PhasmophobiaGamePage'
+import { PhasmophobiaFilterPage } from './pages/PhasmophobiaFilter/PhasmophobiaFilterPage'
 
 
 export const App = () => {
