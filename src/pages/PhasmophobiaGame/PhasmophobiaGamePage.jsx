@@ -10,7 +10,7 @@ import { Header } from '../../components/header/Header';
 export const PhasmophobiaGamePage = () => {
 
     const [playersNum, setPlayersNum] = useState({ min: 1, max: 2 });
-    const { prepareGame, getCurrentGhost } = usePhasmophobiaGame();
+    const { prepareGame, getCurrentGhost, getDamagedEquipment } = usePhasmophobiaGame();
     const [showGhost, setShowGhost] = useState(false)
     const [showAlertFinishGame, setShowAlertFinishGame] = useState(false)
     const [currentTest, setCurrentTest] = useState(null)
@@ -41,13 +41,16 @@ export const PhasmophobiaGamePage = () => {
         const ghost = getCurrentGhost();
         let positive = false;
 
-        console.log(ghost[currentTest.property]);
-        console.log(currentTest.property);
         if (ghost[currentTest.property] == true) {
             positive = true;
         }
 
-        setTestResult({ result: positive });
+        const equipmentIsDamaged = getDamagedEquipment().property == currentTest.property;
+        if (equipmentIsDamaged && Math.random() >= 0.5) {
+            positive = !positive;
+        }
+
+        setTestResult({ result: positive, equipmentIsDamaged });
     }
 
     return (
@@ -73,17 +76,6 @@ export const PhasmophobiaGamePage = () => {
                     </div>
                 </div>
 
-                <label className="test-title">Pruebas</label>
-                <div id="test-buttons-container">
-                    {
-                        phasmophobiaEquipment.map((equipment) =>
-                            <div key={equipment.name}>
-                                <button className={`phasmo-button ${equipment.name == currentTest?.name ? 'selected-button' : ''}`} onClick={() => handleTestSelect(equipment)}>{equipment.name}</button>
-                            </div>
-                        )
-                    }
-                </div>
-
                 <div className="current-test">
                     <div className="preview-test-container">
                         <label>
@@ -101,8 +93,8 @@ export const PhasmophobiaGamePage = () => {
                         {testResult != null ?
                             (
                                 testResult.result == true ?
-                                    <label className="positive result">Positivo</label>
-                                    : <label className="negative result">Negativo</label>
+                                    <label className={`result ${testResult.equipmentIsDamaged ? 'fake' : 'positive'}`}>Positivo</label>
+                                    : <label className={`result ${testResult.equipmentIsDamaged ? 'fake' : 'negative'}`}>Negativo</label>
                             ) : <label className="result">???</label>
                         }
                     </div>
@@ -110,7 +102,23 @@ export const PhasmophobiaGamePage = () => {
 
                 <br />
 
-                <Dice diceName="D6" initialDiceNumbers={{ min: 1, max: 6 }} />
+                <div className="tests-dice-container">
+                    <div>
+                        <label className="test-title">Pruebas</label>
+                        <div id="test-buttons-container">
+                            {
+                                phasmophobiaEquipment.map((equipment) =>
+                                    <div key={equipment.name}>
+                                        <button className={`phasmo-button ${equipment.name == currentTest?.name ? 'selected-button' : ''}`} onClick={() => handleTestSelect(equipment)}><label>{equipment.name}</label></button>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
+                    <Dice diceName="D6" initialDiceNumbers={{ min: 1, max: 6 }} />
+                </div>
+
+
 
                 <br />
                 <br />

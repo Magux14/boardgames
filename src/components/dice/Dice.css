@@ -10,15 +10,16 @@
 
     .dice {
         display: flex;
-        font-size: 2em;
         justify-content: center;
+        font-size: calc(700%);
         align-items: center;
         color: white;
         border: 3px solid black;
-        background: rgb(84, 52, 160);
+        background: linear-gradient(45deg, rgba(116, 10, 62, 1) 0%, rgba(9, 16, 116, 1) 100%);
         border-radius: 10px;
-        width: 150px;
-        height: 150px;
+        border: 5px solid rgba(255, 255, 255, 0.438);
+        width: 100%;
+        aspect-ratio: 1 / 1;
         margin: 5px;
 
         .dice-value {

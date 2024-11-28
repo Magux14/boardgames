@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import { phasmophobiaGhostList } from '../../data/phasmophobia-data';
+import { phasmophobiaEquipment, phasmophobiaGhostList } from '../../data/phasmophobia-data';
 export const usePhasmophobiaGame = () => {
 
-    const [currentGhost, setCurrentGhost] = useState(null)
+    const [currentGhost, setCurrentGhost] = useState(null);
+    const [damagedEquipment, setDamagedEquipment] = useState(null);
 
     const prepareGame = () => {
         setRandomGhost();
+        setDamagedEquipment(phasmophobiaEquipment[Math.floor(Math.random() * phasmophobiaEquipment.length)]);
     }
 
     const setRandomGhost = () => {
@@ -17,8 +19,13 @@ export const usePhasmophobiaGame = () => {
         return currentGhost ? currentGhost : { name: '???' };
     }
 
+    const getDamagedEquipment = () => {
+        return damagedEquipment;
+    }
+
     return {
         prepareGame,
+        getDamagedEquipment,
         getCurrentGhost
     }
 }

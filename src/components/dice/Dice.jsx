@@ -30,7 +30,7 @@ export const Dice = ({ initialDiceNumbers, diceName, porcentajeWidth }) => {
         <div className='dice-container'>
             <label>{diceName}</label>
             <button className={`dice ${isAnimating ? 'animate' : ''}`} onClick={() => getRandomNum()}>
-                <label className={`${isAnimating ? 'dice-value' : ''}`}>
+                <label className={`${!isAnimating ? 'dice-value' : ''}`}>
                     {dice.count}
                 </label>
             </button>
