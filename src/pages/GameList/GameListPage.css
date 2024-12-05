@@ -4,6 +4,7 @@
 
 #game-list-container {
     height: 100%;
+    width: 100%;
 
     .general-info {
         display: flex;
@@ -15,7 +16,6 @@
         flex-direction: column;
         justify-content: center;
         padding: 2%;
-        padding-top: 100px;
 
         .game {
             box-sizing: border-box;
@@ -26,20 +26,27 @@
             border-radius: 8px;
             background: white;
 
-            img {
-                width: auto;
-                height: auto;
-                max-height: 250px;
-                object-fit: contain;
-                border-radius: 8px;
-                margin-bottom: 5px;
-                padding: 5%;
+            .image-container {
+                display: flex;
+                justify-content: center;
+                overflow: hidden;
+
+                img {
+                    width: auto;
+                    justify-content: center;
+                    height: auto;
+                    max-height: 250px;
+                    object-fit: contain;
+                    border-radius: 8px;
+                    margin-bottom: 5px;
+                    padding: 10px;
+                }
             }
 
             #main-info-container {
                 padding: 0 5% 0 5%;
 
-                #name {
+                .name {
                     text-align: center;
                 }
 
@@ -56,13 +63,12 @@
             }
 
             .tags {
-                padding-left: 10px;
                 font-weight: bold;
                 display: flex;
                 align-items: center;
                 border: 1px solid var(--border-color);
                 border-radius: 5px;
-                padding: 5px 10px 5px 10px;
+                padding: 5px 2% 5px 2%;
                 margin: 5px;
                 font-size: 12px;
                 color: white;
@@ -81,13 +87,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: fixed;
     width: 100%;
     font-size: 12px;
-    background: var(--header-background-color);
     color: white;
     padding-bottom: 10px;
-    top: 44px;
 
     #input-container {
         width: 100%;
@@ -104,6 +107,54 @@
         input {
             border-radius: 8px;
             height: 30px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    #game-list-container {
+        .list-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .game {
+                display: flex;
+                flex-direction: column;
+                flex-basis: 30%;
+                height: 70vh;
+
+                .image-container {
+                    display: flex;
+                    justify-content: center;
+                    height: 45%;
+
+                    img {
+                        object-fit: fill;
+                        height: 100%;
+                    }
+                }
+
+                #main-info-container {
+                    font-size: 12px;
+                    height: 55%;
+                    overflow-y: hidden;
+
+                    .name {
+                        font-size: 2em;
+                    }
+
+                    .desc-container {
+                        overflow-y: auto;
+                        height: 70%;
+                    }
+                }
+
+                .tags-container {
+                    height: 10%;
+                }
+            }
         }
     }
 }
