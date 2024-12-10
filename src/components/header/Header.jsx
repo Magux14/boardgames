@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChecklistIcon from '@mui/icons-material/Checklist';
 import CasinoIcon from '@mui/icons-material/Casino';
 import { useNavigate } from "react-router-dom";
-import phasmophobiaIcon from '/icons/phasmophobia.ico';
+import phasmophobiaIcon from '/img/phasmophobia-icon.png';
 
 export const Header = () => {
 

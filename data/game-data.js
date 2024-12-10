@@ -317,6 +317,14 @@ export const lstGames = [
         img: 'Sin memoria.jpeg',
     },
     {
+        name: 'Shopping List',
+        desc: 'Un juego para niños rápido y sencillo de comprender, en el cual los jugadores deben completar la lista de productos del supermercado que les ha tocado y llenar su carrito, turnándose para descubrir las diferentes tarjetas del tablero.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 1,
+        img: 'shopping-list.webp',
+    },
+    {
         name: 'Skull King',
         desc: 'Emocionante juego de cartas pirata. Los jugadores deben hacer predicciones sobre cuántas bazas ganarán en cada ronda y luego jugar estratégicamente para lograr su cometido. Declara tu botín al empezar la ronda, muerde tu cuchillo y arrebata tesoros y bazas a los demás jugadores piratas. Con cartas especiales y una ronda final llena de sorpresas, este juego desafía tu astucia y capacidad para leer a tus oponentes.',
         minPlayers: 2,

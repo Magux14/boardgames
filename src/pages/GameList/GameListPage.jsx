@@ -19,7 +19,6 @@ export const GameListPage = () => {
     });
 
     const handleSearchWordChange = (event) => {
-        console.log(event.target.value.toLowerCase());
         setFilters({
             ...filters,
             searchTerm: event.target.value.toLowerCase()
