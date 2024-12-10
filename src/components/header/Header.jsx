@@ -3,8 +3,8 @@ import './Header.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChecklistIcon from '@mui/icons-material/Checklist';
 import CasinoIcon from '@mui/icons-material/Casino';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useNavigate } from "react-router-dom";
+import phasmophobiaIcon from '/assets/icon/phasmophobia.ico'
 
 export const Header = () => {
 
@@ -41,13 +41,12 @@ export const Header = () => {
                         </li>
 
                         <li onClick={() => goTo('/phasmophobia-filter')}>
-                            <span>Phasmophobia</span> <MenuBookIcon />
+                            <span>Phasmophobia</span> <img id="phasmophobia-icon" src={phasmophobiaIcon}></img>
                         </li>
                     </ul>
                 </div>
                 <div className={`overlay ${isOpen ? 'active' : ''}`} onClick={toggleMenu}></div>
             </div>
-            <div id="header-space"></div>
         </>
     )
 }

@@ -21,7 +21,8 @@
     .folder-options-container {
         display: flex;
         justify-content: space-between;
-        margin-top: 15px;
+        background: rgb(68, 68, 68);
+        padding-top: 15px;
 
         .empty {
             flex-basis: 33.33%;
@@ -160,6 +161,7 @@
                 justify-content: center;
                 flex-basis: 33.33%;
                 padding: 5px;
+                min-height: 40px;
 
                 .selected {
                     box-sizing: border-box;

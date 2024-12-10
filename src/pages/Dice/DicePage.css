@@ -2,8 +2,10 @@
     padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    gap: 10%;
+    justify-content: center;
 
     .dice-container {
-        flex: 0 0 50%;
+        flex: 0 0 40%;
     }
 }

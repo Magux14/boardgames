@@ -10,7 +10,7 @@ export const lstGames = [
     },
     {
         name: 'Azul',
-        desc: 'Juego de mesa abstracto, donde tu objetivo es completar el mosaico de tu tablero antes que la competencia para ganarte el favor del Rey. Tienes que ir completando un mosaico de pequeños azulejos en las paredes del palacio real, alternando turnos para tomar fichas de la pila de las fábricas central.Coloca las fichas del mismo color en tu tablero hasta completar el relleno de cada fila, antes que los demás completen sus filas.Al final de cada ronda contabiliza los azulejos conectados y asegúrate de ser el que más puntos tenga al final.',
+        desc: 'Juego de mesa abstracto, donde tu objetivo es completar el mosaico de tu tablero antes que la competencia para ganarte el favor del Rey. Tienes que ir completando un mosaico de pequeños azulejos en las paredes del palacio real, alternando turnos para tomar fichas de la pila de las fábricas central.Coloca las fichas del mismo color en tu tablero hasta completar el relleno de cada fila, antes que los demás completen sus filas. Al final de cada ronda contabiliza los azulejos conectados y asegúrate de ser el que más puntos tenga al final.',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 3,
@@ -63,7 +63,7 @@ export const lstGames = [
     },
     {
         name: 'Coup',
-        desc: 'Juego de identidades ocultas, engaño y deducción, en el que cada jugador intentará eliminar a cada jugador. ¿Duque, Asesino, Condesa, Embajador o Capitán ? ¿Qué dos personajes te gustaría ser ? Cada personaje tiene una habilidad diferente, desafía a la suerte, si quieres ganar y finge ser quien no eres, pero sé pillo, son tres cartas de cada personaje, si cuatro dicen ser Duques uno de ellos no dice la verdad, o quizás dos.Si es preciso miente, crea intrigas y confabula, reta a todo el que creas que trama el exilio.Y sí, el dinero entra en juego también, es una lucha de poder y la banca no puede faltar para darte unos privilegios, o no, Sin engaño será complicado expulsar a tu rival, ¿de verdad quieres ser legal ? De esa forma no vas a ganar.Hay que arriesgar siempre y utilizar la picaresca, la clave está en ser frío y saber fastidiar a todos, porque nunca sabes quién puede ser el adversario más peligroso.',
+        desc: 'Juego de identidades ocultas, engaño y deducción, en el que cada jugador intentará eliminar a cada jugador. ¿Duque, Asesino, Condesa, Embajador o Capitán ? ¿Qué dos personajes te gustaría ser ? Cada personaje tiene una habilidad diferente, desafía a la suerte, si quieres ganar y finge ser quien no eres, pero sé pillo, son tres cartas de cada personaje, si cuatro dicen ser Duques uno de ellos no dice la verdad, o quizás dos. Si es preciso miente, crea intrigas y confabula, reta a todo el que creas que trama el exilio. Y sí, el dinero entra en juego también, es una lucha de poder y la banca no puede faltar para darte unos privilegios, o no, Sin engaño será complicado expulsar a tu rival, ¿de verdad quieres ser legal ? De esa forma no vas a ganar. Hay que arriesgar siempre y utilizar la picaresca, la clave está en ser frío y saber fastidiar a todos, porque nunca sabes quién puede ser el adversario más peligroso.',
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 2,
@@ -98,11 +98,20 @@ export const lstGames = [
     },
     {
         name: 'Dos',
-        desc: 'El objetivo es el descarte, es decir, deshacerte de todas tus cartas antes que sus contrincantes. La manera de conseguirlo es emparejando las cartas que le toquen en suerte con aquellas que estén sobre la mesa disponible para este fin. Hay que dejar dos cartas boca arriba en la mesa.El resto de las cartas se colocan boca abajo para que formen el mazo de robo; el jugador activo debe intentar emparejarlas de alguna manera, con las que están en la mesa, algo que puede hacer de dos maneras: Creando una pareja simple(coincide en el mismo número), o bien, formando una pareja doble(que la pareja se forma con dos cartas que sumadas dan la misma cantidad que una de las cartas de la mesa).',
+        desc: 'El objetivo es el descarte, es decir, deshacerte de todas tus cartas antes que sus contrincantes. La manera de conseguirlo es emparejando las cartas que le toquen en suerte con aquellas que estén sobre la mesa disponible para este fin. Hay que dejar dos cartas boca arriba en la mesa. El resto de las cartas se colocan boca abajo para que formen el mazo de robo; el jugador activo debe intentar emparejarlas de alguna manera, con las que están en la mesa, algo que puede hacer de dos maneras: Creando una pareja simple(coincide en el mismo número), o bien, formando una pareja doble(que la pareja se forma con dos cartas que sumadas dan la misma cantidad que una de las cartas de la mesa).',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
         img: 'Dos.jpeg',
+    },
+    {
+        name: 'Dumb Ways to Die',
+        desc: 'En Dumb Ways to Die, seguimos la vida de los frijoles que viven con ingenuidad impulsiva y alegre. Tonto, divertido y claramente inseguro, está diseñado para sostener un espejo a nuestro propio comportamiento tonto, ayudándonos a estar un poco más seguros.',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 3,
+        lang: 'ENG',
+        img: 'dumb-ways-to-die.webp',
     },
     {
         name: 'El Señor de los anillos – Duelo por la Tierra Media',
@@ -116,7 +125,7 @@ export const lstGames = [
 
     {
         name: 'Hanabi',
-        desc: 'Traducido del japonés ”Fuegos Artificiales”, es un juego cooperativo en el que los jugadores intentan crear el espectáculo de fuegos artificiales perfecto colocando las cartas sobre la mesa en el orden correcto.Los jugadores intentan colocar una fila en el orden correcto del 1 al 5. Suena fácil, ¿verdad ? Bueno, no del todo, ya que en este juego sostienes tus cartas para que solo sean visibles para otros jugadores.Para ayudar a otros jugadores a jugar una carta, debes darles pistas sobre los números o los colores de sus cartas.Los jugadores deben actuar en equipo para evitar errores y terminar el espectáculo de fuegos artificiales antes de que se queden sin cartas.',
+        desc: 'Traducido del japonés ”Fuegos Artificiales”, es un juego cooperativo en el que los jugadores intentan crear el espectáculo de fuegos artificiales perfecto colocando las cartas sobre la mesa en el orden correcto. Los jugadores intentan colocar una fila en el orden correcto del 1 al 5. Suena fácil, ¿verdad ? Bueno, no del todo, ya que en este juego sostienes tus cartas para que solo sean visibles para otros jugadores.Para ayudar a otros jugadores a jugar una carta, debes darles pistas sobre los números o los colores de sus cartas. Los jugadores deben actuar en equipo para evitar errores y terminar el espectáculo de fuegos artificiales antes de que se queden sin cartas.',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 3,
@@ -124,7 +133,7 @@ export const lstGames = [
     },
     {
         name: 'Happy Little Dinosaur',
-        desc: 'La vida puede estar llena de problemas que nos atormentan una y otra vez, esto no exenta nuestros pequeños dinosaurios que tienen que sobrevivir a terribles desastres. Demuestra que puedes sobrevivir a ello y gana el juego.En Happy Little Dinosaurs, el primero en alcanzar los 50 puntos, o ser el último dinosaurio en pie, ¡gana el juego! Durante cada ronda, volcarás una carta con un desastre natural, depredador o problema emocional, aunque al igual que le ocurrió a los pobres dinosaurios en la vida real, probablemente fracasarás… o al menos te reirás con el fracaso y el mal de los otros dinosaurios.',
+        desc: 'La vida puede estar llena de problemas que nos atormentan una y otra vez, esto no exenta nuestros pequeños dinosaurios que tienen que sobrevivir a terribles desastres. Demuestra que puedes sobrevivir a ello y gana el juego. En Happy Little Dinosaurs, el primero en alcanzar los 50 puntos, o ser el último dinosaurio en pie, ¡gana el juego! Durante cada ronda, volcarás una carta con un desastre natural, depredador o problema emocional, aunque al igual que le ocurrió a los pobres dinosaurios en la vida real, probablemente fracasarás… o al menos te reirás con el fracaso y el mal de los otros dinosaurios.',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
@@ -142,7 +151,7 @@ export const lstGames = [
     },
     {
         name: 'Here To Slay',
-        desc: 'Here to Slay es un juego de cartas de estrategia y fantasía en el que los jugadores tendremos que competir reuniendo al mejor grupo de Héroes, matando todos los monstruos que sea posible… bueno, a veces también tendremos que dedicarnos a sabotear a nuestros adversarios… ¡Mata monstruos! y defiéndete de tus… ¿amigos? Tendremos que formar un equipo de héroes para aniquilar peligrosos monstruos, sortear trampas, saquear tesoros, usar poderosos hechizos y, sobre todo, defendernos de los intentos de sabotaje de nuestros oponentes.El objetivo es sencillo: gana el primero que aniquile tres monstruos o se haga con un equipo de seis clases diferentes, que son un auténtico festival de violencia cuqui, animalitos cabreados y conjuros devastadores. ¡Tira la iniciativa y que comience el desafío!',
+        desc: 'Here to Slay es un juego de cartas de estrategia y fantasía en el que los jugadores tendremos que competir reuniendo al mejor grupo de Héroes, matando todos los monstruos que sea posible… bueno, a veces también tendremos que dedicarnos a sabotear a nuestros adversarios… ¡Mata monstruos! y defiéndete de tus… ¿amigos? Tendremos que formar un equipo de héroes para aniquilar peligrosos monstruos, sortear trampas, saquear tesoros, usar poderosos hechizos y, sobre todo, defendernos de los intentos de sabotaje de nuestros oponentes. El objetivo es sencillo: gana el primero que aniquile tres monstruos o se haga con un equipo de seis clases diferentes, que son un auténtico festival de violencia cuqui, animalitos cabreados y conjuros devastadores. ¡Tira la iniciativa y que comience el desafío!',
         minPlayers: 2,
         maxPlayers: 6,
         lang: 'ENG',
@@ -151,7 +160,7 @@ export const lstGames = [
     },
     {
         name: 'Jaipur',
-        desc: 'Sutil juego de comercio: los jugadores asumen los papeles de dos comerciantes poderosos de la ciudad que buscan convertirse en el comerciante personal del Maharajá, acumulando más riquezas que su oponente. Es un juego rápido para dos jugadores donde tú y tu oponente se enfrentarán para demostrar que puedes obtener más beneficios que tu competencia.Con cada turno, podrás elegir entre coger una carta, intercambiar tus bienes por otros, comprar camellos que necesitas para transportar tus mercancías o vender en el mercado.Es un juego rápido, de mucha estrategia y de pocas reglas.',
+        desc: 'Sutil juego de comercio: los jugadores asumen los papeles de dos comerciantes poderosos de la ciudad que buscan convertirse en el comerciante personal del Maharajá, acumulando más riquezas que su oponente. Es un juego rápido para dos jugadores donde tú y tu oponente se enfrentarán para demostrar que puedes obtener más beneficios que tu competencia. Con cada turno, podrás elegir entre coger una carta, intercambiar tus bienes por otros, comprar camellos que necesitas para transportar tus mercancías o vender en el mercado. Es un juego rápido, de mucha estrategia y de pocas reglas.',
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 1,
@@ -176,7 +185,7 @@ export const lstGames = [
     },
     {
         name: 'Magux party',
-        desc: 'Un juego de mesa compuesto por diversos minijuegos con cartas de Póker, dados, tótems y estrellas, guiado por una app que les dirá los retos que deben enfrentar. ¿Conoces Mario Party?... pues este juego no se parece pero seguro que te divertirás.  Consigue estrellas y compite con tus amigos con diversos juegos random que irán descubriendo a lo largo del tablero.Aquí no gana el de más suerte, sino el más listo, rápido y estratégico.',
+        desc: 'Un juego de mesa compuesto por diversos minijuegos con cartas de Póker, dados, tótems y estrellas, guiado por una app que les dirá los retos que deben enfrentar. ¿Conoces Mario Party?... pues este juego no se parece pero seguro que te divertirás.  Consigue estrellas y compite con tus amigos con diversos juegos random que irán descubriendo a lo largo del tablero. Aquí no gana el de más suerte, sino el más listo, rápido y estratégico.',
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 3,
@@ -200,7 +209,7 @@ export const lstGames = [
     },
     {
         name: 'Monopoly Game of Thrones',
-        desc: 'Fans de Game of Thrones: esta es su oportunidad de viajar por las míticas tierras de Westeros, comprando, vendiendo o intercambiando lugares de los siete reinos. Muévete por el tablero comprando tantas propiedades de Juego de Tronos como puedas.Cuanto más poseas, más alquiler se puede recoger de los oponentes.El último con dinero cuando todos los demás jugadores han ido a la quiebra gana. Recuerda sentarte en el trono de hierro y presionar el botón cuando los hayas derrotado a todos.',
+        desc: 'Fans de Game of Thrones: esta es su oportunidad de viajar por las míticas tierras de Westeros, comprando, vendiendo o intercambiando lugares de los siete reinos. Muévete por el tablero comprando tantas propiedades de Juego de Tronos como puedas.Cuanto más poseas, más alquiler se puede recoger de los oponentes. El último con dinero cuando todos los demás jugadores han ido a la quiebra gana. Recuerda sentarte en el trono de hierro y presionar el botón cuando los hayas derrotado a todos.',
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
@@ -263,6 +272,15 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 1,
         img: 'Poop.webp',
+    },
+    {
+        name: 'Power Hungry Pets',
+        desc: 'Un juego de cartas de estrategia, engañosamente sencillo, en el que todo se reduce a una única carta. Un juego llego de divertidas decisiones y adorables mascotas. ¿De qué va esto? Cada carta tiene un NÚMERO y un efecto para ATORMENTAR a los demás jugadores.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 3,
+        lang: 'ENG',
+        img: 'Power Hungry Pets.jpg',
     },
     {
         name: 'Rick y Morty Total Rickall',
@@ -332,7 +350,7 @@ export const lstGames = [
     },
     {
         name: 'Stratego Star Wars',
-        desc: 'El objetivo del juego es capturar la bandera del oponente o capturar todas sus piezas con posibilidad de movimiento, de forma que el oponente no tenga piezas que poder mover. Elige de qué lado estás: Lado Oscuro o el Lado de la Fuerza, situado en el episodio I, II, IV, V, y VI de Star Wars.Algunos de los personajes tienen poderes especiales, colocando este juego en la escala de complejidad comparado con el Stratego original.',
+        desc: 'El objetivo del juego es capturar la bandera del oponente o capturar todas sus piezas con posibilidad de movimiento, de forma que el oponente no tenga piezas que poder mover. Elige de qué lado estás: Lado Oscuro o el Lado de la Fuerza, situado en el episodio I, II, IV, V, y VI de Star Wars. Algunos de los personajes tienen poderes especiales, colocando este juego en la escala de complejidad comparado con el Stratego original.',
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 5,
@@ -355,8 +373,25 @@ export const lstGames = [
         img: 'Taco Gato Cabra Queso Pizza.webp',
     },
     {
+        name: 'Tic Tac K.O Dragons vs Unicorns',
+        desc: 'Un juego de cartas de aprendizaje rápido que le da un giro diabólico a Tic Tac Toe, permitiéndote golpear a tus oponentes hacia un lado mientras reclamas casillas en tu búsqueda de la victoria.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 4,
+        lang: 'ENG',
+        img: 'tic tac KO.png',
+    },
+    {
+        name: 'Ticket to Ride Europe',
+        desc: 'Una aventura en tren en la que los jugadores recogen y juegan cartas de tren coincidentes para reclamar las rutas ferroviarias que conectan las ciudades en toda América del Norte. Cuanto más largas las rutas que reclamas, más puntos ganan.',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 3,
+        img: 'Ticket to Ride Europe.jpg',
+    },
+    {
         name: 'That time you killed me',
-        desc: 'Tú y tu oponente viajan en el tiempo para intentarse borrar mutuamente de la historia. Para demostrar que eres quien creó los viajes en el tiempo, debes utilizar tu invento para encontrar a tu rival en el tiempo y acabar con su vida, ¡antes de que acabe con la tuya!. Este es un juego abstracto para dos personas que introduce nuevos escenarios con reglas y componentes únicos a medida que juegas.Como en cualquier otro juego que trata de traspasar el tiempo, debes jugar con este contenido en un orden estricto e inalterable. Elimina al impostor de la historia.',
+        desc: 'Tú y tu oponente viajan en el tiempo para intentarse borrar mutuamente de la historia. Para demostrar que eres quien creó los viajes en el tiempo, debes utilizar tu invento para encontrar a tu rival en el tiempo y acabar con su vida, ¡antes de que acabe con la tuya!. Este es un juego abstracto para dos personas que introduce nuevos escenarios con reglas y componentes únicos a medida que juegas. Como en cualquier otro juego que trata de traspasar el tiempo, debes jugar con este contenido en un orden estricto e inalterable. Elimina al impostor de la historia.',
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 4,
@@ -365,7 +400,7 @@ export const lstGames = [
     },
     {
         name: 'The Mind',
-        desc: 'Juego cooperativo, todos somos uno, trata de poner las cartas en orden con ayuda de tu equipo. Comienza el juego con un número de vidas igual al número de jugadores.Pierde todas tus vidas y pierdes el juego.También comenzarás con un shuriken, si todos quieren usar un shuriken, cada jugadore descarta su carta más baja boca arriba, brindando información a todos y acercándose a completar el nivel.A medida que completan niveles, puedes recibir una recompensa de shuriken o vida extra.',
+        desc: 'Juego cooperativo, todos somos uno, trata de poner las cartas en orden con ayuda de tu equipo. Comienza el juego con un número de vidas igual al número de jugadores. Pierde todas tus vidas y pierdes el juego. También comenzarás con un shuriken, si todos quieren usar un shuriken, cada jugadore descarta su carta más baja boca arriba, brindando información a todos y acercándose a completar el nivel. A medida que completan niveles, puedes recibir una recompensa de shuriken o vida extra.',
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 1,
@@ -380,8 +415,16 @@ export const lstGames = [
         img: 'The Resistance.jpg',
     },
     {
+        name: 'The Werewolves',
+        desc: 'One Night Ultimate Werewolf es un juego de ritmo rápido en el que todos pueden ser un rol diferente. En el transcurso de una sola noche y a la mañana siguiente, los jugadores determinarán quién de ellos es un hombre lobo ... con suerte.',
+        minPlayers: 8,
+        maxPlayers: 18,
+        difficulty: 2,
+        img: 'The Werewolves.webp',
+    },
+    {
         name: 'Throw Throw Burrito',
-        desc: 'El resultado de cruzar juego de cartas y el balón prisionero es Throw Throw Burrito. El objetivo es reunir conjuntos iguales más rápido que tus oponentes, mientras esquivas y lanzas burritos voladores.Las cartas que recojas ganan puntos, pero si te golpean los burritos voladores los pierdes. Así que, despeja el salón, guarda antigüedades y prepárate para arrojar el burrito.',
+        desc: 'El resultado de cruzar juego de cartas y el balón prisionero es Throw Throw Burrito. El objetivo es reunir conjuntos iguales más rápido que tus oponentes, mientras esquivas y lanzas burritos voladores. Las cartas que recojas ganan puntos, pero si te golpean los burritos voladores los pierdes. Así que, despeja el salón, guarda antigüedades y prepárate para arrojar el burrito.',
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 1,
@@ -389,7 +432,7 @@ export const lstGames = [
     },
     {
         name: 'Twister',
-        desc: 'El juego que te retuerce. Diseñado para que pongas los pies y las manos en diferentes lugares de la alfombra sin caerte.El objetivo es conseguir tocas los colores con la parte del cuerpo indicada sin dejar que el cuerpo toque el suelo.El primer jugador en caer será el perdedor.',
+        desc: 'El juego que te retuerce. Diseñado para que pongas los pies y las manos en diferentes lugares de la alfombra sin caerte. El objetivo es conseguir tocas los colores con la parte del cuerpo indicada sin dejar que el cuerpo toque el suelo.El primer jugador en caer será el perdedor.',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 1,
@@ -462,7 +505,7 @@ export const lstGames = [
     },
     {
         name: 'Yugioh',
-        desc: 'Dos jugadores entran, solo uno sale de pie. Duelo de cartas utilizado con una variedad de Monstruos, Mágicas y Trampas para derrotar a los monstruos adversarios.Se el primero en reducir los puntos de vida del otro, mientras ves cómo se destruye y no puede hacer nada por rescatar a sus campeones.  Todo lo que necesitas es el Deck de cartas a seleccionar y ser el más astuto en el campo de batalla.',
+        desc: 'Dos jugadores entran, solo uno sale de pie. Duelo de cartas utilizado con una variedad de Monstruos, Mágicas y Trampas para derrotar a los monstruos adversarios. Se el primero en reducir los puntos de vida del otro, mientras ves cómo se destruye y no puede hacer nada por rescatar a sus campeones.  Todo lo que necesitas es el Deck de cartas a seleccionar y ser el más astuto en el campo de batalla.',
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 4,
