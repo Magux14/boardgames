@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChecklistIcon from '@mui/icons-material/Checklist';
 import CasinoIcon from '@mui/icons-material/Casino';
 import { useNavigate } from "react-router-dom";
+import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave';
 
 export const Header = () => {
 
@@ -41,6 +42,10 @@ export const Header = () => {
 
                         <li onClick={() => goTo('/phasmophobia-filter')}>
                             <span>Phasmophobia</span> <img id="phasmophobia-icon" src="./icons/phasmophobia-icon.png"></img>
+                        </li>
+
+                        <li onClick={() => goTo('/knowledge-race')}>
+                            <span>Knowledge Race</span> <TimeToLeaveIcon />
                         </li>
                     </ul>
                 </div>
