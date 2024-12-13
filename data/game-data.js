@@ -49,7 +49,6 @@ export const lstGames = [
         minPlayers: 3,
         maxPlayers: 4,
         difficulty: 3,
-        lang: 'ENG',
         img: 'catan.webp',
     },
     {

@@ -116,8 +116,7 @@ export const GameListPage = () => {
                             </div>
 
                             <div className='right tags-container'>
-                                <span className='tags'><PersonIcon /> Min {item.minPlayers}</span>
-                                <span className='tags'><PersonIcon /> Max {item.maxPlayers}</span>
+                                <span className='tags'><PersonIcon /> {`${item.minPlayers == item.maxPlayers ? ` ${item.minPlayers} ` : `${item.minPlayers} - ${item.maxPlayers}`}`}</span>
                                 <span className='tags'><PsychologyIcon /> {item.difficulty}</span>
 
                                 {item.lang ?
