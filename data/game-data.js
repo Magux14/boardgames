@@ -108,7 +108,7 @@ export const lstGames = [
         desc: 'En Dumb Ways to Die, seguimos la vida de los frijoles que viven con ingenuidad impulsiva y alegre. Tonto, divertido y claramente inseguro, está diseñado para sostener un espejo a nuestro propio comportamiento tonto, ayudándonos a estar un poco más seguros.',
         minPlayers: 2,
         maxPlayers: 5,
-        difficulty: 3,
+        difficulty: 2,
         lang: 'ENG',
         img: 'dumb-ways-to-die.webp',
     },
@@ -121,7 +121,15 @@ export const lstGames = [
         lang: 'ENG',
         img: 'el señor de los anillos - duelo por la tierra media.jpg',
     },
-
+    {
+        name: 'Fire Tower',
+        desc: 'Fire Tower es un juego de construcción de patrones y gestión de manos que incorpora tácticas y eventos reales de lucha contra incendios forestales. Se tarda cinco minutos en aprender, segundos en configurarse y 15-30 minutos en jugar.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 3,
+        lang: 'ENG',
+        img: 'fire tower.jpg',
+    },
     {
         name: 'Hanabi',
         desc: 'Traducido del japonés ”Fuegos Artificiales”, es un juego cooperativo en el que los jugadores intentan crear el espectáculo de fuegos artificiales perfecto colocando las cartas sobre la mesa en el orden correcto. Los jugadores intentan colocar una fila en el orden correcto del 1 al 5. Suena fácil, ¿verdad ? Bueno, no del todo, ya que en este juego sostienes tus cartas para que solo sean visibles para otros jugadores.Para ayudar a otros jugadores a jugar una carta, debes darles pistas sobre los números o los colores de sus cartas. Los jugadores deben actuar en equipo para evitar errores y terminar el espectáculo de fuegos artificiales antes de que se queden sin cartas.',
@@ -306,6 +314,14 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 2,
         img: 'Saboteur.webp',
+    },
+    {
+        name: 'Scrabble',
+        desc: 'Un juego de mesa en el cual cada jugador intenta ganar más puntos mediante la construcción de palabras sobre un tablero de 15×15 casillas cuadradas. Las palabras pueden formarse, siempre y cuando aparezcan en el diccionario estándar, de forma horizontal o verticalmente y se pueden cruzar.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 3,
+        img: 'scrabble.jpg',
     },
     {
         name: 'Sin memoria',

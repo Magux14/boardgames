@@ -16,6 +16,7 @@ export const GameListPage = () => {
     const [filters, setFilters] = useState({
         searchTerm: '',
         selectedPlayers: -1,
+        hardSearch: false
     });
 
     const handleSearchWordChange = (event) => {
@@ -32,14 +33,30 @@ export const GameListPage = () => {
         });
     };
 
+    const handleHardSearch = (active) => {
+        setFilters({
+            ...filters,
+            hardSearch: active
+        });
+    };
+
     const applyFilters = () => {
         let lstFiltered = [...lstGames.sort((a, b) => a.name > b.name ? 1 : 0)];
         if (filters.searchTerm) {
             lstFiltered = lstFiltered.filter(item => item.name.toLowerCase().includes(filters.searchTerm));
         }
 
-        if (filters.selectedPlayers != -1) {
-            lstFiltered = lstFiltered.filter(item => filters.selectedPlayers >= item.minPlayers && filters.selectedPlayers <= item.maxPlayers);
+        if (filters.hardSearch) {
+            lstFiltered = lstFiltered.filter(item => item.maxPlayers == filters.selectedPlayers);
+        } else {
+            if (filters.selectedPlayers != -1) {
+                if (filters.selectedPlayers >= 10) {
+                    lstFiltered = lstFiltered.filter(item => item.maxPlayers >= filters.selectedPlayers);
+
+                } else {
+                    lstFiltered = lstFiltered.filter(item => filters.selectedPlayers >= item.minPlayers && filters.selectedPlayers <= item.maxPlayers);
+                }
+            }
         }
 
         setlstFilteredItems(lstFiltered);
@@ -57,7 +74,7 @@ export const GameListPage = () => {
 
                     <div className="select">
                         <label>
-                            <SearchIcon /> Nombre
+                            <SearchIcon />
                         </label>
                         <input
                             type="text"
@@ -70,7 +87,7 @@ export const GameListPage = () => {
 
                     <div className="select">
                         <label>
-                            <PersonIcon /> Jugadores
+                            <PersonIcon />
                         </label>
                         <select name="Máximo de jugadores" value={filters.selectedPlayers} onChange={handlePlayersChanged}>
                             <option value="-1">-</option>
@@ -83,8 +100,14 @@ export const GameListPage = () => {
                             <option value="7">7</option>
                             <option value="8">8</option>
                             <option value="9">9</option>
-                            <option value="10">10</option>
+                            <option value="10">10+</option>
                         </select>
+                    </div>
+                    <div className="select">
+                        <label className="checkbox-label">
+                            H
+                        </label>
+                        <input className="checkbox" type="checkbox" onChange={(ev) => handleHardSearch(ev.target.checked)}></input>
                     </div>
                     <div className="select">
                         <label>
