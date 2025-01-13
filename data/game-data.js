@@ -88,6 +88,15 @@ export const lstGames = [
         img: 'Disney trivia.jpg',
     },
     {
+        name: 'Dixit',
+        desc: 'El maravilloso mundo de Disney Trivia es un juego de mesa diseñado para jugadores de todas las edades que disfrutan del maravilloso mundo de Disney. Está basado en formato trivial, donde debe haber un mínimo de 2 jugadores y con duración aprox. de 45 min. Asegurate de ver todas las películas de Disney, demuestra quién sabe más y quién tiene mejor memoria.',
+        minPlayers: 3,
+        maxPlayers: 8,
+        difficulty: 1,
+        desc: 'Dixit es un juego de mesa en el que las personas que juegan tratan de adivinar la carta de otro jugador basándose en una sola pista. En cada ronda, una de las personas jugadoras adquiere el rol de cuentacuentos y, de las 6 cartas que tiene en mano, elige una carta y en voz alta dice una frase que la defina.',
+        img: 'dixit.webp',
+    },
+    {
         name: 'Dominó',
         desc: 'Es un juego atemporal, de 28 fichas divididas en 2 cuadrados y adornados con una combinación única de puntos. El principal objetivo en general es quedarte con menos puntos que los demás oponentes, a través de distintos retos y posibilidades estratégicas que proporciona una experiencia versátil y motivadora con los distintos juegos posibles. Como consejo: comienza con un movimiento fuerte o de valor alto, esto te permitirá planificar movimientos, reducir el número de puntos en tu mano y maximizar la victoria.',
         minPlayers: 2,
@@ -197,6 +206,14 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         img: 'Magux part.webp',
+    },
+    {
+        name: 'Mente Vacuna (Digital)',
+        desc: 'En el juego Mente Vacuna, el objetivo es responder a las preguntas de manera que coincidan con la mayoría de respuestas del resto de jugadores, en otras palabras, con una “mentalidad de rebaño”. Si tu respuesta no coincide con la mayoría, serás etiquetado como la “vaca rosa” del rebaño y así no llegarás muy lejos.',
+        minPlayers: 4,
+        maxPlayers: 20,
+        difficulty: 1,
+        img: 'mente-vacuna.webp',
     },
     {
         name: 'Mini Torre del beber',

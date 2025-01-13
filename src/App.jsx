@@ -5,6 +5,7 @@ import { DicePage } from './pages/Dice/DicePage'
 import { PhasmophobiaGamePage } from './pages/PhasmophobiaGame/PhasmophobiaGamePage'
 import { PhasmophobiaFilterPage } from './pages/PhasmophobiaFilter/PhasmophobiaFilterPage'
 import { KnowledgeRace } from './pages/KnowledgeRace/KnowledgeRace'
+import { CowMind } from './pages/CowMind/CowMind'
 
 
 export const App = () => {
@@ -17,6 +18,7 @@ export const App = () => {
                 <Route path="/phasmophobia-filter" element={<PhasmophobiaFilterPage />} />
                 <Route path="/phasmophobia-game" element={<PhasmophobiaGamePage />} />
                 <Route path="/knowledge-race" element={<KnowledgeRace />} />
+                <Route path="/cow-mind" element={<CowMind />} />
             </Routes>
         </BrowserRouter>
     )

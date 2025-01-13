@@ -47,6 +47,10 @@ export const Header = () => {
                         <li onClick={() => goTo('/knowledge-race')}>
                             <span>Knowledge Race</span> <TimeToLeaveIcon />
                         </li>
+
+                        <li onClick={() => goTo('/cow-mind')}>
+                            <span>Mente Vacuna</span> <img src="./icons/cow.png" alt="cow" width={24} height={24} />
+                        </li>
                     </ul>
                 </div>
                 <div className={`overlay ${isOpen ? 'active' : ''}`} onClick={toggleMenu}></div>

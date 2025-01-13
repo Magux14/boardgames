@@ -3,6 +3,10 @@
     src: url('https://magux14.github.io/boardgames/fonts/TragicMarker.otf');
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .text-center {
     text-align: center;
 }
