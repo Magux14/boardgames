@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 #phasmophobia-game-container {
     min-height: 100vh;
     display: flex;
@@ -9,6 +13,7 @@
     align-items: center;
     align-content: center;
     padding: 20px;
+    overflow: hidden;
 
     #title-and-ghost-container {
         display: flex;
@@ -37,14 +42,7 @@
         display: flex;
 
         div {
-            flex-basis: 65%;
-
-            &&.dice-container {
-                flex-basis: 35%;
-                display: flex;
-                justify-content: center;
-                padding: 5%;
-            }
+            flex-basis: 100%;
         }
 
         @media screen and (max-width: 600px) {
@@ -95,6 +93,7 @@
         background: transparent;
         text-transform: capitalize;
         padding: 10px 0 10px 0;
+        min-height: 70px;
 
         label {
             width: 50%;
@@ -147,5 +146,78 @@
 
         }
 
+    }
+
+    #cordura-container {
+        width: 100%;
+        margin: 24px 0;
+        padding: 24px;
+
+        .cordura-title {
+            margin-left: 5%;
+            font-size: 6vw;
+        }
+
+        .controllers {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            border-radius: 8px;
+            border: 1px solid white;
+            padding: 24px;
+
+            button {
+                width: 40%;
+                font-size: 2em;
+                border-radius: 15px;
+            }
+
+            button:active {
+                background: rgb(219, 219, 219);
+            }
+
+            .cordura-amount {
+                font-size: 2em;
+            }
+        }
+    }
+
+    .dice-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .dice {
+            width: 50%;
+        }
+    }
+
+    .all-screen-ghost {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: blink-animation 0.5s infinite;
+        height: 120%;
+        width: auto;
+        z-index: 2;
+    }
+}
+
+@keyframes blink-animation {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }

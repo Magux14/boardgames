@@ -7,6 +7,9 @@ import ConfirmationModal from '../../components/confirmation-modal/ConfirmationM
 import { phasmophobiaEquipment } from '../../../data/phasmophobia-data';
 import { Header } from '../../components/header/Header';
 
+const minBadEnergyValue = 4;
+const maxBadEnergyValue = 12;
+
 export const PhasmophobiaGamePage = () => {
 
     const [playersNum, setPlayersNum] = useState({ min: 1, max: 2 });
@@ -15,10 +18,19 @@ export const PhasmophobiaGamePage = () => {
     const [showAlertFinishGame, setShowAlertFinishGame] = useState(false)
     const [currentTest, setCurrentTest] = useState(null)
     const [testResult, setTestResult] = useState(null)
+    const [ghostStacks, setGhostStacks] = useState({ current: 0, limit: 0 });
+    const [showGhostImage, setShowGhostImage] = useState(false);
 
     useEffect(() => {
         prepareGame();
     }, [])
+
+    const setLimitEnergyValue = () => {
+        setGhostStacks({
+            current: 0,
+            limit: (Math.floor(Math.random() * (maxBadEnergyValue - minBadEnergyValue + 1)) + minBadEnergyValue)
+        });
+    }
 
     const handleSetPlayersNum = (playersNum) => {
         if (isNaN(playersNum)) {
@@ -53,10 +65,41 @@ export const PhasmophobiaGamePage = () => {
         setTestResult({ result: positive, equipmentIsDamaged });
     }
 
+    const addGhostStacks = () => {
+        if (ghostStacks.current + 1 == ghostStacks.limit) {
+            setLimitEnergyValue();
+            setShowGhostImage(true);
+        } else {
+            setGhostStacks(previous => {
+                return {
+                    current: previous.current + 1,
+                    limit: previous.limit
+                }
+            });
+        }
+    }
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowGhostImage(false);
+        }, 7_000)
+    }, [showGhostImage])
+
+    useEffect(() => {
+        setLimitEnergyValue();
+    }, []);
+
     return (
         <>
             <Header />
             <div id="phasmophobia-game-container">
+                {
+                    showGhostImage &&
+                    <>
+                        <audio src="./music/phasmophobia-ghost-hunting.mp3" autoPlay loop></audio>
+                        <img className="all-screen-ghost" src={`./img/phasmophobia/ghost1.png`} alt="ghost1" />
+                    </>
+                }
                 <div id="title-and-ghost-container">
                     <div className="title">Phasmophobia</div>
                     <div>
@@ -75,6 +118,16 @@ export const PhasmophobiaGamePage = () => {
                         }
                     </div>
                 </div>
+
+                <div id="cordura-container">
+                    <label className="cordura-title">Energía Maldita</label>
+                    <div className='controllers'>
+                        <label></label>
+                        <label className="cordura-amount">{ghostStacks.current}</label>
+                        <button onClick={() => addGhostStacks()}>+</button>
+                    </div>
+                </div>
+
 
                 <div className="current-test">
                     <div className="preview-test-container">
@@ -115,12 +168,10 @@ export const PhasmophobiaGamePage = () => {
                             }
                         </div>
                     </div>
-                    <Dice diceName="D6" initialDiceNumbers={{ min: 1, max: 6 }} />
                 </div>
 
-
-
                 <br />
+                <Dice diceName="D6" initialDiceNumbers={{ min: 1, max: 6 }} />
                 <br />
                 <br />
                 <br />

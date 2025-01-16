@@ -20,6 +20,7 @@
         border: 5px solid rgba(255, 255, 255, 0.438);
         width: 100%;
         margin: 5px;
+        aspect-ratio: 500/500;
 
         .dice-value {
             transition: transform 1s ease, background-color 1s ease;
