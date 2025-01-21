@@ -97,6 +97,14 @@ export const lstGames = [
         img: 'dixit.webp',
     },
     {
+        name: 'Dodos Riding Dinos',
+        desc: 'Dodos Riding Dinosaurs es un juego de mesa competitivo en el que los jugadores compiten para ser los primeros en llegar a la meta con un dodo y un dinosaurio. El objetivo es que el dodo y el dinosaurio más rápidos se salven de la extinción.',
+        minPlayers: 1,
+        maxPlayers: 8,
+        difficulty: 2,
+        img: 'dodos-riding-dinos.webp',
+    },
+    {
         name: 'Dominó',
         desc: 'Es un juego atemporal, de 28 fichas divididas en 2 cuadrados y adornados con una combinación única de puntos. El principal objetivo en general es quedarte con menos puntos que los demás oponentes, a través de distintos retos y posibilidades estratégicas que proporciona una experiencia versátil y motivadora con los distintos juegos posibles. Como consejo: comienza con un movimiento fuerte o de valor alto, esto te permitirá planificar movimientos, reducir el número de puntos en tu mano y maximizar la victoria.',
         minPlayers: 2,
@@ -275,7 +283,7 @@ export const lstGames = [
     },
     {
         name: 'Phasmophobia',
-        desc: 'Un juego de mesa donde tú eres el caza fantasma, pero apúrate a salir de la caza con la mayor cantidad de puntos de cordura, antes que el fantasma venga por ti. Debes encontrar qué tipo de fantasma asecha la casa, necesitarás sacar pruebas para descubrirlo, mientras intentas no morir en el intento.',
+        desc: 'Un juego de mesa donde tú eres el caza fantasma, pero apúrate a salir de la casa con la mayor cantidad de puntos de cordura, antes que el fantasma venga por ti. Debes encontrar qué tipo de fantasma asecha la casa, necesitarás sacar pruebas para descubrirlo, mientras intentas no morir en el intento.',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 3,
