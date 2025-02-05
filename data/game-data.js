@@ -349,6 +349,14 @@ export const lstGames = [
         img: 'scrabble.jpg',
     },
     {
+        name: 'Serpientes y Escaleras',
+        desc: 'Serpientes y escaleras es un juego de mesa clásico que consiste en avanzar por un tablero hasta llegar a la casilla final. El juego se juega con dados y tiene como objetivo ser el primero en llegar a la casilla final.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 1,
+        img: 'serpientes y escaleras.jpg',
+    },
+    {
         name: 'Sin memoria',
         desc: 'Juego de mesa tipo Scape Room, que ofrece una profunda experiencia narrativa, con exploración inmensa, sin límites de tiempo para resolver acertijos y una colección de decisiones difíciles que te cautivarán y te sumergirán en una historia de un futuro cyberpunk.',
         minPlayers: 1,
@@ -436,6 +444,15 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         img: 'Ticket to Ride Europe.jpg',
+    },
+    {
+        name: 'That\'s not a hat',
+        desc: 'Recordar dos objetos. Suena fácil ¿verdad? ¡Pues vas a descubrir que no lo es! Hace nada aun te acordabas y, de repente, se te ha ido: te toca marcarte un farol y endosarle el regalo otro usando tu poder de convicción. Simple. Inolvidable. Divertido. ¡Sorprendente!',
+        minPlayers: 3,
+        maxPlayers: 8,
+        difficulty: 2,
+        lang: 'ENG',
+        img: 'thats-not-a-hat.webp',
     },
     {
         name: 'That time you killed me',
