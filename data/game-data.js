@@ -1,5 +1,13 @@
 export const lstGames = [
     {
+        name: '5 minutos en el calabozo',
+        desc: 'Es un juego frenético y emocionante que pone a prueba la capacidad de los jugadores para pensar bajo presión y trabajar en equipo. Cada partida es única gracias a la disposición aleatoria del calabozo y los diferentes desafíos que los jugadores enfrentarán en cada juego.',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 3,
+        img: '5 minutos en el calabozo.jpg',
+    },
+    {
         name: 'ajedrez',
         desc: 'Merece destacarse como objeto de interés social e intelectual, que reflexiona sobre diferentes tácticas, que son el arte de mover y emplear las piezas sobre el tablero para la obtención de un determinado fin, mediante ataques espectaculares que aprovechan la natural debilidad del rey, por lo tanto, la combinación de diversas maniobras caracterizan el sacrificio de piezas estratégicamente para lograr objetivos tácticos de romper defensas y alcanzar la victoria capturando al rey contrario.',
         minPlayers: 2,
@@ -135,7 +143,6 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 4,
-        lang: 'ENG',
         img: 'el señor de los anillos - duelo por la tierra media.jpg',
     },
     {
@@ -329,7 +336,6 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 4,
-        lang: 'ENG',
         img: 'risk.jpg',
     },
     {
@@ -451,7 +457,6 @@ export const lstGames = [
         minPlayers: 3,
         maxPlayers: 8,
         difficulty: 2,
-        lang: 'ENG',
         img: 'thats-not-a-hat.webp',
     },
     {
