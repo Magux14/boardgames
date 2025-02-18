@@ -8,7 +8,7 @@ import { phasmophobiaEquipment } from '../../../data/phasmophobia-data';
 import { Header } from '../../components/header/Header';
 
 const minBadEnergyValue = 4;
-const maxBadEnergyValue = 12;
+const maxBadEnergyValue = 14;
 
 export const PhasmophobiaGamePage = () => {
 
@@ -20,10 +20,18 @@ export const PhasmophobiaGamePage = () => {
     const [testResult, setTestResult] = useState(null)
     const [ghostStacks, setGhostStacks] = useState({ current: 0, limit: 0 });
     const [showGhostImage, setShowGhostImage] = useState(false);
+    const [phasmoGhostNum] = useState((Math.floor(Math.random() * (6)) + 1));
 
-    useEffect(() => {
-        prepareGame();
-    }, [])
+    const loadHuntingMusic = (ghostNumber) => {
+        if (ghostNumber == 3 || ghostNumber == 6) {
+            return 'female';
+        } else {
+            return 'male';
+        }
+    }
+
+    const [phasmoGhostMusic] = useState(loadHuntingMusic(phasmoGhostNum));
+
 
     const setLimitEnergyValue = () => {
         setGhostStacks({
@@ -80,13 +88,20 @@ export const PhasmophobiaGamePage = () => {
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            setShowGhostImage(false);
-        }, 7_000)
+        if (showGhostImage) {
+            setTimeout(() => {
+                setShowGhostImage(false);
+            }, 7_000)
+        }
     }, [showGhostImage])
 
     useEffect(() => {
         setLimitEnergyValue();
+    }, []);
+
+
+    useEffect(() => {
+        prepareGame();
     }, []);
 
     return (
@@ -96,8 +111,8 @@ export const PhasmophobiaGamePage = () => {
                 {
                     showGhostImage &&
                     <>
-                        <audio src="./music/phasmophobia-ghost-hunting.mp3" autoPlay loop></audio>
-                        <img className="all-screen-ghost" src={`./img/phasmophobia/ghost1.png`} alt="ghost1" />
+                        <audio src={`./music/phasmophobia-ghost-hunting-${phasmoGhostMusic}.mp3`} autoPlay loop></audio>
+                        <img className="all-screen-ghost" src={`./img/phasmophobia/ghost-${phasmoGhostNum}.png`} alt="ghost1" />
                     </>
                 }
                 <div id="title-and-ghost-container">
