@@ -6,13 +6,14 @@ import './PhasmophobiaGamePage.css'
 import ConfirmationModal from '../../components/confirmation-modal/ConfirmationModal';
 import { phasmophobiaEquipment } from '../../../data/phasmophobia-data';
 import { Header } from '../../components/header/Header';
+import { PGPlayersNum } from './components/PGPlayersNum';
 
 const minBadEnergyValue = 4;
-const maxBadEnergyValue = 14;
+const maxBadEnergyValue = 10;
 
 export const PhasmophobiaGamePage = () => {
 
-    const [playersNum, setPlayersNum] = useState({ min: 1, max: 2 });
+    const [playersNum, setPlayersNum] = useState();
     const { prepareGame, getCurrentGhost, getDamagedEquipment } = usePhasmophobiaGame();
     const [showGhost, setShowGhost] = useState(false)
     const [showAlertFinishGame, setShowAlertFinishGame] = useState(false)
@@ -32,19 +33,17 @@ export const PhasmophobiaGamePage = () => {
 
     const [phasmoGhostMusic] = useState(loadHuntingMusic(phasmoGhostNum));
 
-
     const setLimitEnergyValue = () => {
+        const minEnergy = minBadEnergyValue + (playersNum);
+        const maxEnergy = maxBadEnergyValue + (2 * playersNum);
         setGhostStacks({
             current: 0,
-            limit: (Math.floor(Math.random() * (maxBadEnergyValue - minBadEnergyValue + 1)) + minBadEnergyValue)
+            limit: (Math.floor(Math.random() * (maxEnergy - minEnergy + 1)) + minEnergy)
         });
     }
 
     const handleSetPlayersNum = (playersNum) => {
-        if (isNaN(playersNum)) {
-            return;
-        }
-        setPlayersNum({ min: 1, max: Number(playersNum) });
+        setPlayersNum(playersNum);
     }
 
     const finishGame = () => {
@@ -104,94 +103,106 @@ export const PhasmophobiaGamePage = () => {
         prepareGame();
     }, []);
 
+    useEffect(() => {
+        setLimitEnergyValue();
+    }, [playersNum])
+
     return (
         <>
+
             <Header />
             <div id="phasmophobia-game-container">
                 {
-                    showGhostImage &&
+                    !playersNum &&
+                    <PGPlayersNum callbackSetPlayersNum={handleSetPlayersNum} />
+                }
+                {
+                    playersNum &&
                     <>
-                        <audio src={`./music/phasmophobia-ghost-hunting-${phasmoGhostMusic}.mp3`} autoPlay loop></audio>
-                        <img className="all-screen-ghost" src={`./img/phasmophobia/ghost-${phasmoGhostNum}.png`} alt="ghost1" />
+                        {
+                            showGhostImage &&
+                            <>
+                                <audio src={`./music/phasmophobia-ghost-hunting-${phasmoGhostMusic}.mp3`} autoPlay loop></audio>
+                                <img className="all-screen-ghost" src={`./img/phasmophobia/ghost-${phasmoGhostNum}.png`} alt="ghost1" />
+                            </>
+                        }
+                        <div id="title-and-ghost-container">
+                            <div className="title">Jugadores: {playersNum}</div>
+                            <div>
+                                <div className="ghost-title">Fantasma:</div>
+                                {
+                                    showGhost ?
+                                        <div className="ghost-title">{getCurrentGhost().name}</div>
+                                        : <ConfirmationModal
+                                            description="¿Deseas terminar el juego? el fantasma será revelado"
+                                            acceptCallback={finishGame}
+                                            closeCallback={() => setShowAlertFinishGame(false)}
+                                            showAlert={showAlertFinishGame}
+                                        >
+                                            <div className="ghost-title" onClick={() => setShowAlertFinishGame(true)}>???</div>
+                                        </ConfirmationModal>
+                                }
+                            </div>
+                        </div>
+
+                        <div id="cordura-container">
+                            <label className="cordura-title">Energía Maldita</label>
+                            <div className='controllers'>
+                                <label></label>
+                                <label className="cordura-amount">{ghostStacks.current}</label>
+                                <button onClick={() => addGhostStacks()}>+</button>
+                            </div>
+                        </div>
+
+
+                        <div className="current-test">
+                            <div className="preview-test-container">
+                                <label>
+                                    Prueba:
+                                </label>
+                                <br />
+                                <label className="result">
+                                    {currentTest ? currentTest.name : '???'}
+                                </label>
+                            </div>
+                            <div className="result-test-container">
+
+                                <button className="phasmo-button" onClick={() => handleTestResult()} disabled={currentTest ? false : true}>Probar</button>
+                                <br />
+                                {testResult != null ?
+                                    (
+                                        testResult.result == true ?
+                                            <label className={`result ${testResult.equipmentIsDamaged ? 'fake' : 'positive'}`}>Positivo</label>
+                                            : <label className={`result ${testResult.equipmentIsDamaged ? 'fake' : 'negative'}`}>Negativo</label>
+                                    ) : <label className="result">???</label>
+                                }
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div className="tests-dice-container">
+                            <div>
+                                <label className="test-title">Pruebas</label>
+                                <div id="test-buttons-container">
+                                    {
+                                        phasmophobiaEquipment.map((equipment) =>
+                                            <div key={equipment.name}>
+                                                <button className={`phasmo-button ${equipment.name == currentTest?.name ? 'selected-button' : ''}`} onClick={() => handleTestSelect(equipment)}><label>{equipment.name}</label></button>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <br />
+                        <Dice diceName="D6" initialDiceNumbers={{ min: 1, max: 6 }} />
+                        <br />
+                        <br />
+                        <br />
                     </>
                 }
-                <div id="title-and-ghost-container">
-                    <div className="title">Phasmophobia</div>
-                    <div>
-                        <div className="ghost-title">Fantasma:</div>
-                        {
-                            showGhost ?
-                                <div className="ghost-title">{getCurrentGhost().name}</div>
-                                : <ConfirmationModal
-                                    description="¿Deseas terminar el juego? el fantasma será revelado"
-                                    acceptCallback={finishGame}
-                                    closeCallback={() => setShowAlertFinishGame(false)}
-                                    showAlert={showAlertFinishGame}
-                                >
-                                    <div className="ghost-title" onClick={() => setShowAlertFinishGame(true)}>???</div>
-                                </ConfirmationModal>
-                        }
-                    </div>
-                </div>
-
-                <div id="cordura-container">
-                    <label className="cordura-title">Energía Maldita</label>
-                    <div className='controllers'>
-                        <label></label>
-                        <label className="cordura-amount">{ghostStacks.current}</label>
-                        <button onClick={() => addGhostStacks()}>+</button>
-                    </div>
-                </div>
-
-
-                <div className="current-test">
-                    <div className="preview-test-container">
-                        <label>
-                            Prueba:
-                        </label>
-                        <br />
-                        <label className="result">
-                            {currentTest ? currentTest.name : '???'}
-                        </label>
-                    </div>
-                    <div className="result-test-container">
-
-                        <button className="phasmo-button" onClick={() => handleTestResult()} disabled={currentTest ? false : true}>Probar</button>
-                        <br />
-                        {testResult != null ?
-                            (
-                                testResult.result == true ?
-                                    <label className={`result ${testResult.equipmentIsDamaged ? 'fake' : 'positive'}`}>Positivo</label>
-                                    : <label className={`result ${testResult.equipmentIsDamaged ? 'fake' : 'negative'}`}>Negativo</label>
-                            ) : <label className="result">???</label>
-                        }
-                    </div>
-                </div>
-
-                <br />
-
-                <div className="tests-dice-container">
-                    <div>
-                        <label className="test-title">Pruebas</label>
-                        <div id="test-buttons-container">
-                            {
-                                phasmophobiaEquipment.map((equipment) =>
-                                    <div key={equipment.name}>
-                                        <button className={`phasmo-button ${equipment.name == currentTest?.name ? 'selected-button' : ''}`} onClick={() => handleTestSelect(equipment)}><label>{equipment.name}</label></button>
-                                    </div>
-                                )
-                            }
-                        </div>
-                    </div>
-                </div>
-
-                <br />
-                <Dice diceName="D6" initialDiceNumbers={{ min: 1, max: 6 }} />
-                <br />
-                <br />
-                <br />
-
-
             </div>
         </>
     )
