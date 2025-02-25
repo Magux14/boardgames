@@ -6,7 +6,8 @@ import './PhasmophobiaGamePage.css'
 import ConfirmationModal from '../../components/confirmation-modal/ConfirmationModal';
 import { phasmophobiaEquipment } from '../../../data/phasmophobia-data';
 import { Header } from '../../components/header/Header';
-import { PGPlayersNum } from './components/PGPlayersNum';
+import { PGPlayersNum } from './components/pg-players-num/PGPlayersNum';
+import { PGTestVideo } from './components/pg-test-video/PGTestVideo';
 
 const minBadEnergyValue = 2;
 const maxBadEnergyValue = 5;
@@ -22,6 +23,7 @@ export const PhasmophobiaGamePage = () => {
     const [ghostStacks, setGhostStacks] = useState({ current: 0, limit: 0 });
     const [showGhostImage, setShowGhostImage] = useState(false);
     const [phasmoGhostNum] = useState((Math.floor(Math.random() * (6)) + 1));
+    const [showVideoTest, setShowVideoTest] = useState(false);
 
     const loadHuntingMusic = (ghostNumber) => {
         if (ghostNumber == 3 || ghostNumber == 6) {
@@ -59,15 +61,14 @@ export const PhasmophobiaGamePage = () => {
     const handleTestResult = () => {
         const ghost = getCurrentGhost();
         let positive = false;
-
         if (ghost[currentTest.property] == true) {
             positive = true;
         }
 
-        const equipmentIsDamaged = getDamagedEquipment().property == currentTest.property;
-        if (equipmentIsDamaged && Math.random() >= 0.5) {
-            positive = !positive;
-        }
+        // const equipmentIsDamaged = getDamagedEquipment().property == currentTest.property;
+        // if (equipmentIsDamaged && Math.random() >= 0.5) {
+        //     positive = !positive;
+        // }
 
         setTestResult({ result: positive, equipmentIsDamaged });
     }
@@ -106,6 +107,12 @@ export const PhasmophobiaGamePage = () => {
     useEffect(() => {
         setLimitEnergyValue();
     }, [playersNum])
+
+    useEffect(() => {
+        if (!showVideoTest) {
+            setShowVideoTest(true)
+        }
+    }, [testResult]);
 
     return (
         <>
@@ -168,16 +175,19 @@ export const PhasmophobiaGamePage = () => {
                                 </label>
                             </div>
                             <div className="result-test-container">
-
+                                {
+                                    (currentTest && testResult && showVideoTest) &&
+                                    <PGTestVideo phasmophobiaEquipment={currentTest.property} hasEvidence={testResult.result} callbackClose={() => setShowVideoTest(false)} />
+                                }
                                 <button className="phasmo-button" onClick={() => handleTestResult()} disabled={currentTest ? false : true}>Probar</button>
-                                <br />
+                                {/* <br />
                                 {testResult != null ?
                                     (
                                         testResult.result == true ?
                                             <label className={`result ${testResult.equipmentIsDamaged ? 'fake' : 'positive'}`}>Positivo</label>
                                             : <label className={`result ${testResult.equipmentIsDamaged ? 'fake' : 'negative'}`}>Negativo</label>
                                     ) : <label className="result">???</label>
-                                }
+                                } */}
                             </div>
                         </div>
 

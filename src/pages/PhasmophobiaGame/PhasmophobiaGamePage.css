@@ -150,8 +150,7 @@
 
     #cordura-container {
         width: 100%;
-        margin: 24px 0;
-        padding: 24px;
+        padding: 10px 0;
 
         .cordura-title {
             margin-left: 5%;

@@ -1,0 +1,25 @@
+.pg-test-video {
+
+    &__layout {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30%;
+        top: 0;
+        left: 0;
+        width: 50vw;
+        height: 100vh;
+        background: black;
+        z-index: 2;
+    }
+
+    &__video {
+        width: 100%;
+    }
+
+    button {
+        padding: 10px 50px;
+    }
+}
