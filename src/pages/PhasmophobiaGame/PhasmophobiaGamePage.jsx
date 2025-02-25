@@ -65,8 +65,8 @@ export const PhasmophobiaGamePage = () => {
             positive = true;
         }
 
-        // const equipmentIsDamaged = getDamagedEquipment().property == currentTest.property;
-        // if (equipmentIsDamaged && Math.random() >= 0.5) {
+        const equipmentIsDamaged = getDamagedEquipment().property == currentTest.property;
+        // if (equipmentIsDamaged && Math.random() >= 0.75) {
         //     positive = !positive;
         // }
 
