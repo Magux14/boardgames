@@ -8,8 +8,8 @@ import { phasmophobiaEquipment } from '../../../data/phasmophobia-data';
 import { Header } from '../../components/header/Header';
 import { PGPlayersNum } from './components/PGPlayersNum';
 
-const minBadEnergyValue = 4;
-const maxBadEnergyValue = 10;
+const minBadEnergyValue = 2;
+const maxBadEnergyValue = 5;
 
 export const PhasmophobiaGamePage = () => {
 
@@ -148,8 +148,10 @@ export const PhasmophobiaGamePage = () => {
                         <div id="cordura-container">
                             <label className="cordura-title">Energía Maldita</label>
                             <div className='controllers'>
-                                <label></label>
-                                <label className="cordura-amount">{ghostStacks.current}</label>
+                                {/* <label className="cordura-amount">{ghostStacks.current}</label> */}
+                                <div className="fire-sanity-container">
+                                    <img src="./img/phasmophobia/fire.gif" className="fire-sanity" alt="fire" width={20} style={{ zoom: ghostStacks.current + 1 }} />
+                                </div>
                                 <button onClick={() => addGhostStacks()}>+</button>
                             </div>
                         </div>
