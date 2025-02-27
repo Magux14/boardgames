@@ -6,15 +6,14 @@ import './PhasmophobiaGamePage.css'
 import ConfirmationModal from '../../components/confirmation-modal/ConfirmationModal';
 import { phasmophobiaEquipment } from '../../../data/phasmophobia-data';
 import { Header } from '../../components/header/Header';
-import { PGPlayersNum } from './components/pg-players-num/PGPlayersNum';
 import { PGTestVideo } from './components/pg-test-video/PGTestVideo';
+import { PGConfig } from './components/pg-config/PGConfig';
 
-const minBadEnergyValue = 2;
-const maxBadEnergyValue = 5;
+
 
 export const PhasmophobiaGamePage = () => {
 
-    const [playersNum, setPlayersNum] = useState();
+    const [config, setConfig] = useState();
     const { prepareGame, getCurrentGhost, getDamagedEquipment } = usePhasmophobiaGame();
     const [showGhost, setShowGhost] = useState(false)
     const [showAlertFinishGame, setShowAlertFinishGame] = useState(false)
@@ -36,16 +35,10 @@ export const PhasmophobiaGamePage = () => {
     const [phasmoGhostMusic] = useState(loadHuntingMusic(phasmoGhostNum));
 
     const setLimitEnergyValue = () => {
-        const minEnergy = minBadEnergyValue + (playersNum);
-        const maxEnergy = maxBadEnergyValue + (2 * playersNum);
         setGhostStacks({
             current: 0,
-            limit: (Math.floor(Math.random() * (maxEnergy - minEnergy + 1)) + minEnergy)
+            limit: (Math.floor(Math.random() * (config.maxBadEnergyValue - config.minBadEnergyValue + 1)) + config.minBadEnergyValue)
         });
-    }
-
-    const handleSetPlayersNum = (playersNum) => {
-        setPlayersNum(playersNum);
     }
 
     const finishGame = () => {
@@ -105,10 +98,6 @@ export const PhasmophobiaGamePage = () => {
     }, []);
 
     useEffect(() => {
-        setLimitEnergyValue();
-    }, [playersNum])
-
-    useEffect(() => {
         if (!showVideoTest) {
             setShowVideoTest(true)
         }
@@ -120,11 +109,11 @@ export const PhasmophobiaGamePage = () => {
             <Header />
             <div id="phasmophobia-game-container">
                 {
-                    !playersNum &&
-                    <PGPlayersNum callbackSetPlayersNum={handleSetPlayersNum} />
+                    !config &&
+                    <PGConfig callbackSetConfig={setConfig} />
                 }
                 {
-                    playersNum &&
+                    config &&
                     <>
                         {
                             showGhostImage &&
@@ -134,7 +123,7 @@ export const PhasmophobiaGamePage = () => {
                             </>
                         }
                         <div id="title-and-ghost-container">
-                            <div className="title">Jugadores: {playersNum}</div>
+                            <div className="title">Jugadores: {config.playersNum}</div>
                             <div>
                                 <div className="ghost-title">Fantasma:</div>
                                 {

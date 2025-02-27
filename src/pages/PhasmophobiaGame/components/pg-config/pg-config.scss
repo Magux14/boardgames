@@ -1,0 +1,42 @@
+.pg-config {
+
+    &__title-container {
+        display: flex;
+        justify-content: center;
+        font-size: 10vw;
+        margin-bottom: 20px;
+    }
+
+    &__input-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+
+        label {
+            width: 70%;
+        }
+
+        input {
+            width: 30%;
+            text-align: center;
+        }
+
+    }
+
+    &__description-container {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 10px;
+        margin-top: 10px;
+    }
+
+    &__continue-container {
+
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+
+        button {
+            padding: 10px 50px;
+        }
+    }
+}
