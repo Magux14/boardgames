@@ -19,6 +19,14 @@
         width: 100%;
     }
 
+    &__equipment-damaged-container {
+        display: flex;
+        justify-content: center;
+        color: rgb(255, 208, 0);
+        font-size: 5vw;
+        padding: 10px;
+    }
+
     button {
         padding: 10px 50px;
     }

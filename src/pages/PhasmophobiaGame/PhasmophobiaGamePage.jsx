@@ -58,10 +58,13 @@ export const PhasmophobiaGamePage = () => {
             positive = true;
         }
 
-        const equipmentIsDamaged = getDamagedEquipment().property == currentTest.property;
-        // if (equipmentIsDamaged && Math.random() >= 0.75) {
-        //     positive = !positive;
-        // }
+        let equipmentIsDamaged = false;
+        if (config.equipmentIsDamaged) {
+            equipmentIsDamaged = getDamagedEquipment().property == currentTest.property;
+            if (equipmentIsDamaged && Math.random() >= 0.333) {
+                positive = !positive;
+            }
+        }
 
         setTestResult({ result: positive, equipmentIsDamaged });
     }
@@ -89,11 +92,6 @@ export const PhasmophobiaGamePage = () => {
     }, [showGhostImage])
 
     useEffect(() => {
-        setLimitEnergyValue();
-    }, []);
-
-
-    useEffect(() => {
         prepareGame();
     }, []);
 
@@ -102,6 +100,12 @@ export const PhasmophobiaGamePage = () => {
             setShowVideoTest(true)
         }
     }, [testResult]);
+
+    useEffect(() => {
+        if (config) {
+            setLimitEnergyValue();
+        }
+    }, [config])
 
     return (
         <>
@@ -144,7 +148,6 @@ export const PhasmophobiaGamePage = () => {
                         <div id="cordura-container">
                             <label className="cordura-title">Energía Maldita</label>
                             <div className='controllers'>
-                                {/* <label className="cordura-amount">{ghostStacks.current}</label> */}
                                 <div className="fire-sanity-container">
                                     <img src="./img/phasmophobia/fire.gif" className="fire-sanity" alt="fire" width={20} style={{ zoom: ghostStacks.current + 1 }} />
                                 </div>
@@ -166,17 +169,14 @@ export const PhasmophobiaGamePage = () => {
                             <div className="result-test-container">
                                 {
                                     (currentTest && testResult && showVideoTest) &&
-                                    <PGTestVideo phasmophobiaEquipment={currentTest.property} hasEvidence={testResult.result} callbackClose={() => setShowVideoTest(false)} />
+                                    <PGTestVideo
+                                        phasmophobiaEquipment={currentTest.property}
+                                        hasEvidence={testResult.result}
+                                        callbackClose={() => setShowVideoTest(false)}
+                                        equipmentIsDamaged={testResult.equipmentIsDamaged}
+                                    />
                                 }
                                 <button className="phasmo-button" onClick={() => handleTestResult()} disabled={currentTest ? false : true}>Probar</button>
-                                {/* <br />
-                                {testResult != null ?
-                                    (
-                                        testResult.result == true ?
-                                            <label className={`result ${testResult.equipmentIsDamaged ? 'fake' : 'positive'}`}>Positivo</label>
-                                            : <label className={`result ${testResult.equipmentIsDamaged ? 'fake' : 'negative'}`}>Negativo</label>
-                                    ) : <label className="result">???</label>
-                                } */}
                             </div>
                         </div>
 
