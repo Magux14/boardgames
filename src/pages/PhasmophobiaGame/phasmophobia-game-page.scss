@@ -2,34 +2,37 @@
     box-sizing: border-box;
 }
 
-#phasmophobia-game-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    background: linear-gradient(180deg, #17171f 57%, rgba(63, 62, 88, 1) 94%);
-    background-attachment: fixed;
-    font-family: 'tragicMarker';
-    align-items: center;
-    align-content: center;
-    padding: 20px;
-    overflow: hidden;
+.phasmophobia-game {
 
-    #title-and-ghost-container {
+    &__container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        background: linear-gradient(180deg, #17171f 57%, rgba(63, 62, 88, 1) 94%);
+        background-attachment: fixed;
+        font-family: 'tragicMarker';
+        align-items: center;
+        align-content: center;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    &__title-and-ghost-container {
         display: flex;
         width: 100%;
         justify-content: space-around;
         text-align: center;
         border-bottom: 3px solid white;
         margin-bottom: 10px;
+    }
 
-        .title {
-            font-size: 2.5em;
-        }
+    &__ghost-title {
+        font-size: 5vw;
+    }
 
-        .ghost-title {
-            font-size: 2em;
-        }
+    &__ghost-title-revealed {
+        font-size: 15vw;
     }
 
     .test-title {
@@ -49,7 +52,7 @@
             flex-direction: column;
 
             div {
-                &&.dice-container {
+                .dice-container {
                     padding: 20%;
                 }
             }
@@ -99,7 +102,7 @@
             width: 50%;
         }
 
-        &&.selected-button {
+        .selected-button {
             border: 3px solid rgb(172, 166, 92);
             color: rgb(172, 166, 92);
             background: rgba(172, 165, 92, 0.25);
@@ -148,49 +151,45 @@
 
     }
 
-    #cordura-container {
+    &__sanity-container {
         width: 100%;
         padding: 10px 0;
+    }
 
-        .cordura-title {
-            margin-left: 5%;
-            font-size: 6vw;
+    &__sanity-title {
+        font-size: 6vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__sanity-controllers {
+        width: 100%;
+        max-height: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        border-radius: 8px;
+        border: 1px solid white;
+        padding: 24px;
+
+        button {
+            width: 40%;
+            font-size: 2em;
+            border-radius: 15px;
         }
 
-        .controllers {
-            width: 100%;
-            max-height: 100px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            align-content: center;
-            border-radius: 8px;
-            border: 1px solid white;
-            padding: 24px;
-
-            button {
-                width: 40%;
-                font-size: 2em;
-                border-radius: 15px;
-            }
-
-            button:active {
-                background: rgb(219, 219, 219);
-            }
-
-            .cordura-amount {
-                font-size: 2em;
-            }
-
-            .fire-sanity-container {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-                max-width: 140px;
-            }
-
-            .fire-sanity {}
+        button:active {
+            background: rgb(219, 219, 219);
         }
+    }
+
+    &__fire-sanity-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 140px;
     }
 
     .dice-container {

@@ -2,14 +2,12 @@
 import React, { useEffect, useState } from 'react'
 import { usePhasmophobiaGame } from '../../hooks/usePhasmophobiaGame'
 import { Dice } from '../../components/dice/Dice';
-import './PhasmophobiaGamePage.css'
 import ConfirmationModal from '../../components/confirmation-modal/ConfirmationModal';
 import { phasmophobiaEquipment } from '../../../data/phasmophobia-data';
 import { Header } from '../../components/header/Header';
 import { PGTestVideo } from './components/pg-test-video/PGTestVideo';
 import { PGConfig } from './components/pg-config/PGConfig';
-
-
+import './phasmophobia-game-page.scss';
 
 export const PhasmophobiaGamePage = () => {
 
@@ -111,7 +109,7 @@ export const PhasmophobiaGamePage = () => {
         <>
 
             <Header />
-            <div id="phasmophobia-game-container">
+            <div className="phasmophobia-game phasmophobia-game__container">
                 {
                     !config &&
                     <PGConfig callbackSetConfig={setConfig} />
@@ -126,35 +124,15 @@ export const PhasmophobiaGamePage = () => {
                                 <img className="all-screen-ghost" src={`./img/phasmophobia/ghost-${phasmoGhostNum}.png`} alt="ghost1" />
                             </>
                         }
-                        <div id="title-and-ghost-container">
-                            <div className="title">Jugadores: {config.playersNum}</div>
-                            <div>
-                                <div className="ghost-title">Fantasma:</div>
-                                {
-                                    showGhost ?
-                                        <div className="ghost-title">{getCurrentGhost().name}</div>
-                                        : <ConfirmationModal
-                                            description="¿Deseas terminar el juego? el fantasma será revelado"
-                                            acceptCallback={finishGame}
-                                            closeCallback={() => setShowAlertFinishGame(false)}
-                                            showAlert={showAlertFinishGame}
-                                        >
-                                            <div className="ghost-title" onClick={() => setShowAlertFinishGame(true)}>???</div>
-                                        </ConfirmationModal>
-                                }
-                            </div>
-                        </div>
-
-                        <div id="cordura-container">
-                            <label className="cordura-title">Energía Maldita</label>
-                            <div className='controllers'>
-                                <div className="fire-sanity-container">
+                        <div className="phasmophobia-game__sanity-container">
+                            <label className="phasmophobia-game__sanity-title">Energía Maldita</label>
+                            <div className='phasmophobia-game__sanity-controllers'>
+                                <div className="phasmophobia-game__fire-sanity-container">
                                     <img src="./img/phasmophobia/fire.gif" className="fire-sanity" alt="fire" width={20} style={{ zoom: ghostStacks.current + 1 }} />
                                 </div>
                                 <button onClick={() => addGhostStacks()}>+</button>
                             </div>
                         </div>
-
 
                         <div className="current-test">
                             <div className="preview-test-container">
@@ -194,6 +172,26 @@ export const PhasmophobiaGamePage = () => {
                                         )
                                     }
                                 </div>
+                            </div>
+                        </div>
+
+                        <br />
+                        <br />
+                        <div className="phasmophobia-game__title-and-ghost-container">
+                            <div>
+                                <div className="phasmophobia-game__ghost-title">Fantasma:</div>
+                                {
+                                    showGhost ?
+                                        <div className="phasmophobia-game__ghost-title-revealed">{getCurrentGhost().name}</div>
+                                        : <ConfirmationModal
+                                            description="¿Deseas terminar el juego? el fantasma será revelado"
+                                            acceptCallback={finishGame}
+                                            closeCallback={() => setShowAlertFinishGame(false)}
+                                            showAlert={showAlertFinishGame}
+                                        >
+                                            <div className="phasmophobia-game__ghost-title-revealed" onClick={() => setShowAlertFinishGame(true)}>???</div>
+                                        </ConfirmationModal>
+                                }
                             </div>
                         </div>
 

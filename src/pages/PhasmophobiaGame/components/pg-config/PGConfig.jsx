@@ -5,7 +5,7 @@ const defaultConfig = {
     playersNum: 2,
     minBadEnergyValue: 2,
     maxBadEnergyValue: 5,
-    equipmentIsDamaged: false
+    equipmentIsDamaged: true
 }
 export const PGConfig = ({ callbackSetConfig }) => {
     const [config, setConfig] = useState(defaultConfig);
@@ -76,7 +76,6 @@ export const PGConfig = ({ callbackSetConfig }) => {
                 Configuración
             </div>
             <div className="pg-config__inputs-container">
-
                 <div className="pg-config__input-container">
                     <label>Cantidad de jugares</label>
                     <input type="number" value={config.playersNum} onChange={(ev) => handleConfigChange('playersNum', ev.target.value, 'number')} />
@@ -97,13 +96,12 @@ export const PGConfig = ({ callbackSetConfig }) => {
                 </div>
                 <div className="pg-config__input-container">
                     <label>Equipo dañado</label>
-                    <input type="checkbox" value={config.equipmentIsDamaged} onChange={(ev) => handleConfigChange('equipmentIsDamaged', ev.target.checked, 'boolean')} />
+                    <input type="checkbox" checked={config.equipmentIsDamaged} onChange={(ev) => handleConfigChange('equipmentIsDamaged', ev.target.checked, 'boolean')} />
                 </div>
                 <div className="pg-config__continue-container">
                     <button onClick={handleContinue} disabled={validateAllValues()}>Continuar</button>
                 </div>
             </div>
-
         </div>
     )
 }
