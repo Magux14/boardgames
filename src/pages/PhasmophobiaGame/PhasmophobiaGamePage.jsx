@@ -8,10 +8,17 @@ import { Header } from '../../components/header/Header';
 import { PGTestVideo } from './components/pg-test-video/PGTestVideo';
 import { PGConfig } from './components/pg-config/PGConfig';
 import './phasmophobia-game-page.scss';
+import { PGTarot } from './components/pg-tarot/PgTarot';
 
 export const PhasmophobiaGamePage = () => {
 
-    const [config, setConfig] = useState();
+    const [config, setConfig] = useState({
+        playersNum: 2,
+        minBadEnergyValue: 2,
+        maxBadEnergyValue: 5,
+        equipmentIsDamaged: true
+    });
+
     const { prepareGame, getCurrentGhost, getDamagedEquipment } = usePhasmophobiaGame();
     const [showGhost, setShowGhost] = useState(false)
     const [showAlertFinishGame, setShowAlertFinishGame] = useState(false)
@@ -21,6 +28,7 @@ export const PhasmophobiaGamePage = () => {
     const [showGhostImage, setShowGhostImage] = useState(false);
     const [phasmoGhostNum] = useState((Math.floor(Math.random() * (6)) + 1));
     const [showVideoTest, setShowVideoTest] = useState(false);
+    const [showCartasTarot, setShowCartasTarot] = useState(false);
 
     const loadHuntingMusic = (ghostNumber) => {
         if (ghostNumber == 3 || ghostNumber == 6) {
@@ -68,7 +76,7 @@ export const PhasmophobiaGamePage = () => {
     }
 
     const addGhostStacks = () => {
-        if (ghostStacks.current + 1 == ghostStacks.limit) {
+        if (ghostStacks.current + 1 >= ghostStacks.limit) {
             setLimitEnergyValue();
             setShowGhostImage(true);
         } else {
@@ -109,6 +117,11 @@ export const PhasmophobiaGamePage = () => {
         <>
 
             <Header />
+
+            <span style={{ visibility: showCartasTarot ? 'visible' : 'hidden' }}>
+                <PGTarot callbackClose={() => setShowCartasTarot(false)} />
+            </span>
+
             <div className="phasmophobia-game phasmophobia-game__container">
                 {
                     !config &&
@@ -173,6 +186,13 @@ export const PhasmophobiaGamePage = () => {
                                     }
                                 </div>
                             </div>
+                        </div>
+
+                        <br />
+                        <br />
+                        <div className="phasmophobia-game__cartas-tarot-button-container">
+                            <button onClick={(() => setShowCartasTarot(true))}> Cartas Tarot</button>
+
                         </div>
 
                         <br />

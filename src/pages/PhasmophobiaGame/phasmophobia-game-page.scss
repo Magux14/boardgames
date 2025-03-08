@@ -214,6 +214,15 @@
         width: 100%;
         z-index: 2;
     }
+
+    &__cartas-tarot-button-container {
+        margin: 50px;
+
+        button {
+            font-size: 5vw;
+            padding: 10px
+        }
+    }
 }
 
 @keyframes blink-animation {

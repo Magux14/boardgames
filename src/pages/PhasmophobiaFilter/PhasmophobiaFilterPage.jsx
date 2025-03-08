@@ -20,7 +20,7 @@ export const PhasmophobiaFilterPage = () => {
     });
 
     const [ghostListFiltered, setGhostListFiltered] = useState(phasmophobiaGhostList);
-    const [cordura, setCordura] = useState(10);
+    const [cordura, setCordura] = useState(15);
     const [folderSelected, setFolderSelected] = useState('tests');
     const [selectedGhost, setSelectedGhost] = useState(null);
     const navigation = useNavigate();

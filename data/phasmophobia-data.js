@@ -189,3 +189,60 @@ export const phasmophobiaGhostList = [
         dots: true,
     }
 ]
+
+export const phasmophobiaTarotCards = [
+    {
+        name: 'El Colgado',
+        description: 'Mueres instantáneamente',
+        img: 'el_colgado.webp',
+        probability: 1
+    },
+    {
+        name: 'El Diablo',
+        description: '+ 2 energía maldita',
+        img: 'el_diablo.webp',
+        probability: 15
+    },
+    {
+        name: 'El Sol',
+        description: 'Recuperas tu cordura al 100%',
+        img: 'el_sol.webp',
+        probability: 5
+    },
+    {
+        name: 'La Luna',
+        description: 'Tu cordura baja a 1 punto',
+        img: 'la_luna.webp',
+        probability: 5
+    },
+    {
+        name: 'La Torre',
+        description: 'Puedes voltear una prueba oculta',
+        img: 'la_torre.webp',
+        probability: 17
+    },
+    {
+        name: 'Muerte',
+        description: 'Inicia una casería, pierdes 4 de cordura',
+        img: 'muerte.webp',
+        probability: 17
+    },
+    {
+        name: 'Ruleta de la fortuna',
+        description: '- 2 de cordura',
+        img: 'ruleta_de_la_fortuna.webp',
+        probability: 15,
+    },
+    {
+        name: 'Ruleta de la fortuna',
+        description: '+ 2 de cordura',
+        img: 'ruleta_de_la_fortuna.webp',
+        probability: 23
+    },
+    {
+        name: 'Sacerdotisa',
+        description: 'Revives a un compañero muerto, tendrá 2 de cordura',
+        img: 'sacerdotisa.webp',
+        probability: 2
+    }
+]

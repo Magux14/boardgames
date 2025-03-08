@@ -47,20 +47,20 @@ export const PGConfig = ({ callbackSetConfig }) => {
     const onChangePlayersNum = (playersNum) => {
         switch (playersNum) {
             case 2: {
-                config.minBadEnergyValue = 3;
-                config.maxBadEnergyValue = 5;
+                config.minBadEnergyValue = 5;
+                config.maxBadEnergyValue = 9;
             } break;
             case 3: {
-                config.minBadEnergyValue = 4;
-                config.maxBadEnergyValue = 6;
+                config.minBadEnergyValue = 5;
+                config.maxBadEnergyValue = 11;
             } break;
             case 4: {
                 config.minBadEnergyValue = 6;
-                config.maxBadEnergyValue = 9;
+                config.maxBadEnergyValue = 14;
             } break;
             default: {
-                config.minBadEnergyValue = 3;
-                config.maxBadEnergyValue = 5;
+                config.minBadEnergyValue = 6;
+                config.maxBadEnergyValue = 9;
             } break;
         }
         setConfig({ ...config });
