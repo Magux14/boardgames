@@ -137,7 +137,7 @@ export const PhasmophobiaGamePage = () => {
                         <div className="phasmophobia-game__sanity-container">
                             <label className="phasmophobia-game__sanity-title">
                                 Energía Maldita
-                                <div>Testing: Limit: {ghostStacks.limit} | Current: {ghostStacks.current}</div>
+                                {/* <div>Testing: Limit: {ghostStacks.limit} | Current: {ghostStacks.current}</div> */}
                             </label>
 
                             <div className='phasmophobia-game__sanity-controllers'>
