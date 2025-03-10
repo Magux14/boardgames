@@ -9,12 +9,12 @@
         background-image: none !important;
         box-shadow: inset 0 -50px 50px 20px rgba(1, 1, 14, 0.795);
 
-        &&.folder-option {
+        &.folder-option {
             background-color: #809ea5 !important;
             box-shadow: none
         }
 
-        &&.folder-selected {
+        &.folder-selected {
             background-color: var(--dead-color) !important;
         }
     }
@@ -128,7 +128,7 @@
                         accent-color: black;
                     }
 
-                    &&:last-child {
+                    &:last-child {
                         flex-basis: 100%;
                     }
 
@@ -205,6 +205,48 @@
                     padding: 20px;
                 }
             }
+        }
+    }
+}
+
+.tarot {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    &__title {
+        font-size: 5vw;
+    }
+
+    &__item-container {
+        display: flex;
+        border-top: 1px solid black;
+        padding: 5px 0;
+    }
+
+    &__item-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: 65%;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+    }
+
+    &__item-description-probability {
+        margin-top: 30px
+    }
+
+    &__item-img-container {
+        flex-basis: 35%;
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-height: 20vh;
         }
     }
 }

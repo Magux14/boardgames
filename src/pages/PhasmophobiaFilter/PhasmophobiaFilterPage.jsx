@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { phasmophobiaEquipment, phasmophobiaGhostList } from '../../../data/phasmophobia-data';
-import './PhasmophobiaFilterPage.css';
+import { phasmophobiaEquipment, phasmophobiaGhostList, phasmophobiaTarotCards } from '../../../data/phasmophobia-data';
+import './PhasmophobiaFilterPage.scss';
 import { Header } from '../../components/header/Header'
 import { useNavigate } from 'react-router-dom';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
@@ -77,6 +77,12 @@ export const PhasmophobiaFilterPage = () => {
                 <div className="folder-options-container">
                     <div className="empty">
 
+                    </div>
+                    <div className={`folder-option ${folderSelected == 'deseos' ? 'folder-selected' : ''} ${cordura == 0 ? 'dead' : ''}`} onClick={(() => setFolderSelected('deseos'))}>
+                        Deseos
+                    </div>
+                    <div className={`folder-option ${folderSelected == 'tarot' ? 'folder-selected' : ''} ${cordura == 0 ? 'dead' : ''}`} onClick={(() => setFolderSelected('tarot'))}>
+                        Tarot
                     </div>
                     <div className={`folder-option ${folderSelected == 'ghosts' ? 'folder-selected' : ''} ${cordura == 0 ? 'dead' : ''}`} onClick={(() => setFolderSelected('ghosts'))}>
                         Fantasmas
@@ -173,6 +179,50 @@ export const PhasmophobiaFilterPage = () => {
                             </div>
                         </div>
 
+                    }
+
+                    {
+                        folderSelected == 'tarot' &&
+                        <div className="tarot tarot__container">
+                            <div className="tarot__title">
+                                Cartas del tarot:
+                            </div>
+                            {
+                                phasmophobiaTarotCards.map((item) =>
+                                    <div key={item.name} className="tarot__item-container">
+                                        <div className="tarot__item-description">
+                                            <span>{item.description}</span>
+                                            <span className="tarot__item-description-probability">Probabilidad: {item.probability}%</span>
+                                        </div>
+                                        <div className="tarot__item-img-container">
+                                            <img className="" src={`./img/phasmophobia/tarot/${item.img}`} alt="tarot card" />
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    }
+
+                    {
+                        folderSelected == 'deseos' &&
+                        <div style={{ padding: 20 }}>
+
+                            Con este objeto podrás pedir 1 deseo de las siguientes opciones:
+                            <br />
+                            <br />
+                            1.
+                            Revivir a un compañero muerto, pero tirarás una moneda, si sale cara
+                            no pasa nada, pero si sale cruz tu morirás…
+                            <br />
+                            <br />
+                            2.                    Recuperas tu cordura al 100%, pero por el resto de la partida solo
+                            tendrás una acción por turno.
+                            <br />
+                            <br />
+                            3.                    Teletransportarte a otra habitación de la casa, pero ese cuarto
+                            quedará cerrado hasta que alguien te abra la puerta (si eres el último
+                            jugador con vida NO puedes pedir este deseo).
+                        </div>
                     }
 
                 </div >
