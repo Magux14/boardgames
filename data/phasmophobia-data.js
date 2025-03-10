@@ -223,7 +223,7 @@ export const phasmophobiaTarotCards = [
     },
     {
         name: 'Muerte',
-        description: 'Inicia una casería, pierdes 4 de cordura',
+        description: 'Inicia una casería, pierdes 3 de cordura',
         img: 'muerte.webp',
         probability: 17
     },

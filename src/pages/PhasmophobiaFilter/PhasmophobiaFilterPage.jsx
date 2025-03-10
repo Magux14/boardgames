@@ -205,23 +205,32 @@ export const PhasmophobiaFilterPage = () => {
 
                     {
                         folderSelected == 'deseos' &&
-                        <div style={{ padding: 20 }}>
+                        <div className="deseos deseos__container">
+                            <div className="deseos__title">
+                                La mano del mono
+                            </div>
 
-                            Con este objeto podrás pedir 1 deseo de las siguientes opciones:
-                            <br />
-                            <br />
-                            1.
-                            Revivir a un compañero muerto, pero tirarás una moneda, si sale cara
-                            no pasa nada, pero si sale cruz tu morirás…
-                            <br />
-                            <br />
-                            2.                    Recuperas tu cordura al 100%, pero por el resto de la partida solo
-                            tendrás una acción por turno.
-                            <br />
-                            <br />
-                            3.                    Teletransportarte a otra habitación de la casa, pero ese cuarto
-                            quedará cerrado hasta que alguien te abra la puerta (si eres el último
-                            jugador con vida NO puedes pedir este deseo).
+                            <div className="deseos__img-container">
+
+                                <img className="" src={`./img/phasmophobia/la-mano-del-mono.png`} alt="tarot card" />
+                            </div>
+
+                            <div>
+                                Con este objeto podrás pedir 1 deseo de las siguientes opciones:
+                                <br />
+                                <br />
+                                1. Revive a un compañero (el jugador revivido tendrá 2 de cordura) después tira una moneda, si sale cara
+                                no pasa nada, pero si sale cruz tu morirás…
+                                <br />
+                                <br />
+                                2. Recuperas tu cordura al 100%, pero por el resto de la partida solo
+                                tendrás una acción por turno.
+                                <br />
+                                <br />
+                                3. Teletransportarte a otra habitación de la casa, pero ese cuarto
+                                quedará cerrado hasta que alguien te abra la puerta (si eres el último
+                                jugador con vida NO puedes pedir este deseo).
+                            </div>
                         </div>
                     }
 

@@ -250,3 +250,26 @@
         }
     }
 }
+
+.deseos {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        font-size: 10vw;
+    }
+
+    &__img-container {
+        display: flex;
+        justify-content: center;
+
+        img {
+            height: 20vh;
+        }
+    }
+}
