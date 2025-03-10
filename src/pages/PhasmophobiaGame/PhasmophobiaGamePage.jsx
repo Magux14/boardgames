@@ -12,13 +12,7 @@ import { PGTarot } from './components/pg-tarot/PgTarot';
 
 export const PhasmophobiaGamePage = () => {
 
-    const [config, setConfig] = useState({
-        playersNum: 2,
-        minBadEnergyValue: 2,
-        maxBadEnergyValue: 5,
-        equipmentIsDamaged: true
-    });
-
+    const [config, setConfig] = useState();
     const { prepareGame, getCurrentGhost, getDamagedEquipment } = usePhasmophobiaGame();
     const [showGhost, setShowGhost] = useState(false)
     const [showAlertFinishGame, setShowAlertFinishGame] = useState(false)
@@ -75,14 +69,14 @@ export const PhasmophobiaGamePage = () => {
         setTestResult({ result: positive, equipmentIsDamaged });
     }
 
-    const addGhostStacks = () => {
-        if (ghostStacks.current + 1 >= ghostStacks.limit) {
+    const addGhostStacks = (numberOfStacks = 1) => {
+        if (ghostStacks.current + numberOfStacks >= ghostStacks.limit) {
             setLimitEnergyValue();
             setShowGhostImage(true);
         } else {
             setGhostStacks(previous => {
                 return {
-                    current: previous.current + 1,
+                    current: previous.current + numberOfStacks,
                     limit: previous.limit
                 }
             });
@@ -119,7 +113,10 @@ export const PhasmophobiaGamePage = () => {
             <Header />
 
             <span style={{ visibility: showCartasTarot ? 'visible' : 'hidden' }}>
-                <PGTarot callbackClose={() => setShowCartasTarot(false)} />
+                <PGTarot
+                    callbackClose={() => setShowCartasTarot(false)}
+                    callbackAddGhostStacks={addGhostStacks}
+                />
             </span>
 
             <div className="phasmophobia-game phasmophobia-game__container">
@@ -138,7 +135,11 @@ export const PhasmophobiaGamePage = () => {
                             </>
                         }
                         <div className="phasmophobia-game__sanity-container">
-                            <label className="phasmophobia-game__sanity-title">Energía Maldita</label>
+                            <label className="phasmophobia-game__sanity-title">
+                                Energía Maldita
+                                <div>Testing: Limit: {ghostStacks.limit} | Current: {ghostStacks.current}</div>
+                            </label>
+
                             <div className='phasmophobia-game__sanity-controllers'>
                                 <div className="phasmophobia-game__fire-sanity-container">
                                     <img src="./img/phasmophobia/fire.gif" className="fire-sanity" alt="fire" width={20} style={{ zoom: ghostStacks.current + 1 }} />

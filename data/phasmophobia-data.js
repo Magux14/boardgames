@@ -201,7 +201,7 @@ export const phasmophobiaTarotCards = [
         name: 'El Diablo',
         description: '+ 2 energía maldita',
         img: 'el_diablo.webp',
-        probability: 15
+        probability: 17
     },
     {
         name: 'El Sol',
@@ -219,7 +219,7 @@ export const phasmophobiaTarotCards = [
         name: 'La Torre',
         description: 'Puedes voltear una prueba oculta',
         img: 'la_torre.webp',
-        probability: 17
+        probability: 5
     },
     {
         name: 'Muerte',
@@ -231,18 +231,24 @@ export const phasmophobiaTarotCards = [
         name: 'Ruleta de la fortuna',
         description: '- 2 de cordura',
         img: 'ruleta_de_la_fortuna.webp',
-        probability: 15,
+        probability: 19,
     },
     {
         name: 'Ruleta de la fortuna',
         description: '+ 2 de cordura',
         img: 'ruleta_de_la_fortuna.webp',
-        probability: 23
+        probability: 24
     },
     {
         name: 'Sacerdotisa',
         description: 'Revives a un compañero muerto, tendrá 2 de cordura',
         img: 'sacerdotisa.webp',
         probability: 2
+    },
+    {
+        name: 'El Hermit',
+        description: 'Cambias de posición con el jugador de la derecha',
+        img: 'el_hermit.webp',
+        probability: 5
     }
 ]

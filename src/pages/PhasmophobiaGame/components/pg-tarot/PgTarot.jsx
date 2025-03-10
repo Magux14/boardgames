@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './pg-tarot.scss';
 import { phasmophobiaTarotCards } from '../../../../../data/phasmophobia-data';
 
-export const PGTarot = ({ phasmophobiaEquipment, hasEvidence, callbackClose, equipmentIsDamaged }) => {
+export const PGTarot = ({ callbackClose, callbackAddGhostStacks }) => {
 
     const [lstCards, setLstCards] = useState([]);
     const [blockPicks, setBlockPicks] = useState(false);
@@ -24,7 +24,6 @@ export const PGTarot = ({ phasmophobiaEquipment, hasEvidence, callbackClose, equ
             }
         }
 
-        console.log('total: ', total);
         lstSelectedCards = lstSelectedCards.map((item, index) => {
             return {
                 ...item,
@@ -32,7 +31,6 @@ export const PGTarot = ({ phasmophobiaEquipment, hasEvidence, callbackClose, equ
                 revealed: false,
             }
         });
-        console.log('lstSelectedCards', lstSelectedCards);
         setLstCards([...lstSelectedCards]);
     }
 
@@ -55,6 +53,14 @@ export const PGTarot = ({ phasmophobiaEquipment, hasEvidence, callbackClose, equ
             return;
         }
 
+        if (!card.revealed) {
+            if (card.name == 'El Diablo') {
+                setTimeout(() => {
+                    callbackAddGhostStacks(2);
+                }, 1_500);
+            }
+        }
+
         lstCards[index].revealed = true;
         setLstCards([...lstCards]);
         setCurrentCard({ ...card, revealed: true });
@@ -71,40 +77,42 @@ export const PGTarot = ({ phasmophobiaEquipment, hasEvidence, callbackClose, equ
 
     return (
         <div className="pg-tarot pg-tarot__layout">
-            <div key={currentCard?.id} className={`pg-tarot__current-text-container`}>
-                <div className="pg-tarot__current-title-container">
-                    {
-                        currentCard &&
-                        <span>{currentCard.name}</span>
-                    }
-                </div>
-                <div className="pg-tarot__current-description-container">
-                    {
-                        currentCard
-                            ?
-                            <span>{currentCard.description}</span>
-                            : <span>Selecciona una carta</span>
-                    }
+            <div className="pg-tarot__scroll">
+                <div key={currentCard?.id} className={`pg-tarot__current-text-container`}>
+                    <div className="pg-tarot__current-title-container">
+                        {
+                            currentCard &&
+                            <span>{currentCard.name}</span>
+                        }
+                    </div>
+                    <div className="pg-tarot__current-description-container">
+                        {
+                            currentCard
+                                ?
+                                <span>{currentCard.description}</span>
+                                : <span>Selecciona una carta</span>
+                        }
 
+                    </div>
                 </div>
-            </div>
-            <div className="pg-tarot__cards-container">
-                {
-                    lstCards.map(((item, index) =>
-                        index < 8 &&
-                        <div key={`card-${item.id}`} className={`pg-tarot__card-container ${item.dissapearing ? 'pg-tarot__card--dissapearing' : ''}`} onClick={() => handleCardSelected(item)}>
-                            <div className={`pg-tarot__card ${item.revealed ? 'pg-tarot__card--flip' : ''}`}>
-                                <img className="pg-tarot__card-inside pg-tarot__card--revealed pg-tarot__card--back" src={`./img/phasmophobia/tarot/${item.img}`} alt="tarot card" />
-                                <img className="pg-tarot__card-inside pg-tarot__card--revealed" src={`./img/phasmophobia/tarot/reverso.webp`} alt="tarot card" />
+                <div className="pg-tarot__cards-container">
+                    {
+                        lstCards.map(((item, index) =>
+                            index < 8 &&
+                            <div key={`card-${item.id}`} className={`pg-tarot__card-container ${item.dissapearing ? 'pg-tarot__card--dissapearing' : ''}`} onClick={() => handleCardSelected(item)}>
+                                <div className={`pg-tarot__card ${item.revealed ? 'pg-tarot__card--flip' : ''}`}>
+                                    <img className="pg-tarot__card-inside pg-tarot__card--revealed pg-tarot__card--back" src={`./img/phasmophobia/tarot/${item.img}`} alt="tarot card" />
+                                    <img className="pg-tarot__card-inside pg-tarot__card--revealed" src={`./img/phasmophobia/tarot/reverso.webp`} alt="tarot card" />
+                                </div>
                             </div>
-                        </div>
-                    ))
-                }
-            </div>
-            <div className="pg-tarot__button-container">
-                <button onClick={callbackClose}>Cerrar</button>
-            </div>
+                        ))
+                    }
+                </div>
+                <div className="pg-tarot__button-container">
+                    <button onClick={callbackClose}>Cerrar</button>
+                </div>
 
+            </div>
         </div>
     )
 }
