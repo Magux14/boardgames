@@ -160,6 +160,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 3,
         img: 'hanabi.png',
+        new: true
     },
     {
         name: 'Happy Little Dinosaur',
@@ -319,6 +320,7 @@ export const lstGames = [
         difficulty: 3,
         lang: 'ENG',
         img: 'Power-Hungry-Pets.png',
+        new: true
     },
     {
         name: 'Rick y Morty Total Rickall',
@@ -376,6 +378,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 1,
         img: 'shopping-list.png',
+        new: true
     },
     {
         name: 'Skull King',
@@ -441,6 +444,7 @@ export const lstGames = [
         difficulty: 4,
         lang: 'ENG',
         img: 'tic-tac-KO.png',
+        new: true
     },
     {
         name: 'Ticket to Ride Europe',
@@ -449,6 +453,7 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         img: 'Ticket-to-Ride-Europe.png',
+        new: true
     },
     {
         name: 'That\'s not a hat',
@@ -490,6 +495,7 @@ export const lstGames = [
         maxPlayers: 18,
         difficulty: 2,
         img: 'The Werewolves.webp',
+        new: true
     },
     {
         name: 'Throw Throw Burrito',
@@ -555,6 +561,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 5,
         img: 'Villanious-Star-Wars.png',
+        new: true
     },
     {
         name: 'Virus Halloween',
@@ -563,6 +570,7 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 2,
         img: 'virus halloween.webp',
+        new: true
     },
     {
         name: 'Yo Nunca Nunca',
@@ -596,5 +604,6 @@ export const lstGames = [
         maxPlayers: 10,
         difficulty: 1,
         img: 'flip-7.jpg',
+        new: true
     }
 ]

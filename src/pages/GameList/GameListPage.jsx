@@ -121,6 +121,12 @@ export const GameListPage = () => {
 
                     {lstFilteredItems.map(item =>
                         <div key={item.name} className="game-list-page__game">
+                            {
+                                item.new &&
+                                <span className="game-list-page__new-game">
+                                    NUEVO
+                                </span>
+                            }
                             <div className="game-list-page__image-container">
                                 <img src={`./img/games/${item.img}`}
                                     alt={item.name}

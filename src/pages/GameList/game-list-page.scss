@@ -35,14 +35,15 @@
     }
 
     &__game {
+        position: relative;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         margin-bottom: 10px;
         border: 3px solid rgb(95, 95, 95);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.5);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.7);
         min-height: 60vh;
 
         @media (min-width: $mobileMaxValue) {
@@ -52,6 +53,18 @@
             height: 70vh;
             height: 40vh;
         }
+    }
+
+    &__new-game {
+        position: absolute;
+        top: 3%;
+        right: 5%;
+        color: white;
+        font-weight: bold;
+        background: rgb(0, 195, 255);
+        border-radius: 100%;
+        padding: 20px;
+        transform: rotate(5deg);
     }
 
     &__image-container {
