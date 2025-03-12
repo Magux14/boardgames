@@ -605,5 +605,44 @@ export const lstGames = [
         difficulty: 1,
         img: 'flip-7.jpg',
         new: true
+    },
+    {
+        name: 'Ghost Blitz',
+        desc: 'Fantasma Blitz es un juego que permite a entre 2-8 jugadores enfrentarse en rápidas y divertidas partidas de no más de 20 minutos. Es un juego con un marcado carácter infantil, ideal para introducir a los más peques de la casa en el mundo de los juegos de mesa modernos.',
+        minPlayers: 2,
+        maxPlayers: 8,
+        difficulty: 1,
+        img: 'ghost-blitz.webp',
+        new: true
+    },
+    {
+        name: 'No sin mi gato',
+        desc: 'es el de conseguir el mayor número posible de puntos. Para ello, los jugadores tendrán que manipular adecuadamente las cartas de canalón para trazar caminos que unan las cartas de gato callejero con las cartas de hogar. Cada carta de gato callejero otorga una cantidad determinada de puntos.',
+        minPlayers: 1,
+        maxPlayers: 4,
+        difficulty: 2,
+        img: 'no-sin-mi-gato.png',
+        new: true
+    },
+    {
+        name: 'Pit',
+        desc: 'Pit es el desmadrado juego de las vacas en el que todo el mun- do participa a la vez. El objetivo de los jugadores es obtener fa- milias de cartas idénticas. Una familia está compuesta por 9 cartas. Cada familia otorga un determinado número de pun- tos, indicado en cada una de las cartas.',
+        minPlayers: 3,
+        maxPlayers: 8,
+        difficulty: 2,
+        img: 'pit.png',
+        new: true
+    },
+    {
+        name: 'Sonic Speed Battle',
+        desc: 'Consiste en tres juegos de cartas diferentes, cada uno para 2 a 4 jugadores que usan la misma baraja, ¡pero de maneras completamente diferentes! Con 24 personajes para elegir, ¡las batallas son infinitas!',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 2,
+        lang: 'ENG',
+        img: 'sonic-speed-battle.png',
+        new: true
     }
+
+
 ]

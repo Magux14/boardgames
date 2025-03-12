@@ -61,10 +61,20 @@
         right: 5%;
         color: white;
         font-weight: bold;
-        background: rgb(0, 195, 255);
         border-radius: 100%;
         padding: 20px;
-        transform: rotate(5deg);
+        transform: rotate(8deg);
+        animation: newBlink 0.5s infinite alternate;
+
+        @keyframes newBlink {
+            0% {
+                background: rgb(0, 195, 255);
+            }
+
+            100% {
+                background: rgb(0, 225, 255);
+            }
+        }
     }
 
     &__image-container {
