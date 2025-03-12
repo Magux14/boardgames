@@ -5,7 +5,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 3,
-        img: '5 minutos en el calabozo.jpg',
+        img: '5 minutos en el calabozo.png',
     },
     {
         name: 'ajedrez',
@@ -49,7 +49,7 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         lang: 'ENG',
-        img: 'Cartoon Network Crossover Crisis.jpg',
+        img: 'Cartoon-Network-Crossover-Crisis.png',
     },
     {
         name: 'Catán',
@@ -57,7 +57,7 @@ export const lstGames = [
         minPlayers: 3,
         maxPlayers: 4,
         difficulty: 3,
-        img: 'catan.webp',
+        img: 'catan.png',
     },
     {
         name: 'Conecta 4',
@@ -66,7 +66,7 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 1,
         lang: '',
-        img: 'Conecta 4.jpg',
+        img: 'Conecta-4.png',
     },
     {
         name: 'Coup',
@@ -84,7 +84,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 4,
         lang: '',
-        img: 'Criaturas de las sombras.webp',
+        img: 'Criaturas-de-las-sombras.png',
     },
     {
         name: 'Disney trivia',
@@ -93,11 +93,10 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 1,
         lang: 'ESP',
-        img: 'Disney trivia.jpg',
+        img: 'Disney-trivia.png',
     },
     {
         name: 'Dixit',
-        desc: 'El maravilloso mundo de Disney Trivia es un juego de mesa diseñado para jugadores de todas las edades que disfrutan del maravilloso mundo de Disney. Está basado en formato trivial, donde debe haber un mínimo de 2 jugadores y con duración aprox. de 45 min. Asegurate de ver todas las películas de Disney, demuestra quién sabe más y quién tiene mejor memoria.',
         minPlayers: 3,
         maxPlayers: 8,
         difficulty: 1,
@@ -143,7 +142,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 4,
-        img: 'el señor de los anillos - duelo por la tierra media.jpg',
+        img: 'el-señor-de-los-anillos-duelo-por-la-tierra-media.png',
     },
     {
         name: 'Fire Tower',
@@ -152,7 +151,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 3,
         lang: 'ENG',
-        img: 'fire tower.jpg',
+        img: 'fire-tower.png',
     },
     {
         name: 'Hanabi',
@@ -160,7 +159,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 3,
-        img: 'Hanabi.webp',
+        img: 'hanabi.png',
     },
     {
         name: 'Happy Little Dinosaur',
@@ -178,7 +177,7 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 1,
         lang: 'ENG',
-        img: 'Headbanz.webp',
+        img: 'Headbanz.png',
     },
     {
         name: 'Here To Slay',
@@ -195,7 +194,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 1,
-        img: 'Jaipur.jpg',
+        img: 'Jaipur.png',
     },
     {
         name: 'La Isla Prohibida',
@@ -204,7 +203,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 2,
         lang: 'ENG',
-        img: 'La Isla Prohibida.jpg',
+        img: 'La-Isla-Prohibida.png',
     },
     {
         name: 'La Polilla Tramposa',
@@ -212,7 +211,7 @@ export const lstGames = [
         minPlayers: 3,
         maxPlayers: 8,
         difficulty: 2,
-        img: 'La Polilla Tramposa.jpg',
+        img: 'La-Polilla-Tramposa.png',
     },
     {
         name: 'Magux party',
@@ -220,7 +219,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 3,
-        img: 'Magux part.webp',
+        img: 'Magux-party.png',
     },
     {
         name: 'Mente Vacuna (Digital)',
@@ -228,7 +227,7 @@ export const lstGames = [
         minPlayers: 4,
         maxPlayers: 20,
         difficulty: 1,
-        img: 'mente-vacuna.webp',
+        img: 'mente-vacuna.png',
     },
     {
         name: 'Mini Torre del beber',
@@ -236,7 +235,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 8,
         difficulty: 1,
-        img: 'Mini Torre del beber.jpg',
+        img: 'Mini-Torre-del-beber.png',
     },
     {
         name: 'Monopoly Fortnite',
@@ -244,7 +243,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 10,
         difficulty: 2,
-        img: 'Monopoly Fornite.jpg',
+        img: 'Monopoly-Fornite.png',
     },
     {
         name: 'Monopoly Game of Thrones',
@@ -253,7 +252,7 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 2,
         lang: 'ENG',
-        img: 'Monopoly Game of Thrones.jpg',
+        img: 'Monopoly-Game-of-Thrones.png',
     },
     {
         name: 'Monopoly Pokémon',
@@ -262,7 +261,7 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 2,
         lang: 'ENG',
-        img: 'Monopoly Pokémon.jpg',
+        img: 'Monopoly-Pokémon.png',
     },
     {
         name: 'No Mames',
@@ -270,7 +269,7 @@ export const lstGames = [
         minPlayers: 5,
         maxPlayers: 10,
         difficulty: 1,
-        img: 'No Mames.jpg',
+        img: 'No-Mames.png',
     },
     {
         name: 'Papas Traidoras',
@@ -278,7 +277,7 @@ export const lstGames = [
         minPlayers: 3,
         maxPlayers: 6,
         difficulty: 2,
-        img: 'Papas Traidoras.jpg',
+        img: 'Papas-Traidoras.png',
     },
     {
         name: 'Patchwork',
@@ -302,7 +301,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 10,
         difficulty: 1,
-        img: 'Pixar el legado.jpg',
+        img: 'Pixar-el-legado.png',
     },
     {
         name: 'Poop',
@@ -310,7 +309,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 1,
-        img: 'Poop.webp',
+        img: 'Poop.png',
     },
     {
         name: 'Power Hungry Pets',
@@ -319,7 +318,7 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 3,
         lang: 'ENG',
-        img: 'Power Hungry Pets.jpg',
+        img: 'Power-Hungry-Pets.png',
     },
     {
         name: 'Rick y Morty Total Rickall',
@@ -328,7 +327,7 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         lang: 'ENG',
-        img: 'Rick y Morty Total Rickall.webp',
+        img: 'Rick-y-Morty-Total-Rickall.png',
     },
     {
         name: 'Risk',
@@ -336,7 +335,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 4,
-        img: 'risk.jpg',
+        img: 'risk.png',
     },
     {
         name: 'Saboteur',
@@ -344,7 +343,7 @@ export const lstGames = [
         minPlayers: 3,
         maxPlayers: 8,
         difficulty: 2,
-        img: 'Saboteur.webp',
+        img: 'Saboteur.png',
     },
     {
         name: 'Scrabble',
@@ -352,7 +351,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 3,
-        img: 'scrabble.jpg',
+        img: 'scrabble.png',
     },
     {
         name: 'Serpientes y Escaleras',
@@ -368,7 +367,7 @@ export const lstGames = [
         minPlayers: 1,
         maxPlayers: 4,
         difficulty: 5,
-        img: 'Sin memoria.jpeg',
+        img: 'Sin-memoria.png',
     },
     {
         name: 'Shopping List',
@@ -376,7 +375,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 1,
-        img: 'shopping-list.webp',
+        img: 'shopping-list.png',
     },
     {
         name: 'Skull King',
@@ -384,7 +383,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 3,
-        img: 'Skull King.jpg',
+        img: 'Skull-King.png',
     },
     {
         name: 'Slamwich',
@@ -392,7 +391,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 3,
-        img: 'Slamwich.jpg',
+        img: 'Slamwich.png',
     },
     {
         name: 'Sleeping Queens',
@@ -400,7 +399,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
-        img: 'Sleeping Queens.jpg',
+        img: 'Sleeping-Queens.png',
     },
     {
         name: 'Splendor',
@@ -408,7 +407,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
-        img: 'Splendor.jpg',
+        img: 'splendor.png',
     },
     {
         name: 'Stratego Star Wars',
@@ -416,7 +415,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 5,
-        img: 'Stratego Star Wars.webp',
+        img: 'Stratego-Star-Wars.png',
     },
     {
         name: 'Sushi Go!',
@@ -424,7 +423,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
-        img: 'Sushi Go!.jpg',
+        img: 'Sushi-Go!.png',
     },
     {
         name: 'Taco Gato Cabra Queso Pizza',
@@ -432,7 +431,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 1,
-        img: 'Taco Gato Cabra Queso Pizza.webp',
+        img: 'Taco-Gato-Cabra-Queso-Pizza.png',
     },
     {
         name: 'Tic Tac K.O Dragons vs Unicorns',
@@ -441,7 +440,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 4,
         lang: 'ENG',
-        img: 'tic tac KO.png',
+        img: 'tic-tac-KO.png',
     },
     {
         name: 'Ticket to Ride Europe',
@@ -449,7 +448,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 3,
-        img: 'Ticket to Ride Europe.jpg',
+        img: 'Ticket-to-Ride-Europe.png',
     },
     {
         name: 'That\'s not a hat',
@@ -466,7 +465,7 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 4,
         lang: 'ENG',
-        img: 'That time you killed me.jpg',
+        img: 'That-time-you-killed-me.png',
     },
     {
         name: 'The Mind',
@@ -474,7 +473,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 1,
-        img: 'The Mind.jpg',
+        img: 'The-Mind.png',
     },
     {
         name: 'The Resistance',
@@ -482,7 +481,7 @@ export const lstGames = [
         minPlayers: 5,
         maxPlayers: 10,
         difficulty: 2,
-        img: 'The Resistance.jpg',
+        img: 'The-Resistance.png',
     },
     {
         name: 'The Werewolves',
@@ -498,7 +497,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 1,
-        img: 'Throw Throw Burrito.jpg',
+        img: 'Throw-Throw-Burrito.png',
     },
     {
         name: 'Twister',
@@ -506,7 +505,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 1,
-        img: 'Twister.jpg',
+        img: 'twister.png',
     },
     {
         name: 'Uno',
@@ -522,7 +521,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 10,
         difficulty: 2,
-        img: 'uno Flip.webp',
+        img: 'uno-flip.png',
     },
     {
         name: 'Unstable Retro',
@@ -530,7 +529,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 3,
-        img: 'Unstable Retro.png',
+        img: 'Unstable-Retro.png',
     },
     {
         name: 'Unstable Unicorns',
@@ -539,7 +538,7 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 3,
         lang: 'ENG',
-        img: 'Unstable Unicorns.webp',
+        img: 'Unstable-Unicorns.png',
     },
     {
         name: 'Villanious Disney',
@@ -547,7 +546,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 5,
-        img: 'Villanious Disney.jpg',
+        img: 'Villanious-Disney.png',
     },
     {
         name: 'Villanious Star Wars',
@@ -555,7 +554,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 5,
-        img: 'Villanious Star Wars.jpg',
+        img: 'Villanious-Star-Wars.png',
     },
     {
         name: 'Virus Halloween',

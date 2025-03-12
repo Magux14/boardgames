@@ -42,7 +42,7 @@
         margin-bottom: 10px;
         border: 3px solid rgb(95, 95, 95);
         border-radius: 8px;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.5);
         min-height: 60vh;
 
         @media (min-width: $mobileMaxValue) {
@@ -68,14 +68,12 @@
             margin-bottom: 5px;
             padding: 10px;
             height: auto;
-            object-fit: contain;
         }
 
         @media (min-width: $mobileMaxValue) {
             display: flex;
             justify-content: center;
             height: 45%;
-
         }
     }
 
