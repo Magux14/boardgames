@@ -589,5 +589,13 @@ export const lstGames = [
         difficulty: 3,
         lang: 'ENG',
         img: 'Zombie Kittens.png',
+    },
+    {
+        name: 'Flip 7',
+        desc: '¿Juega seguro o arriesgarlo todo? - En Flip 7, presionarás tu suerte recibiendo tarjetas repartidas sin revelar el mismo número dos veces. Cómo ganar: sé el primero en alcanzar 200 puntos en este intenso juego de prensa para tu suerte que pone a prueba tus habilidades de estrategia y toma de riesgos.',
+        minPlayers: 3,
+        maxPlayers: 10,
+        difficulty: 1,
+        img: 'flip-7.jpg',
     }
 ]
