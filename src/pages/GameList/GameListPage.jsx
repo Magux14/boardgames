@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './GameListPage.css';
+import './game-list-page.scss';
 import PersonIcon from '@mui/icons-material/Person';
 import TranslateIcon from '@mui/icons-material/Translate';
 import PsychologyIcon from '@mui/icons-material/Psychology';
@@ -7,11 +7,10 @@ import { lstGames } from '../../../data/game-data';
 import { Header } from '../../components/header/Header'
 import SearchIcon from '@mui/icons-material/Search';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import { ColoredWaves } from '../../components/colored-waves/ColoredWaves';
 
 export const GameListPage = () => {
 
-    const [lstFilteredItems, setlstFilteredItems] = useState(lstGames);
+    const [lstFilteredItems, setlstFilteredItems] = useState(lstGames.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1));
 
     const [filters, setFilters] = useState({
         searchTerm: '',
@@ -69,10 +68,10 @@ export const GameListPage = () => {
     return (
         <>
             <Header />
-            <div id="filter-container">
-                <div id="input-container">
+            <div className="game-list-page game-list-page__filter-container">
+                <div className="game-list-page__input-container">
 
-                    <div className="select">
+                    <div className="game-list-page__select">
                         <label>
                             <SearchIcon />
                         </label>
@@ -81,11 +80,11 @@ export const GameListPage = () => {
                             placeholder="Buscar..."
                             value={filters.searchTerm}
                             onChange={handleSearchWordChange}
-                            className="select"
+                            className="game-list-page__select"
                         />
                     </div>
 
-                    <div className="select">
+                    <div className="game-list-page__select">
                         <label>
                             <PersonIcon />
                         </label>
@@ -103,26 +102,26 @@ export const GameListPage = () => {
                             <option value="10">10+</option>
                         </select>
                     </div>
-                    <div className="select">
-                        <label className="checkbox-label">
+                    <div className="game-list-page__select">
+                        <label className="game-list-page__checkbox-label">
                             H
                         </label>
-                        <input className="checkbox" type="checkbox" onChange={(ev) => handleHardSearch(ev.target.checked)}></input>
+                        <input className="game-list-page__checkbox" type="checkbox" onChange={(ev) => handleHardSearch(ev.target.checked)}></input>
                     </div>
-                    <div className="select">
+                    <div className="game-list-page__select">
                         <label>
                             <FilterAltIcon /> {lstFilteredItems.length}
                         </label>
                     </div>
                 </div>
             </div>
-            <div id="game-list-container">
+            <div className="game-list-page__game-list-container">
 
-                <div className="list-container">
+                <div className="game-list-page__list-container">
 
                     {lstFilteredItems.map(item =>
-                        <div key={item.name} className="game">
-                            <div className="image-container">
+                        <div key={item.name} className="game-list-page__game">
+                            <div className="game-list-page__image-container">
                                 <img src={`./img/games/${item.img}`}
                                     alt={item.name}
                                     className='image'
@@ -131,26 +130,25 @@ export const GameListPage = () => {
                                     }}
                                 />
                             </div>
-                            <div id="main-info-container">
-                                <h3 className="name">{item.name}</h3>
-                                <div className="desc-container">
-                                    {item.desc ? <p className="desc">{item.desc}</p> : null}
+                            <div className="game-list-page__main-info-container">
+                                <h3 className="game-list-page__game-name">{item.name}</h3>
+                                <div className="game-list-page__desc-container">
+                                    {item.desc ? <p className="game-list-page__desc">{item.desc}</p> : null}
                                 </div>
                             </div>
 
-                            <div className='right tags-container'>
-                                <span className='tags'><PersonIcon /> {`${item.minPlayers == item.maxPlayers ? ` ${item.minPlayers} ` : `${item.minPlayers} - ${item.maxPlayers}`}`}</span>
-                                <span className='tags'><PsychologyIcon /> {item.difficulty}</span>
+                            <div className='game-list-page__right game-list-page__tags-container'>
+                                <span className='game-list-page__tags'><PersonIcon /> {`${item.minPlayers == item.maxPlayers ? ` ${item.minPlayers} ` : `${item.minPlayers} - ${item.maxPlayers}`}`}</span>
+                                <span className='game-list-page__tags'><PsychologyIcon /> {item.difficulty}</span>
 
                                 {item.lang ?
-                                    <span className='tags'><TranslateIcon /> {item.lang}</span> : null
+                                    <span className='game-list-page__tags'><TranslateIcon /> {item.lang}</span> : null
                                 }
                             </div>
 
                         </div>)}
                 </div>
             </div>
-            <ColoredWaves />
         </>
     )
 }
