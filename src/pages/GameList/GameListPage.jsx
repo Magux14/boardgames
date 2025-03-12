@@ -128,7 +128,7 @@ export const GameListPage = () => {
                                 </span>
                             }
                             <div className="game-list-page__image-container">
-                                <img src={`../img/games/${item.img}`}
+                                <img src={`./img/games/${item.img}`}
                                     alt={item.name}
                                     className='image'
                                     onError={(e) => {
