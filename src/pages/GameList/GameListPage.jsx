@@ -128,7 +128,7 @@ export const GameListPage = () => {
                                 </span>
                             }
                             <div className="game-list-page__image-container">
-                                <img src={`./img/games/${item.img}`}
+                                <img src={`../img/games/${item.img}`}
                                     alt={item.name}
                                     className='image'
                                     onError={(e) => {
@@ -144,6 +144,21 @@ export const GameListPage = () => {
                             </div>
 
                             <div className='game-list-page__right game-list-page__tags-container'>
+                                {
+                                    !!item.rank &&
+                                    <span className='game-list-page__tags game-list-page__rank'>
+                                        {
+
+                                            Array.from({ length: item.rank }, (_, i) => i + 1).map((i) =>
+                                                <img key={`start-${i}`} src={`./icons/star.png`}
+                                                    width={20}
+                                                    height={20}
+                                                    alt="star"
+                                                />
+                                            )
+                                        }
+                                    </span>
+                                }
                                 <span className='game-list-page__tags'><PersonIcon /> {`${item.minPlayers == item.maxPlayers ? ` ${item.minPlayers} ` : `${item.minPlayers} - ${item.maxPlayers}`}`}</span>
                                 <span className='game-list-page__tags'><PsychologyIcon /> {item.difficulty}</span>
 
