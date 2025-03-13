@@ -6,17 +6,19 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import { lstGames } from '../../../data/game-data';
 import { Header } from '../../components/header/Header'
 import SearchIcon from '@mui/icons-material/Search';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import SortIcon from '@mui/icons-material/Sort';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 export const GameListPage = () => {
-
-    const [lstFilteredItems, setlstFilteredItems] = useState(lstGames.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1));
 
     const [filters, setFilters] = useState({
         searchTerm: '',
         selectedPlayers: -1,
         hardSearch: false
     });
+    const [lstFilteredItems, setlstFilteredItems] = useState(lstGames);
+    const [filterType, setFilterType] = useState('nameAsc');
 
     const handleSearchWordChange = (event) => {
         setFilters({
@@ -39,8 +41,39 @@ export const GameListPage = () => {
         });
     };
 
+    const sortList = (type, lstSorted) => {
+        switch (type) {
+            case 'nameAsc':
+                lstSorted = lstSorted.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
+                break;
+            case 'nameDesc':
+                lstSorted = lstSorted.sort((a, b) => a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1);
+                break;
+            case 'rankAsc':
+                lstSorted = lstSorted.sort((a, b) => (a.rank ?? 0) > (b.rank ?? 0) ? 1 : -1);
+                break;
+            case 'rankDesc':
+                lstSorted = lstSorted.sort((a, b) => (a.rank ?? 0) < (b.rank ?? 0) ? 1 : -1);
+                break;
+            case 'newAsc':
+                lstSorted = lstSorted.sort((a, b) => !!a.new > !!b.new ? 1 : -1);
+                break;
+            case 'newDesc':
+                lstSorted = lstSorted.sort((a, b) => !!a.new < !!b.new ? 1 : -1);
+                break;
+        }
+
+        return lstSorted;
+    }
+
+    const handleSort = (type, lstFilteredItems) => {
+        const lstSorted = sortList(type, [...lstFilteredItems]);
+        setlstFilteredItems([...lstSorted]);
+        setFilterType(type);
+    }
+
     const applyFilters = () => {
-        let lstFiltered = [...lstGames.sort((a, b) => a.name > b.name ? 1 : 0)];
+        let lstFiltered = [...lstGames];
         if (filters.searchTerm) {
             lstFiltered = lstFiltered.filter(item => item.name.toLowerCase().includes(filters.searchTerm));
         }
@@ -58,6 +91,7 @@ export const GameListPage = () => {
             }
         }
 
+        lstFiltered = sortList(filterType, lstFiltered);
         setlstFilteredItems(lstFiltered);
     }
 
@@ -69,9 +103,9 @@ export const GameListPage = () => {
         <>
             <Header />
             <div className="game-list-page game-list-page__filter-container">
-                <div className="game-list-page__input-container">
+                <div className="game-list-page__inputs-container">
 
-                    <div className="game-list-page__select">
+                    <div className="game-list-page__input-container">
                         <label>
                             <SearchIcon />
                         </label>
@@ -84,11 +118,32 @@ export const GameListPage = () => {
                         />
                     </div>
 
-                    <div className="game-list-page__select">
+                    <div className="game-list-page__input-container">
+                        <label>
+                            <SortIcon />
+                        </label>
+                        <select name="Máximo de jugadores" value={filterType} onChange={(ev) => handleSort(ev.target.value, lstFilteredItems)}>
+                            <option value="nameAsc">Nombre ↓</option>
+                            <option value="nameDesc">Nombre ↑</option>
+                            <option value="rankDesc">Rank ↓</option>
+                            <option value="rankAsc">Rank ↑</option>
+                            <option value="newDesc">Nuevos ↓</option>
+                            <option value="newAsc">Nuevos ↑</option>
+                        </select>
+                    </div>
+
+                    <div className="game-list-page__select-container">
+                        <label className="game-list-page__checkbox-label">
+                            H
+                        </label>
+                        <input className="game-list-page__checkbox" type="checkbox" onChange={(ev) => handleHardSearch(ev.target.checked)}></input>
+                    </div>
+
+                    <div className="game-list-page__input-container">
                         <label>
                             <PersonIcon />
                         </label>
-                        <select name="Máximo de jugadores" value={filters.selectedPlayers} onChange={handlePlayersChanged}>
+                        <select name="Ordenar" value={filters.selectedPlayers} onChange={handlePlayersChanged}>
                             <option value="-1">-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -102,15 +157,10 @@ export const GameListPage = () => {
                             <option value="10">10+</option>
                         </select>
                     </div>
-                    <div className="game-list-page__select">
-                        <label className="game-list-page__checkbox-label">
-                            H
-                        </label>
-                        <input className="game-list-page__checkbox" type="checkbox" onChange={(ev) => handleHardSearch(ev.target.checked)}></input>
-                    </div>
+
                     <div className="game-list-page__select">
                         <label>
-                            <FilterAltIcon /> {lstFilteredItems.length}
+                            Juegos: {lstFilteredItems.length}
                         </label>
                     </div>
                 </div>
@@ -147,14 +197,19 @@ export const GameListPage = () => {
                                 {
                                     <span className='game-list-page__tags game-list-page__rank'>
                                         {
-
-                                            Array.from({ length: 5 }, (_, i) => i + 1).map((i) =>
-                                                <img key={`start-${i}`} src={`./icons/${i <= item.rank ? 'star' : 'unfilled-star'}.png`}
-                                                    width={20}
-                                                    height={20}
-                                                    alt="star"
-                                                />
-                                            )
+                                            item.rank
+                                                ?
+                                                Array.from({ length: 5 }, (_, i) => i + 1).map((i) =>
+                                                    <img key={`start-${i}`} src={`./icons/${i <= item.rank ? 'star' : 'unfilled-star'}.png`}
+                                                        width={20}
+                                                        height={20}
+                                                        alt="star"
+                                                    />
+                                                )
+                                                :
+                                                <span>
+                                                    Unranked
+                                                </span>
                                         }
                                     </span>
                                 }

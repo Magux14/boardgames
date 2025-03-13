@@ -102,7 +102,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 8,
         difficulty: 1,
-        lang: 'ESP',
+        lang: 'ES',
         img: 'Disney-trivia.png',
         rank: 3
     },

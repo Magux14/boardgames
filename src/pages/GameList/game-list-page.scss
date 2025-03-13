@@ -168,23 +168,47 @@
         background: rgb(61, 61, 61);
     }
 
-    &__input-container {
-        padding: 10px 0;
+    &__inputs-container {
+        padding: 10px;
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        // justify-content: space-between;
+        gap: 10px;
     }
 
-    &__select {
+    &__input-container {
         display: flex;
         align-items: center;
+        background: white;
+        border-radius: 8px;
+        margin: 3px;
+
+        svg {
+            padding: 2px;
+            fill: rgb(160, 160, 160);
+        }
+
+        input,
+        select {
+            border: 0;
+            border-radius: 8px;
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+
+        select {
+            padding-right: 5px;
+        }
     }
 
-    select {
-        height: 30px;
-        border-radius: 8px;
+    &__select-container {
+        display: flex;
+        align-items: center;
     }
 
     &__checkbox-label {
@@ -203,9 +227,6 @@
         }
     }
 
-    input {
-        border-radius: 8px;
-        height: 30px;
-    }
+
 
 }
