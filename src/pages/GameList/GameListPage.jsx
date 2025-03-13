@@ -145,12 +145,11 @@ export const GameListPage = () => {
 
                             <div className='game-list-page__right game-list-page__tags-container'>
                                 {
-                                    !!item.rank &&
                                     <span className='game-list-page__tags game-list-page__rank'>
                                         {
 
-                                            Array.from({ length: item.rank }, (_, i) => i + 1).map((i) =>
-                                                <img key={`start-${i}`} src={`./icons/star.png`}
+                                            Array.from({ length: 5 }, (_, i) => i + 1).map((i) =>
+                                                <img key={`start-${i}`} src={`./icons/${i <= item.rank ? 'star' : 'unfilled-star'}.png`}
                                                     width={20}
                                                     height={20}
                                                     alt="star"

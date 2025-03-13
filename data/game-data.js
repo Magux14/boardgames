@@ -53,7 +53,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 3,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'Cartoon-Network-Crossover-Crisis.png',
         rank: 3
     },
@@ -148,7 +148,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'dumb-ways-to-die.webp',
         rank: 4
     },
@@ -167,7 +167,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 3,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'fire-tower.png',
         rank: 4
     },
@@ -186,7 +186,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'Happy Little Dinosaur.jpg',
         rank: 4
     },
@@ -196,7 +196,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 1,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'Headbanz.png',
         rank: 4
     },
@@ -205,7 +205,7 @@ export const lstGames = [
         desc: 'Here to Slay es un juego de cartas de estrategia y fantasía en el que los jugadores tendremos que competir reuniendo al mejor grupo de Héroes, matando todos los monstruos que sea posible… bueno, a veces también tendremos que dedicarnos a sabotear a nuestros adversarios… ¡Mata monstruos! y defiéndete de tus… ¿amigos? Tendremos que formar un equipo de héroes para aniquilar peligrosos monstruos, sortear trampas, saquear tesoros, usar poderosos hechizos y, sobre todo, defendernos de los intentos de sabotaje de nuestros oponentes. El objetivo es sencillo: gana el primero que aniquile tres monstruos o se haga con un equipo de seis clases diferentes, que son un auténtico festival de violencia cuqui, animalitos cabreados y conjuros devastadores. ¡Tira la iniciativa y que comience el desafío!',
         minPlayers: 2,
         maxPlayers: 6,
-        lang: 'ENG',
+        lang: 'EN',
         difficulty: 4,
         img: 'Here To Slay.jpg',
         rank: 3
@@ -225,7 +225,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'La-Isla-Prohibida.png',
         rank: 4
     },
@@ -280,7 +280,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'Monopoly-Game-of-Thrones.png',
         rank: 4
     },
@@ -290,7 +290,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'Monopoly-Pokémon.png',
         rank: 2
     },
@@ -354,7 +354,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 3,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'Power-Hungry-Pets.png',
         new: true
     },
@@ -364,7 +364,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 3,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'Rick-y-Morty-Total-Rickall.png',
         rank: 5
     },
@@ -491,7 +491,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 4,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'tic-tac-KO.png',
         new: true
     },
@@ -519,7 +519,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 4,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'That-time-you-killed-me.png',
         rank: 5
     },
@@ -601,7 +601,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 3,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'Unstable-Unicorns.png',
         rank: 5
     },
@@ -656,7 +656,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 3,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'Zombie Kittens.png',
         rank: 4
     },
@@ -702,10 +702,17 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
-        lang: 'ENG',
+        lang: 'EN',
         img: 'sonic-speed-battle.png',
         new: true
+    },
+    {
+        name: 'splendor duel',
+        desc: 'Splendor Duel es una versión para dos jugadores del juego Splendor, manteniendo la esencia de la construcción de motores y gestión de recursos, pero con un enfoque más compacto y dinámico.',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 3,
+        img: 'splendor-duel.jpg',
+        new: true
     }
-
-
 ]
