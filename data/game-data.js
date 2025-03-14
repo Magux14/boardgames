@@ -493,7 +493,7 @@ export const lstGames = [
         difficulty: 4,
         lang: 'EN',
         img: 'tic-tac-KO.png',
-        new: true
+        rank: 4
     },
     {
         name: 'Ticket to Ride Europe',
@@ -713,6 +713,15 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 3,
         img: 'splendor-duel.jpg',
+        new: true
+    },
+    {
+        name: 'parchis',
+        desc: 'El parchís es un juego de mesa de estrategia para 2, 3 o 4 jugadores, donde el objetivo es mover todas tus fichas desde tu zona de partida hasta la zona de meta, utilizando un dado para determinar el movimiento',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 2,
+        img: 'parchis.png',
         new: true
     }
 ]
