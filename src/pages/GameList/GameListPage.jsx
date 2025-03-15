@@ -7,8 +7,7 @@ import { lstGames } from '../../../data/game-data';
 import { Header } from '../../components/header/Header'
 import SearchIcon from '@mui/icons-material/Search';
 import SortIcon from '@mui/icons-material/Sort';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 export const GameListPage = () => {
 
@@ -61,9 +60,26 @@ export const GameListPage = () => {
             case 'newDesc':
                 lstSorted = lstSorted.sort((a, b) => !!a.new < !!b.new ? 1 : -1);
                 break;
+            case 'timeAsc':
+                lstSorted = lstSorted.sort((a, b) => a.minutes < b.minutes ? 1 : -1);
+                break;
+            case 'timeDesc':
+                lstSorted = lstSorted.sort((a, b) => a.minutes > b.minutes ? 1 : -1);
+                break;
         }
 
         return lstSorted;
+    }
+
+    const typeOftime = (minutes) => {
+        if (minutes <= 15) {
+            return 'short';
+        } else if (minutes <= 40) {
+            return 'medium';
+
+        } else {
+            return 'long';
+        }
     }
 
     const handleSort = (type, lstFilteredItems) => {
@@ -129,6 +145,8 @@ export const GameListPage = () => {
                             <option value="rankAsc">Rank ↑</option>
                             <option value="newDesc">Nuevos ↓</option>
                             <option value="newAsc">Nuevos ↑</option>
+                            <option value="timeAsc">Duración ↓</option>
+                            <option value="timeDesc">Duración ↑</option>
                         </select>
                     </div>
 
@@ -213,6 +231,7 @@ export const GameListPage = () => {
                                         }
                                     </span>
                                 }
+                                <span className='game-list-page__tags'><AccessTimeIcon /> {`${item.minutes}min`}</span>
                                 <span className='game-list-page__tags'><PersonIcon /> {`${item.minPlayers == item.maxPlayers ? ` ${item.minPlayers} ` : `${item.minPlayers} - ${item.maxPlayers}`}`}</span>
                                 <span className='game-list-page__tags'><PsychologyIcon /> {item.difficulty}</span>
 

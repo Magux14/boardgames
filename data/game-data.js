@@ -6,7 +6,8 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         img: '5 minutos en el calabozo.png',
-        rank: 4
+        rank: 4,
+        minutes: 5,
     },
     {
         name: 'ajedrez',
@@ -16,7 +17,8 @@ export const lstGames = [
         difficulty: 3,
         lang: '',
         img: 'ajedrez.jpg',
-        rank: 2
+        rank: 2,
+        minutes: 15,
     },
     {
         name: 'Azul',
@@ -26,7 +28,8 @@ export const lstGames = [
         difficulty: 3,
         lang: '',
         img: 'azul.jpg',
-        rank: 3
+        rank: 3,
+        minutes: 35,
     },
     {
         name: 'Baraja española',
@@ -36,7 +39,8 @@ export const lstGames = [
         difficulty: 2,
         lang: '',
         img: 'Baraja española.png',
-        rank: 1
+        rank: 1,
+        minutes: 20,
     },
     {
         name: 'Baraja Inglésa',
@@ -45,7 +49,8 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         img: 'Cartas de Poker.webp',
-        rank: 2
+        rank: 2,
+        minutes: 40,
     },
     {
         name: 'Cartoon Network Crossover Crisis',
@@ -55,7 +60,8 @@ export const lstGames = [
         difficulty: 3,
         lang: 'EN',
         img: 'Cartoon-Network-Crossover-Crisis.png',
-        rank: 3
+        rank: 3,
+        minutes: 40,
     },
     {
         name: 'Catán',
@@ -64,7 +70,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 3,
         img: 'catan.png',
-        rank: 1
+        rank: 1,
+        minutes: 60,
     },
     {
         name: 'Conecta 4',
@@ -74,7 +81,8 @@ export const lstGames = [
         difficulty: 1,
         lang: '',
         img: 'Conecta-4.png',
-        rank: 1
+        rank: 1,
+        minutes: 5,
     },
     {
         name: 'Coup',
@@ -84,7 +92,8 @@ export const lstGames = [
         difficulty: 2,
         lang: '',
         img: 'Coup.jpg',
-        rank: 3
+        rank: 3,
+        minutes: 15
     },
     {
         name: 'Criaturas de las sombras',
@@ -94,7 +103,8 @@ export const lstGames = [
         difficulty: 4,
         lang: '',
         img: 'Criaturas-de-las-sombras.png',
-        rank: 4
+        rank: 4,
+        minutes: 45,
     },
     {
         name: 'Disney trivia',
@@ -104,7 +114,8 @@ export const lstGames = [
         difficulty: 1,
         lang: 'ES',
         img: 'Disney-trivia.png',
-        rank: 3
+        rank: 3,
+        minutes: 45,
     },
     {
         name: 'Dixit',
@@ -113,7 +124,8 @@ export const lstGames = [
         difficulty: 1,
         desc: 'Dixit es un juego de mesa en el que las personas que juegan tratan de adivinar la carta de otro jugador basándose en una sola pista. En cada ronda, una de las personas jugadoras adquiere el rol de cuentacuentos y, de las 6 cartas que tiene en mano, elige una carta y en voz alta dice una frase que la defina.',
         img: 'dixit.webp',
-        rank: 4
+        rank: 4,
+        minutes: 30,
     },
     {
         name: 'Dodos Riding Dinos',
@@ -122,7 +134,8 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 2,
         img: 'dodos-riding-dinos.webp',
-        rank: 4
+        rank: 4,
+        minutes: 20,
     },
     {
         name: 'Dominó',
@@ -131,7 +144,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 1,
         img: 'Dominó.jpg',
-        rank: 2
+        rank: 2,
+        minutes: 20,
     },
     {
         name: 'Dos',
@@ -140,7 +154,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 2,
         img: 'Dos.jpeg',
-        rank: 1
+        rank: 1,
+        minutes: 20,
     },
     {
         name: 'Dumb Ways to Die',
@@ -150,7 +165,8 @@ export const lstGames = [
         difficulty: 2,
         lang: 'EN',
         img: 'dumb-ways-to-die.webp',
-        rank: 4
+        rank: 4,
+        minutes: 20,
     },
     {
         name: 'El Señor de los anillos – Duelo por la Tierra Media',
@@ -159,7 +175,8 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 4,
         img: 'el-señor-de-los-anillos-duelo-por-la-tierra-media.png',
-        rank: 2
+        rank: 2,
+        minutes: 30,
     },
     {
         name: 'Fire Tower',
@@ -169,7 +186,8 @@ export const lstGames = [
         difficulty: 3,
         lang: 'EN',
         img: 'fire-tower.png',
-        rank: 4
+        rank: 4,
+        minutes: 25,
     },
     {
         name: 'Hanabi',
@@ -178,7 +196,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 3,
         img: 'hanabi.png',
-        new: true
+        new: true,
+        minutes: 25,
     },
     {
         name: 'Happy Little Dinosaur',
@@ -188,7 +207,8 @@ export const lstGames = [
         difficulty: 2,
         lang: 'EN',
         img: 'Happy Little Dinosaur.jpg',
-        rank: 4
+        rank: 4,
+        minutes: 40,
     },
     {
         name: 'Hedbanz',
@@ -198,7 +218,8 @@ export const lstGames = [
         difficulty: 1,
         lang: 'EN',
         img: 'Headbanz.png',
-        rank: 4
+        rank: 4,
+        minutes: 45,
     },
     {
         name: 'Here To Slay',
@@ -208,7 +229,8 @@ export const lstGames = [
         lang: 'EN',
         difficulty: 4,
         img: 'Here To Slay.jpg',
-        rank: 3
+        rank: 3,
+        minutes: 45,
     },
     {
         name: 'Jaipur',
@@ -217,7 +239,8 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 1,
         img: 'Jaipur.png',
-        rank: 5
+        rank: 5,
+        minutes: 30,
     },
     {
         name: 'La Isla Prohibida',
@@ -227,7 +250,8 @@ export const lstGames = [
         difficulty: 2,
         lang: 'EN',
         img: 'La-Isla-Prohibida.png',
-        rank: 4
+        rank: 4,
+        minutes: 30,
     },
     {
         name: 'La Polilla Tramposa',
@@ -236,7 +260,8 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 2,
         img: 'La-Polilla-Tramposa.png',
-        rank: 3
+        rank: 3,
+        minutes: 30,
     },
     {
         name: 'Magux party',
@@ -245,7 +270,8 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         img: 'Magux-party.png',
-        rank: 3
+        rank: 3,
+        minutes: 50,
     },
     {
         name: 'Mente Vacuna (Digital)',
@@ -254,7 +280,8 @@ export const lstGames = [
         maxPlayers: 20,
         difficulty: 1,
         img: 'mente-vacuna.png',
-        rank: 4
+        rank: 4,
+        minutes: 20,
     },
     {
         name: 'Mini Torre del beber',
@@ -263,7 +290,8 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 1,
         img: 'Mini-Torre-del-beber.png',
-        rank: 2
+        rank: 2,
+        minutes: 20,
     },
     {
         name: 'Monopoly Fortnite',
@@ -272,7 +300,8 @@ export const lstGames = [
         maxPlayers: 10,
         difficulty: 2,
         img: 'Monopoly-Fornite.png',
-        rank: 4
+        rank: 4,
+        minutes: 45,
     },
     {
         name: 'Monopoly Game of Thrones',
@@ -282,7 +311,8 @@ export const lstGames = [
         difficulty: 2,
         lang: 'EN',
         img: 'Monopoly-Game-of-Thrones.png',
-        rank: 4
+        rank: 4,
+        minutes: 60,
     },
     {
         name: 'Monopoly Pokémon',
@@ -292,7 +322,8 @@ export const lstGames = [
         difficulty: 2,
         lang: 'EN',
         img: 'Monopoly-Pokémon.png',
-        rank: 2
+        rank: 2,
+        minutes: 60,
     },
     {
         name: 'No Mames',
@@ -301,7 +332,8 @@ export const lstGames = [
         maxPlayers: 10,
         difficulty: 1,
         img: 'No-Mames.png',
-        rank: 3
+        rank: 3,
+        minutes: 20,
     },
     {
         name: 'Papas Traidoras',
@@ -310,7 +342,8 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 2,
         img: 'Papas-Traidoras.png',
-        rank: 3
+        rank: 3,
+        minutes: 25,
     },
     {
         name: 'Patchwork',
@@ -319,7 +352,8 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 3,
         img: 'patchwork.webp',
-        rank: 5
+        rank: 5,
+        minutes: 25,
     },
     {
         name: 'Phasmophobia',
@@ -328,7 +362,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 3,
         img: 'Phasmophobia.png',
-        rank: 5
+        rank: 5,
+        minutes: 40,
     },
     {
         name: 'Pixar el legado',
@@ -337,7 +372,8 @@ export const lstGames = [
         maxPlayers: 10,
         difficulty: 1,
         img: 'Pixar-el-legado.png',
-        rank: 2
+        rank: 2,
+        minutes: 40,
     },
     {
         name: 'Poop',
@@ -346,7 +382,8 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 1,
         img: 'Poop.png',
-        rank: 2
+        rank: 2,
+        minutes: 15,
     },
     {
         name: 'Power Hungry Pets',
@@ -356,7 +393,8 @@ export const lstGames = [
         difficulty: 3,
         lang: 'EN',
         img: 'Power-Hungry-Pets.png',
-        new: true
+        new: true,
+        minutes: 15,
     },
     {
         name: 'Rick y Morty Total Rickall',
@@ -366,7 +404,8 @@ export const lstGames = [
         difficulty: 3,
         lang: 'EN',
         img: 'Rick-y-Morty-Total-Rickall.png',
-        rank: 5
+        rank: 5,
+        minutes: 30,
     },
     {
         name: 'Risk',
@@ -375,7 +414,8 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 4,
         img: 'risk.png',
-        rank: 4
+        rank: 4,
+        minutes: 120,
     },
     {
         name: 'Saboteur',
@@ -384,7 +424,8 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 2,
         img: 'Saboteur.png',
-        rank: 4
+        rank: 4,
+        minutes: 30,
     },
     {
         name: 'Scrabble',
@@ -393,7 +434,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 3,
         img: 'scrabble.png',
-        rank: 3
+        rank: 3,
+        minutes: 60,
     },
     {
         name: 'Serpientes y Escaleras',
@@ -402,7 +444,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 1,
         img: 'serpientes y escaleras.jpg',
-        rank: 2
+        rank: 2,
+        minutes: 20,
     },
     {
         name: 'Sin memoria',
@@ -411,7 +454,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 5,
         img: 'Sin-memoria.png',
-        rank: 3
+        rank: 3,
+        minutes: 120,
     },
     {
         name: 'Shopping List',
@@ -420,7 +464,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 1,
         img: 'shopping-list.png',
-        new: true
+        minutes: 15,
     },
     {
         name: 'Skull King',
@@ -429,7 +473,8 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 3,
         img: 'Skull-King.png',
-        rank: 2
+        rank: 2,
+        minutes: 30,
     },
     {
         name: 'Slamwich',
@@ -438,7 +483,8 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 3,
         img: 'Slamwich.png',
-        rank: 3
+        rank: 3,
+        minutes: 15,
     },
     {
         name: 'Sleeping Queens',
@@ -447,7 +493,8 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 2,
         img: 'Sleeping-Queens.png',
-        rank: 2
+        rank: 2,
+        minutes: 20,
     },
     {
         name: 'Splendor',
@@ -456,7 +503,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 2,
         img: 'splendor.png',
-        rank: 5
+        rank: 5,
+        minutes: 30,
     },
     {
         name: 'Stratego Star Wars',
@@ -465,7 +513,8 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 5,
         img: 'Stratego-Star-Wars.png',
-        rank: 2
+        rank: 2,
+        minutes: 30,
     },
     {
         name: 'Sushi Go!',
@@ -474,7 +523,8 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 2,
         img: 'Sushi-Go!.png',
-        rank: 2
+        rank: 2,
+        minutes: 15,
     },
     {
         name: 'Taco Gato Cabra Queso Pizza',
@@ -483,7 +533,8 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 1,
         img: 'Taco-Gato-Cabra-Queso-Pizza.png',
-        rank: 5
+        rank: 5,
+        minutes: 20,
     },
     {
         name: 'Tic Tac K.O Dragons vs Unicorns',
@@ -493,7 +544,8 @@ export const lstGames = [
         difficulty: 4,
         lang: 'EN',
         img: 'tic-tac-KO.png',
-        rank: 4
+        rank: 4,
+        minutes: 25,
     },
     {
         name: 'Ticket to Ride Europe',
@@ -502,7 +554,8 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         img: 'Ticket-to-Ride-Europe.png',
-        new: true
+        new: true,
+        minutes: 45,
     },
     {
         name: 'That\'s not a hat',
@@ -511,7 +564,8 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 2,
         img: 'thats-not-a-hat.webp',
-        rank: 4
+        rank: 4,
+        minutes: 15,
     },
     {
         name: 'That time you killed me',
@@ -521,7 +575,8 @@ export const lstGames = [
         difficulty: 4,
         lang: 'EN',
         img: 'That-time-you-killed-me.png',
-        rank: 5
+        rank: 5,
+        minutes: 25,
     },
     {
         name: 'The Mind',
@@ -530,7 +585,8 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 1,
         img: 'The-Mind.png',
-        rank: 5
+        rank: 5,
+        minutes: 20,
     },
     {
         name: 'The Resistance',
@@ -539,7 +595,8 @@ export const lstGames = [
         maxPlayers: 10,
         difficulty: 2,
         img: 'The-Resistance.png',
-        rank: 5
+        rank: 5,
+        minutes: 30,
     },
     {
         name: 'The Werewolves',
@@ -548,7 +605,8 @@ export const lstGames = [
         maxPlayers: 18,
         difficulty: 2,
         img: 'The Werewolves.webp',
-        new: true
+        new: true,
+        minutes: 30,
     },
     {
         name: 'Throw Throw Burrito',
@@ -557,7 +615,8 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 1,
         img: 'Throw-Throw-Burrito.png',
-        rank: 3
+        rank: 3,
+        minutes: 15,
     },
     {
         name: 'Twister',
@@ -566,7 +625,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 1,
         img: 'twister.png',
-        rank: 1
+        rank: 1,
+        minutes: 10,
     },
     {
         name: 'Uno',
@@ -575,7 +635,8 @@ export const lstGames = [
         maxPlayers: 10,
         difficulty: 1,
         img: 'Uno.png',
-        rank: 2
+        rank: 2,
+        minutes: 25,
     },
     {
         name: 'Uno Flip',
@@ -584,7 +645,8 @@ export const lstGames = [
         maxPlayers: 10,
         difficulty: 2,
         img: 'uno-flip.png',
-        rank: 2
+        rank: 2,
+        minutes: 25,
     },
     {
         name: 'Unstable Retro',
@@ -593,7 +655,8 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 3,
         img: 'Unstable-Retro.png',
-        rank: 5
+        rank: 5,
+        minutes: 25,
     },
     {
         name: 'Unstable Unicorns',
@@ -603,7 +666,8 @@ export const lstGames = [
         difficulty: 3,
         lang: 'EN',
         img: 'Unstable-Unicorns.png',
-        rank: 5
+        rank: 5,
+        minutes: 40,
     },
     {
         name: 'Villanious Disney',
@@ -612,7 +676,8 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 5,
         img: 'Villanious-Disney.png',
-        rank: 5
+        rank: 5,
+        minutes: 80,
     },
     {
         name: 'Villanious Star Wars',
@@ -621,7 +686,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 5,
         img: 'Villanious-Star-Wars.png',
-        new: true
+        new: true,
+        minutes: 80,
     },
     {
         name: 'Virus Halloween',
@@ -630,7 +696,8 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 2,
         img: 'virus halloween.webp',
-        new: true
+        new: true,
+        minutes: 20,
     },
     {
         name: 'Yo Nunca Nunca',
@@ -639,7 +706,8 @@ export const lstGames = [
         maxPlayers: 10,
         difficulty: 1,
         img: 'Yo Nunca Nunca.jpeg',
-        rank: 3
+        rank: 3,
+        minutes: 20,
     },
     {
         name: 'Yugioh',
@@ -648,7 +716,8 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 4,
         img: 'Yugioh.jpg',
-        rank: 3
+        rank: 3,
+        minutes: 25,
     },
     {
         name: 'Zombie Kittens',
@@ -658,7 +727,8 @@ export const lstGames = [
         difficulty: 3,
         lang: 'EN',
         img: 'Zombie Kittens.png',
-        rank: 4
+        rank: 4,
+        minutes: 15,
     },
     {
         name: 'Flip 7',
@@ -667,7 +737,8 @@ export const lstGames = [
         maxPlayers: 10,
         difficulty: 1,
         img: 'flip-7.jpg',
-        new: true
+        new: true,
+        minutes: 15,
     },
     {
         name: 'Ghost Blitz',
@@ -676,7 +747,8 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 1,
         img: 'ghost-blitz.webp',
-        new: true
+        rank: 4,
+        minutes: 15,
     },
     {
         name: 'No sin mi gato',
@@ -685,7 +757,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 2,
         img: 'no-sin-mi-gato.png',
-        new: true
+        new: true,
+        minutes: 15,
     },
     {
         name: 'Pit',
@@ -694,7 +767,8 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 2,
         img: 'pit.png',
-        new: true
+        rank: 4,
+        minutes: 30,
     },
     {
         name: 'Sonic Speed Battle',
@@ -704,7 +778,8 @@ export const lstGames = [
         difficulty: 2,
         lang: 'EN',
         img: 'sonic-speed-battle.png',
-        new: true
+        new: true,
+        minutes: 30,
     },
     {
         name: 'splendor duel',
@@ -713,7 +788,8 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 3,
         img: 'splendor-duel.jpg',
-        new: true
+        new: true,
+        minutes: 30,
     },
     {
         name: 'parchis',
@@ -722,6 +798,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 2,
         img: 'parchis.png',
-        new: true
+        new: true,
+        minutes: 30,
     }
 ]

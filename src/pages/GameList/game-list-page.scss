@@ -227,6 +227,24 @@
         }
     }
 
+    &__timer-container {
+        position: absolute;
+    }
 
+    &__timer-container--short {
+        background-color: green;
+    }
+
+    &__timer-container--medium {
+        background-color: rgb(201, 181, 0);
+    }
+
+    &__timer-container--long {
+        background-color: rgb(129, 2, 2);
+    }
+
+    &__timer {
+        color: white;
+    }
 
 }
