@@ -87,7 +87,7 @@
             justify-content: center;
             max-height: 250px;
             object-fit: contain;
-            border-radius: 8px;
+            border-radius: 20px;
             margin-bottom: 5px;
             padding: 10px;
             height: auto;
@@ -229,22 +229,49 @@
 
     &__timer-container {
         position: absolute;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 8px;
+        left: 8px;
+        top: 8px;
+
+        svg {
+            fill: white;
+            width: 35px;
+            height: 35px;
+        }
     }
 
     &__timer-container--short {
-        background-color: green;
+        background-color: rgb(72, 173, 72);
     }
 
     &__timer-container--medium {
-        background-color: rgb(201, 181, 0);
+        background-color: rgb(233, 203, 55);
     }
 
     &__timer-container--long {
-        background-color: rgb(129, 2, 2);
+        background-color: rgb(185, 41, 41);
     }
 
-    &__timer {
+    &__timer-info-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 5px;
+        padding-bottom: 0;
         color: white;
-    }
 
+        div {
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            padding: 5px;
+            gap: 3px;
+        }
+
+        svg {
+            fill: white;
+        }
+    }
 }

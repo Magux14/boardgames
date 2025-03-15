@@ -9,6 +9,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import SortIcon from '@mui/icons-material/Sort';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
+const shortTime = 15;
+const mediumTime = 40;
+
 export const GameListPage = () => {
 
     const [filters, setFilters] = useState({
@@ -71,12 +74,11 @@ export const GameListPage = () => {
         return lstSorted;
     }
 
-    const typeOftime = (minutes) => {
-        if (minutes <= 15) {
+    const getTypeOfTime = (minutes) => {
+        if (minutes <= shortTime) {
             return 'short';
-        } else if (minutes <= 40) {
+        } else if (minutes <= mediumTime) {
             return 'medium';
-
         } else {
             return 'long';
         }
@@ -184,6 +186,17 @@ export const GameListPage = () => {
                 </div>
             </div>
             <div className="game-list-page__game-list-container">
+                <div className="game-list-page__timer-info-container">
+                    <div className="game-list-page__timer-container--short">
+                        <AccessTimeIcon /> -{shortTime} min
+                    </div>
+                    <div className="game-list-page__timer-container--medium">
+                        <AccessTimeIcon /> {shortTime} - {mediumTime} min
+                    </div>
+                    <div className="game-list-page__timer-container--long">
+                        <AccessTimeIcon /> +{mediumTime} min
+                    </div>
+                </div>
 
                 <div className="game-list-page__list-container">
 
@@ -195,6 +208,9 @@ export const GameListPage = () => {
                                     NUEVO
                                 </span>
                             }
+                            <div className={`game-list-page__timer-container game-list-page__timer-container--${getTypeOfTime(item.minutes)}`}>
+                                <AccessTimeIcon />
+                            </div>
                             <div className="game-list-page__image-container">
                                 <img src={`./img/games/${item.img}`}
                                     alt={item.name}
