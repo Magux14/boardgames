@@ -1,0 +1,90 @@
+$blockbuster-yellow: rgb(221, 198, 48);
+
+.blockbuster-page {
+    background-color: $blockbuster-yellow;
+    min-height: 100vh;
+
+    &__logo-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+
+        img {
+            width: 80%;
+            transform: rotateZ(10deg);
+            padding: 20px;
+        }
+    }
+
+    &__content-container {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__button {
+        width: 80%;
+        border: 2px solid blue;
+        margin: 20px 0;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.6);
+        color: blue;
+        min-height: 50px;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        &:active {
+            opacity: 0.6;
+        }
+    }
+
+    &__button-reset-timer {
+        min-height: 40%;
+        font-size: 13vw;
+        border-radius: 100%;
+        background: blue;
+        color: $blockbuster-yellow;
+
+        :active {
+            opacity: 0.6;
+        }
+    }
+
+    &__face-to-face-container {
+        background-color: $blockbuster-yellow;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        z-index: 1;
+    }
+
+    &__close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    &__question {
+        font-size: 5vw;
+    }
+
+    &__timer {
+        font-size: 40vw;
+        color: blue;
+    }
+
+    &__timer--time-over {
+        color: rgb(193, 12, 12);
+    }
+
+    &__face-to-face-question {
+        margin-top: 50px;
+        font-size: 5vw;
+    }
+}
