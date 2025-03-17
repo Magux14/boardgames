@@ -17,7 +17,7 @@ export const Header = () => {
 
     const goTo = (path) => {
         setTimeout(() => {
-            navigate(path);
+            navigate(path, { replace: true });
         }, 100);
     }
 
@@ -44,9 +44,9 @@ export const Header = () => {
                             <span>Phasmophobia</span> <img id="phasmophobia-icon" src="./icons/phasmophobia-icon.png"></img>
                         </li>
 
-                        <li onClick={() => goTo('/knowledge-race')}>
+                        {/* <li onClick={() => goTo('/knowledge-race')}>
                             <span>Knowledge Race</span> <TimeToLeaveIcon />
-                        </li>
+                        </li> */}
 
                         <li onClick={() => goTo('/cow-mind')}>
                             <span>Mente Vacuna</span> <img src="./icons/cow.png" alt="cow" width={24} height={24} />

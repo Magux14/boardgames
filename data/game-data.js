@@ -6,8 +6,8 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         img: '5 minutos en el calabozo.png',
-        rank: 4,
-        minutes: 5,
+        rank: 5,
+        minutes: 5
     },
     {
         name: 'ajedrez',
@@ -18,7 +18,7 @@ export const lstGames = [
         lang: '',
         img: 'ajedrez.jpg',
         rank: 2,
-        minutes: 15,
+        minutes: 15
     },
     {
         name: 'Azul',
@@ -29,7 +29,7 @@ export const lstGames = [
         lang: '',
         img: 'azul.jpg',
         rank: 3,
-        minutes: 35,
+        minutes: 35
     },
     {
         name: 'Baraja española',
@@ -40,7 +40,7 @@ export const lstGames = [
         lang: '',
         img: 'Baraja española.png',
         rank: 1,
-        minutes: 20,
+        minutes: 20
     },
     {
         name: 'Baraja Inglésa',
@@ -50,7 +50,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'Cartas de Poker.webp',
         rank: 2,
-        minutes: 40,
+        minutes: 40
     },
     {
         name: 'Cartoon Network Crossover Crisis',
@@ -61,7 +61,7 @@ export const lstGames = [
         lang: 'EN',
         img: 'Cartoon-Network-Crossover-Crisis.png',
         rank: 3,
-        minutes: 40,
+        minutes: 40
     },
     {
         name: 'Catán',
@@ -71,7 +71,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'catan.png',
         rank: 1,
-        minutes: 60,
+        minutes: 60
     },
     {
         name: 'Conecta 4',
@@ -82,7 +82,7 @@ export const lstGames = [
         lang: '',
         img: 'Conecta-4.png',
         rank: 1,
-        minutes: 5,
+        minutes: 5
     },
     {
         name: 'Coup',
@@ -104,7 +104,7 @@ export const lstGames = [
         lang: '',
         img: 'Criaturas-de-las-sombras.png',
         rank: 4,
-        minutes: 45,
+        minutes: 45
     },
     {
         name: 'Disney trivia',
@@ -115,7 +115,7 @@ export const lstGames = [
         lang: 'ES',
         img: 'Disney-trivia.png',
         rank: 3,
-        minutes: 45,
+        minutes: 45
     },
     {
         name: 'Dixit',
@@ -125,7 +125,7 @@ export const lstGames = [
         desc: 'Dixit es un juego de mesa en el que las personas que juegan tratan de adivinar la carta de otro jugador basándose en una sola pista. En cada ronda, una de las personas jugadoras adquiere el rol de cuentacuentos y, de las 6 cartas que tiene en mano, elige una carta y en voz alta dice una frase que la defina.',
         img: 'dixit.webp',
         rank: 4,
-        minutes: 30,
+        minutes: 30
     },
     {
         name: 'Dodos Riding Dinos',
@@ -135,7 +135,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'dodos-riding-dinos.webp',
         rank: 4,
-        minutes: 20,
+        minutes: 20
     },
     {
         name: 'Dominó',
@@ -145,7 +145,7 @@ export const lstGames = [
         difficulty: 1,
         img: 'Dominó.jpg',
         rank: 2,
-        minutes: 20,
+        minutes: 20
     },
     {
         name: 'Dos',
@@ -155,7 +155,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'Dos.jpeg',
         rank: 1,
-        minutes: 20,
+        minutes: 20
     },
     {
         name: 'Dumb Ways to Die',
@@ -166,7 +166,7 @@ export const lstGames = [
         lang: 'EN',
         img: 'dumb-ways-to-die.webp',
         rank: 4,
-        minutes: 20,
+        minutes: 20
     },
     {
         name: 'El Señor de los anillos – Duelo por la Tierra Media',
@@ -176,7 +176,7 @@ export const lstGames = [
         difficulty: 4,
         img: 'el-señor-de-los-anillos-duelo-por-la-tierra-media.png',
         rank: 2,
-        minutes: 30,
+        minutes: 30
     },
     {
         name: 'Fire Tower',
@@ -187,7 +187,27 @@ export const lstGames = [
         lang: 'EN',
         img: 'fire-tower.png',
         rank: 4,
-        minutes: 25,
+        minutes: 25
+    },
+    {
+        name: 'Flip 7',
+        desc: '¿Juega seguro o arriesgarlo todo? - En Flip 7, presionarás tu suerte recibiendo tarjetas repartidas sin revelar el mismo número dos veces. Cómo ganar: sé el primero en alcanzar 200 puntos en este intenso juego de prensa para tu suerte que pone a prueba tus habilidades de estrategia y toma de riesgos.',
+        minPlayers: 3,
+        maxPlayers: 10,
+        difficulty: 1,
+        img: 'flip-7.jpg',
+        new: true,
+        minutes: 15
+    },
+    {
+        name: 'Ghost Blitz',
+        desc: 'Fantasma Blitz es un juego que permite a entre 2-8 jugadores enfrentarse en rápidas y divertidas partidas de no más de 20 minutos. Es un juego con un marcado carácter infantil, ideal para introducir a los más peques de la casa en el mundo de los juegos de mesa modernos.',
+        minPlayers: 2,
+        maxPlayers: 8,
+        difficulty: 1,
+        img: 'ghost-blitz.webp',
+        rank: 4,
+        minutes: 15
     },
     {
         name: 'Hanabi',
@@ -197,7 +217,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'hanabi.png',
         new: true,
-        minutes: 25,
+        minutes: 25
     },
     {
         name: 'Happy Little Dinosaur',
@@ -208,7 +228,7 @@ export const lstGames = [
         lang: 'EN',
         img: 'Happy Little Dinosaur.jpg',
         rank: 4,
-        minutes: 40,
+        minutes: 40
     },
     {
         name: 'Hedbanz',
@@ -219,7 +239,7 @@ export const lstGames = [
         lang: 'EN',
         img: 'Headbanz.png',
         rank: 4,
-        minutes: 45,
+        minutes: 45
     },
     {
         name: 'Here To Slay',
@@ -230,7 +250,7 @@ export const lstGames = [
         difficulty: 4,
         img: 'Here To Slay.jpg',
         rank: 3,
-        minutes: 45,
+        minutes: 45
     },
     {
         name: 'Jaipur',
@@ -240,7 +260,7 @@ export const lstGames = [
         difficulty: 1,
         img: 'Jaipur.png',
         rank: 5,
-        minutes: 30,
+        minutes: 30
     },
     {
         name: 'La Isla Prohibida',
@@ -251,7 +271,7 @@ export const lstGames = [
         lang: 'EN',
         img: 'La-Isla-Prohibida.png',
         rank: 4,
-        minutes: 30,
+        minutes: 30
     },
     {
         name: 'La Polilla Tramposa',
@@ -261,7 +281,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'La-Polilla-Tramposa.png',
         rank: 3,
-        minutes: 30,
+        minutes: 30
     },
     {
         name: 'Magux party',
@@ -271,7 +291,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'Magux-party.png',
         rank: 3,
-        minutes: 50,
+        minutes: 50
     },
     {
         name: 'Mente Vacuna (Digital)',
@@ -281,7 +301,7 @@ export const lstGames = [
         difficulty: 1,
         img: 'mente-vacuna.png',
         rank: 4,
-        minutes: 20,
+        minutes: 20
     },
     {
         name: 'Mini Torre del beber',
@@ -291,7 +311,7 @@ export const lstGames = [
         difficulty: 1,
         img: 'Mini-Torre-del-beber.png',
         rank: 2,
-        minutes: 20,
+        minutes: 20
     },
     {
         name: 'Monopoly Fortnite',
@@ -301,7 +321,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'Monopoly-Fornite.png',
         rank: 4,
-        minutes: 45,
+        minutes: 45
     },
     {
         name: 'Monopoly Game of Thrones',
@@ -312,7 +332,7 @@ export const lstGames = [
         lang: 'EN',
         img: 'Monopoly-Game-of-Thrones.png',
         rank: 4,
-        minutes: 60,
+        minutes: 60
     },
     {
         name: 'Monopoly Pokémon',
@@ -323,7 +343,7 @@ export const lstGames = [
         lang: 'EN',
         img: 'Monopoly-Pokémon.png',
         rank: 2,
-        minutes: 60,
+        minutes: 60
     },
     {
         name: 'No Mames',
@@ -333,7 +353,17 @@ export const lstGames = [
         difficulty: 1,
         img: 'No-Mames.png',
         rank: 3,
-        minutes: 20,
+        minutes: 20
+    },
+    {
+        name: 'No sin mi gato',
+        desc: 'es el de conseguir el mayor número posible de puntos. Para ello, los jugadores tendrán que manipular adecuadamente las cartas de canalón para trazar caminos que unan las cartas de gato callejero con las cartas de hogar. Cada carta de gato callejero otorga una cantidad determinada de puntos.',
+        minPlayers: 1,
+        maxPlayers: 4,
+        difficulty: 2,
+        img: 'no-sin-mi-gato.png',
+        rank: 2,
+        minutes: 15
     },
     {
         name: 'Papas Traidoras',
@@ -343,7 +373,17 @@ export const lstGames = [
         difficulty: 2,
         img: 'Papas-Traidoras.png',
         rank: 3,
-        minutes: 25,
+        minutes: 25
+    },
+    {
+        name: 'parchis',
+        desc: 'El parchís es un juego de mesa de estrategia para 2, 3 o 4 jugadores, donde el objetivo es mover todas tus fichas desde tu zona de partida hasta la zona de meta, utilizando un dado para determinar el movimiento',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 2,
+        img: 'parchis.png',
+        new: true,
+        minutes: 30
     },
     {
         name: 'Patchwork',
@@ -353,7 +393,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'patchwork.webp',
         rank: 5,
-        minutes: 25,
+        minutes: 25
     },
     {
         name: 'Phasmophobia',
@@ -363,7 +403,17 @@ export const lstGames = [
         difficulty: 3,
         img: 'Phasmophobia.png',
         rank: 5,
-        minutes: 40,
+        minutes: 40
+    },
+    {
+        name: 'Pit',
+        desc: 'Pit es el desmadrado juego de las vacas en el que todo el mun- do participa a la vez. El objetivo de los jugadores es obtener fa- milias de cartas idénticas. Una familia está compuesta por 9 cartas. Cada familia otorga un determinado número de pun- tos, indicado en cada una de las cartas.',
+        minPlayers: 3,
+        maxPlayers: 8,
+        difficulty: 2,
+        img: 'pit.png',
+        rank: 4,
+        minutes: 30
     },
     {
         name: 'Pixar el legado',
@@ -373,7 +423,7 @@ export const lstGames = [
         difficulty: 1,
         img: 'Pixar-el-legado.png',
         rank: 2,
-        minutes: 40,
+        minutes: 40
     },
     {
         name: 'Poop',
@@ -383,7 +433,7 @@ export const lstGames = [
         difficulty: 1,
         img: 'Poop.png',
         rank: 2,
-        minutes: 15,
+        minutes: 15
     },
     {
         name: 'Power Hungry Pets',
@@ -394,7 +444,7 @@ export const lstGames = [
         lang: 'EN',
         img: 'Power-Hungry-Pets.png',
         new: true,
-        minutes: 15,
+        minutes: 15
     },
     {
         name: 'Rick y Morty Total Rickall',
@@ -405,7 +455,7 @@ export const lstGames = [
         lang: 'EN',
         img: 'Rick-y-Morty-Total-Rickall.png',
         rank: 5,
-        minutes: 30,
+        minutes: 30
     },
     {
         name: 'Risk',
@@ -415,7 +465,7 @@ export const lstGames = [
         difficulty: 4,
         img: 'risk.png',
         rank: 4,
-        minutes: 120,
+        minutes: 120
     },
     {
         name: 'Saboteur',
@@ -425,7 +475,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'Saboteur.png',
         rank: 4,
-        minutes: 30,
+        minutes: 30
     },
     {
         name: 'Scrabble',
@@ -435,7 +485,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'scrabble.png',
         rank: 3,
-        minutes: 60,
+        minutes: 60
     },
     {
         name: 'Serpientes y Escaleras',
@@ -445,7 +495,16 @@ export const lstGames = [
         difficulty: 1,
         img: 'serpientes y escaleras.jpg',
         rank: 2,
-        minutes: 20,
+        minutes: 20
+    },
+    {
+        name: 'Shopping List',
+        desc: 'Un juego para niños rápido y sencillo de comprender, en el cual los jugadores deben completar la lista de productos del supermercado que les ha tocado y llenar su carrito, turnándose para descubrir las diferentes tarjetas del tablero.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 1,
+        img: 'shopping-list.png',
+        minutes: 15
     },
     {
         name: 'Sin memoria',
@@ -455,16 +514,7 @@ export const lstGames = [
         difficulty: 5,
         img: 'Sin-memoria.png',
         rank: 3,
-        minutes: 120,
-    },
-    {
-        name: 'Shopping List',
-        desc: 'Un juego para niños rápido y sencillo de comprender, en el cual los jugadores deben completar la lista de productos del supermercado que les ha tocado y llenar su carrito, turnándose para descubrir las diferentes tarjetas del tablero.',
-        minPlayers: 2,
-        maxPlayers: 4,
-        difficulty: 1,
-        img: 'shopping-list.png',
-        minutes: 15,
+        minutes: 120
     },
     {
         name: 'Skull King',
@@ -474,7 +524,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'Skull-King.png',
         rank: 2,
-        minutes: 30,
+        minutes: 30
     },
     {
         name: 'Slamwich',
@@ -484,7 +534,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'Slamwich.png',
         rank: 3,
-        minutes: 15,
+        minutes: 15
     },
     {
         name: 'Sleeping Queens',
@@ -494,281 +544,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'Sleeping-Queens.png',
         rank: 2,
-        minutes: 20,
-    },
-    {
-        name: 'Splendor',
-        desc: 'Experimenta las riquezas de esta era en Splendor, un juego rápido, elegante e intuitivo en el que los jugadores representarán a comerciantes del Renacimiento, compitiendo por el control de las minas de gemas, las rutas comerciales y los escaparates para dominar el comercio de gemas y atraer la atención de los nobles. Todas las cartas que compres aumentan tu riqueza, ya que te dan una bonificación de gemas permanentes para compras posteriores, algunas te dan puntos de prestigio.Para ganar el juego debes alcanzar 15 puntos de prestigio antes que tus oponentes.',
-        minPlayers: 2,
-        maxPlayers: 4,
-        difficulty: 2,
-        img: 'splendor.png',
-        rank: 5,
-        minutes: 30,
-    },
-    {
-        name: 'Stratego Star Wars',
-        desc: 'El objetivo del juego es capturar la bandera del oponente o capturar todas sus piezas con posibilidad de movimiento, de forma que el oponente no tenga piezas que poder mover. Elige de qué lado estás: Lado Oscuro o el Lado de la Fuerza, situado en el episodio I, II, IV, V, y VI de Star Wars. Algunos de los personajes tienen poderes especiales, colocando este juego en la escala de complejidad comparado con el Stratego original.',
-        minPlayers: 2,
-        maxPlayers: 2,
-        difficulty: 5,
-        img: 'Stratego-Star-Wars.png',
-        rank: 2,
-        minutes: 30,
-    },
-    {
-        name: 'Sushi Go!',
-        desc: '¿Se te antoja un Sushi? Te invitamos a preparar y elegir platillo para tener la mejor comida posible. Sushi Go! es un divertido y rápido juego de cartas en el que los jugadores tratan de comer el menú perfecto de su comida favorita.Saber qué platillos quedarte y qué platillos dejar pasar es la clave para ganar la ronda, pero ten cuidado con el sushi que los demás oponentes se llevan, podría ser justo lo que necesitan para la victoria.',
-        minPlayers: 2,
-        maxPlayers: 5,
-        difficulty: 2,
-        img: 'Sushi-Go!.png',
-        rank: 2,
-        minutes: 15,
-    },
-    {
-        name: 'Taco Gato Cabra Queso Pizza',
-        desc: 'En el juego de cartas Taco Gato Cabra Queso Pizza, debes ser el más rápido. Cuando un jugador se deshaga de una carta que coincida con la palabra que dice, coloca tu mano sobre el montón central. ¡El último en poner la mano se queda con todas las cartas del montón!',
-        minPlayers: 2,
-        maxPlayers: 5,
-        difficulty: 1,
-        img: 'Taco-Gato-Cabra-Queso-Pizza.png',
-        rank: 5,
-        minutes: 20,
-    },
-    {
-        name: 'Tic Tac K.O Dragons vs Unicorns',
-        desc: 'Un juego de cartas de aprendizaje rápido que le da un giro diabólico a Tic Tac Toe, permitiéndote golpear a tus oponentes hacia un lado mientras reclamas casillas en tu búsqueda de la victoria.',
-        minPlayers: 2,
-        maxPlayers: 4,
-        difficulty: 4,
-        lang: 'EN',
-        img: 'tic-tac-KO.png',
-        rank: 4,
-        minutes: 25,
-    },
-    {
-        name: 'Ticket to Ride Europe',
-        desc: 'Una aventura en tren en la que los jugadores recogen y juegan cartas de tren coincidentes para reclamar las rutas ferroviarias que conectan las ciudades en toda América del Norte. Cuanto más largas las rutas que reclamas, más puntos ganan.',
-        minPlayers: 2,
-        maxPlayers: 5,
-        difficulty: 3,
-        img: 'Ticket-to-Ride-Europe.png',
-        new: true,
-        minutes: 45,
-    },
-    {
-        name: 'That\'s not a hat',
-        desc: 'Recordar dos objetos. Suena fácil ¿verdad? ¡Pues vas a descubrir que no lo es! Hace nada aun te acordabas y, de repente, se te ha ido: te toca marcarte un farol y endosarle el regalo otro usando tu poder de convicción. Simple. Inolvidable. Divertido. ¡Sorprendente!',
-        minPlayers: 3,
-        maxPlayers: 8,
-        difficulty: 2,
-        img: 'thats-not-a-hat.webp',
-        rank: 4,
-        minutes: 15,
-    },
-    {
-        name: 'That time you killed me',
-        desc: 'Tú y tu oponente viajan en el tiempo para intentarse borrar mutuamente de la historia. Para demostrar que eres quien creó los viajes en el tiempo, debes utilizar tu invento para encontrar a tu rival en el tiempo y acabar con su vida, ¡antes de que acabe con la tuya!. Este es un juego abstracto para dos personas que introduce nuevos escenarios con reglas y componentes únicos a medida que juegas. Como en cualquier otro juego que trata de traspasar el tiempo, debes jugar con este contenido en un orden estricto e inalterable. Elimina al impostor de la historia.',
-        minPlayers: 2,
-        maxPlayers: 2,
-        difficulty: 4,
-        lang: 'EN',
-        img: 'That-time-you-killed-me.png',
-        rank: 5,
-        minutes: 25,
-    },
-    {
-        name: 'The Mind',
-        desc: 'Juego cooperativo, todos somos uno, trata de poner las cartas en orden con ayuda de tu equipo. Comienza el juego con un número de vidas igual al número de jugadores. Pierde todas tus vidas y pierdes el juego. También comenzarás con un shuriken, si todos quieren usar un shuriken, cada jugadore descarta su carta más baja boca arriba, brindando información a todos y acercándose a completar el nivel. A medida que completan niveles, puedes recibir una recompensa de shuriken o vida extra.',
-        minPlayers: 2,
-        maxPlayers: 6,
-        difficulty: 1,
-        img: 'The-Mind.png',
-        rank: 5,
-        minutes: 20,
-    },
-    {
-        name: 'The Resistance',
-        desc: 'La resistencia no puede ser vencida... sabemos que tenemos espías infiltrados, ¡hay que encontrarlos! Los jugadores son agentes de la resistencia o espías imperiales, dependen el uno del otro para llevar a cabo misiones contra el imperio, al mismo tiempo, deben intentar deducir las identidades de los demás jugadores y ganarse su confianza. Cada ronda comienza con una discusión, cuando esté listo el líder, confía el conjunto de planes a un cierto número de jugadores(posiblemente incluido él), donde todos deben aprobar o no la misión, así los jugadores elegidos deciden en secreto apoyar o sabotear la misión, ¿Tendrán éxito o fallarán la misión del imperio ? ',
-        minPlayers: 5,
-        maxPlayers: 10,
-        difficulty: 2,
-        img: 'The-Resistance.png',
-        rank: 5,
-        minutes: 30,
-    },
-    {
-        name: 'The Werewolves',
-        desc: 'One Night Ultimate Werewolf es un juego de ritmo rápido en el que todos pueden ser un rol diferente. En el transcurso de una sola noche y a la mañana siguiente, los jugadores determinarán quién de ellos es un hombre lobo ... con suerte.',
-        minPlayers: 8,
-        maxPlayers: 18,
-        difficulty: 2,
-        img: 'The Werewolves.webp',
-        new: true,
-        minutes: 30,
-    },
-    {
-        name: 'Throw Throw Burrito',
-        desc: 'El resultado de cruzar juego de cartas y el balón prisionero es Throw Throw Burrito. El objetivo es reunir conjuntos iguales más rápido que tus oponentes, mientras esquivas y lanzas burritos voladores. Las cartas que recojas ganan puntos, pero si te golpean los burritos voladores los pierdes. Así que, despeja el salón, guarda antigüedades y prepárate para arrojar el burrito.',
-        minPlayers: 2,
-        maxPlayers: 6,
-        difficulty: 1,
-        img: 'Throw-Throw-Burrito.png',
-        rank: 3,
-        minutes: 15,
-    },
-    {
-        name: 'Twister',
-        desc: 'El juego que te retuerce. Diseñado para que pongas los pies y las manos en diferentes lugares de la alfombra sin caerte. El objetivo es conseguir tocas los colores con la parte del cuerpo indicada sin dejar que el cuerpo toque el suelo.El primer jugador en caer será el perdedor.',
-        minPlayers: 2,
-        maxPlayers: 4,
-        difficulty: 1,
-        img: 'twister.png',
-        rank: 1,
-        minutes: 10,
-    },
-    {
-        name: 'Uno',
-        desc: 'El objetivo es ser el primero en quedarse sin cartas, mientras que el último o el que tengas más cartas al final será el perdedor. Pero recuerda, cuando te quede una carta debes gritar “UNO” o serás penalizado y te llevarás más cartas a la mano.',
-        minPlayers: 2,
-        maxPlayers: 10,
-        difficulty: 1,
-        img: 'Uno.png',
-        rank: 2,
-        minutes: 25,
-    },
-    {
-        name: 'Uno Flip',
-        desc: 'Sin importar si empiezan con el lado claro u oscuro, cuando sea tu turno, haz coicidir una de las cartas de tu mano con la carta de hasta arriba de la pila para TIRAR, ya sea, por número, color o símbolo. Ten cuidado, pues dentro del mazo están las cartas que les darán la vuelta a todo el juego hacia el otro de las cartas, y hay algunas que tienen efectos especiales que te harán ganar… o perder. Cuando tires la penúltima carta, recuerda gritar “UNO”, de lo contrario serás penalizado añadiendo más cartas a tu mano.',
-        minPlayers: 2,
-        maxPlayers: 10,
-        difficulty: 2,
-        img: 'uno-flip.png',
-        rank: 2,
-        minutes: 25,
-    },
-    {
-        name: 'Unstable Retro',
-        desc: 'Consigue 7 programas en tu canal para ganar, pero cuidado los demás jugadores no te dejarán hacerlo tan fácil... Crea un ejército de programas retro de los 2000, traiciona a tus amigos que ahora su mejor arma será su memora y astucia, sabemos que te darán mucha nostalgia y recordarás viejos tiempos… pero ¡no tengas piedad y destrúyelos a todos!',
-        minPlayers: 2,
-        maxPlayers: 6,
-        difficulty: 3,
-        img: 'Unstable-Retro.png',
-        rank: 5,
-        minutes: 25,
-    },
-    {
-        name: 'Unstable Unicorns',
-        desc: 'Consigue 7 unicornios en tu establo para ganar, pero cuidado los demás jugadores no te dejarán hacerlo tan fácil...Crea un ejército de unicornios, traiciona a tus amigos que ahora son unicornios, sabemos que te darán ternura… pero ¡no tengas piedad y destrúyelos a todos!',
-        minPlayers: 2,
-        maxPlayers: 6,
-        difficulty: 3,
-        lang: 'EN',
-        img: 'Unstable-Unicorns.png',
-        rank: 5,
-        minutes: 40,
-    },
-    {
-        name: 'Villanious Disney',
-        desc: '¡Los villanos entran en escena, los héroes quien que pierdas! Descubre sus habilidades únicas y lleva a cabo sus planes malvados para conseguir la victoria. Un juego donde personificas a un villano de Disney, cada personaje tiene un modo de juego diferente, completa sus objetivos para ganar, el más astuto y malvado villano ganará.',
-        minPlayers: 2,
-        maxPlayers: 6,
-        difficulty: 5,
-        img: 'Villanious-Disney.png',
-        rank: 5,
-        minutes: 80,
-    },
-    {
-        name: 'Villanious Star Wars',
-        desc: '¡Los villanos de Star Wars entran en escena, los héroes quien que pierdas! Descubre sus habilidades únicas y lleva a cabo sus planes malvados para conseguir la victoria. Un juego donde personificas a un villano de Star Wars, cada personaje tiene un modo de juego diferente, completa sus objetivos para ganar, el más astuto y malvado villano ganará ',
-        minPlayers: 2,
-        maxPlayers: 4,
-        difficulty: 5,
-        img: 'Villanious-Star-Wars.png',
-        new: true,
-        minutes: 80,
-    },
-    {
-        name: 'Virus Halloween',
-        desc: 'Es un juego de corte familiar, en el que nuestro objetivo es conseguir aislar un cuerpo sano y erradicar el virus antes de que cualquier otra persona lo logre. Consigue cuatro órganos sanos de distinto color, elimina los virus e inmuniza tus órganos para que no te los puedan robar.',
-        minPlayers: 2,
-        maxPlayers: 6,
-        difficulty: 2,
-        img: 'virus halloween.webp',
-        new: true,
-        minutes: 20,
-    },
-    {
-        name: 'Yo Nunca Nunca',
-        desc: 'Set de cartas para que conozcas realmente a tus amigos… o desconozcas. Con la garantía de que te vas a cagar de risa y hacer que tus amigos desempolven sus más oscuros secretos, no nos hacemos responsables por la información proporcionada por los jugadores, las amistadas que se pierdan o el ridículo que todos hagan.  Solo déjate llevar… es por la anécdota.',
-        minPlayers: 5,
-        maxPlayers: 10,
-        difficulty: 1,
-        img: 'Yo Nunca Nunca.jpeg',
-        rank: 3,
-        minutes: 20,
-    },
-    {
-        name: 'Yugioh',
-        desc: 'Dos jugadores entran, solo uno sale de pie. Duelo de cartas utilizado con una variedad de Monstruos, Mágicas y Trampas para derrotar a los monstruos adversarios. Se el primero en reducir los puntos de vida del otro, mientras ves cómo se destruye y no puede hacer nada por rescatar a sus campeones.  Todo lo que necesitas es el Deck de cartas a seleccionar y ser el más astuto en el campo de batalla.',
-        minPlayers: 2,
-        maxPlayers: 2,
-        difficulty: 4,
-        img: 'Yugioh.jpg',
-        rank: 3,
-        minutes: 25,
-    },
-    {
-        name: 'Zombie Kittens',
-        desc: '¡Como una ruleta rusa, trata de no explotar! Usa las carta de acción para moverte y evitar que explotes, haz que los demás jugadores jalen más cartas del maso para que ellos mueran, pero si explotas, tendrás solo una oportunidad de revivir como gato zombi, levántate de entre los muertos y sigue jugando.',
-        minPlayers: 2,
-        maxPlayers: 5,
-        difficulty: 3,
-        lang: 'EN',
-        img: 'Zombie Kittens.png',
-        rank: 4,
-        minutes: 15,
-    },
-    {
-        name: 'Flip 7',
-        desc: '¿Juega seguro o arriesgarlo todo? - En Flip 7, presionarás tu suerte recibiendo tarjetas repartidas sin revelar el mismo número dos veces. Cómo ganar: sé el primero en alcanzar 200 puntos en este intenso juego de prensa para tu suerte que pone a prueba tus habilidades de estrategia y toma de riesgos.',
-        minPlayers: 3,
-        maxPlayers: 10,
-        difficulty: 1,
-        img: 'flip-7.jpg',
-        new: true,
-        minutes: 15,
-    },
-    {
-        name: 'Ghost Blitz',
-        desc: 'Fantasma Blitz es un juego que permite a entre 2-8 jugadores enfrentarse en rápidas y divertidas partidas de no más de 20 minutos. Es un juego con un marcado carácter infantil, ideal para introducir a los más peques de la casa en el mundo de los juegos de mesa modernos.',
-        minPlayers: 2,
-        maxPlayers: 8,
-        difficulty: 1,
-        img: 'ghost-blitz.webp',
-        rank: 4,
-        minutes: 15,
-    },
-    {
-        name: 'No sin mi gato',
-        desc: 'es el de conseguir el mayor número posible de puntos. Para ello, los jugadores tendrán que manipular adecuadamente las cartas de canalón para trazar caminos que unan las cartas de gato callejero con las cartas de hogar. Cada carta de gato callejero otorga una cantidad determinada de puntos.',
-        minPlayers: 1,
-        maxPlayers: 4,
-        difficulty: 2,
-        img: 'no-sin-mi-gato.png',
-        new: true,
-        minutes: 15,
-    },
-    {
-        name: 'Pit',
-        desc: 'Pit es el desmadrado juego de las vacas en el que todo el mun- do participa a la vez. El objetivo de los jugadores es obtener fa- milias de cartas idénticas. Una familia está compuesta por 9 cartas. Cada familia otorga un determinado número de pun- tos, indicado en cada una de las cartas.',
-        minPlayers: 3,
-        maxPlayers: 8,
-        difficulty: 2,
-        img: 'pit.png',
-        rank: 4,
-        minutes: 30,
+        minutes: 20
     },
     {
         name: 'Sonic Speed Battle',
@@ -779,7 +555,17 @@ export const lstGames = [
         lang: 'EN',
         img: 'sonic-speed-battle.png',
         new: true,
-        minutes: 30,
+        minutes: 30
+    },
+    {
+        name: 'Splendor',
+        desc: 'Experimenta las riquezas de esta era en Splendor, un juego rápido, elegante e intuitivo en el que los jugadores representarán a comerciantes del Renacimiento, compitiendo por el control de las minas de gemas, las rutas comerciales y los escaparates para dominar el comercio de gemas y atraer la atención de los nobles. Todas las cartas que compres aumentan tu riqueza, ya que te dan una bonificación de gemas permanentes para compras posteriores, algunas te dan puntos de prestigio.Para ganar el juego debes alcanzar 15 puntos de prestigio antes que tus oponentes.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 2,
+        img: 'splendor.png',
+        rank: 5,
+        minutes: 30
     },
     {
         name: 'splendor duel',
@@ -789,16 +575,230 @@ export const lstGames = [
         difficulty: 3,
         img: 'splendor-duel.jpg',
         new: true,
-        minutes: 30,
+        minutes: 30
     },
     {
-        name: 'parchis',
-        desc: 'El parchís es un juego de mesa de estrategia para 2, 3 o 4 jugadores, donde el objetivo es mover todas tus fichas desde tu zona de partida hasta la zona de meta, utilizando un dado para determinar el movimiento',
+        name: 'Stratego Star Wars',
+        desc: 'El objetivo del juego es capturar la bandera del oponente o capturar todas sus piezas con posibilidad de movimiento, de forma que el oponente no tenga piezas que poder mover. Elige de qué lado estás: Lado Oscuro o el Lado de la Fuerza, situado en el episodio I, II, IV, V, y VI de Star Wars. Algunos de los personajes tienen poderes especiales, colocando este juego en la escala de complejidad comparado con el Stratego original.',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 5,
+        img: 'Stratego-Star-Wars.png',
+        rank: 2,
+        minutes: 30
+    },
+    {
+        name: 'Sushi Go!',
+        desc: '¿Se te antoja un Sushi? Te invitamos a preparar y elegir platillo para tener la mejor comida posible. Sushi Go! es un divertido y rápido juego de cartas en el que los jugadores tratan de comer el menú perfecto de su comida favorita.Saber qué platillos quedarte y qué platillos dejar pasar es la clave para ganar la ronda, pero ten cuidado con el sushi que los demás oponentes se llevan, podría ser justo lo que necesitan para la victoria.',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 2,
+        img: 'Sushi-Go!.png',
+        rank: 2,
+        minutes: 15
+    },
+    {
+        name: 'Taco Gato Cabra Queso Pizza',
+        desc: 'En el juego de cartas Taco Gato Cabra Queso Pizza, debes ser el más rápido. Cuando un jugador se deshaga de una carta que coincida con la palabra que dice, coloca tu mano sobre el montón central. ¡El último en poner la mano se queda con todas las cartas del montón!',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 1,
+        img: 'Taco-Gato-Cabra-Queso-Pizza.png',
+        rank: 5,
+        minutes: 20
+    },
+    {
+        name: 'That time you killed me',
+        desc: 'Tú y tu oponente viajan en el tiempo para intentarse borrar mutuamente de la historia. Para demostrar que eres quien creó los viajes en el tiempo, debes utilizar tu invento para encontrar a tu rival en el tiempo y acabar con su vida, ¡antes de que acabe con la tuya!. Este es un juego abstracto para dos personas que introduce nuevos escenarios con reglas y componentes únicos a medida que juegas. Como en cualquier otro juego que trata de traspasar el tiempo, debes jugar con este contenido en un orden estricto e inalterable. Elimina al impostor de la historia.',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 4,
+        lang: 'EN',
+        img: 'That-time-you-killed-me.png',
+        rank: 5,
+        minutes: 25
+    },
+    {
+        name: 'That\'s not a hat',
+        desc: 'Recordar dos objetos. Suena fácil ¿verdad? ¡Pues vas a descubrir que no lo es! Hace nada aun te acordabas y, de repente, se te ha ido: te toca marcarte un farol y endosarle el regalo otro usando tu poder de convicción. Simple. Inolvidable. Divertido. ¡Sorprendente!',
+        minPlayers: 3,
+        maxPlayers: 8,
+        difficulty: 2,
+        img: 'thats-not-a-hat.webp',
+        rank: 4,
+        minutes: 15
+    },
+    {
+        name: 'The Mind',
+        desc: 'Juego cooperativo, todos somos uno, trata de poner las cartas en orden con ayuda de tu equipo. Comienza el juego con un número de vidas igual al número de jugadores. Pierde todas tus vidas y pierdes el juego. También comenzarás con un shuriken, si todos quieren usar un shuriken, cada jugadore descarta su carta más baja boca arriba, brindando información a todos y acercándose a completar el nivel. A medida que completan niveles, puedes recibir una recompensa de shuriken o vida extra.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 1,
+        img: 'The-Mind.png',
+        rank: 5,
+        minutes: 20
+    },
+    {
+        name: 'The Resistance',
+        desc: 'La resistencia no puede ser vencida... sabemos que tenemos espías infiltrados, ¡hay que encontrarlos! Los jugadores son agentes de la resistencia o espías imperiales, dependen el uno del otro para llevar a cabo misiones contra el imperio, al mismo tiempo, deben intentar deducir las identidades de los demás jugadores y ganarse su confianza. Cada ronda comienza con una discusión, cuando esté listo el líder, confía el conjunto de planes a un cierto número de jugadores(posiblemente incluido él), donde todos deben aprobar o no la misión, así los jugadores elegidos deciden en secreto apoyar o sabotear la misión, ¿Tendrán éxito o fallarán la misión del imperio ? ',
+        minPlayers: 5,
+        maxPlayers: 10,
+        difficulty: 2,
+        img: 'The-Resistance.png',
+        rank: 5,
+        minutes: 30
+    },
+    {
+        name: 'The Werewolves',
+        desc: 'One Night Ultimate Werewolf es un juego de ritmo rápido en el que todos pueden ser un rol diferente. En el transcurso de una sola noche y a la mañana siguiente, los jugadores determinarán quién de ellos es un hombre lobo ... con suerte.',
+        minPlayers: 8,
+        maxPlayers: 18,
+        difficulty: 2,
+        img: 'The Werewolves.webp',
+        new: true,
+        minutes: 30
+    },
+    {
+        name: 'Throw Throw Burrito',
+        desc: 'El resultado de cruzar juego de cartas y el balón prisionero es Throw Throw Burrito. El objetivo es reunir conjuntos iguales más rápido que tus oponentes, mientras esquivas y lanzas burritos voladores. Las cartas que recojas ganan puntos, pero si te golpean los burritos voladores los pierdes. Así que, despeja el salón, guarda antigüedades y prepárate para arrojar el burrito.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 1,
+        img: 'Throw-Throw-Burrito.png',
+        rank: 3,
+        minutes: 15
+    },
+    {
+        name: 'Tic Tac K.O Dragons vs Unicorns',
+        desc: 'Un juego de cartas de aprendizaje rápido que le da un giro diabólico a Tic Tac Toe, permitiéndote golpear a tus oponentes hacia un lado mientras reclamas casillas en tu búsqueda de la victoria.',
         minPlayers: 2,
         maxPlayers: 4,
-        difficulty: 2,
-        img: 'parchis.png',
+        difficulty: 4,
+        lang: 'EN',
+        img: 'tic-tac-KO.png',
+        rank: 4,
+        minutes: 25
+    },
+    {
+        name: 'Ticket to Ride Europe',
+        desc: 'Una aventura en tren en la que los jugadores recogen y juegan cartas de tren coincidentes para reclamar las rutas ferroviarias que conectan las ciudades en toda América del Norte. Cuanto más largas las rutas que reclamas, más puntos ganan.',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 3,
+        img: 'Ticket-to-Ride-Europe.png',
         new: true,
-        minutes: 30,
+        minutes: 45
+    },
+    {
+        name: 'Twister',
+        desc: 'El juego que te retuerce. Diseñado para que pongas los pies y las manos en diferentes lugares de la alfombra sin caerte. El objetivo es conseguir tocas los colores con la parte del cuerpo indicada sin dejar que el cuerpo toque el suelo.El primer jugador en caer será el perdedor.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 1,
+        img: 'twister.png',
+        rank: 1,
+        minutes: 10
+    },
+    {
+        name: 'Uno',
+        desc: 'El objetivo es ser el primero en quedarse sin cartas, mientras que el último o el que tengas más cartas al final será el perdedor. Pero recuerda, cuando te quede una carta debes gritar “UNO” o serás penalizado y te llevarás más cartas a la mano.',
+        minPlayers: 2,
+        maxPlayers: 10,
+        difficulty: 1,
+        img: 'Uno.png',
+        rank: 2,
+        minutes: 25
+    },
+    {
+        name: 'Uno Flip',
+        desc: 'Sin importar si empiezan con el lado claro u oscuro, cuando sea tu turno, haz coicidir una de las cartas de tu mano con la carta de hasta arriba de la pila para TIRAR, ya sea, por número, color o símbolo. Ten cuidado, pues dentro del mazo están las cartas que les darán la vuelta a todo el juego hacia el otro de las cartas, y hay algunas que tienen efectos especiales que te harán ganar… o perder. Cuando tires la penúltima carta, recuerda gritar “UNO”, de lo contrario serás penalizado añadiendo más cartas a tu mano.',
+        minPlayers: 2,
+        maxPlayers: 10,
+        difficulty: 2,
+        img: 'uno-flip.png',
+        rank: 2,
+        minutes: 25
+    },
+    {
+        name: 'Unstable Retro',
+        desc: 'Consigue 7 programas en tu canal para ganar, pero cuidado los demás jugadores no te dejarán hacerlo tan fácil... Crea un ejército de programas retro de los 2000, traiciona a tus amigos que ahora su mejor arma será su memora y astucia, sabemos que te darán mucha nostalgia y recordarás viejos tiempos… pero ¡no tengas piedad y destrúyelos a todos!',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 3,
+        img: 'Unstable-Retro.png',
+        rank: 5,
+        minutes: 25
+    },
+    {
+        name: 'Unstable Unicorns',
+        desc: 'Consigue 7 unicornios en tu establo para ganar, pero cuidado los demás jugadores no te dejarán hacerlo tan fácil...Crea un ejército de unicornios, traiciona a tus amigos que ahora son unicornios, sabemos que te darán ternura… pero ¡no tengas piedad y destrúyelos a todos!',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 3,
+        lang: 'EN',
+        img: 'Unstable-Unicorns.png',
+        rank: 5,
+        minutes: 40
+    },
+    {
+        name: 'Villanious Disney',
+        desc: '¡Los villanos entran en escena, los héroes quien que pierdas! Descubre sus habilidades únicas y lleva a cabo sus planes malvados para conseguir la victoria. Un juego donde personificas a un villano de Disney, cada personaje tiene un modo de juego diferente, completa sus objetivos para ganar, el más astuto y malvado villano ganará.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 5,
+        img: 'Villanious-Disney.png',
+        rank: 5,
+        minutes: 80
+    },
+    {
+        name: 'Villanious Star Wars',
+        desc: '¡Los villanos de Star Wars entran en escena, los héroes quien que pierdas! Descubre sus habilidades únicas y lleva a cabo sus planes malvados para conseguir la victoria. Un juego donde personificas a un villano de Star Wars, cada personaje tiene un modo de juego diferente, completa sus objetivos para ganar, el más astuto y malvado villano ganará ',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 5,
+        img: 'Villanious-Star-Wars.png',
+        new: true,
+        minutes: 80
+    },
+    {
+        name: 'Virus Halloween',
+        desc: 'Es un juego de corte familiar, en el que nuestro objetivo es conseguir aislar un cuerpo sano y erradicar el virus antes de que cualquier otra persona lo logre. Consigue cuatro órganos sanos de distinto color, elimina los virus e inmuniza tus órganos para que no te los puedan robar.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'virus halloween.webp',
+        new: true,
+        minutes: 20
+    },
+    {
+        name: 'Yo Nunca Nunca',
+        desc: 'Set de cartas para que conozcas realmente a tus amigos… o desconozcas. Con la garantía de que te vas a cagar de risa y hacer que tus amigos desempolven sus más oscuros secretos, no nos hacemos responsables por la información proporcionada por los jugadores, las amistadas que se pierdan o el ridículo que todos hagan.  Solo déjate llevar… es por la anécdota.',
+        minPlayers: 5,
+        maxPlayers: 10,
+        difficulty: 1,
+        img: 'Yo Nunca Nunca.jpeg',
+        rank: 3,
+        minutes: 20
+    },
+    {
+        name: 'Yugioh',
+        desc: 'Dos jugadores entran, solo uno sale de pie. Duelo de cartas utilizado con una variedad de Monstruos, Mágicas y Trampas para derrotar a los monstruos adversarios. Se el primero en reducir los puntos de vida del otro, mientras ves cómo se destruye y no puede hacer nada por rescatar a sus campeones.  Todo lo que necesitas es el Deck de cartas a seleccionar y ser el más astuto en el campo de batalla.',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 4,
+        img: 'Yugioh.jpg',
+        rank: 3,
+        minutes: 25
+    },
+    {
+        name: 'Zombie Kittens',
+        desc: '¡Como una ruleta rusa, trata de no explotar! Usa las carta de acción para moverte y evitar que explotes, haz que los demás jugadores jalen más cartas del maso para que ellos mueran, pero si explotas, tendrás solo una oportunidad de revivir como gato zombi, levántate de entre los muertos y sigue jugando.',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 3,
+        lang: 'EN',
+        img: 'Zombie Kittens.png',
+        rank: 4,
+        minutes: 15
     }
 ]
