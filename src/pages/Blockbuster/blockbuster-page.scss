@@ -52,13 +52,13 @@ $blockbuster-blue: rgb(47, 47, 140);
         }
     }
 
-    &__face-to-face-container {
+    &__modal-container {
         background-color: $blockbuster-yellow;
         position: fixed;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100vh;
+        min-height: 100vh;
         width: 100vw;
         z-index: 1;
     }

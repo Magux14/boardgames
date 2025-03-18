@@ -2,20 +2,21 @@ import React, { useState } from 'react';
 import { BlockbusterTimer } from './components/BlockbusterTimer';
 import { blockbusterMovies, blockbusterThings } from '../../../data/blockbuster';
 import './blockbuster-page.scss';
+import { BlockbusterSelectMovies } from './components/BlockbusterSelectMovies';
 
 export const BlockbusterPage = () => {
 
     const lstBlockbusterThings = [...blockbusterThings];
     const lstBlockbusterMovies = [...blockbusterMovies];
     const [showFaceToFace, setShowFaceToFace] = useState(false);
-    const [showMovies, setShowMovies] = useState(true);
+    const [showSelectMovies, setShowSelectMovies] = useState(false);
 
     const handleShowFaceToFace = () => {
         setShowFaceToFace(true);
     }
 
     const handleShowMovies = () => {
-        setShowMovies(true);
+        setShowSelectMovies(true);
     }
 
     const GetFaceToFaceContent = () => {
@@ -24,26 +25,19 @@ export const BlockbusterPage = () => {
         return <span>{`Películas donde hay "${thing}"...`}</span>;
     }
 
-    const GetMoviesList = () => {
+    const getMoviesList = (numberOfMovies) => {
         const lstMovies = [];
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < numberOfMovies; i++) {
             const randomIndex = Math.floor(Math.random() * lstBlockbusterMovies.length);
             const movie = lstBlockbusterMovies.splice(randomIndex, 1);
             lstMovies.push(movie);
         }
-        return <ul>
-            {
-                lstMovies.map((movie) =>
-                    <li key={movie}>
-                        {movie}
-                    </li>
-                )
-            }
-        </ul>
+        return lstMovies;
     }
 
     return (
         <div className="blockbuster-page">
+
             {
                 showFaceToFace &&
                 <BlockbusterTimer defaultTime={15} callbackClose={() => setShowFaceToFace(false)}>
@@ -51,10 +45,8 @@ export const BlockbusterPage = () => {
                 </BlockbusterTimer>
             }
             {
-                showMovies &&
-                <BlockbusterTimer defaultTime={60} callbackClose={() => setShowMovies(false)} >
-                    {GetMoviesList()}
-                </BlockbusterTimer>
+                showSelectMovies &&
+                <BlockbusterSelectMovies lstMovies={getMoviesList(6)} />
             }
             <div className="blockbuster-page__logo-container">
                 <img src="./img/blockbuster/logo.png" />

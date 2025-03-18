@@ -32,7 +32,7 @@ export const BlockbusterTimer = ({ defaultTime, children, callbackClose }) => {
     }, [timer, forceTimerUpdate]);
 
     return (
-        <div className="blockbuster-page__face-to-face-container">
+        <div className="blockbuster-page__modal-container">
             <CancelIcon className="blockbuster-page__close-button" onClick={closeFaceToFace} />
             <div className={`blockbuster-page__face-to-face-question`}>
                 {children}

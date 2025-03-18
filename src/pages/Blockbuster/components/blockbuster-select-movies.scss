@@ -1,0 +1,63 @@
+@import '../blockbuster-page.scss';
+
+.blockbuster-select-movies {
+    padding-top: 5%;
+
+    &__container {
+        padding-top: 5%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__desc-container {
+        padding: 0 5%;
+        font-size: 16px;
+    }
+
+    &__guess-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 7vw;
+        padding: 8px;
+        min-height: 20vh;
+        border: 3px solid $blockbuster-blue;
+        margin: 10px;
+        border-radius: 8px;
+    }
+
+    &__button {
+        align-items: center;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        border: 2px solid $blockbuster-blue;
+        color: blue;
+        display: flex;
+        flex-basis: calc(50% - 20px);
+        font-weight: bold;
+        gap: 20px;
+        justify-content: space-around;
+        margin: 10px;
+        min-height: 80px;
+        padding: 8px;
+        text-align: center;
+        text-transform: uppercase;
+        width: 100%;
+
+        &:active {
+            opacity: 0.6;
+        }
+
+        &--selected {
+            background: rgba(0, 128, 0, 0.4);
+        }
+
+        &--continue {
+            padding: 8px 20px;
+            background: $blockbuster-blue;
+            color: white;
+        }
+    }
+}
