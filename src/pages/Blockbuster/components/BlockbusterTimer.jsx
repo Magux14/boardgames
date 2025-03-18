@@ -1,14 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { blockbusterThings } from '../../../../data/blockbuster';
 import CancelIcon from '@mui/icons-material/Cancel';
 import '../blockbuster-page.scss';
 
-const defaultTime = 15;
-export const BlockbusterTimer = ({ callbackClose }) => {
-    const lstBlockbusterThings = [...blockbusterThings];
+export const BlockbusterTimer = ({ defaultTime, children, callbackClose }) => {
     const [timer, setTimer] = useState();
     const [forceTimerUpdate, setForceTimerUpdate] = useState();
-    const [faceTofaceQuestion, setFaceTofaceQuestion] = useState();
     const intervalRef = useRef(null);
 
     const restartTimer = () => {
@@ -17,12 +13,6 @@ export const BlockbusterTimer = ({ callbackClose }) => {
         }
         setTimer(defaultTime);
         setForceTimerUpdate(prev => !prev);
-    }
-
-    const getFaceToFaceQuestion = () => {
-        const randomIndex = Math.floor(Math.random() * lstBlockbusterThings.length);
-        const thing = lstBlockbusterThings.splice(randomIndex, 1);
-        setFaceTofaceQuestion(thing);
     }
 
     const closeFaceToFace = () => {
@@ -41,18 +31,14 @@ export const BlockbusterTimer = ({ callbackClose }) => {
         return () => clearInterval(intervalRef.current);
     }, [timer, forceTimerUpdate]);
 
-    useEffect(() => {
-        getFaceToFaceQuestion();
-    }, []);
-
     return (
         <div className="blockbuster-page__face-to-face-container">
             <CancelIcon className="blockbuster-page__close-button" onClick={closeFaceToFace} />
             <div className={`blockbuster-page__face-to-face-question`}>
-                Películas donde hay "{faceTofaceQuestion}"...
+                {children}
             </div>
-            <div className={`blockbuster-page__timer ${timer == 0 ? 'blockbuster-page__timer--time-over' : ''}`}>
-                {timer > 0 ? timer : 'x__x'}
+            <div className={`blockbuster-page__timer ${!timer ? 'blockbuster-page__timer--time-over' : ''}`}>
+                {timer ? timer : 'x__x'}
             </div>
             <button className="blockbuster-page__button blockbuster-page__button-reset-timer" onClick={restartTimer}>
                 ¡Tu Turno!
