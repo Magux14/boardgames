@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { BlockbusterTimer } from '../blockbuster-timer/BlockbusterTimer';
-import { useLongPress } from '../../../../hooks/useLongPress';
+import { useContinuePressing } from '../../../../hooks/useContinuePressing';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import './blockbuster-guess-movies.scss';
 
 export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
 
     const [showMoviesList, setShowMoviesList] = useState(false);
     const [movies, setMovies] = useState(lstMovies.filter(item => item.selected));
-    const longPressEvents = useLongPress(
+    const continuePressing = useCallback(useContinuePressing(
         () => setShowMoviesList(true),
         () => setShowMoviesList(false),
-        500
-    );
+    ), []);
 
     const handleContinueWithTeamBQuestions = () => {
         setMovies(lstMovies.filter(item => !item.selected));
@@ -22,7 +20,7 @@ export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
     return (
         <div className="blockbuster-guess-movies">
             <div className="blockbuster-guess-movies__guess-container">
-                <button {...longPressEvents} className="blockbuster-guess-movies__guess-button">
+                <button {...continuePressing} className="blockbuster-guess-movies__guess-button">
                     {
                         showMoviesList &&
                         <ul>
