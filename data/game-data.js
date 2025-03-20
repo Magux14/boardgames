@@ -53,6 +53,16 @@ export const lstGames = [
         minutes: 40
     },
     {
+        name: 'Blockbuster (Digital)',
+        desc: 'Un juego donde 2 equipos compiten para demostrar quien sabe más sobre películas, haz que tu equipo adivine tus 3 películas escogiendo como adivinarn cada una, ¡no se vale repetir! 1. Contando de que trata la película, 2. Haciendo mímica, 3. Diciendo una sola palabra. (Está en fase de pruebas así que pueden haber muchos errores, pero no os preocupeis seguro pasareis un buen rato).',
+        minPlayers: 2,
+        maxPlayers: 10,
+        difficulty: 1,
+        img: 'blockbuster.png',
+        rank: 3,
+        minutes: 40
+    },
+    {
         name: 'Cartoon Network Crossover Crisis',
         desc: '¿Qué tipo de locura se desata cuando los mundos de dibujos animados chocan? Los peores adversarios de Cartoon Network están sueltos y tú tienes que detenerlos. ¡Juega como tus héroes favoritos de los programas de éxito pasados ​​y presentes de Cartoon Network: ¡Cada carta del mazo principal es única y está repleta de fanatismo de Cartoon Network! Comienza tu batalla con Punchies y Pratfalls, luego construye tu mazo para crear el conglomerado final de héroes impresionantes, superpoderes épicos, equipos inteligentes, villanos viles y chistes internos. Pero ten cuidado con las debilidades y los eventos de sorpresa que pueden cambiar tus planes de manera absurda. ¿Quién se levantará como el campeón en medio de la calamidad cómica de esta Crisis del Crossover.',
         minPlayers: 2,
