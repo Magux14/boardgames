@@ -5,6 +5,7 @@
     &__container {
         padding: 20px 10px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         flex-wrap: wrap;
     }
@@ -12,6 +13,12 @@
     &__desc-container {
         font-size: 16px;
         padding: 10px;
+        text-align: center;
+    }
+    
+    &__movies-container {
+        display: flex;
+        flex-wrap: wrap;
     }
 
     &__button {
@@ -35,6 +42,10 @@
 
         &:active {
             opacity: 0.6;
+        }
+
+        &:disabled {
+            opacity: 0.7;
         }
 
         &--selected {

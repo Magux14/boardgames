@@ -54,7 +54,7 @@ export const lstGames = [
     },
     {
         name: 'Blockbuster (Digital)',
-        desc: 'Un juego donde 2 equipos compiten para demostrar quien sabe más sobre películas, haz que tu equipo adivine tus 3 películas escogiendo como adivinarn cada una, ¡no se vale repetir! 1. Contando de que trata la película, 2. Haciendo mímica, 3. Diciendo una sola palabra. (Está en fase de pruebas así que pueden haber muchos errores, pero no os preocupeis seguro pasareis un buen rato).',
+        desc: 'Un juego donde 2 equipos compiten para demostrar quien sabe más sobre películas, haz que tu equipo adivine tus 3 películas escogiendo como adivinarán cada una, ¡no se vale repetir! 1. Contando de que trata la película, 2. Haciendo mímica, 3. Diciendo una sola palabra. (Está en fase de pruebas así que pueden haber muchos errores, pero no os preocupeis seguro pasareis un buen rato).',
         minPlayers: 2,
         maxPlayers: 10,
         difficulty: 1,

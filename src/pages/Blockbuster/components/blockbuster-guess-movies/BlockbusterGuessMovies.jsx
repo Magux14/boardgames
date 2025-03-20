@@ -40,9 +40,9 @@ export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
             <BlockbusterTimer defaultTime={60} />
 
             <div className="blockbuster-guess-movies__instructions-container">
-                Tu equipo debe adivinar cada una se las siguientes películas, pero solo puedes elegir una forma de adivinar por cada una:
+                Tu equipo debe adivinar cada una de las siguientes películas, pero solo puedes elegir una forma de adivinar por cada una:
                 <br /><br />
-                1. contar de que trata la película (no puedes utilizar palabras que vengan en el título).
+                1. Contar de que trata la película (no puedes utilizar palabras que vengan en el título).
                 <br />
                 2. Mímica
                 <br />

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import './blockbuster-select-movies.scss';
 
 export const BlockbusterSelectMovies = ({ lstMovies = [], callbackSetSelectedMovies }) => {
@@ -34,22 +33,23 @@ export const BlockbusterSelectMovies = ({ lstMovies = [], callbackSetSelectedMov
                 <div className="blockbuster-select-movies__desc-container">
                     Selecciona 3 películas, tu equipo tratará de adivinarlas, las que no selecciones las deberá adivinar el equipo contrario.
                 </div>
-                {
-                    movies.map((movie, index) =>
-                        <button key={movie.name}
-                            className={`blockbuster-select-movies__button ${movie.selected ? 'blockbuster-select-movies__button--selected' : ''}`}
-                            onClick={() => handleSelected(index)}
-                        >
-                            <span>{movie.name}</span>
-                        </button>
-                    )
-                }
+                <div className="blockbuster-select-movies__movies-container">
+                    {
+                        movies.map((movie, index) =>
+                            <button key={movie.name}
+                                className={`blockbuster-select-movies__button ${movie.selected ? 'blockbuster-select-movies__button--selected' : ''}`}
+                                onClick={() => handleSelected(index)}
+                            >
+                                <span>{movie.name}</span>
+                            </button>
+                        )
+                    }
+                </div>
             </div>
 
             {
-                validateMoviesSelected() &&
                 <div className="blockbuster-select-movies__container">
-                    <button className={`blockbuster-select-movies__button blockbuster-select-movies__button--continue`} onClick={handleContinue}>
+                    <button className={`blockbuster-select-movies__button blockbuster-select-movies__button--continue`} onClick={handleContinue} disabled={!validateMoviesSelected()}>
                         <span>Continuar</span>
                     </button>
                 </div>
