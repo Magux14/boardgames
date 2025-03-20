@@ -284,6 +284,16 @@ export const lstGames = [
         minutes: 30
     },
     {
+        name: 'La Morada Maldita',
+        desc: 'Un rápido y trepidante juego, de 2 a 6 participantes, en el que tendréis que conseguir el mayor número de gemas y, sobre todo, evitar la joya embrujada.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'la morada maldita.jpeg',
+        minutes: 20,
+        new: true
+    },
+    {
         name: 'La Polilla Tramposa',
         desc: 'El juego donde hay que hacer trampa para ganar. Aprovecha los despistes del vigilante para esconder cartas, lanzarlas o guardártelas en el bolsillo…. En este juego queremos deshacernos de toda nuestra mano de cartas, pero sobre todo, molestar a los demás haciendo que roben cartas legalmente, mientras tú las escondes, tiras y las desapareces. ¡Todo se vale! La única regla es no bajar las manos de la mesa.',
         minPlayers: 3,
