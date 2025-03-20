@@ -1,17 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import { BlockbusterTimer } from '../blockbuster-timer/BlockbusterTimer';
-import { useContinuePressing } from '../../../../hooks/useContinuePressing';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import './blockbuster-guess-movies.scss';
 
 export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
 
-    const [showMoviesList, setShowMoviesList] = useState(false);
     const [movies, setMovies] = useState(lstMovies.filter(item => item.selected));
-    const continuePressing = useCallback(useContinuePressing(
-        () => setShowMoviesList(true),
-        () => setShowMoviesList(false),
-    ), []);
 
     const handleContinueWithTeamBQuestions = () => {
         setMovies(lstMovies.filter(item => !item.selected));
@@ -20,28 +14,26 @@ export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
     return (
         <div className="blockbuster-guess-movies">
             <div className="blockbuster-guess-movies__guess-container">
-                <button {...continuePressing} className="blockbuster-guess-movies__guess-button">
-                    {
-                        showMoviesList &&
-                        <ul>
-                            {
-                                movies.map((movie) =>
-                                    <li key={movie.name}>
-                                        {movie.name}
-                                    </li>
-                                )
-                            }
-                        </ul>
-                    }
-                    {
-                        !showMoviesList &&
-                        <>
+                <button className="blockbuster-guess-movies__guess-button">
+                    <div className="blockbuster-guess-movies__guess-relative-container">
+                        <div className="blockbuster-guess-movies__revealed-list" >
+                            <ul>
+                                {
+                                    movies.map((movie) =>
+                                        <li key={movie.name}>
+                                            {movie.name}
+                                        </li>
+                                    )
+                                }
+                            </ul>
+                        </div>
+                        <div className="blockbuster-guess-movies__unrevealed-list">
                             <span>Manten presionado</span>
                             <span>
                                 <RemoveRedEyeIcon />
                             </span>
-                        </>
-                    }
+                        </div>
+                    </div>
                 </button>
             </div>
 

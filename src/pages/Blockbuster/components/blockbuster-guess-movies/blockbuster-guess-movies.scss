@@ -25,9 +25,9 @@
 
     &__guess-button {
         all: unset;
+        position: relative;
         user-select: none;
         width: 100%;
-        background: rgba(0, 0, 0, 0.05);
         padding: 8px;
         border-radius: 8px;
 
@@ -37,12 +37,36 @@
             justify-content: center;
 
             svg {
-                font-size: 30vw;
+                font-size: 25vw;
 
                 @media (min-width: 990px) {
                     font-size: 100px;
                 }
             }
+        }
+
+        ul {
+            margin-left: 30px;
+        }
+    }
+
+    &__guess-relative-container {
+        position: relative;
+        min-height: 180px;
+    }
+
+    &__unrevealed-list {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background: rgb(209, 187, 46);
+        border-radius: 8px;
+        padding: 10px;
+        height: 100%;
+
+        &:active {
+            opacity: 0;
+            z-index: -2;
         }
     }
 

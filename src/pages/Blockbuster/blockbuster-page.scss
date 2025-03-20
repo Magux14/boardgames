@@ -46,6 +46,10 @@ $blockbuster-blue: rgb(47, 47, 140);
         font-weight: bold;
         font-family: 'blockbuster', 'Courier New', Courier, monospace;
 
+        @media (max-width: 990px) {
+            font-size: 6vw;
+        }
+
         &:active {
             opacity: 0.6;
         }
