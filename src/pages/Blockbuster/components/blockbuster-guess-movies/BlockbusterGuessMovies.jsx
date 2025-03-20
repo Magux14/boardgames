@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BlockbusterTimer } from '../blockbuster-timer/BlockbusterTimer';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import './blockbuster-guess-movies.scss';
 
 export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
 
-    const [movies, setMovies] = useState(lstMovies.filter(item => item.selected));
+    const [isWinnerTeam, setIsWinnerTeam] = useState(true);
+    const [movies, setMovies] = useState(lstMovies.filter(item => item.selected == isWinnerTeam));
 
-    const handleContinueWithTeamBQuestions = () => {
-        setMovies(lstMovies.filter(item => !item.selected));
-    }
+    useEffect(() => {
+        setMovies(lstMovies.filter(item => item.selected == isWinnerTeam));
+    }, [isWinnerTeam])
 
     return (
         <div className="blockbuster-guess-movies">
@@ -39,6 +40,10 @@ export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
 
             <BlockbusterTimer defaultTime={60} />
 
+            <div className={`blockbuster-guess-movies__current-team-container ${isWinnerTeam? 'blockbuster-guess-movies__current-team-container--winner': 'blockbuster-guess-movies__current-team-container--loser'}`}>
+                {`Equipo ${isWinnerTeam? 'GANADOR': 'PERDEDOR'} del cara a cara`}
+            </div>
+
             <div className="blockbuster-guess-movies__instructions-container">
                 Tu equipo debe adivinar cada una de las siguientes películas, pero solo puedes elegir una forma de adivinar por cada una:
                 <br /><br />
@@ -50,9 +55,8 @@ export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
                 <br /><br /><br />
 
                 {
-                    movies.findIndex(item => item.selected) != -1 &&
-                    <button className={`blockbuster-guess-movies__button blockbuster-guess-movies__button--continue`} onClick={handleContinueWithTeamBQuestions}>
-                        <span>Continuar</span>
+                    <button className={`blockbuster-guess-movies__button blockbuster-guess-movies__button--continue`} onClick={() => setIsWinnerTeam(prev => !prev)}>
+                        <span>Cambiar a equipo {isWinnerTeam? 'PERDEDOR': 'GANADOR'}</span>
                     </button>
                 }
             </div>
