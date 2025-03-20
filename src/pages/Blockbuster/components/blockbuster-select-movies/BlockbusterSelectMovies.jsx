@@ -50,7 +50,7 @@ export const BlockbusterSelectMovies = ({ lstMovies = [], callbackSetSelectedMov
                 validateMoviesSelected() &&
                 <div className="blockbuster-select-movies__container">
                     <button className={`blockbuster-select-movies__button blockbuster-select-movies__button--continue`} onClick={handleContinue}>
-                        <span>Continuar</span> <ArrowRightIcon />
+                        <span>Continuar</span>
                     </button>
                 </div>
             }

@@ -25,11 +25,15 @@ export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
                 <button {...longPressEvents} className="blockbuster-guess-movies__guess-button">
                     {
                         showMoviesList &&
-                        movies.map((movie) =>
-                            <div key={movie.name}>
-                                {movie.name}
-                            </div>
-                        )
+                        <ul>
+                            {
+                                movies.map((movie) =>
+                                    <li key={movie.name}>
+                                        {movie.name}
+                                    </li>
+                                )
+                            }
+                        </ul>
                     }
                     {
                         !showMoviesList &&
@@ -53,12 +57,12 @@ export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
                 2. Mímica
                 <br />
                 3. Decir solamente UNA palabra.
-                <br /><br /><br /><br />
+                <br /><br /><br />
 
                 {
                     movies.findIndex(item => item.selected) != -1 &&
-                    <button className={`blockbuster-guess-movies__button blockbuster-guess-movies__button--continue`} onClick={handleContinueWithTeamBQuestions}>https://www.fontbolt.com/font/blockbuster-font/
-                        <span>Continuar</span> <ArrowRightIcon />
+                    <button className={`blockbuster-guess-movies__button blockbuster-guess-movies__button--continue`} onClick={handleContinueWithTeamBQuestions}>
+                        <span>Continuar</span>
                     </button>
                 }
             </div>

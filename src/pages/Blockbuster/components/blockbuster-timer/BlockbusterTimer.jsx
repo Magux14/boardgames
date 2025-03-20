@@ -30,7 +30,7 @@ export const BlockbusterTimer = ({ defaultTime }) => {
                     (timer == null || timer <= 0) &&
                     <span className={`blockbuster-timer__button-reset-timer--font-smaller`}>
                         {
-                            timer == null ? '!Turno!' : 'x__x'
+                            timer == null ? '!TURNO!' : '¡TIEMPO!'
                         }
                     </span>
                 }

@@ -1,12 +1,12 @@
-
 @import '../../blockbuster-page.scss';
+
 .blockbuster-guess-movies {
 
     &__instructions-container {
         padding: 20px;
         font-size: 16px;
     }
-    
+
     &__guess-container {
         display: flex;
         flex-direction: column;
@@ -16,22 +16,31 @@
         padding: 8px;
         min-height: 20vh;
         margin: 10px;
-        margin-top: 100px;
+        margin-top: 50px;
         border-radius: 8px;
         background: rgba(0, 0, 0, 0.05);
+        font-family: 'blockbuster', 'Courier New', Courier, monospace;
+
+        @media (min-width: 990px) {
+            font-size: 30px;
+        }
     }
-    
+
     &__guess-button {
         all: unset;
         user-select: none;
-    
+
         span {
             width: 100%;
             display: flex;
             justify-content: center;
-    
+
             svg {
                 font-size: 30vw;
+
+                @media (min-width: 990px) {
+                    font-size: 100px;
+                }
             }
         }
     }
@@ -53,7 +62,7 @@
         text-align: center;
         text-transform: uppercase;
         width: 100%;
-        font-family: 'blockbuster';
+        font-family: 'blockbuster', 'Courier New', Courier, monospace;
 
         &:active {
             opacity: 0.6;

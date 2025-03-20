@@ -268,7 +268,7 @@ export const blockbusterThings = [
     "manzanas",
     "mapas",
     "martillos",
-    "mascaras",
+    "máscaras",
     "mochilas",
     "muñecas",
     "naves espaciales",
