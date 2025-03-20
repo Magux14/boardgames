@@ -15,12 +15,15 @@ const defaultShowModals = {
 
 export const BlockbusterPage = () => {
 
-    const lstBlockbusterThings = [...blockbusterThings];
-    const lstBlockbusterMovies = [...blockbusterMovies];
+    const [lstBlockbusterThings, setLstBlockbusterThings] = useState([...blockbusterThings]);
+    const [lstBlockbusterMovies, setLstBlockbusterMovies] = useState([...blockbusterMovies]);
     const [showModal, setShowModal] = useState(defaultShowModals);
+    const [randomMovies, setRandomMovies] = useState([]);
+    const [randomThing, setRandomThing] = useState();
     const [selectedMovies, setSelectedMovies] = useState([]);
 
     const handleShowFaceToFace = () => {
+        setRandomThing(getFaceToFaceThing());
         setShowModal({
             ...defaultShowModals,
             faceToFace: true
@@ -28,23 +31,36 @@ export const BlockbusterPage = () => {
     }
 
     const handleShowMovies = () => {
+        const randomMovies = getMoviesList(6);
+        setRandomMovies(randomMovies);
         setShowModal({
             ...defaultShowModals,
             selectMovies: true
         });
     }
 
-    const GetFaceToFaceContent = () => {
-        const randomIndex = Math.floor(Math.random() * lstBlockbusterThings.length);
-        const thing = lstBlockbusterThings.splice(randomIndex, 1);
-        return <span>{`Películas donde hay "${thing}"...`}</span>;
+    const getFaceToFaceThing = () => {
+        let remainingThings = lstBlockbusterThings;
+        if (remainingThings.length == 0) {
+            remainingThings = [...blockbusterThings];
+            setLstBlockbusterThings([...remainingThings]);
+        }
+
+        const randomIndex = Math.floor(Math.random() * remainingThings.length);
+        return remainingThings.splice(randomIndex, 1)[0];
     }
 
     const getMoviesList = (numberOfMovies) => {
         const lstMovies = [];
+        let remainingMovies = lstBlockbusterMovies;
+        if (remainingMovies.length < 6) {
+            remainingMovies = [...blockbusterMovies];
+            setLstBlockbusterMovies(remainingMovies);
+        }
+
         for (let i = 0; i < numberOfMovies; i++) {
-            const randomIndex = Math.floor(Math.random() * lstBlockbusterMovies.length);
-            const movie = lstBlockbusterMovies.splice(randomIndex, 1);
+            const randomIndex = Math.floor(Math.random() * remainingMovies.length);
+            const movie = remainingMovies.splice(randomIndex, 1)[0];
             lstMovies.push(movie);
         }
         return lstMovies;
@@ -57,6 +73,8 @@ export const BlockbusterPage = () => {
             guessMovies: true
         });
     }
+
+    console.log('lstBlockbusterThings', lstBlockbusterThings, randomThing)
 
     return (
         <>
@@ -78,7 +96,7 @@ export const BlockbusterPage = () => {
                     >
                         <div className="blockbuster-page__face-to-face-question-container">
                             <div className="blockbuster-page__face-to-face-question">
-                                {GetFaceToFaceContent()}
+                                <span>{`Películas donde hay "${randomThing}"...`}</span>
                             </div>
                             <BlockbusterTimer defaultTime={15} />
                         </div>
@@ -99,7 +117,7 @@ export const BlockbusterPage = () => {
                         maskClosable={false}
                     >
                         <BlockbusterSelectMovies
-                            lstMovies={getMoviesList(6)}
+                            lstMovies={randomMovies}
                             callbackSetSelectedMovies={handleGetSelectedMovies}
                         />
                     </Modal>
