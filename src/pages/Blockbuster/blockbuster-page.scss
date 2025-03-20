@@ -17,6 +17,12 @@ $blockbuster-blue: rgb(47, 47, 140);
         }
     }
 
+    &__modal-yellow-background {
+        .ant-modal-content {
+            background: $blockbuster-yellow;
+        }
+    }
+
     &__content-container {
         margin-top: 50px;
         display: flex;
@@ -40,53 +46,35 @@ $blockbuster-blue: rgb(47, 47, 140);
         }
     }
 
-    &__button-reset-timer {
-        min-height: 40%;
-        font-size: 13vw;
-        border-radius: 100%;
-        background: blue;
-        color: $blockbuster-yellow;
-
-        :active {
-            opacity: 0.6;
-        }
-    }
-
     &__modal-container {
         background-color: $blockbuster-yellow;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        z-index: 1;
+    }
+
+    &__modal-content {
+        padding-top: 20px;
         position: fixed;
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 100vh;
-        width: 100vw;
-        z-index: 1;
     }
 
-    &__close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 40px !important;
-        height: 40px !important;
-    }
-
-    &__question {
-        font-size: 5vw;
-    }
-
-    &__timer {
-        font-size: 40vw;
-        color: blue;
-    }
-
-    &__timer--time-over {
-        color: rgb(193, 12, 12);
-        font-size: 30vw;
-    }
-
-    &__face-to-face-question {
+    &__face-to-face-question-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin-top: 50px;
         font-size: 5vw;
     }
+
+    &__face-to-face-question {
+        margin-bottom: 30px;
+    }
+
 }

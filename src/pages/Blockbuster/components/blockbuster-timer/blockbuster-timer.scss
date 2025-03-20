@@ -1,0 +1,46 @@
+@import '../../blockbuster-page.scss';
+
+.blockbuster-timer {
+
+    background: $blockbuster-yellow;
+
+    &__button-reset-timer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80vw;
+        width: 80vw;
+        padding: 20px;
+        font-size: 40vw;
+        border-radius: 100%;
+        background: blue;
+        color: $blockbuster-yellow;
+
+        :active {
+            opacity: 0.6;
+        }
+    }
+
+    &__button-reset-timer--font-smaller {
+        font-size: 15vw;
+    }
+
+    &__timer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__timer {
+        font-size: 40vw;
+        line-height: 33vw;
+        color: blue;
+        user-select: none;
+    }
+
+    &__timer--time-over {
+        color: rgb(193, 12, 12);
+        font-size: 30vw;
+    }
+
+}

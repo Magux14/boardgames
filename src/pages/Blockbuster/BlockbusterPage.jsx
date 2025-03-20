@@ -1,22 +1,36 @@
 import React, { useState } from 'react';
-import { BlockbusterTimer } from './components/BlockbusterTimer';
+import { BlockbusterTimer } from './components/blockbuster-timer/BlockbusterTimer';
 import { blockbusterMovies, blockbusterThings } from '../../../data/blockbuster';
+import { BlockbusterSelectMovies } from './components/blockbuster-select-movies/BlockbusterSelectMovies';
+import { BlockbusterGuessMovies } from './components/blockbuster-guess-movies/BlockbusterGuessMovies';
+import { Modal } from 'antd';
 import './blockbuster-page.scss';
-import { BlockbusterSelectMovies } from './components/BlockbusterSelectMovies';
+
+const defaultShowModals = {
+    faceToFace: false,
+    selectMovies: false,
+    guessMovies: false
+}
 
 export const BlockbusterPage = () => {
 
     const lstBlockbusterThings = [...blockbusterThings];
     const lstBlockbusterMovies = [...blockbusterMovies];
-    const [showFaceToFace, setShowFaceToFace] = useState(false);
-    const [showSelectMovies, setShowSelectMovies] = useState(false);
+    const [showModal, setShowModal] = useState(defaultShowModals);
+    const [selectedMovies, setSelectedMovies] = useState([]);
 
     const handleShowFaceToFace = () => {
-        setShowFaceToFace(true);
+        setShowModal({
+            ...defaultShowModals,
+            faceToFace: true
+        });
     }
 
     const handleShowMovies = () => {
-        setShowSelectMovies(true);
+        setShowModal({
+            ...defaultShowModals,
+            selectMovies: true
+        });
     }
 
     const GetFaceToFaceContent = () => {
@@ -35,18 +49,75 @@ export const BlockbusterPage = () => {
         return lstMovies;
     }
 
+    const handleGetSelectedMovies = (lstMovies) => {
+        setSelectedMovies(lstMovies);
+        setShowModal({
+            ...defaultShowModals,
+            guessMovies: true
+        });
+    }
+
     return (
         <div className="blockbuster-page">
-
             {
-                showFaceToFace &&
-                <BlockbusterTimer defaultTime={15} callbackClose={() => setShowFaceToFace(false)}>
-                    {GetFaceToFaceContent()}
-                </BlockbusterTimer>
+                showModal.faceToFace &&
+                <Modal
+                    open={showModal.faceToFace}
+                    width={'100vw'}
+                    height={'100vh'}
+                    className="blockbuster-page__modal-yellow-background"
+                    footer={null}
+                    onCancel={() => setShowModal({
+                        ...defaultShowModals,
+                        faceToFace: false
+                    })}
+                    maskClosable={false}
+                >
+                    <div className="blockbuster-page__face-to-face-question-container">
+                        <div className="blockbuster-page__face-to-face-question">
+                            {GetFaceToFaceContent()}
+                        </div>
+                        <BlockbusterTimer defaultTime={15} />
+                    </div>
+                </Modal>
             }
             {
-                showSelectMovies &&
-                <BlockbusterSelectMovies lstMovies={getMoviesList(6)} />
+                showModal.selectMovies &&
+                <Modal
+                    open={showModal.selectMovies}
+                    width={'100vw'}
+                    height={'100vh'}
+                    className="blockbuster-page__modal-yellow-background"
+                    footer={null}
+                    onCancel={() => setShowModal({
+                        ...defaultShowModals,
+                        selectMovies: false
+                    })}
+                    maskClosable={false}
+                >
+                    <BlockbusterSelectMovies
+                        lstMovies={getMoviesList(6)}
+                        callbackSetSelectedMovies={handleGetSelectedMovies}
+                    />
+                </Modal>
+            }
+            {
+                showModal.guessMovies &&
+                <Modal
+                    open={showModal.guessMovies}
+                    width={'100vw'}
+                    height={'100vh'}
+                    centered={true}
+                    className="blockbuster-page__modal-yellow-background"
+                    footer={null}
+                    onCancel={() => setShowModal({
+                        ...defaultShowModals,
+                        guessMovies: false
+                    })}
+                    maskClosable={false}
+                >
+                    <BlockbusterGuessMovies lstMovies={selectedMovies} />
+                </Modal>
             }
             <div className="blockbuster-page__logo-container">
                 <img src="./img/blockbuster/logo.png" />
