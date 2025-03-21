@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BlockbusterTimer } from './components/blockbuster-timer/BlockbusterTimer';
 import { blockbusterMovies, blockbusterThings } from '../../../data/blockbuster';
 import { BlockbusterSelectMovies } from './components/blockbuster-select-movies/BlockbusterSelectMovies';
@@ -21,6 +21,7 @@ export const BlockbusterPage = () => {
     const [randomMovies, setRandomMovies] = useState([]);
     const [randomThing, setRandomThing] = useState();
     const [selectedMovies, setSelectedMovies] = useState([]);
+    const [fontLoaded, setFontLoaded] = useState(false);
 
     const handleShowFaceToFace = () => {
         setRandomThing(getFaceToFaceThing());
@@ -74,81 +75,90 @@ export const BlockbusterPage = () => {
         });
     }
 
-    console.log('lstBlockbusterThings', lstBlockbusterThings, randomThing)
+    useEffect(() => {
+        const font = new FontFace('blockbuster', 'url("https://magux14.github.io/boardgames/fonts/Blockletter.otf")');
+        font.load().then(() => {
+            setFontLoaded(true);
+        }).catch((err) => {
+            console.error("Error al cargar la fuente:", err);
+        });
+    }, []);
 
     return (
         <>
             <Header />
-            <div className="blockbuster-page">
-                {
-                    showModal.faceToFace &&
-                    <Modal
-                        open={showModal.faceToFace}
-                        width={'100vw'}
-                        height={'100vh'}
-                        className="blockbuster-page__modal-yellow-background"
-                        footer={null}
-                        onCancel={() => setShowModal({
-                            ...defaultShowModals,
-                            faceToFace: false
-                        })}
-                        maskClosable={false}
-                    >
-                        <div className="blockbuster-page__face-to-face-question-container">
-                            <div className="blockbuster-page__face-to-face-question">
-                                <span>{`Películas donde hay "${randomThing}"...`}</span>
+            {fontLoaded &&
+                <div className="blockbuster-page">
+                    {
+                        showModal.faceToFace &&
+                        <Modal
+                            open={showModal.faceToFace}
+                            width={'100vw'}
+                            height={'100vh'}
+                            className="blockbuster-page__modal-yellow-background"
+                            footer={null}
+                            onCancel={() => setShowModal({
+                                ...defaultShowModals,
+                                faceToFace: false
+                            })}
+                            maskClosable={false}
+                        >
+                            <div className="blockbuster-page__face-to-face-question-container">
+                                <div className="blockbuster-page__face-to-face-question">
+                                    <span>{`Películas donde hay "${randomThing}"...`}</span>
+                                </div>
+                                <BlockbusterTimer defaultTime={15} />
                             </div>
-                            <BlockbusterTimer defaultTime={15} />
-                        </div>
-                    </Modal>
-                }
-                {
-                    showModal.selectMovies &&
-                    <Modal
-                        open={showModal.selectMovies}
-                        width={'100vw'}
-                        height={'100vh'}
-                        className="blockbuster-page__modal-yellow-background"
-                        footer={null}
-                        onCancel={() => setShowModal({
-                            ...defaultShowModals,
-                            selectMovies: false
-                        })}
-                        maskClosable={false}
-                    >
-                        <BlockbusterSelectMovies
-                            lstMovies={randomMovies}
-                            callbackSetSelectedMovies={handleGetSelectedMovies}
-                        />
-                    </Modal>
-                }
-                {
-                    showModal.guessMovies &&
-                    <Modal
-                        open={showModal.guessMovies}
-                        width={'100vw'}
-                        height={'100vh'}
-                        centered={true}
-                        className="blockbuster-page__modal-yellow-background"
-                        footer={null}
-                        onCancel={() => setShowModal({
-                            ...defaultShowModals,
-                            guessMovies: false
-                        })}
-                        maskClosable={false}
-                    >
-                        <BlockbusterGuessMovies lstMovies={selectedMovies} />
-                    </Modal>
-                }
-                <div className="blockbuster-page__logo-container">
-                    <img src="./img/blockbuster/logo.png" />
-                </div>
+                        </Modal>
+                    }
+                    {
+                        showModal.selectMovies &&
+                        <Modal
+                            open={showModal.selectMovies}
+                            width={'100vw'}
+                            height={'100vh'}
+                            className="blockbuster-page__modal-yellow-background"
+                            footer={null}
+                            onCancel={() => setShowModal({
+                                ...defaultShowModals,
+                                selectMovies: false
+                            })}
+                            maskClosable={false}
+                        >
+                            <BlockbusterSelectMovies
+                                lstMovies={randomMovies}
+                                callbackSetSelectedMovies={handleGetSelectedMovies}
+                            />
+                        </Modal>
+                    }
+                    {
+                        showModal.guessMovies &&
+                        <Modal
+                            open={showModal.guessMovies}
+                            width={'100vw'}
+                            height={'100vh'}
+                            centered={true}
+                            className="blockbuster-page__modal-yellow-background"
+                            footer={null}
+                            onCancel={() => setShowModal({
+                                ...defaultShowModals,
+                                guessMovies: false
+                            })}
+                            maskClosable={false}
+                        >
+                            <BlockbusterGuessMovies lstMovies={selectedMovies} />
+                        </Modal>
+                    }
+                    <div className="blockbuster-page__logo-container">
+                        <img src="./img/blockbuster/logo.png" />
+                    </div>
 
-                <div className="blockbuster-page__content-container">
-                    <button className="blockbuster-page__button" onClick={handleShowFaceToFace}>Cara a Cara</button>
-                    <button className="blockbuster-page__button" onClick={handleShowMovies}>Adivina la película</button>
+                    <div className="blockbuster-page__content-container">
+                        <button className="blockbuster-page__button" onClick={handleShowFaceToFace}>Cara a Cara</button>
+                        <button className="blockbuster-page__button" onClick={handleShowMovies}>Adivina la película</button>
+                    </div>
                 </div>
-            </div>
+            }
         </>
     )
 }

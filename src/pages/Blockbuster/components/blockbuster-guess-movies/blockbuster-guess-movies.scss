@@ -10,7 +10,7 @@
         font-size: 7vw;
         min-height: 20vh;
         margin: 10px;
-        margin-top: 50px;
+        margin-top: 10px;
         font-family: 'blockbuster', 'Courier New', Courier, monospace;
 
         @media (min-width: 990px) {
@@ -72,7 +72,6 @@
 
     &__current-team-container {
         padding: 20px 5px;
-        margin: 20px 0;
         text-align: center;
         font-family: 'blockbuster', 'Courier New', Courier, monospace;
         font-size: 20px;
@@ -80,11 +79,11 @@
         color: white;
 
         &--winner {
-            background: rgb(21, 177, 21);
+            color: rgb(21, 177, 21);
         }
 
         &--loser {
-            background: rgb(190, 15, 15);
+            color: rgb(190, 15, 15);
         }
     }
 
@@ -99,7 +98,6 @@
         font-weight: bold;
         gap: 20px;
         justify-content: space-around;
-        margin: 10px;
         min-height: 80px;
         padding: 8px;
         text-align: center;
@@ -116,7 +114,6 @@
         }
 
         &--continue {
-            padding: 8px 20px;
             background: $blockbuster-blue;
             color: white;
         }

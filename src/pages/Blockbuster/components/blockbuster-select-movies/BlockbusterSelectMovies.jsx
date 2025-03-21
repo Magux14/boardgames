@@ -33,6 +33,9 @@ export const BlockbusterSelectMovies = ({ lstMovies = [], callbackSetSelectedMov
                 <div className="blockbuster-select-movies__desc-container">
                     Selecciona 3 películas, tu equipo tratará de adivinarlas, las que no selecciones las deberá adivinar el equipo contrario.
                 </div>
+                <div className="blockbuster-select-movies__info-left-to-select-container">
+                    {`${movies.filter(item => item.selected).length} / 3`}
+                </div>
                 <div className="blockbuster-select-movies__movies-container">
                     {
                         movies.map((movie, index) =>
