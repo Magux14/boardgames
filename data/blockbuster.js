@@ -220,6 +220,7 @@ export const blockbusterMovies = [
 
 export const blockbusterThings = [
     "animales gigantes",
+    "animales que hablan",
     "arañas",
     "arena",
     "aviones",
@@ -245,6 +246,7 @@ export const blockbusterThings = [
     "cestas de picnic",
     "chocolates",
     "cortes de cabello",
+    "cosas o personas invisibles",
     "cucarachas",
     "cuchillos",
     "cuerdas",
@@ -255,9 +257,10 @@ export const blockbusterThings = [
     "escobas",
     "escudos",
     "espadas",
+    "espías",
     "extraterrestres",
     "fantasmas",
-    "flechas",
+    "arco y flechas",
     "flores",
     "fuego",
     "gemelos",

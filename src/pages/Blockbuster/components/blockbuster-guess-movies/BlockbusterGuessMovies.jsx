@@ -3,7 +3,7 @@ import { BlockbusterTimer } from '../blockbuster-timer/BlockbusterTimer';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import './blockbuster-guess-movies.scss';
 
-export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
+export const BlockbusterGuessMovies = ({ lstMovies = [], timeToGuessMovies }) => {
 
     const [isWinnerTeam, setIsWinnerTeam] = useState(true);
     const [movies, setMovies] = useState(lstMovies.filter(item => item.selected == isWinnerTeam));
@@ -41,7 +41,7 @@ export const BlockbusterGuessMovies = ({ lstMovies = [] }) => {
                 </button>
             </div>
 
-            <BlockbusterTimer defaultTime={60} />
+            <BlockbusterTimer defaultTime={timeToGuessMovies} />
 
             <div className="blockbuster-guess-movies__instructions-container">
                 Tu equipo debe adivinar cada una de las siguientes películas, pero solo puedes elegir una forma de adivinar por cada una:

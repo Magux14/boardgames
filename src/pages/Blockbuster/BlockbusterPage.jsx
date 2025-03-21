@@ -3,6 +3,7 @@ import { BlockbusterTimer } from './components/blockbuster-timer/BlockbusterTime
 import { blockbusterMovies, blockbusterThings } from '../../../data/blockbuster';
 import { BlockbusterSelectMovies } from './components/blockbuster-select-movies/BlockbusterSelectMovies';
 import { BlockbusterGuessMovies } from './components/blockbuster-guess-movies/BlockbusterGuessMovies';
+import { useSearchParams } from 'react-router-dom';
 import { Modal } from 'antd';
 import { Header } from '../../components/header/Header'
 import './blockbuster-page.scss';
@@ -22,6 +23,8 @@ export const BlockbusterPage = () => {
     const [randomThing, setRandomThing] = useState();
     const [selectedMovies, setSelectedMovies] = useState([]);
     const [fontLoaded, setFontLoaded] = useState(false);
+    const [searchParams] = useSearchParams();
+    const timeToGuessMovies = searchParams.get('t') || 60;
 
     const handleShowFaceToFace = () => {
         setRandomThing(getFaceToFaceThing());
@@ -117,6 +120,7 @@ export const BlockbusterPage = () => {
                             open={showModal.selectMovies}
                             width={'100vw'}
                             height={'100vh'}
+                            centered={true}
                             className="blockbuster-page__modal-yellow-background"
                             footer={null}
                             onCancel={() => setShowModal({
@@ -146,7 +150,7 @@ export const BlockbusterPage = () => {
                             })}
                             maskClosable={false}
                         >
-                            <BlockbusterGuessMovies lstMovies={selectedMovies} />
+                            <BlockbusterGuessMovies lstMovies={selectedMovies} timeToGuessMovies={timeToGuessMovies} />
                         </Modal>
                     }
                     <div className="blockbuster-page__logo-container">
