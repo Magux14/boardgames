@@ -145,8 +145,13 @@
         border-radius: 5px;
         padding: 5px 2% 5px 2%;
         margin: 5px;
-        font-size: 16px;
+        font-size: 14px;
         color: rgb(95, 95, 95);
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
     }
 
     &__rank {
@@ -272,6 +277,26 @@
 
         svg {
             fill: white;
+        }
+    }
+
+    &__files-container {
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px;
+
+        button {
+            border-radius: 8px;
+            background: rgb(152, 152, 152);
+            color: white;
+
+            &:active {
+                opacity: 0.6;
+            }
+        }
+
+        svg {
+            fill: rgb(164, 7, 7);
         }
     }
 }

@@ -8,6 +8,9 @@ import { Header } from '../../components/header/Header'
 import SearchIcon from '@mui/icons-material/Search';
 import SortIcon from '@mui/icons-material/Sort';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import { Modal } from 'antd';
+import { GameFiles } from './components/game-files/GameFiles';
 
 const shortTime = 15;
 const mediumTime = 40;
@@ -21,6 +24,7 @@ export const GameListPage = () => {
     });
     const [lstFilteredItems, setlstFilteredItems] = useState(lstGames);
     const [filterType, setFilterType] = useState('nameAsc');
+    const [openFileModal, setOpenFileModal] = useState(false);
 
     const handleSearchWordChange = (event) => {
         setFilters({
@@ -113,6 +117,10 @@ export const GameListPage = () => {
         setlstFilteredItems(lstFiltered);
     }
 
+    const handleOpenFileMoal = () => {
+        setOpenFileModal(true);
+    }
+
     useEffect(() => {
         applyFilters();
     }, [filters])
@@ -120,6 +128,7 @@ export const GameListPage = () => {
     return (
         <>
             <Header />
+
             <div className="game-list-page game-list-page__filter-container">
                 <div className="game-list-page__inputs-container">
 
@@ -235,8 +244,8 @@ export const GameListPage = () => {
                                                 ?
                                                 Array.from({ length: 5 }, (_, i) => i + 1).map((i) =>
                                                     <img key={`start-${i}`} src={`./icons/${i <= item.rank ? 'star' : 'unfilled-star'}.png`}
-                                                        width={20}
-                                                        height={20}
+                                                        width={18}
+                                                        height={18}
                                                         alt="star"
                                                     />
                                                 )
@@ -250,11 +259,28 @@ export const GameListPage = () => {
                                 <span className='game-list-page__tags'><AccessTimeIcon /> {`${item.minutes}min`}</span>
                                 <span className='game-list-page__tags'><PersonIcon /> {`${item.minPlayers == item.maxPlayers ? ` ${item.minPlayers} ` : `${item.minPlayers} - ${item.maxPlayers}`}`}</span>
                                 <span className='game-list-page__tags'><PsychologyIcon /> {item.difficulty}</span>
-
-                                {item.lang ?
-                                    <span className='game-list-page__tags'><TranslateIcon /> {item.lang}</span> : null
+                                {
+                                    item.lang ?
+                                        <span className='game-list-page__tags'><TranslateIcon /> {item.lang}</span> : null
+                                }
+                                <Modal
+                                    open={openFileModal}
+                                    width={'100vw'}
+                                    height={'100vh'}
+                                    footer={null}
+                                    onCancel={() => setOpenFileModal(false)}
+                                    maskClosable={false}
+                                >
+                                    <GameFiles files={item.files} title={item.name} />
+                                </Modal>
+                                {
+                                    (item.files) &&
+                                    <div className="game-list-page__files-container">
+                                        <button onClick={() => handleOpenFileMoal()}>Archivos <PictureAsPdfIcon /></button>
+                                    </div>
                                 }
                             </div>
+
 
                         </div>)}
                 </div>

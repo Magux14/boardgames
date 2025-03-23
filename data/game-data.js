@@ -819,6 +819,11 @@ export const lstGames = [
         lang: 'EN',
         img: 'Zombie Kittens.png',
         rank: 4,
-        minutes: 15
+        minutes: 15,
+        files: [{
+            name: 'Traducción de cartas',
+            url: 'https://drive.google.com/file/d/1pP92DnCKNm_Mkb4sd0QLVldKNoLJBWXs/view?usp=drive_link'
+        }
+        ]
     }
 ]

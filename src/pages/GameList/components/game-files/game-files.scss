@@ -1,0 +1,31 @@
+.game-files {
+    &__container {
+        margin: 30px 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+    &__file {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid rgb(178, 178, 178);
+        padding: 10px;
+        border-radius: 8px;
+        background: rgb(243, 243, 243);
+
+        svg {
+            fill: rgb(164, 7, 7);
+        }
+
+        &:active {
+            opacity: 0.6;
+        }
+    }
+}
