@@ -263,25 +263,27 @@ export const GameListPage = () => {
                                     item.lang ?
                                         <span className='game-list-page__tags'><TranslateIcon /> {item.lang}</span> : null
                                 }
-                                <Modal
-                                    open={openFileModal}
-                                    width={'100vw'}
-                                    height={'100vh'}
-                                    footer={null}
-                                    onCancel={() => setOpenFileModal(false)}
-                                    maskClosable={false}
-                                >
-                                    <GameFiles files={item.files} title={item.name} />
-                                </Modal>
+
                                 {
+
                                     (item.files) &&
-                                    <div className="game-list-page__files-container">
-                                        <button onClick={() => handleOpenFileMoal()}>Archivos <PictureAsPdfIcon /></button>
-                                    </div>
+                                    <>
+                                        <Modal
+                                            open={openFileModal}
+                                            width={'100vw'}
+                                            height={'100vh'}
+                                            footer={null}
+                                            onCancel={() => setOpenFileModal(false)}
+                                            maskClosable={false}
+                                        >
+                                            <GameFiles files={item.files} title={item.name} />
+                                        </Modal>
+                                        <div className="game-list-page__files-container">
+                                            <button onClick={() => handleOpenFileMoal()}>Archivos <PictureAsPdfIcon /></button>
+                                        </div>
+                                    </>
                                 }
                             </div>
-
-
                         </div>)}
                 </div>
             </div>

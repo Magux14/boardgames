@@ -281,7 +281,13 @@ export const lstGames = [
         lang: 'EN',
         img: 'La-Isla-Prohibida.png',
         rank: 4,
-        minutes: 30
+        minutes: 30,
+        files: [
+            {
+                name: 'Manual La Isla Prohibida',
+                url: 'https://drive.google.com/file/d/1J8Zzkp4LvWBIRRhQ2tuA6PSaVWjpoSfj/view?usp=drive_link'
+            }
+        ]
     },
     {
         name: 'La Morada Maldita',
@@ -352,7 +358,12 @@ export const lstGames = [
         lang: 'EN',
         img: 'Monopoly-Game-of-Thrones.png',
         rank: 4,
-        minutes: 60
+        minutes: 60,
+        files: [{
+            name: 'Reglas speed run',
+            url: 'https://docs.google.com/document/d/1DZW_YdeKGbdrN-KumSnazuWBO5oHOOHJ/edit?usp=drive_link&ouid=118249578608824905636&rtpof=true&sd=true'
+        }
+        ]
     },
     {
         name: 'Monopoly Pokémon',
