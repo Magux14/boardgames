@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
 import './deck.scss';
 
-export const Deck = ({ cards = [], backImgPath, classes, type = "onlyContent", infinite = true }) => {
+export const Deck = ({ cards = [], backImgPath, classes, infinite = true }) => {
 
     const [lstRemainingCards, setLstRemainingCards] = useState(cards);
     const [currentCard, setCurrentCard] = useState();
     const [revealed, setRevealed] = useState(false);
-
-    const parseOnlyContentCard = (text) => {
-        return {
-            title: '',
-            desc: text
-        }
-    }
 
     const handleSelectNext = () => {
         let remainingCards = [...lstRemainingCards];
@@ -24,9 +17,6 @@ export const Deck = ({ cards = [], backImgPath, classes, type = "onlyContent", i
         setTimeout(() => {
             const randomIndex = Math.floor(Math.random() * remainingCards.length);
             let card = remainingCards.splice(randomIndex, 1)[0];
-            if (type == 'onlyContent') {
-                card = parseOnlyContentCard(card);
-            }
             setLstRemainingCards([...remainingCards]);
             setCurrentCard(card);
             setRevealed(true);
@@ -42,7 +32,12 @@ export const Deck = ({ cards = [], backImgPath, classes, type = "onlyContent", i
                         {
                             currentCard &&
                             <>
-                                {currentCard.desc}
+                                <div className={`${classes?.cardClassTitle}`}>
+                                    {currentCard.title}
+                                </div>
+                                <div className={`${classes?.cardClassDesc}`}>
+                                    {currentCard.desc}
+                                </div>
                             </>
                         }
                     </div>

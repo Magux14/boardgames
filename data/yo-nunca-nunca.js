@@ -20,7 +20,7 @@ export const lstYoNuncaNunca = [
     "He usado juguetes sexuales",
     "Me he tatuado algo de lo que me arrepienta",
     "He mandado un mensaje pedo a mi ex",
-    "He han cachado teniendo sexo",
+    "Me han cachado teniendo sexo",
     "He mentido sobre mi situación sentimental",
     "¡Ronda especial! Cada quien inventa una pregunta de \"Yo nunca nunca\"",
     "Me he masturbado viendo el instagram de alguien",

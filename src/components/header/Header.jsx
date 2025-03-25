@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChecklistIcon from '@mui/icons-material/Checklist';
 import CasinoIcon from '@mui/icons-material/Casino';
 import { useNavigate } from "react-router-dom";
-import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave';
 
 export const Header = () => {
 
@@ -58,7 +57,7 @@ export const Header = () => {
                         </li>
 
                         <li onClick={() => goTo('/yo-nunca-nunca')}>
-                            <span>Yo Nunca Nunca</span> <img src="./img/no-mames/back.png" alt="cow" width={24} height={24} />
+                            <span>Yo Nunca Nunca</span> <img src="./img/yo-nunca-nunca/back.png" alt="cow" width={24} height={24} />
                         </li>
                     </ul>
                 </div>
