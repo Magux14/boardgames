@@ -7,6 +7,8 @@ import { PhasmophobiaFilterPage } from './pages/phasmophobia/phasmophobia-filter
 import { KnowledgeRace } from './pages/knowledge-race/KnowledgeRace';
 import { CowMind } from './pages/cow-mind/CowMind';
 import { BlockbusterPage } from './pages/blockbuster/BlockBusterPage';
+import { NoMamesPage } from './pages/no-mames/NoMamesPage';
+import { YoNuncaNuncaPage } from './pages/yo-nunca-nunca/YoNuncaNunca';
 
 export const App = () => {
 
@@ -20,6 +22,8 @@ export const App = () => {
                 <Route path="/knowledge-race" element={<KnowledgeRace />} />
                 <Route path="/cow-mind" element={<CowMind />} />
                 <Route path="/blockbuster" element={<BlockbusterPage />} />
+                <Route path="/yo-nunca-nunca" element={<YoNuncaNuncaPage />} />
+                <Route path="/no-mames" element={<NoMamesPage />} />
             </Routes>
         </BrowserRouter>
     )
