@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { lstCowMindQuestions } from '../../../data/mente-vacuna';
-import './CowMind.scss';
 import { Header } from '../../components/header/Header';
+import './cow-mind.scss';
 
 export const CowMind = () => {
 

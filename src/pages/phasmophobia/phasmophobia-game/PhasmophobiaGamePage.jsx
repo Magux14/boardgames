@@ -1,10 +1,10 @@
 
 import React, { useEffect, useState } from 'react'
-import { usePhasmophobiaGame } from '../../hooks/usePhasmophobiaGame'
-import { Dice } from '../../components/dice/Dice';
-import ConfirmationModal from '../../components/confirmation-modal/ConfirmationModal';
-import { phasmophobiaEquipment } from '../../../data/phasmophobia-data';
-import { Header } from '../../components/header/Header';
+import { usePhasmophobiaGame } from '../../../hooks/usePhasmophobiaGame'
+import { Dice } from '../../../components/dice/Dice';
+import ConfirmationModal from '../../../components/confirmation-modal/ConfirmationModal';
+import { phasmophobiaEquipment } from '../../../../data/phasmophobia-data';
+import { Header } from '../../../components/header/Header';
 import { PGTestVideo } from './components/pg-test-video/PGTestVideo';
 import { PGConfig } from './components/pg-config/PGConfig';
 import './phasmophobia-game-page.scss';

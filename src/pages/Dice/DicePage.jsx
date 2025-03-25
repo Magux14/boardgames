@@ -2,7 +2,7 @@ import React from 'react'
 import { Header } from '../../components/header/Header'
 import { Dice } from '../../components/dice/Dice'
 import { DiceCharacter } from '../../components/dice/DiceCharacter'
-import './DicePage.css'
+import './dice-page.css';
 
 export const DicePage = () => {
     return (

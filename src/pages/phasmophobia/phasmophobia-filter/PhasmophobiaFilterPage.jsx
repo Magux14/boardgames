@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { phasmophobiaEquipment, phasmophobiaGhostList, phasmophobiaTarotCards } from '../../../data/phasmophobia-data';
-import './PhasmophobiaFilterPage.scss';
-import { Header } from '../../components/header/Header'
+import { phasmophobiaEquipment, phasmophobiaGhostList, phasmophobiaTarotCards } from '../../../../data/phasmophobia-data';
+import { Header } from '../../../components/header/Header'
 import { useNavigate } from 'react-router-dom';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import './phasmophobia-filter-page.scss';
+
 export const PhasmophobiaFilterPage = () => {
 
     const [filters, setFilters] = useState(() => {

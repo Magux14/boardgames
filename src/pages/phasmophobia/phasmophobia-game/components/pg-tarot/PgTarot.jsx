@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './pg-tarot.scss';
-import { phasmophobiaTarotCards } from '../../../../../data/phasmophobia-data';
+import { phasmophobiaTarotCards } from '../../../../../../data/phasmophobia-data';
 
 export const PGTarot = ({ callbackClose, callbackAddGhostStacks }) => {
 

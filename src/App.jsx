@@ -1,13 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { GameListPage } from './pages/GameList/GameListPage'
-import { DicePage } from './pages/Dice/DicePage'
-import { PhasmophobiaGamePage } from './pages/PhasmophobiaGame/PhasmophobiaGamePage'
-import { PhasmophobiaFilterPage } from './pages/PhasmophobiaFilter/PhasmophobiaFilterPage'
-import { KnowledgeRace } from './pages/KnowledgeRace/KnowledgeRace'
-import { CowMind } from './pages/CowMind/CowMind'
-import { BlockbusterPage } from './pages/Blockbuster/BlockBusterPage'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { GameListPage } from './pages/game-list/GameListPage';
+import { DicePage } from './pages/dice/DicePage';
+import { PhasmophobiaGamePage } from './pages/phasmophobia/phasmophobia-game/PhasmophobiaGamePage';
+import { PhasmophobiaFilterPage } from './pages/phasmophobia/phasmophobia-filter/PhasmophobiaFilterPage';
+import { KnowledgeRace } from './pages/knowledge-race/KnowledgeRace';
+import { CowMind } from './pages/cow-mind/CowMind';
+import { BlockbusterPage } from './pages/blockbuster/BlockBusterPage';
 
 export const App = () => {
 
