@@ -39,8 +39,10 @@
         padding: 10px;
         border-radius: 20px;
         background: white;
-        font-size: 24px;
+        font-size: 20%;
     }
+
+    &__card-inside-content {}
 
     &__card--revealed {
         backface-visibility: hidden;

@@ -28,7 +28,7 @@ export const Deck = ({ cards = [], backImgPath, classes, infinite = true }) => {
             <div className={`deck__card ${revealed ? '' : 'deck__card--flip'}`} >
                 <img className="deck__card-inside deck__card--revealed deck__card--back" src={backImgPath} alt="card" />
                 <div className={`deck__card-inside deck__card--revealed ${classes?.cardClassMargin}`}>
-                    <div className={classes?.cardClassInside}>
+                    <div className={`deck__card-inside-content ${classes?.cardClassInside}`}>
                         {
                             currentCard &&
                             <>

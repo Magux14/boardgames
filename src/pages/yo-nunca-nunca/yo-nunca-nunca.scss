@@ -13,21 +13,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-evenly;
         padding: 20px;
         font-weight: bold;
         background: white;
         border-radius: 30px;
         height: 100%;
-        gap: 15%;
     }
 
     &__card-title {
-        font-size: 30px;
-        
+        font-size: 25px;
     }
 
     &__card-desc {
         font-size: 38px;
+        overflow-x: hidden;
     }
 
     &__button {
