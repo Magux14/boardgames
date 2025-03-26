@@ -13,19 +13,12 @@
         height: 70vh;
         margin-top: 5vh;
         text-align: center;
-        transition: transform 1s;
+        transition: transform 0.6s;
         transform-style: preserve-3d;
     }
 
     &__card--flip {
         transform: rotateY(180deg);
-    }
-
-    &__card--dissapearing {
-        animation-name: fadeInOpacity;
-        animation-iteration-count: 1;
-        animation-timing-function: ease-out;
-        animation-duration: 1s;
     }
 
     &__card-inside {

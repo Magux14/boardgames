@@ -20,7 +20,7 @@ export const Deck = ({ cards = [], backImgPath, classes, infinite = true }) => {
             setLstRemainingCards([...remainingCards]);
             setCurrentCard(card);
             setRevealed(true);
-        }, 600);
+        }, 500);
     }
 
     return (
