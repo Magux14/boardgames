@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import BedtimeIcon from '@mui/icons-material/Bedtime';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import './mario-party-main-game.scss';
 
-const daysLeftTuSwitchTime = 3;
+const daysLeftTuSwitchTime = 2;
 
 export const MarioPartyMainGame = () => {
     const [searchParams] = useSearchParams();
@@ -13,11 +15,11 @@ export const MarioPartyMainGame = () => {
     });
 
     const handleNextTurn = () => {
-        setTurnsLeft(--turnsLeft);
-        if (day.daysLeft == 1) {
+        setTurnsLeft((prev) => prev - 1);
+        if (day.daysLeft > 1) {
             setDay({
                 ...day,
-                daysLeft: --daysLeft
+                daysLeft: --day.daysLeft
             });
         } else {
             setDay({
@@ -29,20 +31,46 @@ export const MarioPartyMainGame = () => {
 
     useEffect(() => {
 
-        if (turnsLeft < 0) {
+        if (turnsLeft <= 0) {
             console.log('se terminó el juego');
         }
 
     }, [turnsLeft]);
 
     return (
-        <div className="mario-party-main-game__container">
-            <div className="mario-party-main-game__day-status">
+        <div className={`mario-party-main-game__container ${day.isDay ? 'mario-party-main-game__container--day' : 'mario-party-main-game__container--night'}`}>
+            <div className="mario-party-main-game__day-status-container">
+                {
+                    day.isDay ?
+                        [1, 2].map((_, index) =>
+                            <WbSunnyIcon
+                                key={index}
+                                className={`mario-party-main-game__day-status mario-party-main-game__day-status-sun ${index >= day.daysLeft ? 'mario-party-main-game__day-status--inactive' : ''}`}
+                            />
+                        )
+                        :
+                        [1, 2].map((_, index) =>
+                            <BedtimeIcon
+                                key={index}
+                                className={`mario-party-main-game__day-status mario-party-main-game__day-status-moon ${index >= day.daysLeft ? 'mario-party-main-game__day-status--inactive' : ''}`}
+                            />
+                        )
+                }
             </div>
             <div className="mario-party-main-game__turns-left">
-                {turnsLeft}
+                {
+                    turnsLeft > 1
+                        ?
+                        <span>
+                            ¡Faltan {turnsLeft} rondas!
+                        </span>
+                        :
+                        <span>
+                            ¡Último turno!
+                        </span>
+                }
             </div>
-            <button>¡Mini Juegos!</button>
+            <button className="mario-party-main-game__button" onClick={(() => handleNextTurn())}>¡Mini Juegos!</button>
         </div>
     )
 

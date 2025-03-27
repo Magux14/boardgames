@@ -10,6 +10,12 @@ $mobileMaxValue: 990px;
     src: url('https://magux14.github.io/boardgames/fonts/Blockletter.otf');
 }
 
+@font-face {
+    font-family: "superMario";
+    src: url('https://magux14.github.io/boardgames/fonts/SuperMario256.ttf');
+}
+
+
 * {
     box-sizing: border-box;
 }
