@@ -1,0 +1,13 @@
+.mario-party-main-game {
+    &__container {
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    &__day-status {}
+
+    &__turns-left {}
+}

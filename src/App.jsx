@@ -9,6 +9,7 @@ import { CowMind } from './pages/cow-mind/CowMind';
 import { BlockbusterPage } from './pages/blockbuster/BlockBusterPage';
 import { NoMamesPage } from './pages/no-mames/NoMamesPage';
 import { YoNuncaNuncaPage } from './pages/yo-nunca-nunca/YoNuncaNunca';
+import { MarioPartyPage } from './pages/mario-party/MarioPartyPage';
 
 export const App = () => {
 
@@ -24,6 +25,7 @@ export const App = () => {
                 <Route path="/blockbuster" element={<BlockbusterPage />} />
                 <Route path="/yo-nunca-nunca" element={<YoNuncaNuncaPage />} />
                 <Route path="/no-mames" element={<NoMamesPage />} />
+                <Route path="/mario-party" element={<MarioPartyPage />} />
             </Routes>
         </BrowserRouter>
     )

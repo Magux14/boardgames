@@ -605,7 +605,6 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 3,
         img: 'splendor-duel.jpg',
-        new: true,
         minutes: 30
     },
     {

@@ -59,6 +59,10 @@ export const Header = () => {
                         <li onClick={() => goTo('/yo-nunca-nunca')}>
                             <span>Yo Nunca Nunca</span> <img src="./img/yo-nunca-nunca/back.png" alt="cow" width={24} height={24} />
                         </li>
+
+                        <li onClick={() => goTo('/mario-party')}>
+                            <span>Mario Party</span> <img src="./img/games/Magux-party.png" alt="mario party" width={24} height={24} />
+                        </li>
                     </ul>
                 </div>
                 <div className={`overlay ${isOpen ? 'active' : ''}`} onClick={toggleMenu}></div>
