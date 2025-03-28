@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './deck.scss';
 
-export const Deck = ({ cards = [], backImgPath, classes, infinite = true }) => {
+export const Deck = ({ cards = [], backImgPath, classes, infinite = true, showNextButton = true }) => {
 
     const [lstRemainingCards, setLstRemainingCards] = useState(cards);
     const [currentCard, setCurrentCard] = useState();
@@ -23,6 +23,12 @@ export const Deck = ({ cards = [], backImgPath, classes, infinite = true }) => {
         }, 500);
     }
 
+    useEffect(() => {
+        setTimeout(() => {
+            handleSelectNext();
+        }, [600])
+    }, [])
+
     return (
         <div className="deck deck__container"  >
             <div className={`deck__card ${revealed ? '' : 'deck__card--flip'}`} >
@@ -43,7 +49,10 @@ export const Deck = ({ cards = [], backImgPath, classes, infinite = true }) => {
                     </div>
                 </div>
             </div>
-            <button className={`deck__button ${classes?.button}`} onClick={() => handleSelectNext()}>Siguiente</button>
+            {
+                showNextButton &&
+                <button className={`deck__button ${classes?.button}`} onClick={() => handleSelectNext()}>Siguiente</button>
+            }
         </div>
     )
 }

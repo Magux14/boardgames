@@ -6,7 +6,7 @@ import './mario-party-main-game.scss';
 
 const daysLeftTuSwitchTime = 2;
 
-export const MarioPartyMainGame = () => {
+export const MarioPartyMainGame = ({ callbackShowGameList }) => {
     const [searchParams] = useSearchParams();
     const [turnsLeft, setTurnsLeft] = useState(searchParams.get('t') || 10);
     const [day, setDay] = useState({
@@ -70,7 +70,7 @@ export const MarioPartyMainGame = () => {
                         </span>
                 }
             </div>
-            <button className="mario-party-main-game__button" onClick={(() => handleNextTurn())}>¡Mini Juegos!</button>
+            <button className="mario-party-main-game__button" onClick={(() => callbackShowGameList())}>¡Mini Juego!</button>
         </div>
     )
 

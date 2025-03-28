@@ -1,0 +1,47 @@
+.mario-party-game-list {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__game-item {
+        border-radius: 10px;
+        color: white;
+        background: black;
+        text-align: center;
+    }
+
+    &__card-content {
+        display: flex;
+        flex-direction: column;
+        background: rgb(28, 246, 181);
+    }
+
+    &__card-inside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        padding-top: 40px;
+        font-weight: bold;
+        background: white;
+        border-radius: 30px;
+        height: 100%;
+        gap: 30px;
+    }
+
+    &__card-title {
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    &__card-desc {
+        font-size: 18px;
+        overflow-x: hidden;
+    }
+
+    &__button {
+        background: rgb(33, 158, 189);
+    }
+}

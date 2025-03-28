@@ -1,6 +1,11 @@
 .mario-party {
-
     &__container {
         height: 95vh;
     }
+}
+
+.ant-modal-content {
+    background: rgb(0, 0, 0, 0.2) !important;
+    height: 98vh;
+    padding: 0 !important;
 }
