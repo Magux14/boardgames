@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { lstMarioPartyGames } from '../../../../../data/mario-party';
 import './mario-party-game-list.scss';
 import { Deck } from '../../../../components/deck/Deck';
+const flipCardSound = "./img/mario-party/flip-card.ogg";
 
-export const MarioPartyGameList = ({ lstGames, callbackUpdateGameList }) => {
+export const MarioPartyGameList = ({ lstGames, callbackUpdateGameList, callbackHandleNextTurn, callbackSound }) => {
 
     const [currentGame, setCurrentGame] = useState(null);
 
@@ -21,6 +22,9 @@ export const MarioPartyGameList = ({ lstGames, callbackUpdateGameList }) => {
 
     useEffect(() => {
         getGame();
+        setTimeout(() => {
+            callbackSound('action-sound', flipCardSound);
+        }, 1_200);
     }, []);
 
     return (
@@ -40,7 +44,8 @@ export const MarioPartyGameList = ({ lstGames, callbackUpdateGameList }) => {
                         }
                     }
                     infinite={true}
-                    showNextButton={false}
+                    callbackButtonFunction={callbackHandleNextTurn}
+                    buttonText={'Siguiente ronda'}
                 />
             }
 

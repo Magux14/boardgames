@@ -16,7 +16,7 @@ export const lstMarioPartyGames = [
         desc: "Nuestro amigo kenny murió, por turno cada jugador armará una torre de dados lo más alta que pueda usando todos los dados disponibles, quien haya apilado el mayor número de dados será el ganador."
     },
     {
-        title: "Cargame a la cima",
+        title: "Cárgame a la cima",
         desc: "Cada jugador pone sus 5 dados en una lína horizontal y ponen su mipple arriba del dado de la extrema derecha, cuando todos los jugadores estén listos intentarán hacer una torre de derecha a izquierda, manteniendo a su mipple siempre arriba, agarrando el dado de hasta abajo, quien logre hacerlo primero ganará."
     },
     {

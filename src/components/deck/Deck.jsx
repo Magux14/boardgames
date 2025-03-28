@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './deck.scss';
 
-export const Deck = ({ cards = [], backImgPath, classes, infinite = true, showNextButton = true }) => {
+export const Deck = ({ cards = [], callbackButtonFunction, backImgPath, classes, infinite = true, showNextButton = true, buttonText = "Siguiente" }) => {
 
     const [lstRemainingCards, setLstRemainingCards] = useState(cards);
     const [currentCard, setCurrentCard] = useState();
     const [revealed, setRevealed] = useState(false);
+
+    const onButtonClick = () => {
+        if (callbackButtonFunction) {
+            callbackButtonFunction();
+        } else {
+            handleSelectNext();
+        }
+    }
 
     const handleSelectNext = () => {
         let remainingCards = [...lstRemainingCards];
@@ -32,7 +40,7 @@ export const Deck = ({ cards = [], backImgPath, classes, infinite = true, showNe
     return (
         <div className="deck deck__container"  >
             <div className={`deck__card ${revealed ? '' : 'deck__card--flip'}`} >
-                <img className="deck__card-inside deck__card--revealed deck__card--back" src={backImgPath} alt="card" />
+                <div className={`deck__card-inside deck__card--revealed deck__card--back ${classes?.cardClassBack}`} style={{ backgroundImage: `url('${backImgPath}')` }} alt="card" />
                 <div className={`deck__card-inside deck__card--revealed ${classes?.cardClassMargin}`}>
                     <div className={`deck__card-inside-content ${classes?.cardClassInside}`}>
                         {
@@ -51,7 +59,7 @@ export const Deck = ({ cards = [], backImgPath, classes, infinite = true, showNe
             </div>
             {
                 showNextButton &&
-                <button className={`deck__button ${classes?.button}`} onClick={() => handleSelectNext()}>Siguiente</button>
+                <button className={`deck__button ${classes?.button}`} onClick={() => onButtonClick()}>{buttonText}</button>
             }
         </div>
     )

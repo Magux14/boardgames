@@ -44,7 +44,5 @@ Hi! it's good to see you here.`
 logExtraData();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />
 )

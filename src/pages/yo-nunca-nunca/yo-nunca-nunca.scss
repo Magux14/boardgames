@@ -9,6 +9,11 @@
         background: red;
     }
 
+    &__card--back {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
     &__card-inside {
         display: flex;
         flex-direction: column;

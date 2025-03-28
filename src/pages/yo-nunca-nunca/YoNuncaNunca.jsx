@@ -26,6 +26,7 @@ export const YoNuncaNuncaPage = () => {
               cardClassInside: "yo-nunca-nunca__card-inside",
               cardClassTitle: "yo-nunca-nunca__card-title",
               cardClassDesc: "yo-nunca-nunca__card-desc",
+              cardClassBack: "yo-nunca-nunca__card--back",
               button: "yo-nunca-nunca__button"
             }
           }

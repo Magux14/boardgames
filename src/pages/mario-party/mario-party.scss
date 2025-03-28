@@ -1,6 +1,78 @@
 .mario-party {
+
     &__container {
-        height: 95vh;
+        padding-top: 50px;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-size: cover;
+        gap: 50px;
+
+        &--day {
+            background-image: url('./img/mario-party/background-day.png');
+        }
+
+        &--night {
+            background-image: url('./img/mario-party/background-night.png');
+        }
+    }
+
+    &__day-status-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    &__day-status {
+        width: 70px !important;
+        height: 70px !important;
+        animation: moveIcons 1s infinite linear;
+
+        &--inactive {
+            opacity: 0.3;
+        }
+
+        @keyframes moveIcons {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(10deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    &__day-status-sun {
+        fill: orange !important;
+    }
+
+    &__day-status-moon {
+        fill: rgb(236, 236, 236) !important;
+    }
+
+    &__turns-left {
+        font-size: 40px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        color: white;
+    }
+
+    &__button {
+        width: 80%;
+        font-size: 'superMario';
+        font-size: 25px;
+        color: white;
+        background: rgb(40, 149, 153);
+        border-radius: 10px;
+        padding: 20px 10px;
+        font-family: 'superMario', 'Courier New', Courier, monospace;
     }
 }
 
