@@ -474,7 +474,7 @@ export const lstGames = [
         difficulty: 3,
         lang: 'EN',
         img: 'Power-Hungry-Pets.png',
-        new: true,
+        rank: 4,
         minutes: 15
     },
     {
@@ -777,7 +777,7 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 5,
         img: 'Villanious-Disney.png',
-        rank: 5,
+        rank: 3,
         minutes: 80
     },
     {
@@ -787,7 +787,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 5,
         img: 'Villanious-Star-Wars.png',
-        new: true,
+        rank: 3,
         minutes: 80
     },
     {
