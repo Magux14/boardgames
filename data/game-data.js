@@ -168,6 +168,17 @@ export const lstGames = [
         minutes: 20
     },
     {
+        name: 'Dragon Ball Super - El Torneo de la Fuerza',
+        desc: 'Un juego de cartas de estrategia, engañosamente sencillo, en el que todo se reduce a una única carta. Un juego llego de divertidas decisiones y personajes del dragon ball. ¿De qué va esto? Cada carta tiene un NÚMERO y un efecto para ATORMENTAR a los demás jugadores.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'Dragon Ball Super - El Torneo de la Fuerza.png',
+        rank: 4,
+        minutes: 15,
+        new: true
+    },
+    {
         name: 'Dumb Ways to Die',
         desc: 'En Dumb Ways to Die, seguimos la vida de los frijoles que viven con ingenuidad impulsiva y alegre. Tonto, divertido y claramente inseguro, está diseñado para sostener un espejo a nuestro propio comportamiento tonto, ayudándonos a estar un poco más seguros.',
         minPlayers: 2,
@@ -474,7 +485,7 @@ export const lstGames = [
         difficulty: 3,
         lang: 'EN',
         img: 'Power-Hungry-Pets.png',
-        new: true,
+        rank: 4,
         minutes: 15
     },
     {
@@ -777,7 +788,7 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 5,
         img: 'Villanious-Disney.png',
-        rank: 5,
+        rank: 3,
         minutes: 80
     },
     {
@@ -787,7 +798,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 5,
         img: 'Villanious-Star-Wars.png',
-        new: true,
+        rank: 3,
         minutes: 80
     },
     {
