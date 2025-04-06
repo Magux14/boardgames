@@ -84,26 +84,27 @@ export const MarioPartyPage = () => {
                 <source src={bellSound} type="audio/ogg" />
             </audio>
             <Header />
-            {
-                showGameList &&
-                <Modal
-                    open={showGameList}
-                    width={'100vw'}
-                    height={'100vh'}
-                    centered={true}
-                    footer={null}
-                    onCancel={() => setShowGameList(false)}
-                    maskClosable={false}
-                >
-                    <MarioPartyGameList
-                        lstGames={lstGames}
-                        callbackUpdateGameList={setLstGames}
-                        callbackHandleNextTurn={handleNextTurn}
-                        callbackSound={playMusic}
-                    />
-                </Modal>
-            }
-            <div className={`mario-party__container ${gameState.isDay ? 'mario-party__container--day' : 'mario-party__container--night'}`}>
+            <div className={`mario-party mario-party__container ${gameState.isDay ? 'mario-party__container--day' : 'mario-party__container--night'}`}>
+                {
+                    showGameList &&
+                    <Modal
+                        open={showGameList}
+                        width={'100vw'}
+                        height={'100vh'}
+                        centered={true}
+                        footer={null}
+                        onCancel={() => setShowGameList(false)}
+                        maskClosable={false}
+                        className="mario-party__modal-background"
+                    >
+                        <MarioPartyGameList
+                            lstGames={lstGames}
+                            callbackUpdateGameList={setLstGames}
+                            callbackHandleNextTurn={handleNextTurn}
+                            callbackSound={playMusic}
+                        />
+                    </Modal>
+                }
                 <div className="mario-party__day-status-container">
                     {
                         gameState.isDay ?

@@ -74,10 +74,12 @@
         padding: 20px 10px;
         font-family: 'superMario', 'Courier New', Courier, monospace;
     }
-}
 
-.ant-modal-content {
-    background: rgb(0, 0, 0, 0.2) !important;
-    height: 98vh;
-    padding: 0 !important;
+    &__modal-background {
+        .ant-modal-content {
+            background: rgb(0, 0, 0, 0.2) !important;
+            height: 98vh;
+            padding: 0 !important;
+        }
+    }
 }

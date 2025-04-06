@@ -58,11 +58,6 @@
         border-radius: 8px;
         padding: 10px;
         height: 100%;
-
-        &:active {
-            opacity: 0;
-            z-index: -2;
-        }
     }
 
     &__instructions-container {
@@ -107,6 +102,14 @@
 
         &:active {
             opacity: 0.6;
+        }
+
+        &--winner {
+            background: rgb(3, 117, 3) !important;
+        }
+
+        &--loser {
+            background: rgb(141, 0, 0) !important;
         }
 
         &--selected {
