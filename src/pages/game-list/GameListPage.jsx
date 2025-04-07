@@ -154,8 +154,13 @@ export const GameListPage = () => {
                             <option value="nameDesc">Nombre ↑</option>
                             <option value="rankDesc">Rank ↓</option>
                             <option value="rankAsc">Rank ↑</option>
-                            <option value="newDesc">Nuevos ↓</option>
-                            <option value="newAsc">Nuevos ↑</option>
+                            {
+                                lstGames.findIndex(item => item.new) != -1 &&
+                                <>
+                                    <option value="newDesc">Nuevos ↓</option>
+                                    <option value="newAsc">Nuevos ↑</option>
+                                </>
+                            }
                             <option value="timeAsc">Duración ↓</option>
                             <option value="timeDesc">Duración ↑</option>
                         </select>
