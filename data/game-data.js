@@ -117,6 +117,16 @@ export const lstGames = [
         minutes: 45
     },
     {
+        name: 'Dino Fiesta',
+        desc: '"Dino Fiesta" es un juego de cartas explosivo donde los jugadores, en una celebración prehistórica, deben construir una pirámide de dinosaurios, cantando y bailando, para salvar a sus dinosaurios de la extinción.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'dino-fiesta.png',
+        minutes: 15,
+        new: true
+    },
+    {
         name: 'Disney trivia',
         desc: 'El maravilloso mundo de Disney Trivia es un juego de mesa diseñado para jugadores de todas las edades que disfrutan del maravilloso mundo de Disney. Está basado en formato trivial, donde debe haber un mínimo de 2 jugadores y con duración aprox. de 45 min. Asegurate de ver todas las películas de Disney, demuestra quién sabe más y quién tiene mejor memoria.',
         minPlayers: 2,
@@ -176,7 +186,6 @@ export const lstGames = [
         img: 'Dragon Ball Super - El Torneo de la Fuerza.png',
         rank: 4,
         minutes: 15,
-        new: true
     },
     {
         name: 'Dumb Ways to Die',
@@ -200,6 +209,16 @@ export const lstGames = [
         minutes: 30
     },
     {
+        name: 'El Rebaño',
+        desc: '¿Te has sentido alguna vez como una oveja? Son inquietas, están hambrientas y son asustadizas, sobre todo cuando viene el lobo. Menos mal que el perro y el pastor están con ellas. Estate muy atentos a tus ovejas para seguir la actividad del redil e ir descartando cartas. El primero que se quede sin cartas, gana.',
+        minPlayers: 3,
+        maxPlayers: 5,
+        difficulty: 2,
+        img: 'el rebaño.png',
+        minutes: 15,
+        new: true
+    },
+    {
         name: 'Fire Tower',
         desc: 'Fire Tower es un juego de construcción de patrones y gestión de manos que incorpora tácticas y eventos reales de lucha contra incendios forestales. Se tarda cinco minutos en aprender, segundos en configurarse y 15-30 minutos en jugar.',
         minPlayers: 2,
@@ -217,8 +236,18 @@ export const lstGames = [
         maxPlayers: 10,
         difficulty: 1,
         img: 'flip-7.jpg',
-        new: true,
-        minutes: 15
+        minutes: 15,
+        rank: 5
+    },
+    {
+        name: 'Guarro Pig',
+        desc: 'Trata de lograr que todos tus cerdos se ensucien antes que tus oponentes. Ante ti, tienes una pandilla de relucientes cerdos que están deseando llenarse de barro. Tu misión es lograrlo y hacerlos felices antes de que lo consigan el resto de jugadores y jugadoras.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'guarro-pig.jpg',
+        minutes: 10,
+        new: true
     },
     {
         name: 'Ghost Blitz',
@@ -308,7 +337,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'la morada maldita.jpeg',
         minutes: 20,
-        new: true
+        rank: 2
     },
     {
         name: 'La Polilla Tramposa',
@@ -449,7 +478,7 @@ export const lstGames = [
     },
     {
         name: 'Pit',
-        desc: 'Pit es el desmadrado juego de las vacas en el que todo el mun- do participa a la vez. El objetivo de los jugadores es obtener fa- milias de cartas idénticas. Una familia está compuesta por 9 cartas. Cada familia otorga un determinado número de pun- tos, indicado en cada una de las cartas.',
+        desc: 'Pit es el desmadrado juego de las vacas en el que todo el mundo participa a la vez. El objetivo de los jugadores es obtener familias de cartas idénticas. Una familia está compuesta por 9 cartas. Cada familia otorga un determinado número de pun- tos, indicado en cada una de las cartas.',
         minPlayers: 3,
         maxPlayers: 8,
         difficulty: 2,
