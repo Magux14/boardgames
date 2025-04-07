@@ -73,6 +73,12 @@ export const GameListPage = () => {
             case 'timeDesc':
                 lstSorted = lstSorted.sort((a, b) => a.minutes > b.minutes ? 1 : -1);
                 break;
+            case 'difficultyAsc':
+                lstSorted = lstSorted.sort((a, b) => a.difficulty < b.difficulty ? 1 : -1);
+                break;
+            case 'difficultyDesc':
+                lstSorted = lstSorted.sort((a, b) => a.difficulty > b.difficulty ? 1 : -1);
+                break;
         }
 
         return lstSorted;
@@ -163,6 +169,8 @@ export const GameListPage = () => {
                             }
                             <option value="timeAsc">Duración ↓</option>
                             <option value="timeDesc">Duración ↑</option>
+                            <option value="difficultyAsc">Dificultad ↓</option>
+                            <option value="difficultyDesc">Dificultad ↑</option>
                         </select>
                     </div>
 
