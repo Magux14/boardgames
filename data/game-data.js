@@ -59,7 +59,7 @@ export const lstGames = [
         maxPlayers: 10,
         difficulty: 1,
         img: 'blockbuster.png',
-        rank: 3,
+        rank: 5,
         minutes: 40
     },
     {
