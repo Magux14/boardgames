@@ -226,7 +226,7 @@ export const lstGames = [
         difficulty: 1,
         img: 'escape-of-the-dead.png',
         minutes: 15,
-        new: true
+        rank: 3
     },
     {
         name: 'Fire Tower',
