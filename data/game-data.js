@@ -219,6 +219,16 @@ export const lstGames = [
         new: true
     },
     {
+        name: 'Escape of the dead',
+        desc: 'Escape of the Dead es un juego para un solo jugador. Intentas reparar el coche mientras te defiendes de hordas de zombis. Recibes 4 dados de acción por turno, que se distribuyen en 3 fases (disparando al zombi, reparando la barricada o reparando el coche). Tira para determinar el éxito en cada fase. Cualquier zombi que sobreviva atacará la barricada.',
+        minPlayers: 1,
+        maxPlayers: 1,
+        difficulty: 1,
+        img: 'escape-of-the-dead.png',
+        minutes: 15,
+        new: true
+    },
+    {
         name: 'Fire Tower',
         desc: 'Fire Tower es un juego de construcción de patrones y gestión de manos que incorpora tácticas y eventos reales de lucha contra incendios forestales. Se tarda cinco minutos en aprender, segundos en configurarse y 15-30 minutos en jugar.',
         minPlayers: 2,
