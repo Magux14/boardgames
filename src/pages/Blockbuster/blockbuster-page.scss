@@ -90,4 +90,8 @@ $blockbuster-blue: rgb(47, 47, 140);
         margin-bottom: 30px;
     }
 
+    &__close-container {
+        display: flex;
+        justify-content: flex-end;
+    }
 }

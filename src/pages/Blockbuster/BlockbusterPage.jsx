@@ -128,10 +128,15 @@ export const BlockbusterPage = () => {
                                 selectMovies: false
                             })}
                             maskClosable={false}
+                            closeIcon={false}
                         >
                             <BlockbusterSelectMovies
                                 lstMovies={randomMovies}
                                 callbackSetSelectedMovies={handleGetSelectedMovies}
+                                callbackClose={() => setShowModal({
+                                    ...defaultShowModals,
+                                    selectMovies: false
+                                })}
                             />
                         </Modal>
                     }
@@ -149,8 +154,12 @@ export const BlockbusterPage = () => {
                                 guessMovies: false
                             })}
                             maskClosable={false}
+                            closeIcon={false}
                         >
-                            <BlockbusterGuessMovies lstMovies={selectedMovies} timeToGuessMovies={timeToGuessMovies} />
+                            <BlockbusterGuessMovies lstMovies={selectedMovies} timeToGuessMovies={timeToGuessMovies} callbackClose={() => setShowModal({
+                                ...defaultShowModals,
+                                guessMovies: false
+                            })} />
                         </Modal>
                     }
                     <div className="blockbuster-page__logo-container">
