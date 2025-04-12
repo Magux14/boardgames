@@ -322,6 +322,181 @@ export const blockbusterMovies =
         "yo, robot",
         "zombieland",
         "zootopia",
+        "el velocipastor",
+        "los picapiedra",
+
+
+
+
+
+        "Legión de ángeles",
+        "Pequeños Guerreros",
+        "El Abogado Del diablo",
+        "La Profesía"
+    "Mini Espias
+    "Machete
+    "El Hombre Sin Sombra
+    "Ganar O Morir
+    "El Patriota
+    "Corazón Valiente
+    "Pesadilla En La Calle Elm
+    "Romeo Y Julieta
+    "Steel Amneza Invisible
+    "La Caida Del Alcón Negro
+    "Amigos Con Derechos
+    "Km 31
+    "El Cascanueces
+    "El Cisne Negro
+    "Mujercitas
+    "Ana Karenina
+    "El Pnaeta De Los Smimios
+    "Persi Jackson
+    "El Niño De La Pijama De Rayas
+    "Kingsman
+    "La Propuesta
+    "Miss Simpatía
+    "Hannibal
+    "El Silencio De Los Inocentrs
+    "Un Lugar En Silencio
+    "Sherlok Homes
+    "Chicas Pesadas
+    "Cuestión De Tiempo
+    "* Poner Sonido Al Tiempo
+    "Proyecto X
+    "Kickass
+    "Super Cool
+    "Una Oelicula De Huevos
+    "La Fiesta De Las Salchichas
+    "El Lorax
+    "Horton Y El Mundo De Los Quien
+    "Walas Y Gromit
+    "Pollitos Fuga
+    "Rebelion En La Granja
+    "Vacas Vaqueras
+    "Vecinlos Invasores
+    "La Busqueda Del Tesoro
+    "Ricky Ricon
+    "Querida Encoji A Los Niños
+    "Escalofrios
+    "Ostin Powers
+    "Barrabas
+    "La Guerra De Los Mundos
+    "Duro De Matar
+    "Oblivion
+    "Monsters University
+    "Monstee House
+    "Hotel Transilvania
+    "Entrevista Cln El Vampiro
+    "Crepusculo
+    "Cenicienta Por Siempre
+    "Golpe Bajo
+    "Zoolander
+    "No Tr Metas Cln Zohan
+    "Megamente
+    "Gilogo Por Accidente
+    "Vomo Si Fuera La Primera Vez
+    "Locos De Ira
+    "Anastasia
+    "Zapatero A Tus Zapatos
+    "Pastorela
+    "Emoji
+    "Pixeles
+    "Un Padre No Tan Padre
+    "Guerra De Papás
+    "El Expreso Polar
+    "Elf
+    "La Vuelta Al Mundo En 80 Días
+    "Cantinflas
+    "Hombre Vicentenario
+    "Papá Por Siempre
+    "Niñera Aprueba De Balas
+    "Aprendices Fuera De Línea
+    "Ted
+    "Eterno Resplandor
+    "Super Agente 86
+    "Tu Y Yo Y Mi Otro Yo
+    "Ace Ventura
+    "La Mascara
+    "Si Señor
+    "Norbit
+    "Dr Dulirul
+    "Un Principe En Nueva York
+    "Al Filo Del Mañana
+    "Hombre En Llamas
+    "Los áNgales De Charly
+    "Siempre Amigos
+    "Amigos Imaginarios
+    "Scooby Doo
+    "Besos De Azucar
+    "Tlatelolco
+    "No Se Si Cortarme Las Venas O Dejarmelas Largas
+    "Agua Para Elefantes
+    "Agua Para Chocolate
+    "Los 3 Guastecos
+    "Los Crímenes Del Padre Amaro
+    "La Purga
+    "Gutentag Ramón
+    "Perras
+    "La Almohada De Piedra
+    "Perfume De Violetas
+    "Radical
+    "Tu Mamá También
+    "Amores Perros
+    "Nosotros Los Nobles
+    "Cindy La Regia
+    "Mireyes  Contra Godines
+    "La Dictadura Perfecta
+    "No Manches Frida
+    "La Ley De Herodes
+    "Sr Y Sra Smith
+    "La Sombra Del Amor
+    "Se Busca
+    "King Kong
+    "Rampage
+    "La Falla De San Andreas
+    "Sector 9
+    "9
+    "Lego
+    "Minecraft
+    "28 Días
+    "Laberinto Del Fauno
+    "Hellboy
+    "Titines Del Pacifico
+    "Terrifier
+    "Asi En La Tierra Como En El Infierno
+    "Arrasrrame Al Infierno
+    "Hostal
+    "Dune
+    "Depredador
+    "Prometeo
+    "La Liga Extraordinaria
+    "Simbad
+    "Pequeños Traviezos
+    "1000 Anres De Cristo
+    "Pewee
+    "La Vida De Pi
+    "Quisiera Ser Millonario
+    "El Peleador
+    "El Padrino
+    "Golpes Del Destino
+    "Gran Turismo
+    "Diario De Una Pasión
+    "Lobquebel Viento Se Llevó
+    "Señales
+    "Los 4 Fsntásticod
+    "Lanligs De La Justicia
+    "Literna Verde
+    "Acuaman
+    "Dr Strange
+    "Black Panter
+    "Y Donde Está El Piloto
+    "Erupción ??
+    "Sharnado
+    "Kill Bill
+    "La Mujer Que Canta
+    "Stalker
+    "Apocalipto
+    "Flubber
     ]
 
 export const blockbusterThings =
