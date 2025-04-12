@@ -108,7 +108,9 @@ export const BlockbusterPage = () => {
                         >
                             <div className="blockbuster-page__face-to-face-question-container">
                                 <div className="blockbuster-page__face-to-face-question">
-                                    <span>{`Películas donde hay "${randomThing}"...`}</span>
+                                    <span>Películas donde hay</span>
+                                    <br />
+                                    <span>{`"${randomThing}"...`}</span>
                                 </div>
                                 <BlockbusterTimer defaultTime={15} />
                             </div>

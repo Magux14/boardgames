@@ -14,17 +14,35 @@ export const BlockbusterTimer = ({ defaultTime }) => {
         setForceTimerUpdate(prev => !prev);
     }
 
+    const playMusic = (htmlId, audio) => {
+        const sound = document.getElementById(htmlId);
+        if (sound) {
+            sound.pause();
+            sound.currentTime = 0;
+            sound.src = audio;
+            sound.play();
+        }
+    }
+
     useEffect(() => {
         if (timer > 0) {
             intervalRef.current = setInterval(() => {
                 setTimer(prevTimer => prevTimer - 1);
             }, 1_000);
         }
+
+        if (timer == 0) {
+            playMusic('action-sound', './music/blockbuster/timer-end.mp3');
+        }
+
         return () => clearInterval(intervalRef.current);
     }, [timer, forceTimerUpdate]);
 
     return (
         <div className="blockbuster-timer blockbuster-timer__timer-container">
+            <audio id="action-sound">
+                <source type="audio/mp3" />
+            </audio>
             <button className={`blockbuster-timer__button-reset-timer`} onClick={restartTimer}>
                 {
                     (timer == null || timer <= 0) &&

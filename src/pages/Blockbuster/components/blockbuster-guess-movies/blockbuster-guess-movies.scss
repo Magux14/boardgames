@@ -43,7 +43,6 @@
 
     &__guess-relative-container {
         position: relative;
-        min-height: 180px;
     }
 
     &__revealed-list {
@@ -53,13 +52,10 @@
     }
 
     &__unrevealed-list {
-        position: absolute;
-        top: 0;
         width: 100%;
         background: rgb(209, 187, 46);
         border-radius: 8px;
         padding: 10px;
-        height: 100%;
         border-radius: 10px;
     }
 

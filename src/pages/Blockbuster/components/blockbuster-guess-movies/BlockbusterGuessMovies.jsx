@@ -11,7 +11,7 @@ export const BlockbusterGuessMovies = ({ lstMovies = [], timeToGuessMovies, call
 
     const [isWinnerTeam, setIsWinnerTeam] = useState(true);
     const [movies, setMovies] = useState(lstMovies.filter(item => item.selected == isWinnerTeam));
-    const [revealMovies, setRevealMovies] = useState(true);
+    const [revealMovies, setRevealMovies] = useState(false);
     const [showExitModal, setShowExitModal] = useState(false);
     const timeoutRef = useRef(null);
 
