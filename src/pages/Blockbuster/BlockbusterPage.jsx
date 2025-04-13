@@ -96,8 +96,6 @@ export const BlockbusterPage = () => {
                         showModal.faceToFace &&
                         <Modal
                             open={showModal.faceToFace}
-                            width={'100vw'}
-                            height={'100vh'}
                             className="blockbuster-page__modal-yellow-background"
                             footer={null}
                             onCancel={() => setShowModal({
@@ -120,8 +118,6 @@ export const BlockbusterPage = () => {
                         showModal.selectMovies &&
                         <Modal
                             open={showModal.selectMovies}
-                            width={'100vw'}
-                            height={'100vh'}
                             centered={true}
                             className="blockbuster-page__modal-yellow-background"
                             footer={null}
@@ -146,8 +142,6 @@ export const BlockbusterPage = () => {
                         showModal.guessMovies &&
                         <Modal
                             open={showModal.guessMovies}
-                            width={'100vw'}
-                            height={'100vh'}
                             centered={true}
                             className="blockbuster-page__modal-yellow-background"
                             footer={null}
