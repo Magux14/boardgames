@@ -94,4 +94,11 @@ $blockbuster-blue: rgb(47, 47, 140);
         display: flex;
         justify-content: flex-end;
     }
+
+    &__game-status-container {
+        display: flex;
+        color: white;
+        justify-content: space-between;
+        padding: 10px;
+    }
 }
