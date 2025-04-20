@@ -636,7 +636,13 @@ export const lstGames = [
         lang: 'EN',
         img: 'sonic-speed-battle.png',
         new: true,
-        minutes: 30
+        minutes: 30,
+        files: [
+            {
+                name: 'Traducciones',
+                url: 'https://drive.google.com/file/d/1MjM0RcMhFIzysgsPdjhE0Momcipi_UeE/view?usp=sharing'
+            }
+        ]
     },
     {
         name: 'Splendor',
