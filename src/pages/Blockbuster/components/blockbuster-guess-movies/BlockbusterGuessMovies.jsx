@@ -79,7 +79,13 @@ export const BlockbusterGuessMovies = ({ lstMovies = [], timeToGuessMovies, call
                     </button>
                 </div>
 
-                <BlockbusterTimer defaultTime={timeToGuessMovies} />
+                <span hidden={!isWinnerTeam}>
+                    <BlockbusterTimer defaultTime={timeToGuessMovies} typeOfTimer='pause' />
+                </span>
+
+                <span hidden={isWinnerTeam}>
+                    <BlockbusterTimer defaultTime={timeToGuessMovies} typeOfTimer='pause' />
+                </span>
 
                 <div className="blockbuster-guess-movies__instructions-container">
                     {/* Tu equipo debe adivinar cada una de las siguientes películas, pero solo puedes elegir una forma de adivinar por cada una:

@@ -4,6 +4,7 @@
     width: 100%;
     color: white;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 #side-menu-container {

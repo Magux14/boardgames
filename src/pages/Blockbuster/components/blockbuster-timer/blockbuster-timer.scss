@@ -2,6 +2,10 @@
 
 .blockbuster-timer {
 
+    * {
+        user-select: none;
+    }
+
     background: $blockbuster-yellow;
 
     &__button-reset-timer {
@@ -17,8 +21,12 @@
         color: $blockbuster-yellow;
         font-family: 'blockbuster', 'Courier New', Courier, monospace;
 
-        :active {
-            opacity: 0.6;
+        &:active {
+            background: rgb(0, 0, 199);
+
+            span {
+                transform: scale(0.9);
+            }
         }
 
         @media (min-width: 990px) {
@@ -26,6 +34,11 @@
             width: 300px;
             height: 300px;
         }
+    }
+
+    &__button-reset-timer--stopped {
+        background: grey;
+        color: rgb(180, 180, 180);
     }
 
     &__button-reset-timer--font-smaller {

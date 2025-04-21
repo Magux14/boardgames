@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './blockbuster-timer.scss';
 
-export const BlockbusterTimer = ({ defaultTime }) => {
+export const BlockbusterTimer = ({ defaultTime, typeOfTimer = 'restart' }) => {
     const [timer, setTimer] = useState();
+    const [timerIsTicking, setTimerIsTicking] = useState(false);
     const [forceTimerUpdate, setForceTimerUpdate] = useState();
     const intervalRef = useRef(null);
 
@@ -12,6 +13,7 @@ export const BlockbusterTimer = ({ defaultTime }) => {
         }
         setTimer(defaultTime);
         setForceTimerUpdate(prev => !prev);
+        setTimerIsTicking(true);
     }
 
     const playMusic = (htmlId, audio) => {
@@ -24,7 +26,34 @@ export const BlockbusterTimer = ({ defaultTime }) => {
         }
     }
 
+    const handleClick = () => {
+        playMusic('action-sound', './music/blockbuster/button-click.mp3');
+        if (typeOfTimer == 'restart') {
+            restartTimer();
+        } else {
+            pauseTimer();
+        }
+    }
+
+    const pauseTimer = () => {
+        if (timerIsTicking) { // pausa
+            setTimerIsTicking(false);
+            if (intervalRef) {
+                clearInterval(intervalRef.current);
+            }
+        } else { // play
+            if (timer == null) {
+                setTimer(defaultTime);
+            }
+            setTimerIsTicking(true);
+        }
+    }
+
     useEffect(() => {
+        if (typeOfTimer != 'restart' && !timerIsTicking) {
+            return;
+        }
+
         if (timer > 0) {
             intervalRef.current = setInterval(() => {
                 setTimer(prevTimer => prevTimer - 1);
@@ -36,14 +65,14 @@ export const BlockbusterTimer = ({ defaultTime }) => {
         }
 
         return () => clearInterval(intervalRef.current);
-    }, [timer, forceTimerUpdate]);
+    }, [timer, forceTimerUpdate, timerIsTicking]);
 
     return (
         <div className="blockbuster-timer blockbuster-timer__timer-container">
             <audio id="action-sound">
                 <source type="audio/mp3" />
             </audio>
-            <button className={`blockbuster-timer__button-reset-timer`} onClick={restartTimer}>
+            <button className={`blockbuster-timer__button-reset-timer ${!timerIsTicking ? 'blockbuster-timer__button-reset-timer--stopped' : ''}`} onClick={handleClick}>
                 {
                     (timer == null || timer <= 0) &&
                     <span className={`blockbuster-timer__button-reset-timer--font-smaller`}>
