@@ -3,7 +3,7 @@ $blockbuster-blue: rgb(47, 47, 140);
 
 .blockbuster-page {
     background-color: $blockbuster-blue;
-    min-height: 100vh;
+    min-height: calc(100% - 44px);
 
     &__logo-container {
         display: flex;
