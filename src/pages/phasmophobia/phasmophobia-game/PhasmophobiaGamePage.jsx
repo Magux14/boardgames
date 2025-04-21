@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
-import { usePhasmophobiaGame } from '../../../hooks/usePhasmophobiaGame'
+import { usePhasmophobiaGame } from '../hooks/usePhasmophobiaGame'
 import { Dice } from '../../../components/dice/Dice';
 import ConfirmationModal from '../../../components/confirmation-modal/ConfirmationModal';
 import { phasmophobiaEquipment } from '../../../../data/phasmophobia-data';
@@ -12,15 +12,27 @@ import { PGTarot } from './components/pg-tarot/PgTarot';
 
 export const PhasmophobiaGamePage = () => {
 
-    const [config, setConfig] = useState();
-    const { prepareGame, getCurrentGhost, getDamagedEquipment } = usePhasmophobiaGame();
+    const {
+        getCurrentGhost,
+        prepareGame,
+        setConfig,
+        setGhostStacks,
+        setRandomLimitEnergyValue,
+        config,
+        damagedEquipment,
+        defaultConfig,
+        gameDate,
+        ghostStacks,
+        phasmoGhostNum,
+        setTarotCards,
+        lstTarotCards
+    } = usePhasmophobiaGame();
+
     const [showGhost, setShowGhost] = useState(false)
     const [showAlertFinishGame, setShowAlertFinishGame] = useState(false)
     const [currentTest, setCurrentTest] = useState(null)
     const [testResult, setTestResult] = useState(null)
-    const [ghostStacks, setGhostStacks] = useState({ current: 0, limit: 0 });
     const [showGhostImage, setShowGhostImage] = useState(false);
-    const [phasmoGhostNum] = useState((Math.floor(Math.random() * (6)) + 1));
     const [showVideoTest, setShowVideoTest] = useState(false);
     const [showCartasTarot, setShowCartasTarot] = useState(false);
 
@@ -31,15 +43,8 @@ export const PhasmophobiaGamePage = () => {
             return 'male';
         }
     }
-
     const [phasmoGhostMusic] = useState(loadHuntingMusic(phasmoGhostNum));
 
-    const setLimitEnergyValue = () => {
-        setGhostStacks({
-            current: 0,
-            limit: (Math.floor(Math.random() * (config.maxBadEnergyValue - config.minBadEnergyValue + 1)) + config.minBadEnergyValue)
-        });
-    }
 
     const finishGame = () => {
         setShowAlertFinishGame(false);
@@ -60,7 +65,7 @@ export const PhasmophobiaGamePage = () => {
 
         let equipmentIsDamaged = false;
         if (config.equipmentIsDamaged) {
-            equipmentIsDamaged = getDamagedEquipment().property == currentTest.property;
+            equipmentIsDamaged = damagedEquipment.property == currentTest.property;
             if (equipmentIsDamaged && Math.random() >= 0.333) {
                 positive = !positive;
             }
@@ -71,16 +76,15 @@ export const PhasmophobiaGamePage = () => {
 
     const addGhostStacks = (numberOfStacks = 1) => {
         if (ghostStacks.current + numberOfStacks >= ghostStacks.limit) {
-            setLimitEnergyValue();
+            setRandomLimitEnergyValue();
             setShowGhostImage(true);
         } else {
-            setGhostStacks(previous => {
-                return {
-                    current: previous.current + numberOfStacks,
-                    limit: previous.limit
-                }
-            });
+            setGhostStacks(numberOfStacks);
         }
+    }
+
+    const handleSaveTarotCardsState = (cards) => {
+        setTarotCards(cards);
     }
 
     useEffect(() => {
@@ -101,28 +105,23 @@ export const PhasmophobiaGamePage = () => {
         }
     }, [testResult]);
 
-    useEffect(() => {
-        if (config) {
-            setLimitEnergyValue();
-        }
-    }, [config])
 
     return (
         <>
-
             <Header />
-
             <span style={{ visibility: showCartasTarot ? 'visible' : 'hidden' }}>
                 <PGTarot
                     callbackClose={() => setShowCartasTarot(false)}
                     callbackAddGhostStacks={addGhostStacks}
+                    lstTarotCards={lstTarotCards}
+                    callbackSaveState={handleSaveTarotCardsState}
                 />
             </span>
 
             <div className="phasmophobia-game phasmophobia-game__container">
                 {
                     !config &&
-                    <PGConfig callbackSetConfig={setConfig} />
+                    <PGConfig callbackSetConfig={setConfig} defaultConfig={defaultConfig} />
                 }
                 {
                     config &&
@@ -133,6 +132,12 @@ export const PhasmophobiaGamePage = () => {
                                 <audio src={`./music/phasmophobia-ghost-hunting-${phasmoGhostMusic}.mp3`} autoPlay loop></audio>
                                 <img className="all-screen-ghost" src={`./img/phasmophobia/ghost-${phasmoGhostNum}.png`} alt="ghost1" />
                             </>
+                        }
+                        {
+                            gameDate &&
+                            <span style={{ right: 0 }}>
+                                {gameDate.toLocaleString()}
+                            </span>
                         }
                         <div className="phasmophobia-game__sanity-container">
                             <label className="phasmophobia-game__sanity-title">

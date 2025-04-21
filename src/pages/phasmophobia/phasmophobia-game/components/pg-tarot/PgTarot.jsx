@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react';
 import './pg-tarot.scss';
 import { phasmophobiaTarotCards } from '../../../../../../data/phasmophobia-data';
 
-export const PGTarot = ({ callbackClose, callbackAddGhostStacks }) => {
+export const PGTarot = ({ callbackClose, callbackAddGhostStacks, lstTarotCards = [], callbackSaveState }) => {
 
-    const [lstCards, setLstCards] = useState([]);
+    const [lstCards, setLstCards] = useState(lstTarotCards);
     const [blockPicks, setBlockPicks] = useState(false);
     const [currentCard, setCurrentCard] = useState();
 
     const fillCards = () => {
+        if (lstTarotCards.length) {
+            setLstCards([...lstTarotCards]);
+            return;
+        }
         const total = phasmophobiaTarotCards.reduce((acc, card) => acc + card.probability, 0);
         let lstSelectedCards = [];
 
@@ -64,6 +68,7 @@ export const PGTarot = ({ callbackClose, callbackAddGhostStacks }) => {
         lstCards[index].revealed = true;
         setLstCards([...lstCards]);
         setCurrentCard({ ...card, revealed: true });
+        callbackSaveState(lstCards);
 
         const indexCardToDiscard = lstCards.findIndex(item => item.revealed == true);
         if (indexCardToDiscard == 1) {
@@ -72,8 +77,9 @@ export const PGTarot = ({ callbackClose, callbackAddGhostStacks }) => {
     }
 
     useEffect(() => {
+        console.log('useEffect lstTarotCards')
         fillCards();
-    }, []);
+    }, [lstTarotCards]);
 
     return (
         <div className="pg-tarot pg-tarot__layout">

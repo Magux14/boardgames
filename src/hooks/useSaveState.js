@@ -4,7 +4,7 @@ export const useSaveState = (key) => {
         localStorage.setItem(key, JSON.stringify(obj));
     }
 
-    const loadState = () => {
+    const getLoadState = () => {
         try {
             return JSON.parse(localStorage.getItem(key));
         } catch {
@@ -18,7 +18,7 @@ export const useSaveState = (key) => {
 
     return {
         saveState,
-        loadState,
+        getLoadState,
         deleteState
     }
 }

@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './pg-config.scss';
 
-const defaultConfig = {
-    playersNum: 2,
-    minBadEnergyValue: 2,
-    maxBadEnergyValue: 5,
-    equipmentIsDamaged: true
-}
-export const PGConfig = ({ callbackSetConfig }) => {
+export const PGConfig = ({ callbackSetConfig, defaultConfig }) => {
     const [config, setConfig] = useState(defaultConfig);
 
     const handleConfigChange = (property, newValue, type) => {

@@ -31,7 +31,7 @@ export const BlockbusterPage = () => {
     const [fontLoaded, setFontLoaded] = useState(false);
     const [searchParams] = useSearchParams();
     const timeToGuessMovies = searchParams.get('t') || 60;
-    const { saveState, loadState, deleteState } = useSaveState('blockcbuster');
+    const { saveState, getLoadState, deleteState } = useSaveState('blockcbuster');
 
     const handleShowFaceToFace = () => {
         setRandomThing(getFaceToFaceThing());
@@ -127,7 +127,7 @@ export const BlockbusterPage = () => {
     }
 
     const loadLastState = () => {
-        const obj = loadState();
+        const obj = getLoadState();
         console.log('last object: ', obj);
         if (obj) {
             setLstBlockbusterThings(obj.lstBlockbusterThings);
