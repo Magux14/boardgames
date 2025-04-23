@@ -11,7 +11,7 @@
         color: white;
         background: linear-gradient(180deg, #17171f 57%, rgba(63, 62, 88, 1) 94%);
         background-attachment: fixed;
-        font-family: 'tragicMarker';
+        font-family: 'tragicMarker', 'Courier New', Courier, monospace;
         align-items: center;
         align-content: center;
         padding: 20px;
@@ -33,6 +33,17 @@
 
     &__ghost-title-revealed {
         font-size: 15vw;
+    }
+
+    &__top-controls-container {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        padding: 20px;
+
+        @media (max-width: 750px) {
+            flex-direction: column;
+        }
     }
 
     .test-title {
@@ -69,24 +80,6 @@
         }
     }
 
-    #test-buttons-container {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        flex-wrap: wrap;
-        box-sizing: border-box;
-
-        .phasmo-button {
-            margin: 10px;
-        }
-
-        div {
-            display: flex;
-            justify-content: center;
-            flex-basis: 50%;
-        }
-    }
-
     .phasmo-button {
         width: 100%;
         font-size: 3vw;
@@ -109,8 +102,7 @@
         }
     }
 
-    .current-test {
-        margin-top: 20px;
+    &__make-test-container {
         font-size: 2.5em;
         width: 100%;
         display: flex;
@@ -118,90 +110,63 @@
         justify-content: space-around;
         background: rgba(255, 255, 255, 0.103);
         border-radius: 15px;
-        padding: 5%;
-
-        div {
-            width: 100%;
-
-            &.preview-test-container {
-                flex-basis: 70%;
-            }
-
-            &.result-test-container {
-                flex-basis: 30%;
-            }
-
-            .result {
-                font-size: 6vw;
-            }
-
-            .positive {
-                color: rgb(87, 194, 87);
-            }
-
-            .negative {
-                color: rgb(160, 29, 29);
-            }
-
-            .fake {
-                color: rgb(216, 183, 77);
-            }
-
-        }
+        padding: 24px;
 
     }
 
-    &__sanity-container {
+    &__preview-test-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        font-size: 6vw;
         width: 100%;
-        padding: 10px 0;
+    }
+
+    &__preview-test-name {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 180.69px;
+        text-align: center;
+
+        @media (max-width: 750px) {
+            min-height: unset;
+        }
+    }
+
+    &__sanity-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.103);
+        border-radius: 15px;
+        padding: 24px;
+
+        button {
+            z-index: 1;
+        }
+
+        button:active {
+            background: rgba(255, 255, 255, 0.1);
+        }
     }
 
     &__sanity-title {
         font-size: 6vw;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
-    &__sanity-controllers {
-        width: 100%;
-        max-height: 100px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        align-content: center;
-        border-radius: 8px;
-        border: 1px solid white;
-        padding: 24px;
-
-        button {
-            width: 40%;
-            font-size: 2em;
-            border-radius: 15px;
-        }
-
-        button:active {
-            background: rgb(219, 219, 219);
-        }
-    }
-
-    &__fire-sanity-container {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        max-width: 140px;
-    }
-
-    .dice-container {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-
-        .dice {
-            width: 50%;
-        }
+    &__fire-sanity {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.2;
     }
 
     .all-screen-ghost {
@@ -216,12 +181,33 @@
     }
 
     &__cartas-tarot-button-container {
-        margin: 50px;
+        margin: 30px;
 
         button {
             font-size: 5vw;
-            padding: 10px
+            padding: 10px 30px;
+            border-radius: 15px;
         }
+    }
+
+    &__equipment-button-container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__equipment-button {
+        opacity: 0.3;
+        width: 20vw;
+        border: 1px solid rgb(151, 151, 151);
+        border-radius: 10px;
+    }
+
+    &__equipment-button--selected {
+        opacity: 1;
     }
 }
 

@@ -25,7 +25,8 @@ export const PhasmophobiaGamePage = () => {
         ghostStacks,
         phasmoGhostNum,
         setTarotCards,
-        lstTarotCards
+        lstTarotCards,
+        resetGame
     } = usePhasmophobiaGame();
 
     const [showGhost, setShowGhost] = useState(false)
@@ -35,6 +36,7 @@ export const PhasmophobiaGamePage = () => {
     const [showGhostImage, setShowGhostImage] = useState(false);
     const [showVideoTest, setShowVideoTest] = useState(false);
     const [showCartasTarot, setShowCartasTarot] = useState(false);
+    const [showResetGameModal, setShowResetGameModal] = useState(false);
 
     const loadHuntingMusic = (ghostNumber) => {
         if (ghostNumber == 3 || ghostNumber == 6) {
@@ -87,6 +89,16 @@ export const PhasmophobiaGamePage = () => {
         setTarotCards(cards);
     }
 
+    const handleAskToResetGame = () => {
+        setShowResetGameModal(true);
+    }
+
+    const handleResetGame = () => {
+        setShowResetGameModal(false);
+        setShowGhost(false);
+        resetGame();
+    }
+
     useEffect(() => {
         if (showGhostImage) {
             setTimeout(() => {
@@ -133,75 +145,73 @@ export const PhasmophobiaGamePage = () => {
                                 <img className="all-screen-ghost" src={`./img/phasmophobia/ghost-${phasmoGhostNum}.png`} alt="ghost1" />
                             </>
                         }
+                        <ConfirmationModal
+                            description="¿Deseas empezar una nueva partida?"
+                            acceptCallback={handleResetGame}
+                            closeCallback={() => setShowResetGameModal(false)}
+                            showAlert={showResetGameModal}
+                        >
+                        </ConfirmationModal>
+
                         {
                             gameDate &&
-                            <span style={{ right: 0 }}>
+                            <span style={{ right: 0 }} onClick={handleAskToResetGame}>
                                 {gameDate.toLocaleString()}
                             </span>
                         }
-                        <div className="phasmophobia-game__sanity-container">
-                            <label className="phasmophobia-game__sanity-title">
-                                Energía Maldita
-                                {/* <div>Testing: Limit: {ghostStacks.limit} | Current: {ghostStacks.current}</div> */}
-                            </label>
 
-                            <div className='phasmophobia-game__sanity-controllers'>
-                                <div className="phasmophobia-game__fire-sanity-container">
-                                    <img src="./img/phasmophobia/fire.gif" className="fire-sanity" alt="fire" width={20} style={{ zoom: ghostStacks.current + 1 }} />
+                        <div className="phasmophobia-game__top-controls-container">
+
+
+                            <div className="phasmophobia-game__sanity-container">
+                                <div className="phasmophobia-game__sanity-title">
+                                    Energía Maldita
+                                    {/* <div>Testing: Limit: {ghostStacks.limit} | Current: {ghostStacks.current}</div> */}
                                 </div>
-                                <button onClick={() => addGhostStacks()}>+</button>
+                                <img src="./img/phasmophobia/fire.gif" className="phasmophobia-game__fire-sanity" alt="fire" width={20} style={{ zoom: ghostStacks.current + 1 }} />
+                                <button className="phasmo-button" onClick={() => addGhostStacks()}>+ 1 stack</button>
+                            </div>
+
+                            <div className="phasmophobia-game__make-test-container">
+                                <div className="phasmophobia-game__preview-test-container">
+                                    <div className="phasmophobia-game__preview-test-name">
+                                        {currentTest ? currentTest.name : 'Seleccione dispositivo'}
+                                    </div>
+                                    {
+                                        (currentTest && testResult && showVideoTest) &&
+                                        <PGTestVideo
+                                            phasmophobiaEquipment={currentTest.property}
+                                            hasEvidence={testResult.result}
+                                            callbackClose={() => setShowVideoTest(false)}
+                                            equipmentIsDamaged={testResult.equipmentIsDamaged}
+                                        />
+                                    }
+                                    <button className="phasmo-button" onClick={() => handleTestResult()} disabled={currentTest ? false : true}>Probar</button>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="current-test">
-                            <div className="preview-test-container">
-                                <label>
-                                    Prueba:
-                                </label>
-                                <br />
-                                <label className="result">
-                                    {currentTest ? currentTest.name : '???'}
-                                </label>
-                            </div>
-                            <div className="result-test-container">
-                                {
-                                    (currentTest && testResult && showVideoTest) &&
-                                    <PGTestVideo
-                                        phasmophobiaEquipment={currentTest.property}
-                                        hasEvidence={testResult.result}
-                                        callbackClose={() => setShowVideoTest(false)}
-                                        equipmentIsDamaged={testResult.equipmentIsDamaged}
-                                    />
-                                }
-                                <button className="phasmo-button" onClick={() => handleTestResult()} disabled={currentTest ? false : true}>Probar</button>
-                            </div>
-                        </div>
 
                         <br />
 
                         <div className="tests-dice-container">
                             <div>
                                 <label className="test-title">Pruebas</label>
-                                <div id="test-buttons-container">
+                                <div className="phasmophobia-game__equipment-button-container">
                                     {
                                         phasmophobiaEquipment.map((equipment) =>
-                                            <div key={equipment.name}>
-                                                <button className={`phasmo-button ${equipment.name == currentTest?.name ? 'selected-button' : ''}`} onClick={() => handleTestSelect(equipment)}><label>{equipment.name}</label></button>
-                                            </div>
+                                            <img key={equipment.name} src={`./img/phasmophobia/equipment/${equipment.property}.png`} className={`phasmophobia-game__equipment-button ${equipment.name == currentTest?.name ? 'phasmophobia-game__equipment-button--selected' : ''}`} onClick={() => handleTestSelect(equipment)} alt={`${equipment.name}`} />
                                         )
                                     }
                                 </div>
                             </div>
                         </div>
 
-                        <br />
-                        <br />
                         <div className="phasmophobia-game__cartas-tarot-button-container">
                             <button onClick={(() => setShowCartasTarot(true))}> Cartas Tarot</button>
 
                         </div>
 
-                        <br />
                         <br />
                         <div className="phasmophobia-game__title-and-ghost-container">
                             <div>
@@ -220,12 +230,6 @@ export const PhasmophobiaGamePage = () => {
                                 }
                             </div>
                         </div>
-
-                        <br />
-                        <Dice diceName="D6" initialDiceNumbers={{ min: 1, max: 6 }} />
-                        <br />
-                        <br />
-                        <br />
                     </>
                 }
             </div>

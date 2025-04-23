@@ -94,6 +94,11 @@ export const usePhasmophobiaGame = () => {
         });
     }
 
+    const resetGame = () => {
+        deleteState();
+        prepareGame();
+    }
+
     useEffect(() => {
         console.log('gameState changed: ', gameState);
 
@@ -115,6 +120,7 @@ export const usePhasmophobiaGame = () => {
         ghostStacks: gameState.ghostStacks,
         phasmoGhostNum: gameState.phasmoGhostNum,
         lstTarotCards: gameState.lstTarotCards,
-        setTarotCards
+        setTarotCards,
+        resetGame
     }
 }

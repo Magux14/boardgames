@@ -5,7 +5,6 @@ import { phasmophobiaTarotCards } from '../../../../../../data/phasmophobia-data
 export const PGTarot = ({ callbackClose, callbackAddGhostStacks, lstTarotCards = [], callbackSaveState }) => {
 
     const [lstCards, setLstCards] = useState(lstTarotCards);
-    const [blockPicks, setBlockPicks] = useState(false);
     const [currentCard, setCurrentCard] = useState();
 
     const fillCards = () => {
@@ -37,19 +36,6 @@ export const PGTarot = ({ callbackClose, callbackAddGhostStacks, lstTarotCards =
         });
         setLstCards([...lstSelectedCards]);
     }
-
-    // const discardNextCard = (indexCardToDiscard) => {
-    //     lstCards[indexCardToDiscard].dissapearing = true;
-    //     setLstCards([...lstCards]);
-
-    //     setTimeout(() => {
-    //         lstCards.splice(indexCardToDiscard, 1);
-    //         setLstCards([...lstCards]);
-    //         if (blockPicks) {
-    //             setBlockPicks(false);
-    //         }
-    //     }, [500]);
-    // }
 
     const handleCardSelected = async (card) => {
         const index = lstCards.findIndex(item => item.id == card.id);
