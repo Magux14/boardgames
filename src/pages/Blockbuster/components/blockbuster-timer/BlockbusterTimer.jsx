@@ -75,7 +75,7 @@ export const BlockbusterTimer = ({ defaultTime, typeOfTimer = 'restart' }) => {
                 <source type="audio/mp3" />
             </audio>
             <button
-                className={`blockbuster-timer__button-reset-timer ${!timerIsTicking ? 'blockbuster-timer__button-reset-timer--stopped' : ''} ${(isTouchingButton && isMobile) ? 'blockbuster-timer__on-touch-start-button' : ''}`}
+                className={`blockbuster-timer__button-reset-timer ${typeOfTimer == 'restart' ? 'blockbuster-timer__button-reset-timer--battle' : ''} ${!timerIsTicking ? 'blockbuster-timer__button-reset-timer--stopped' : ''} ${(isTouchingButton && isMobile) ? 'blockbuster-timer__on-touch-start-button' : ''}`}
                 {
                 ...isMobile
                     ? {

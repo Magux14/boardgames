@@ -12,8 +12,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 80vw;
-        width: 80vw;
+        height: 35vh;
+        width: 35vh;
+        max-width: 80vw;
+        max-height: 80vw;
         padding: 20px;
         font-size: 40vw;
         border-radius: 100%;
@@ -35,6 +37,14 @@
             height: 300px;
         }
     }
+
+    &__button-reset-timer--battle {
+        height: 40vh;
+        width: 40vh;
+        max-width: 90vw;
+        max-height: 90vw;
+    }
+
 
     &__on-touch-start-button {
         background: rgb(0, 0, 199);
