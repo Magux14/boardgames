@@ -4,8 +4,10 @@ import './blockbuster-timer.scss';
 export const BlockbusterTimer = ({ defaultTime, typeOfTimer = 'restart' }) => {
     const [timer, setTimer] = useState();
     const [timerIsTicking, setTimerIsTicking] = useState(false);
+    const [isTouchingButton, setIsTouchingButton] = useState(false);
     const [forceTimerUpdate, setForceTimerUpdate] = useState();
     const intervalRef = useRef(null);
+    const isMobile = window.innerWidth < 768;
 
     const restartTimer = () => {
         if (intervalRef) {
@@ -72,7 +74,22 @@ export const BlockbusterTimer = ({ defaultTime, typeOfTimer = 'restart' }) => {
             <audio id="action-sound">
                 <source type="audio/mp3" />
             </audio>
-            <button className={`blockbuster-timer__button-reset-timer ${!timerIsTicking ? 'blockbuster-timer__button-reset-timer--stopped' : ''}`} onClick={handleClick}>
+            <button
+                className={`blockbuster-timer__button-reset-timer ${!timerIsTicking ? 'blockbuster-timer__button-reset-timer--stopped' : ''} ${(isTouchingButton && isMobile) ? 'blockbuster-timer__on-touch-start-button' : ''}`}
+                {
+                ...isMobile
+                    ? {
+                        onTouchStart: () => {
+                            handleClick();
+                            setIsTouchingButton(true);
+                        },
+                        onTouchEnd: () => {
+                            setIsTouchingButton(false);
+                        }
+                    }
+                    : { onClick: handleClick }
+                }
+            >
                 {
                     (timer == null || timer <= 0) &&
                     <span className={`blockbuster-timer__button-reset-timer--font-smaller`}>

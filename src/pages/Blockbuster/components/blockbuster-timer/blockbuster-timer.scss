@@ -36,6 +36,14 @@
         }
     }
 
+    &__on-touch-start-button {
+        background: rgb(0, 0, 199);
+
+        span {
+            transform: scale(0.9);
+        }
+    }
+
     &__button-reset-timer--stopped {
         background: grey;
         color: rgb(180, 180, 180);
