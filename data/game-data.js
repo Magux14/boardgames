@@ -891,5 +891,15 @@ export const lstGames = [
             url: 'https://drive.google.com/file/d/1pP92DnCKNm_Mkb4sd0QLVldKNoLJBWXs/view?usp=drive_link'
         }
         ]
-    }
+    },
+    {
+        name: 'Slapburger',
+        desc: 'Slap Burger es un juego de cartas de ritmo rápido donde los jugadores se turnan para colocar cartas en una pila central. El objetivo es ser el primero en dar una bofetada cuando aparezca una carta específica (Hamburguesa, Hamburguesa Doble, o Sándwich). El jugador que no da la bofetada primero pierde las cartas y el jugador que se deshace de todas sus cartas primero gana.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 1,
+        img: 'slapburger.png',
+        minutes: 15,
+        new: true
+    },
 ]
