@@ -902,4 +902,55 @@ export const lstGames = [
         minutes: 15,
         new: true
     },
+    {
+        name: 'Rat A Tat Cat',
+        desc: 'juego de cartas para 2 a 6 jugadores, ideal para niños de 6 años en adelante, que combina elementos de memoria, estrategia y un poco de suerte. El objetivo es tener la menor puntuación posible al final del juego, acumulando cartas con valores bajos (gatos) y evitando las cartas con valores altos (ratas).',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'Rat A Tat Cat.png',
+        minutes: 20,
+        new: true
+    },
+    {
+        name: 'Interstellar Odyssey',
+        desc: 'Un juego tipo puzzle donde el reto será sostener la fé y la properidad en los sistemas estelares. comanda a las armadas a través de la galaxia para enfrentar feroces batallas para reclamar el planeta.',
+        minPlayers: 3,
+        maxPlayers: 6,
+        difficulty: 3,
+        img: 'Interstellar Odyssey.png',
+        minutes: 15,
+        new: true
+    },
+    {
+        name: 'The Crew',
+        desc: 'En este juego de bazas cooperativo necesitareis completar 50 misiones diferentes, pero sólo tendréis éxito si trabajáis como un equipo. Para vencer los desafíos y lograr vuestra misión, la comunicación será esencial, pero en el espacio, las cosas son más difíciles de lo que esperas...',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 4,
+        img: 'The Crew.png',
+        minutes: 20,
+        new: true
+    },
+    {
+        name: 'Good Face Bad Face',
+        desc: 'juego de mesa, de cartas, engañosamente simple. Se trata de probar tu suerte y engañar a tus oponentes. El objetivo es colocar cuatro caras buenas frente a ti, volteando las cartas de la parte superior de la pila, ¡pero cuidado! Dale la vuelta a una mala cara y ahuyentará todas las caras buenas que estabas recopilando. Así que piénselo de nuevo: ¿da la vuelta a la carta superior o pasa la pila?',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 1,
+        img: 'Good Face Bad Face.png',
+        minutes: 20,
+        new: true
+    },
+    {
+        name: 'Betrayal at House on The Hill',
+        desc: 'Betrayal es un juego de exploración y misterio con diferentes modo de juego aleatorios. Cada una de las 50 historias comienza entrando en una casa abandonada donde previamente habremos escogido el marco de la historia (Sucesos Paranormales, Se Vende, Maldición...). Iremos explorando la casa, abriendo habitaciones y obteniendo objetos, sucesos y presagios. En un momento determinado al azar dependiente de los sucesos se produce la segunda parte de la partida, el Reto.',
+        minPlayers: 3,
+        maxPlayers: 6,
+        difficulty: 4,
+        img: 'Betrayal at House on The Hill.png',
+        minutes: 60,
+        new: true,
+        commingSoon: true
+    },
 ]

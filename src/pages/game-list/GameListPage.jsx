@@ -227,7 +227,9 @@ export const GameListPage = () => {
                             {
                                 item.new &&
                                 <span className="game-list-page__new-game">
-                                    NUEVO
+                                    {
+                                        item.commingSoon ? 'Próximamente' : 'NUEVO'
+                                    }
                                 </span>
                             }
                             <div className={`game-list-page__timer-container game-list-page__timer-container--${getTypeOfTime(item.minutes)}`}>
