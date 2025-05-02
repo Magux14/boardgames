@@ -13,6 +13,7 @@ export const BlockbusterGuessMovies = ({ lstMovies = [], timeToGuessMovies, call
     const [movies, setMovies] = useState(lstMovies.filter(item => item.selected == isWinnerTeam));
     const [revealMovies, setRevealMovies] = useState(false);
     const [showExitModal, setShowExitModal] = useState(false);
+    const [stealPoints, setStealPoints] = useState(false);
     const timeoutRef = useRef(null);
 
     const handleRevealMovies = () => {
@@ -79,11 +80,11 @@ export const BlockbusterGuessMovies = ({ lstMovies = [], timeToGuessMovies, call
                     </button>
                 </div>
 
-                <span hidden={!isWinnerTeam}>
+                <span hidden={!((isWinnerTeam && !stealPoints) || (!isWinnerTeam && stealPoints))}>
                     <BlockbusterTimer defaultTime={timeToGuessMovies} typeOfTimer='pause' />
                 </span>
 
-                <span hidden={isWinnerTeam}>
+                <span hidden={!((isWinnerTeam && stealPoints) || (!isWinnerTeam && !stealPoints))}>
                     <BlockbusterTimer defaultTime={timeToGuessMovies} typeOfTimer='pause' />
                 </span>
 
@@ -96,6 +97,10 @@ export const BlockbusterGuessMovies = ({ lstMovies = [], timeToGuessMovies, call
                 <br />
                 3. Decir solamente UNA palabra.
                 <br /><br /><br /> */}
+                    <div className="blockbuster-guess-movies__checkbox-container">
+                        <div>Robo de puntos</div>
+                        <input type="checkbox" value={stealPoints} onChange={($event) => setStealPoints($event.target.checked)} />
+                    </div>
                     {
                         <button className={`blockbuster-guess-movies__button blockbuster-guess-movies__button--continue ${isWinnerTeam ? 'blockbuster-guess-movies__button--winner' : 'blockbuster-guess-movies__button--loser'}`} onClick={() => setIsWinnerTeam(prev => !prev)}>
                             <span>Cambiar a equipo {isWinnerTeam ? 'PERDEDOR' : 'GANADOR'} <PublishedWithChangesIcon /></span>

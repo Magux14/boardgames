@@ -120,4 +120,18 @@
             color: white;
         }
     }
+
+    &__checkbox-container {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+        padding: 10px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.1);
+
+        input {
+            width: 30px;
+            height: 30px;
+        }
+    }
 }
