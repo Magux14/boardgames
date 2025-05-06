@@ -940,7 +940,7 @@ export const lstGames = [
         difficulty: 1,
         img: 'Good Face Bad Face.png',
         minutes: 20,
-        new: true
+        rank: 3
     },
     {
         name: 'Betrayal at House on The Hill',
@@ -950,6 +950,39 @@ export const lstGames = [
         difficulty: 4,
         img: 'Betrayal at House on The Hill.png',
         minutes: 60,
+        new: true,
+        commingSoon: true
+    },
+    {
+        name: 'Cabo',
+        desc: 'Cabo es un juego de mesa de cartas donde los jugadores intentan minimizar el valor total de sus cartas, utilizando poderes para mirar sus propias cartas, espiar las de otros o intercambiar. El juego termina cuando un jugador declara "CABO", creyendo tener el valor más bajo, y los demás tienen un último turno. La persona con el menor valor total al final gana.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 3,
+        img: 'cabo.png',
+        minutes: 45,
+        new: true,
+        commingSoon: true
+    },
+    {
+        name: 'Among Spaceship',
+        desc: 'Un juego de mesa de estrategia en el que los jugadores deben conectar cuadrículas y aplicar estrategias para construir caminos.',
+        minPlayers: 4,
+        maxPlayers: 6,
+        difficulty: 3,
+        img: 'Among Spaceship.png',
+        minutes: 30,
+        new: true,
+        commingSoon: true
+    },
+    {
+        name: 'Sea, Salt and Paper',
+        desc: 'juego de cartas de estrategia con temática oceánica donde los jugadores crean su "océano" con cartas plegadas. El objetivo es recolectar combinaciones de cartas para ganar puntos, con efectos especiales que permiten robar cartas de otros jugadores o tomar turnos adicionales.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 3,
+        img: 'Sea, Salt and Paper.png',
+        minutes: 40,
         new: true,
         commingSoon: true
     },
