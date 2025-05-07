@@ -28,7 +28,7 @@ export const lstGames = [
         difficulty: 3,
         lang: '',
         img: 'azul.jpg',
-        rank: 3,
+        rank: 4,
         minutes: 35
     },
     {
@@ -493,7 +493,7 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 2,
         img: 'pit.png',
-        rank: 4,
+        rank: 3,
         minutes: 30
     },
     {
@@ -585,7 +585,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 1,
         img: 'shopping-list.png',
-        minutes: 15
+        minutes: 15,
+        rank: 3
     },
     {
         name: 'Sin memoria',
@@ -635,8 +636,8 @@ export const lstGames = [
         difficulty: 2,
         lang: 'EN',
         img: 'sonic-speed-battle.png',
-        new: true,
         minutes: 30,
+        rank: 3,
         files: [
             {
                 name: 'Traducciones',
@@ -661,7 +662,8 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 3,
         img: 'splendor-duel.jpg',
-        minutes: 30
+        minutes: 30,
+        rank: 5,
     },
     {
         name: 'Stratego Star Wars',
@@ -920,7 +922,8 @@ export const lstGames = [
         difficulty: 3,
         img: 'Interstellar Odyssey.png',
         minutes: 15,
-        new: true
+        new: true,
+        lang: 'EN',
     },
     {
         name: 'The Crew',
@@ -951,7 +954,8 @@ export const lstGames = [
         img: 'Betrayal at House on The Hill.png',
         minutes: 60,
         new: true,
-        commingSoon: true
+        commingSoon: true,
+        lang: 'EN',
     },
     {
         name: 'Cabo',
@@ -973,7 +977,8 @@ export const lstGames = [
         img: 'Among Spaceship.png',
         minutes: 30,
         new: true,
-        commingSoon: true
+        commingSoon: true,
+        lang: 'EN',
     },
     {
         name: 'Sea, Salt and Paper',
@@ -983,6 +988,18 @@ export const lstGames = [
         difficulty: 3,
         img: 'Sea, Salt and Paper.png',
         minutes: 40,
+        new: true,
+        commingSoon: true
+    },
+    {
+        name: 'Super Hazard Quest',
+        desc: 'Super Hazard Quest es un juego de mesa jugado como un desplazador lateral de videojuegos retro. Los héroes construyen y exploran un nivel siempre cambiante y generado aleatoriamente. A lo largo de su aventura, descubrirán nuevos objetos, enfrentarán a enemigos y vencerán a jefes poderosos.',
+        minPlayers: 2,
+        maxPlayers: 8,
+        difficulty: 3,
+        img: 'super-hazard-quest.png',
+        minutes: 25,
+        lang: 'EN',
         new: true,
         commingSoon: true
     },
