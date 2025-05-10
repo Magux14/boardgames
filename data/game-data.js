@@ -276,7 +276,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 3,
         img: 'hanabi.png',
-        new: true,
+        rank: 3,
         minutes: 25
     },
     {
@@ -966,7 +966,6 @@ export const lstGames = [
         img: 'cabo.png',
         minutes: 45,
         new: true,
-        commingSoon: true
     },
     {
         name: 'Among Spaceship',
@@ -977,20 +976,18 @@ export const lstGames = [
         img: 'Among Spaceship.png',
         minutes: 30,
         new: true,
-        commingSoon: true,
         lang: 'EN',
     },
-    {
-        name: 'Sea, Salt and Paper',
-        desc: 'juego de cartas de estrategia con temática oceánica donde los jugadores crean su "océano" con cartas plegadas. El objetivo es recolectar combinaciones de cartas para ganar puntos, con efectos especiales que permiten robar cartas de otros jugadores o tomar turnos adicionales.',
-        minPlayers: 2,
-        maxPlayers: 4,
-        difficulty: 3,
-        img: 'Sea, Salt and Paper.png',
-        minutes: 40,
-        new: true,
-        commingSoon: true
-    },
+    // {
+    //     name: 'Sea, Salt and Paper',
+    //     desc: 'juego de cartas de estrategia con temática oceánica donde los jugadores crean su "océano" con cartas plegadas. El objetivo es recolectar combinaciones de cartas para ganar puntos, con efectos especiales que permiten robar cartas de otros jugadores o tomar turnos adicionales.',
+    //     minPlayers: 2,
+    //     maxPlayers: 4,
+    //     difficulty: 3,
+    //     img: 'Sea, Salt and Paper.png',
+    //     minutes: 40,
+    //     new: true,
+    // },
     {
         name: 'Super Hazard Quest',
         desc: 'Super Hazard Quest es un juego de mesa jugado como un desplazador lateral de videojuegos retro. Los héroes construyen y exploran un nivel siempre cambiante y generado aleatoriamente. A lo largo de su aventura, descubrirán nuevos objetos, enfrentarán a enemigos y vencerán a jefes poderosos.',
@@ -1001,6 +998,5 @@ export const lstGames = [
         minutes: 25,
         lang: 'EN',
         new: true,
-        commingSoon: true
     },
 ]
