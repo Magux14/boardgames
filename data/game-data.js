@@ -273,7 +273,7 @@ export const lstGames = [
         name: 'Hanabi',
         desc: 'Traducido del japonés ”Fuegos Artificiales”, es un juego cooperativo en el que los jugadores intentan crear el espectáculo de fuegos artificiales perfecto colocando las cartas sobre la mesa en el orden correcto. Los jugadores intentan colocar una fila en el orden correcto del 1 al 5. Suena fácil, ¿verdad ? Bueno, no del todo, ya que en este juego sostienes tus cartas para que solo sean visibles para otros jugadores.Para ayudar a otros jugadores a jugar una carta, debes darles pistas sobre los números o los colores de sus cartas. Los jugadores deben actuar en equipo para evitar errores y terminar el espectáculo de fuegos artificiales antes de que se queden sin cartas.',
         minPlayers: 2,
-        maxPlayers: 4,
+        maxPlayers: 5,
         difficulty: 3,
         img: 'hanabi.png',
         rank: 3,
@@ -937,7 +937,7 @@ export const lstGames = [
     },
     {
         name: 'Good Face Bad Face',
-        desc: 'juego de mesa, de cartas, engañosamente simple. Se trata de probar tu suerte y engañar a tus oponentes. El objetivo es colocar cuatro caras buenas frente a ti, volteando las cartas de la parte superior de la pila, ¡pero cuidado! Dale la vuelta a una mala cara y ahuyentará todas las caras buenas que estabas recopilando. Así que piénselo de nuevo: ¿da la vuelta a la carta superior o pasa la pila?',
+        desc: 'Un juego de mesa engañosamente simple. Se trata de probar tu suerte y engañar a tus oponentes. El objetivo es colocar cuatro caras buenas frente a ti, volteando las cartas de la parte superior de la pila, ¡pero cuidado! Dale la vuelta a una mala cara y ahuyentará todas las caras buenas que estabas recopilando. Así que piénselo de nuevo: ¿da la vuelta a la carta superior o pasa la pila?',
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 1,
