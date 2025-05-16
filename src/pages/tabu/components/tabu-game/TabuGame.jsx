@@ -1,29 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useSaveState } from '../../../../hooks/useSaveState';
 import { BlockbusterTimer } from '../../../../components/blockbuster-timer/BlockbusterTimer';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SyncIcon from '@mui/icons-material/Sync';
-import { Slider } from 'antd';
+import { Modal, Slider } from 'antd';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import './tabu-game.scss';
 import ConfirmationModal from '../../../../components/confirmation-modal/ConfirmationModal';
+import { TabuSettings } from '../tabu-settings/TabuSettings';
 
 const defaultTabuGameState = {
     lstCharacters: [
-        {
-            name: 'Coraje el perro cobarde',
-            checked: false
-        },
-        {
-            name: 'El chavo',
-            checked: false
-        },
-        {
-            name: 'matilda',
-            checked: false
-        },
+
     ],
-    currentName: 'matilda'
+    currentName: ''
 }
 
 const defaultBarValue = 10;
@@ -33,6 +23,29 @@ export const TabuGame = () => {
     const [barValue, setBarValue] = useState(defaultBarValue);
     const [gameState, setGameState] = useState(defaultTabuGameState);
     const [showResetListModal, setShowResetListModal] = useState(false);
+    const [showSettings, setShowSettings] = useState(false);
+    const [showTimer, setShowTimer] = useState(true);
+    const [revealCharacter, setRevealCharacter] = useState(false);
+    const timeoutRef = useRef(null);
+
+    const handleReveal = () => {
+        if (revealCharacter) {
+            setRevealCharacter(false);
+            cancelTimeout();
+            return;
+        }
+
+        setRevealCharacter(true);
+        timeoutRef.current = setTimeout(() => {
+            setRevealCharacter(false);
+        }, 2_000);
+    }
+
+    const cancelTimeout = () => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+    };
 
     const nextCharacter = () => {
         console.log('nextCharacter');
@@ -75,8 +88,20 @@ export const TabuGame = () => {
         }
     }
 
+
+    const setGameStateWithPersistance = (gameState) => {
+        setGameState({ ...gameState });
+        saveState(gameState);
+    }
+
+    const handleResetTimer = () => {
+        setShowTimer(false);
+        setTimeout(() => {
+            setShowTimer(true);
+        }, []);
+    }
+
     useEffect(() => {
-        deleteState();
         const savedState = getLoadState();
         if (savedState) {
             setGameState({ ...savedState });
@@ -88,15 +113,16 @@ export const TabuGame = () => {
     return (
         <div className="tabu-game tabu-game__container">
             <ConfirmationModal showAlert={showResetListModal} description={'¡La lista se terminó! vamos a la siguiente fase...'} showCancel={false} acceptCallback={resetList} closeCallback={resetList} />
-            <div className="tabu-game__character-container">
-                <p>
+            <div className={`tabu-game__character-container`} onClick={handleReveal}>
+                <p className={`${!revealCharacter ? 'tabu-game__opacity0' : ''}`}>
                     {gameState.currentName}
                 </p>
             </div>
             <br />
-            <BlockbusterTimer defaultTime={60} typeOfTimer='pause' />
-            <br />
-            <br />
+            {
+                showTimer &&
+                <BlockbusterTimer defaultTime={60} typeOfTimer='pause' />
+            }
             <br />
             <div className="tabu-game__slider-container">
                 <Slider defaultValue={20} onChange={handleBar} onChangeComplete={handleOnCompleteBar} value={barValue} tooltip={false} />
@@ -106,8 +132,12 @@ export const TabuGame = () => {
                 <ArrowRightAltIcon />
             </div>
             <div className="tabu-game__bottom-container">
-                <SettingsIcon />
-                <SyncIcon />
+                <Modal open={showSettings} footer={null} centered={true} onCancel={() => setShowSettings(false)}>
+                    <TabuSettings gameState={gameState} setGameState={setGameStateWithPersistance} deleteState={deleteState} />
+                </Modal>
+                <SettingsIcon onClick={() => setShowSettings(true)} />
+
+                <SyncIcon onClick={handleResetTimer} />
             </div>
         </div>
     )

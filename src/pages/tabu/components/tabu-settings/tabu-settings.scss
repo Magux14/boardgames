@@ -1,4 +1,4 @@
-.tabu-new-characters {
+.tabu-settings {
     &__container {
         padding-top: 20px;
         display: flex;
@@ -16,22 +16,6 @@
             padding: 10px 20px;
             color: white;
             border-radius: 10px;
-
-            &:disabled {
-                background-color: rgba(90, 62, 36, 0.164);
-            }
         }
-    }
-
-    &__inputs-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    &__input-container {
-        display: flex;
-        flex-direction: column;
     }
 }
