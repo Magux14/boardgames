@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BlockbusterTimer } from './components/blockbuster-timer/BlockbusterTimer';
+import { BlockbusterTimer } from '../../components/blockbuster-timer/BlockbusterTimer';
 import { blockbusterMovies, blockbusterThings } from '../../../data/blockbuster';
 import { BlockbusterSelectMovies } from './components/blockbuster-select-movies/BlockbusterSelectMovies';
 import { BlockbusterGuessMovies } from './components/blockbuster-guess-movies/BlockbusterGuessMovies';

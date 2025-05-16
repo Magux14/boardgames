@@ -5,7 +5,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 
-export default function ConfirmationModal({ description, acceptCallback, closeCallback, showAlert, children }) {
+export default function ConfirmationModal({ description, acceptCallback, closeCallback, showAlert, children, showCancel = true }) {
     const [open, setOpen] = React.useState(showAlert);
 
     const handleClose = () => {
@@ -30,7 +30,10 @@ export default function ConfirmationModal({ description, acceptCallback, closeCa
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Cancelar</Button>
+                    {
+                        showCancel &&
+                        <Button onClick={handleClose}>Cancelar</Button>
+                    }
                     <Button onClick={acceptCallback} autoFocus>
                         Aceptar
                     </Button>

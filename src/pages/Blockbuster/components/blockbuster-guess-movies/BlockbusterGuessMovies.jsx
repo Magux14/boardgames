@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { BlockbusterTimer } from '../blockbuster-timer/BlockbusterTimer';
+import { BlockbusterTimer } from '../../../../components/blockbuster-timer/BlockbusterTimer';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import PublishedWithChangesIcon from '@mui/icons-material/PublishedWithChanges';
 import CloseIcon from '@mui/icons-material/Close';
