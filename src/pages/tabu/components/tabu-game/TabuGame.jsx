@@ -85,9 +85,11 @@ export const TabuGame = () => {
         if (value > 95) {
             setBarValue(defaultBarValue);
             nextCharacter();
+            if (!revealCharacter) {
+                handleReveal();
+            }
         }
     }
-
 
     const setGameStateWithPersistance = (gameState) => {
         setGameState({ ...gameState });
