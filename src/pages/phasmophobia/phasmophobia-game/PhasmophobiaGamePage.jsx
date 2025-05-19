@@ -1,14 +1,13 @@
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { usePhasmophobiaGame } from '../hooks/usePhasmophobiaGame'
-import { Dice } from '../../../components/dice/Dice';
 import ConfirmationModal from '../../../components/confirmation-modal/ConfirmationModal';
 import { phasmophobiaEquipment } from '../../../../data/phasmophobia-data';
 import { Header } from '../../../components/header/Header';
 import { PGTestVideo } from './components/pg-test-video/PGTestVideo';
 import { PGConfig } from './components/pg-config/PGConfig';
-import './phasmophobia-game-page.scss';
 import { PGTarot } from './components/pg-tarot/PgTarot';
+import './phasmophobia-game-page.scss';
 
 export const PhasmophobiaGamePage = () => {
 
@@ -162,7 +161,6 @@ export const PhasmophobiaGamePage = () => {
 
                         <div className="phasmophobia-game__top-controls-container">
 
-
                             <div className="phasmophobia-game__sanity-container">
                                 <div className="phasmophobia-game__sanity-title">
                                     Energía Maldita
@@ -207,9 +205,8 @@ export const PhasmophobiaGamePage = () => {
                             </div>
                         </div>
 
-                        <div className="phasmophobia-game__cartas-tarot-button-container">
+                        <div className="phasmophobia-game__extra-buttons-container">
                             <button onClick={(() => setShowCartasTarot(true))}> Cartas Tarot</button>
-
                         </div>
 
                         <br />
@@ -229,6 +226,10 @@ export const PhasmophobiaGamePage = () => {
                                         </ConfirmationModal>
                                 }
                             </div>
+                        </div>
+
+                         <div className="phasmophobia-game__extra-buttons-container">
+                            <button onClick={setRandomLimitEnergyValue}>Resetar Energía Maldita</button>
                         </div>
                     </>
                 }

@@ -231,20 +231,22 @@ export const PhasmophobiaFilterPage = () => {
                                     </div>
 
                                     <div>
-                                        Con este objeto podrás pedir 1 deseo de las siguientes opciones:
+                                        Con este objeto podrás pedir hasta 4 deseos (sin repetir deseo) de las siguientes opciones:
                                         <br />
                                         <br />
-                                        1. Revive a un compañero (el jugador revivido tendrá 2 de cordura) después tira una moneda, si sale cara
+                                        1. Revive a un compañero (el jugador revivido tendrá 4 de cordura) después tira una moneda, si sale cara
                                         no pasa nada, pero si sale cruz tu morirás…
                                         <br />
                                         <br />
-                                        2. Recuperas tu cordura al 100%, pero por el resto de la partida solo
-                                        tendrás una acción por turno.
+                                        2. Recuperas tu cordura al 100%, pero tus puntos de acción se reducirán a la mitad redondeando hacia abajo por el resto de la partida.
                                         <br />
                                         <br />
                                         3. Teletransportarte a otra habitación de la casa, pero ese cuarto
                                         quedará cerrado hasta que alguien te abra la puerta (si eres el último
                                         jugador con vida NO puedes pedir este deseo).
+                                        <br />
+                                        <br />
+                                        4. Calma al fantasma: reduce la energía maldita a 0, pero de aquí en adelante cuando alguien saque stacks fantasma en los dados siempre se le agregará +1
                                     </div>
                                 </div>
                             }

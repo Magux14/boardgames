@@ -48,7 +48,6 @@ export const TabuGame = () => {
     };
 
     const nextCharacter = () => {
-        console.log('nextCharacter');
         const lstNews = gameState.lstCharacters.filter(item => !item.checked);
         if (!lstNews.length) {
             return listHasEnded();

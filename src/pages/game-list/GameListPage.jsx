@@ -162,8 +162,6 @@ export const GameListPage = () => {
         // Ejemplo de uso
         getImageLink('mikey wasausky de disney')
             .then(link => {
-                console.log('Primer imagen encontrada:', link);
-
                 // Opcional: insertar en el HTML
                 const img = document.createElement('img');
                 img.src = link;

@@ -45,12 +45,16 @@ export const PGConfig = ({ callbackSetConfig, defaultConfig }) => {
                 config.maxBadEnergyValue = 9;
             } break;
             case 3: {
-                config.minBadEnergyValue = 5;
+                config.minBadEnergyValue = 7;
                 config.maxBadEnergyValue = 11;
             } break;
             case 4: {
                 config.minBadEnergyValue = 6;
-                config.maxBadEnergyValue = 14;
+                config.maxBadEnergyValue = 12;
+            } break;
+             case 5: {
+                config.minBadEnergyValue = 5;
+                config.maxBadEnergyValue = 12;
             } break;
             default: {
                 config.minBadEnergyValue = 6;

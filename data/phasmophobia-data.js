@@ -201,7 +201,7 @@ export const phasmophobiaTarotCards = [
         name: 'El Diablo',
         description: '+ 2 energía maldita',
         img: 'el_diablo.webp',
-        probability: 17
+        probability: 13
     },
     {
         name: 'El Sol',
@@ -223,31 +223,37 @@ export const phasmophobiaTarotCards = [
     },
     {
         name: 'Muerte',
-        description: 'Inicia una casería y el fantasma te está buscando... pierdes 3 de cordura (saca un 5 o un 6 en los dados para evitarla)',
+        description: 'El fantasma aparece a lo lejos, te está buscando... saca un 5 o un 6 en los dados para esconderte (si no lo logras pierdes 3 de cordura)',
         img: 'muerte.webp',
-        probability: 17
+        probability: 12
+    },
+     {
+        name: 'Movimiento Antinatural',
+        description: '+ 3 puntos de acción este turno',
+        img: 'the_fool.webp',
+        probability: 14,
     },
     {
         name: 'Ruleta de la fortuna',
-        description: '- 2 de cordura',
+        description: '- 1 de cordura',
         img: 'ruleta_de_la_fortuna.webp',
-        probability: 19,
+        probability: 9,
     },
     {
         name: 'Ruleta de la fortuna',
         description: '+ 2 de cordura',
         img: 'ruleta_de_la_fortuna.webp',
-        probability: 24
+        probability: 29
     },
     {
         name: 'Sacerdotisa',
-        description: 'Revives a un compañero muerto, tendrá 2 de cordura',
+        description: 'Revives a un compañero muerto, tendrá 4 de cordura',
         img: 'sacerdotisa.webp',
         probability: 2
     },
     {
         name: 'El Hermit',
-        description: 'Cambias de posición con el jugador de la derecha',
+        description: 'Cambias de lugar con otro jugador vivo o muerto (Tira el dado, si sale par cambiarás con el jugador de la derecha, si sale impar con el de la izquierda).',
         img: 'el_hermit.webp',
         probability: 5
     }

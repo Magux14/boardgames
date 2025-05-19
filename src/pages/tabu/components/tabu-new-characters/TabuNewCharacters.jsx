@@ -7,7 +7,6 @@ export const TabuNewCharacters = ({ gameState, setGameState, callbackClose }) =>
     const handleInput = (index, value) => {
         lstForm[index] = value;
         setLstForm([...lstForm]);
-        console.log(lstForm)
     }
 
     const handleFinish = () => {

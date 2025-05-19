@@ -32,10 +32,11 @@ export const usePhasmophobiaGame = () => {
 
         const loadState = getLoadState();
         if (loadState) {
-            console.log('load state: ', loadState);
+            if (typeof loadState.gameDate == 'string') {
+                loadState.gameDate = new Date(loadState.gameDate);
+            }
             setGameState(loadState);
         } else {
-            console.log('new game');
             const getRandomDamagedEquipment = () => phasmophobiaEquipment[Math.floor(Math.random() * phasmophobiaEquipment.length)]
             const getRandomGhost = () => phasmophobiaGhostList[Math.floor(Math.random() * phasmophobiaGhostList.length)];
 
@@ -46,7 +47,6 @@ export const usePhasmophobiaGame = () => {
             });
         }
         setGameStateLoaded(true);
-
     }
 
     const getCurrentGhost = () => {
@@ -100,8 +100,6 @@ export const usePhasmophobiaGame = () => {
     }
 
     useEffect(() => {
-        console.log('gameState changed: ', gameState);
-
         if (gameStateLoaded) {
             saveState(gameState);
         }

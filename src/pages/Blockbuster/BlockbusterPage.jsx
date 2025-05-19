@@ -123,12 +123,10 @@ export const BlockbusterPage = () => {
             gameStartedDate: gameStartedDate ?? getFriendlyDate()
         }
         saveState(state);
-        console.log('state saved');
     }
 
     const loadLastState = () => {
         const obj = getLoadState();
-        console.log('last object: ', obj);
         if (obj) {
             setLstBlockbusterThings(obj.lstBlockbusterThings);
             setLstBlockbusterMovies(obj.lstBlockbusterMovies);
@@ -249,7 +247,7 @@ export const BlockbusterPage = () => {
                         <CachedIcon className="blockbuster-page__save-icon" onClick={handleSaveStateRefresh} />
                     </div>
                     <div className="blockbuster-page__logo-container">
-                        <img src="./img/blockbuster/logo.png" />
+                        <img src="./img/blockbuster/logo.png" alt="blockbuster-logo"/>
                     </div>
 
                     <div className="blockbuster-page__content-container">
