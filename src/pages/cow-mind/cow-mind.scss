@@ -1,6 +1,7 @@
 .cow-mind {
 
     &__container {
+        position: relative;
         background-image: url(../img/mente-vacuna.jpg);
         background-size: cover;
         height: 100%;
@@ -76,5 +77,19 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    &__refresh {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 30px;
+
+        svg {
+            width: 50px !important;
+            height: 50px !important;
+            fill: purple;
+        }
+
     }
 }
