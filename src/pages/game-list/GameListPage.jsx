@@ -267,7 +267,7 @@ export const GameListPage = () => {
                                 item.new &&
                                 <span className="game-list-page__new-game">
                                     {
-                                        item.commingSoon ? 'Próximamente' : 'NUEVO'
+                                        item.comingSoon ? 'Próximamente' : 'NUEVO'
                                     }
                                 </span>
                             }

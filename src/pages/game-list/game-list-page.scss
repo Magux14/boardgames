@@ -1,4 +1,4 @@
-@import "../../styles.scss";
+@use "../../styles.scss" as *;
 
 :root {
     --border-color: rgb(206, 206, 206);

@@ -857,7 +857,7 @@ export const lstGames = [
         img: 'virus halloween.webp',
         new: true,
         minutes: 20,
-        commmingSoon: true
+        comingSoon: true
     },
     {
         name: 'Yo Nunca Nunca',
@@ -987,7 +987,7 @@ export const lstGames = [
         img: 'Sea, Salt and Paper.png',
         minutes: 40,
         new: true,
-        commmingSoon: true
+        comingSoon: true
     },
     {
         name: 'Super Hazard Quest',
@@ -1009,6 +1009,6 @@ export const lstGames = [
         img: 'Pelusas.png',
         minutes: 20,
         new: true,
-        commingSoon: true
+        comingSoon: true
     },
 ]

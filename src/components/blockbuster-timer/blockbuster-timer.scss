@@ -1,12 +1,12 @@
-@import '../../pages/blockbuster/blockbuster-page.scss';
+@use '../../pages/blockbuster/blockbuster-page.scss' as *;
 
 .blockbuster-timer {
+
+    background: $blockbuster-yellow;
 
     * {
         user-select: none;
     }
-
-    background: $blockbuster-yellow;
 
     &__button-reset-timer {
         display: flex;
@@ -23,18 +23,18 @@
         color: $blockbuster-yellow;
         font-family: 'blockbuster', 'Courier New', Courier, monospace;
 
+        @media (min-width: 990px) {
+            font-size: 100px;
+            width: 300px;
+            height: 300px;
+        }
+
         &:active {
             background: rgb(0, 0, 199);
 
             span {
                 transform: scale(0.9);
             }
-        }
-
-        @media (min-width: 990px) {
-            font-size: 100px;
-            width: 300px;
-            height: 300px;
         }
     }
 
