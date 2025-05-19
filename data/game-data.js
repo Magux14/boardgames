@@ -743,8 +743,8 @@ export const lstGames = [
         maxPlayers: 18,
         difficulty: 2,
         img: 'The Werewolves.webp',
-        new: true,
-        minutes: 30
+        minutes: 30,
+        rank: 4
     },
     {
         name: 'Throw Throw Burrito',
@@ -856,7 +856,8 @@ export const lstGames = [
         difficulty: 2,
         img: 'virus halloween.webp',
         new: true,
-        minutes: 20
+        minutes: 20,
+        commmingSoon: true
     },
     {
         name: 'Yo Nunca Nunca',
@@ -912,7 +913,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'Rat A Tat Cat.png',
         minutes: 20,
-        new: true
+        rank: 4,
     },
     {
         name: 'Interstellar Odyssey',
@@ -954,7 +955,6 @@ export const lstGames = [
         img: 'Betrayal at House on The Hill.png',
         minutes: 60,
         new: true,
-        commingSoon: true,
         lang: 'EN',
     },
     {
@@ -978,16 +978,17 @@ export const lstGames = [
         new: true,
         lang: 'EN',
     },
-    // {
-    //     name: 'Sea, Salt and Paper',
-    //     desc: 'juego de cartas de estrategia con temática oceánica donde los jugadores crean su "océano" con cartas plegadas. El objetivo es recolectar combinaciones de cartas para ganar puntos, con efectos especiales que permiten robar cartas de otros jugadores o tomar turnos adicionales.',
-    //     minPlayers: 2,
-    //     maxPlayers: 4,
-    //     difficulty: 3,
-    //     img: 'Sea, Salt and Paper.png',
-    //     minutes: 40,
-    //     new: true,
-    // },
+    {
+        name: 'Sea, Salt and Paper',
+        desc: 'juego de cartas de estrategia con temática oceánica donde los jugadores crean su "océano" con cartas plegadas. El objetivo es recolectar combinaciones de cartas para ganar puntos, con efectos especiales que permiten robar cartas de otros jugadores o tomar turnos adicionales.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 3,
+        img: 'Sea, Salt and Paper.png',
+        minutes: 40,
+        new: true,
+        commmingSoon: true
+    },
     {
         name: 'Super Hazard Quest',
         desc: 'Super Hazard Quest es un juego de mesa jugado como un desplazador lateral de videojuegos retro. Los héroes construyen y exploran un nivel siempre cambiante y generado aleatoriamente. A lo largo de su aventura, descubrirán nuevos objetos, enfrentarán a enemigos y vencerán a jefes poderosos.',
@@ -998,5 +999,16 @@ export const lstGames = [
         minutes: 25,
         lang: 'EN',
         new: true,
+    },
+    {
+        name: 'Pelusas',
+        desc: 'Un juego de cartas de "push your luck" (tentar la suerte) donde los jugadores buscan acumular pelusas (cartas) para ganar puntos. Tienen que robar pelusas del montón central o robarlas a otros jugadores, pero corren el riesgo de perder todo si sacan una pelusa repetida.',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 2,
+        img: 'Pelusas.png',
+        minutes: 20,
+        new: true,
+        commingSoon: true
     },
 ]
