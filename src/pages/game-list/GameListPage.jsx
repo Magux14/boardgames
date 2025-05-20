@@ -131,45 +131,6 @@ export const GameListPage = () => {
         applyFilters();
     }, [filters])
 
-    useEffect(() => {
-        async function getImageLink(query) {
-            const url = `https://duckduckgo.com/?q=${encodeURIComponent(query)}&iax=images&ia=images`;
-
-            // Paso 1: Obtener el token de búsqueda (vqd)
-            const res = await fetch(url);
-            const text = await res.text();
-            const vqdMatch = text.match(/vqd='(.+?)'/);
-
-            if (!vqdMatch) {
-                throw new Error('No se pudo obtener el token de búsqueda.');
-            }
-
-            const vqd = vqdMatch[1];
-
-            // Paso 2: Usar el token para pedir imágenes
-            const apiUrl = `https://duckduckgo.com/i.js?l=us-en&o=json&q=${encodeURIComponent(query)}&vqd=${vqd}`;
-
-            const imgRes = await fetch(apiUrl);
-            const imgData = await imgRes.json();
-
-            if (imgData.results && imgData.results.length > 0) {
-                return imgData.results[0].image; // Primer imagen
-            } else {
-                throw new Error('No se encontraron imágenes.');
-            }
-        }
-
-        // Ejemplo de uso
-        getImageLink('mikey wasausky de disney')
-            .then(link => {
-                // Opcional: insertar en el HTML
-                const img = document.createElement('img');
-                img.src = link;
-                document.body.appendChild(img);
-            })
-            .catch(err => console.error(err));
-    }, []);
-
     return (
         <>
             <Header />
