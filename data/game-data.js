@@ -849,15 +849,14 @@ export const lstGames = [
         minutes: 80
     },
     {
-        name: 'Virus Halloween',
+        name: 'Virus',
         desc: 'Es un juego de corte familiar, en el que nuestro objetivo es conseguir aislar un cuerpo sano y erradicar el virus antes de que cualquier otra persona lo logre. Consigue cuatro órganos sanos de distinto color, elimina los virus e inmuniza tus órganos para que no te los puedan robar.',
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 2,
-        img: 'virus halloween.webp',
-        new: true,
+        img: 'virus.png',
+        rank: 2,
         minutes: 20,
-        comingSoon: true
     },
     {
         name: 'Yo Nunca Nunca',
@@ -987,7 +986,6 @@ export const lstGames = [
         img: 'Sea, Salt and Paper.png',
         minutes: 40,
         new: true,
-        comingSoon: true
     },
     {
         name: 'Super Hazard Quest',
@@ -1009,6 +1007,5 @@ export const lstGames = [
         img: 'Pelusas.png',
         minutes: 20,
         new: true,
-        comingSoon: true
     },
 ]
