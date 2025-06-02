@@ -5,7 +5,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
-        img: '5 minutos en el calabozo.png',
+        img: '5 minutos en el calabozo.webp',
         rank: 5,
         minutes: 5
     },
@@ -38,7 +38,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 2,
         lang: '',
-        img: 'Baraja española.png',
+        img: 'Baraja española.webp',
         rank: 1,
         minutes: 20
     },
@@ -69,7 +69,7 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         lang: 'EN',
-        img: 'Cartoon-Network-Crossover-Crisis.png',
+        img: 'Cartoon-Network-Crossover-Crisis.webp',
         rank: 3,
         minutes: 40
     },
@@ -122,7 +122,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 2,
-        img: 'dino-fiesta.png',
+        img: 'dino-fiesta.webp',
         minutes: 15,
         new: true
     },
@@ -133,7 +133,7 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 1,
         lang: 'ES',
-        img: 'Disney-trivia.png',
+        img: 'Disney-trivia.webp',
         rank: 3,
         minutes: 45
     },
@@ -204,7 +204,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 4,
-        img: 'el-señor-de-los-anillos-duelo-por-la-tierra-media.png',
+        img: 'el-señor-de-los-anillos-duelo-por-la-tierra-media.webp',
         rank: 2,
         minutes: 30
     },
@@ -214,7 +214,7 @@ export const lstGames = [
         minPlayers: 3,
         maxPlayers: 5,
         difficulty: 2,
-        img: 'el rebaño.png',
+        img: 'el rebaño.webp',
         minutes: 15,
         new: true
     },
@@ -235,7 +235,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 3,
         lang: 'EN',
-        img: 'fire-tower.png',
+        img: 'fire-tower.webp',
         rank: 4,
         minutes: 25
     },
@@ -318,7 +318,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 2,
-        img: 'Jaipur.png',
+        img: 'Jaipur.webp',
         rank: 5,
         minutes: 30
     },
@@ -329,7 +329,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 2,
         lang: 'EN',
-        img: 'La-Isla-Prohibida.png',
+        img: 'La-Isla-Prohibida.webp',
         rank: 4,
         minutes: 30,
         files: [
@@ -360,16 +360,6 @@ export const lstGames = [
         minutes: 30
     },
     {
-        name: 'Magux party',
-        desc: 'Un juego de mesa compuesto por diversos minijuegos con cartas de Póker, dados, tótems y estrellas, guiado por una app que les dirá los retos que deben enfrentar. ¿Conoces Mario Party?... pues este juego no se parece pero seguro que te divertirás.  Consigue estrellas y compite con tus amigos con diversos juegos random que irán descubriendo a lo largo del tablero. Aquí no gana el de más suerte, sino el más listo, rápido y estratégico.',
-        minPlayers: 2,
-        maxPlayers: 5,
-        difficulty: 3,
-        img: 'Magux-party.png',
-        rank: 3,
-        minutes: 50
-    },
-    {
         name: 'Mente Vacuna (Digital)',
         desc: 'En el juego Mente Vacuna, el objetivo es responder a las preguntas de manera que coincidan con la mayoría de respuestas del resto de jugadores, en otras palabras, con una “mentalidad de rebaño”. Si tu respuesta no coincide con la mayoría, serás etiquetado como la “vaca rosa” del rebaño y así no llegarás muy lejos.',
         minPlayers: 4,
@@ -395,7 +385,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 10,
         difficulty: 2,
-        img: 'Monopoly-Fornite.png',
+        img: 'Monopoly-Fornite.webp',
         rank: 4,
         minutes: 45
     },
@@ -422,7 +412,7 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 2,
         lang: 'EN',
-        img: 'Monopoly-Pokémon.png',
+        img: 'Monopoly-Pokémon.webp',
         rank: 2,
         minutes: 60
     },
@@ -452,7 +442,7 @@ export const lstGames = [
         minPlayers: 3,
         maxPlayers: 6,
         difficulty: 2,
-        img: 'Papas-Traidoras.png',
+        img: 'Papas-Traidoras.webp',
         rank: 3,
         minutes: 25
     },
@@ -462,7 +452,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 2,
-        img: 'parchis.png',
+        img: 'parchis.webp',
         new: true,
         minutes: 30
     },
@@ -492,7 +482,7 @@ export const lstGames = [
         minPlayers: 3,
         maxPlayers: 8,
         difficulty: 2,
-        img: 'pit.png',
+        img: 'pit.webp',
         rank: 3,
         minutes: 30
     },
@@ -534,7 +524,7 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         lang: 'EN',
-        img: 'Rick-y-Morty-Total-Rickall.png',
+        img: 'Rick-y-Morty-Total-Rickall.webp',
         rank: 5,
         minutes: 30
     },
@@ -544,7 +534,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 4,
-        img: 'risk.png',
+        img: 'risk.webp',
         rank: 4,
         minutes: 120
     },
@@ -554,7 +544,7 @@ export const lstGames = [
         minPlayers: 3,
         maxPlayers: 8,
         difficulty: 2,
-        img: 'Saboteur.png',
+        img: 'Saboteur.webp',
         rank: 4,
         minutes: 30
     },
@@ -564,7 +554,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 3,
-        img: 'scrabble.png',
+        img: 'scrabble.webp',
         rank: 3,
         minutes: 60
     },
@@ -584,7 +574,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 1,
-        img: 'shopping-list.png',
+        img: 'shopping-list.webp',
         minutes: 15,
         rank: 3
     },
@@ -604,7 +594,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 4,
-        img: 'Skull-King.png',
+        img: 'Skull-King.webp',
         rank: 2,
         minutes: 30
     },
@@ -624,7 +614,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
-        img: 'Sleeping-Queens.png',
+        img: 'Sleeping-Queens.webp',
         rank: 2,
         minutes: 20
     },
@@ -635,7 +625,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 2,
         lang: 'EN',
-        img: 'sonic-speed-battle.png',
+        img: 'sonic-speed-battle.webp',
         minutes: 30,
         rank: 3,
         files: [
@@ -671,7 +661,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 5,
-        img: 'Stratego-Star-Wars.png',
+        img: 'Stratego-Star-Wars.webp',
         rank: 2,
         minutes: 30
     },
@@ -702,7 +692,7 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 4,
         lang: 'EN',
-        img: 'That-time-you-killed-me.png',
+        img: 'That-time-you-killed-me.webp',
         rank: 5,
         minutes: 25
     },
@@ -763,7 +753,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 3,
         lang: 'EN',
-        img: 'tic-tac-KO.png',
+        img: 'tic-tac-KO.webp',
         rank: 4,
         minutes: 25
     },
@@ -773,7 +763,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 3,
-        img: 'Ticket-to-Ride-Europe.png',
+        img: 'Ticket-to-Ride-Europe.webp',
         new: true,
         minutes: 45
     },
@@ -854,7 +844,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 2,
-        img: 'virus.png',
+        img: 'virus.webp',
         rank: 2,
         minutes: 20,
     },
@@ -885,7 +875,7 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         lang: 'EN',
-        img: 'Zombie Kittens.png',
+        img: 'Zombie Kittens.webp',
         rank: 4,
         minutes: 15,
         files: [{
@@ -910,7 +900,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 2,
-        img: 'Rat A Tat Cat.png',
+        img: 'Rat A Tat Cat.webp',
         minutes: 20,
         rank: 4,
     },
@@ -931,7 +921,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 4,
-        img: 'The Crew.png',
+        img: 'The Crew.webp',
         minutes: 20,
         new: true
     },
@@ -951,7 +941,7 @@ export const lstGames = [
         minPlayers: 3,
         maxPlayers: 6,
         difficulty: 4,
-        img: 'Betrayal at House on The Hill.png',
+        img: 'Betrayal at House on The Hill.webp',
         minutes: 60,
         new: true,
         lang: 'EN',
@@ -1004,8 +994,58 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 5,
         difficulty: 2,
-        img: 'Pelusas.png',
+        img: 'Pelusas.webp',
         minutes: 20,
+        new: true,
+    },
+    {
+        name: 'Party Panda Pirates',
+        desc: '¡Embárcate en una aventura llena de risas y desafíos con Party Panda Pirates! Desliza a tus pandas piratas en busca de tesoros, enfréntate a divertidos minijuegos y gana monedas para descubrir cofres ocultos.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 3,
+        img: 'party-panda-pirates.webp',
+        minutes: 40,
+        new: true,
+    },
+    {
+        name: 'Cakes!',
+        desc: 'Cakes! es un juego de mesa de habilidad y equilibrio donde los jugadores compiten para ser el mejor pastelero, creando las tartas más altas y rápidas. El objetivo es construir una tarta de 10 pisos, siguiendo los pedidos que se vayan presentando, mientras se intenta mantener el equilibrio.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 2,
+        img: 'cakes!.webp',
+        minutes: 15,
+        new: true,
+    },
+    {
+        name: 'Catfé',
+        desc: 'los jugadores compiten para convertirse en el chef más exitoso del café de Moka, una gata pastelera. El objetivo es preparar la mayor variedad de postres y ser el primero en recolectar una cantidad determinada, pero también hay que evitar tener demasiados postres iguales, pues a Moka no le gusta la repetición.',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 2,
+        img: 'catfé.webp',
+        minutes: 15,
+        new: true,
+    },
+    {
+        name: 'Las Torres Errantes',
+        desc: 'Ayuda a tus magos a llegar a Ravenskeep lo más rápido posible. ¡Usando su magia, incluso podrían mover las torres sobre las que se encuentran para llegar allí más fácilmente! Pero, ¿cómo pueden rellenar sus frascos de pociones por el camino? Bueno, aquí hay un pequeño secreto: atrapar magos te permite capturar parte de su esencia mágica en una botella...',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 4,
+        img: 'las torres errantes.webp',
+        minutes: 30,
+        new: true,
+    },
+    {
+        name: 'Optimus',
+        desc: 'El objetivo es sumar la mayor cantidad de puntos posible en varias rondas, marcando estratégicamente los resultados de los dados en una hoja de puntuación. Se trata de un juego de azar y estrategia, donde los jugadores deben decidir qué dados utilizar en cada turno para obtener la mejor combinación de puntos.',
+        minPlayers: 1,
+        maxPlayers: 4,
+        difficulty: 3,
+        img: 'optimus.webp',
+        minutes: 30,
         new: true,
     },
 ]
