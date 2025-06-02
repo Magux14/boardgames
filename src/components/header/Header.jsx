@@ -39,6 +39,10 @@ export const Header = () => {
                             <span>Dados</span> <CasinoIcon />
                         </li>
 
+                        <li onClick={() => goTo('/counting')}>
+                            <span>Contador de puntos</span><span>+/-</span>
+                        </li>
+
                         <li onClick={() => goTo('/phasmophobia-filter')}>
                             <span>Phasmophobia</span> <img id="phasmophobia-icon" src="./icons/phasmophobia-icon.png"></img>
                         </li>
@@ -64,9 +68,9 @@ export const Header = () => {
                             <span>No mames</span> <img src="./img/no-mames/back.png" alt="cow" width={24} height={24} />
                         </li>
 
-                        <li onClick={() => goTo('/mario-party')}>
+                        {/* <li onClick={() => goTo('/mario-party')}>
                             <span>Mario Party</span> <img src="./img/games/Magux-party.png" alt="mario party" width={24} height={24} />
-                        </li>
+                        </li> */}
 
                         <li onClick={() => goTo('/tabu')}>
                             <span>Tabú</span> <img src="./img/games/tabu.png" alt="tabu" width={24} height={24} />

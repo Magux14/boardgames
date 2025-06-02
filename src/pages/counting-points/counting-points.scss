@@ -1,0 +1,50 @@
+.counting-points {
+    &__container {
+        min-height: 100dvh;
+        background: rgb(72, 81, 117);
+        color: white;
+        padding: 10px;
+    }
+
+    &__list-container {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input {
+            background: rgba(255, 255, 255, 0.671);
+            border-radius: 10px;
+            width: 100%;
+        }
+    }
+
+    &__name-container {
+        input {
+            background: rgb(241, 233, 195);
+        }
+    }
+
+    &__button-container {
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+
+        button {
+            background: orange;
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+        }
+    }
+
+    &__final-score {
+        text-align: center;
+        font-weight: bold;
+        zoom: 1.2;
+    }
+}

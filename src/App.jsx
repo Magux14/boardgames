@@ -11,6 +11,7 @@ import { NoMamesPage } from './pages/no-mames/NoMamesPage';
 import { YoNuncaNuncaPage } from './pages/yo-nunca-nunca/YoNuncaNunca';
 import { MarioPartyPage } from './pages/mario-party/MarioPartyPage';
 import { TabuGame } from './pages/tabu/components/tabu-game/TabuGame';
+import { CountingPoints } from './pages/counting-points/CountingPoints';
 
 export const App = () => {
 
@@ -28,6 +29,7 @@ export const App = () => {
                 <Route path="/no-mames" element={<NoMamesPage />} />
                 <Route path="/mario-party" element={<MarioPartyPage />} />
                 <Route path="/tabu" element={<TabuGame />} />
+                <Route path="/counting" element={<CountingPoints />} />
             </Routes>
         </BrowserRouter>
     )
