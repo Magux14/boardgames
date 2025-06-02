@@ -36,7 +36,13 @@ const defaultLstPlayers = [
 ]
 export const CountingPoints = () => {
 
-    const [lstPlayers, setLstPlayers] = useState(defaultLstPlayers);
+    const defaultLstPlayersCopy = () => defaultLstPlayers.map(player => ({
+        name: player.name,
+        lstScore: [...player.lstScore],
+        total: player.total
+    }))
+
+    const [lstPlayers, setLstPlayers] = useState(defaultLstPlayersCopy());
     const { saveState, getLoadState } = useSaveState('counting-state');
 
     const updateName = (index, name) => {
@@ -63,7 +69,7 @@ export const CountingPoints = () => {
     }
 
     const resetValues = () => {
-        setLstPlayers([...defaultLstPlayers]);
+        setLstPlayers(defaultLstPlayersCopy());
     }
 
     useEffect(() => {
