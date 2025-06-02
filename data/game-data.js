@@ -297,7 +297,7 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 1,
         lang: 'EN',
-        img: 'Headbanz.png',
+        img: 'Headbanz.webp',
         rank: 4,
         minutes: 45
     },
@@ -902,7 +902,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'Rat A Tat Cat.webp',
         minutes: 20,
-        rank: 4,
+        rank: 3,
     },
     {
         name: 'Interstellar Odyssey',
@@ -953,8 +953,8 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 3,
         img: 'cabo.png',
+        rank: 4,
         minutes: 45,
-        new: true,
     },
     {
         name: 'Among Spaceship',
@@ -986,7 +986,7 @@ export const lstGames = [
         img: 'super-hazard-quest.png',
         minutes: 25,
         lang: 'EN',
-        new: true,
+        rank: 4,
     },
     {
         name: 'Pelusas',
@@ -1006,6 +1006,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'party-panda-pirates.webp',
         minutes: 40,
+        rank: 5,
         new: true,
     },
     {
