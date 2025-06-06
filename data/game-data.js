@@ -1027,7 +1027,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'catfé.webp',
         minutes: 15,
-        new: true,
+        rank: 3
     },
     {
         name: 'Las Torres Errantes',
@@ -1067,6 +1067,6 @@ export const lstGames = [
         difficulty: 4,
         img: 'lorcana.webp',
         minutes: 30,
-        new: true,
+        rank: 2
     },
 ]
