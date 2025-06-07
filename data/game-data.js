@@ -1069,4 +1069,14 @@ export const lstGames = [
         minutes: 30,
         rank: 2
     },
+    {
+        name: 'Zombicide 2da Edición',
+        desc: 'Zombicide Segunda Edición es un juego cooperativo que admite modo solitario y que te permite vivir toda la emoción de las películas de zombis en tu mesa. Las magníficas miniaturas y su mecánica que permite al personaje progresar te transportarán a un escenario lleno de tensión.',
+        minPlayers: 1,
+        maxPlayers: 6,
+        difficulty: 4,
+        img: 'zombicide.webp',
+        minutes: 50,
+        new: true
+    },
 ]
