@@ -11,6 +11,10 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { Modal } from 'antd';
 import { GameFiles } from './components/game-files/GameFiles';
+import { TripCart } from './components/trip-cart/TripCart';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import { useSaveState } from '../../hooks/useSaveState';
 
 const shortTime = 15;
 const mediumTime = 40;
@@ -25,6 +29,10 @@ export const GameListPage = () => {
     const [lstFilteredItems, setlstFilteredItems] = useState(lstGames);
     const [filterType, setFilterType] = useState('nameAsc');
     const [openFileModal, setOpenFileModal] = useState(false);
+
+    const [lstTripGames, setLstTripGames] = useState([]);
+    const [openTripCart, setOpenTripCart] = useState(false);
+    const { saveState, getLoadState } = useSaveState('trip-game-state');
 
     const handleSearchWordChange = (event) => {
         setFilters({
@@ -123,13 +131,40 @@ export const GameListPage = () => {
         setlstFilteredItems(lstFiltered);
     }
 
-    const handleOpenFileMoal = () => {
+    const handleOpenFileModal = () => {
         setOpenFileModal(true);
+    }
+
+    const handleOpenTripModal = () => {
+        setOpenTripCart(true);
+    }
+
+    const handleAddGameToTrip = (game) => {
+        if (lstTripGames.find(item => item.name == game.name) != null) {
+            return;
+        }
+        lstTripGames.push(game);
+        setLstTripGames([...lstTripGames]);
+        saveState([...lstTripGames]);
+    }
+
+    const handleRemoveGameFromTrip = (game) => {
+        const index = lstTripGames.findIndex(item => item.name == game.name);
+        lstTripGames.splice(index, 1);
+        setLstTripGames([...lstTripGames]);
+        saveState([...lstTripGames]);
     }
 
     useEffect(() => {
         applyFilters();
     }, [filters])
+
+    useEffect(() => {
+        const savedState = getLoadState();
+        if (savedState) {
+            setLstTripGames([...savedState]);
+        }
+    }, [])
 
     return (
         <>
@@ -206,104 +241,127 @@ export const GameListPage = () => {
                         </label>
                     </div>
                 </div>
-            </div>
-            <div className="game-list-page__game-list-container">
-                <div className="game-list-page__timer-info-container">
-                    <div className="game-list-page__timer-container--short">
-                        <AccessTimeIcon /> -{shortTime} min
+                <div className="game-list-page__game-list-container">
+                    <div className="game-list-page__timer-info-container">
+                        <div className="game-list-page__timer-container--short">
+                            <AccessTimeIcon /> -{shortTime} min
+                        </div>
+                        <div className="game-list-page__timer-container--medium">
+                            <AccessTimeIcon /> {shortTime} - {mediumTime} min
+                        </div>
+                        <div className="game-list-page__timer-container--long">
+                            <AccessTimeIcon /> +{mediumTime} min
+                        </div>
                     </div>
-                    <div className="game-list-page__timer-container--medium">
-                        <AccessTimeIcon /> {shortTime} - {mediumTime} min
-                    </div>
-                    <div className="game-list-page__timer-container--long">
-                        <AccessTimeIcon /> +{mediumTime} min
-                    </div>
-                </div>
 
-                <div className="game-list-page__list-container">
+                    <div className="game-list-page__list-container">
 
-                    {lstFilteredItems.map(item =>
-                        <div key={item.name} className="game-list-page__game">
-                            {
-                                item.new &&
-                                <span className="game-list-page__new-game">
-                                    {
-                                        item.comingSoon ? 'Próximamente' : 'NUEVO'
-                                    }
-                                </span>
-                            }
-                            <div className={`game-list-page__timer-container game-list-page__timer-container--${getTypeOfTime(item.minutes)}`}>
-                                <AccessTimeIcon />
-                            </div>
-                            <div className="game-list-page__image-container">
-                                <img
-                                    src={`${import.meta.env.VITE_PUBLIC_GITHUB_ORIGIN_PAGE}/img/games/${item.img}`}
-                                    alt={item.name}
-                                    className='image'
-                                    loading="lazy"
-                                    onError={(e) => {
-                                        e.target.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAO0AAADVCAMAAACMuod9AAAAVFBMVEXu7u5mZmbx8fFbW1vAwMDIyMj29vaFhYXz8/PT09Ojo6NZWVmxsbGBgYFjY2NgYGDn5+fY2Nh3d3fQ0NCdnZ1sbGzh4eF7e3tSUlJra2uOjo7d3d3UXWnYAAACyElEQVR4nO3b63aaQBSGYR2sDrEBD2Da5v7vs4AgCKNmhUnT/fq9P0NEnszm4FpmsXii3HcfwD9NWm7ScpOWm7TcpOUmLTdpuUnLTVpu0nKTlpu03KTlJi03ablJy01abtJyk5abtNyk5SYtN2m5SctNWm7ScpOWm7TcpOUmLTdpuUnLTVpu0nKTlpu03KTlJi03abl9gdZFK/6hxd/j/kesdtGPLfYOF77YJnH6lcY+ui/QvuSHTYzKxIR2+3Mdo9etEa2PsB8n7dx9Rt6ftJ9L2tn7jLw/ae++/80HRJ7Wrd9XqzT82zitO22SPE8OQS9Ou/udL6uyPMSiadd/GmzFLQMvgGndqcUul8lxehw07fGizQOvkHZu3zrJSafd4ibZ7cbvBb5K+WN5HP/4VELvQH6fZdn4KaJ+ukjyLe7pwqd5Vl2MJlzfPDkGD8Ku1qXLrB7Z5WSYgZ8K6jE+X44mw3w7q1qfttgH3OuLtlGtP49xx50Mc3ckRXnFtan1+wG2PnfDq+uLJD8MuSa1l3O2X9196HZcVLfebMi1qHXpCFt7p6tbrWyzZcA1qB2N8a1hXhftI/OAa0/rxmMcHmZfXD4f9Fxz2sk523OHkAG2et7quNa0LjTG02G+wvara0wbPGd7bjfM/iW53pS/NVxb2jsrO1zd5tYz2tSsrintA2zHHY1xu7qHnS3t3THuhzmIPQ+zt6N9uLItd3zODrh2tOuPYGvU5Jy9bDksNla07x/D3v1DvL7Z0CZFORtbP4HY+AZRHsFaZ0QbByvtzKSdl7TSQrRP9f1kl65iZeC758/1fwX/c9Jyk5abtNyk5SYtN2m5SctNWm7ScpOWm7TcpOUmLTdpuUnLTVpu0nKTlpu03KTlJi03ablJy01abtJyk5abtNyk5SYtN2m5SctNWm7ScpOWm7TcpOUmLTdpuUnL7cm0fwHDUS1mjADeeAAAAABJRU5ErkJggg=='
-                                    }}
-                                />
-                            </div>
-                            <div className="game-list-page__main-info-container">
-                                <h3 className="game-list-page__game-name">{item.name}</h3>
-                                <div className="game-list-page__desc-container">
-                                    {item.desc ? <p className="game-list-page__desc">{item.desc}</p> : null}
-                                </div>
-                            </div>
-
-                            <div className='game-list-page__right game-list-page__tags-container'>
+                        {lstFilteredItems.map(item =>
+                            <div key={item.name} className="game-list-page__game">
                                 {
-                                    <span className='game-list-page__tags game-list-page__rank'>
+                                    item.new &&
+                                    <span className="game-list-page__new-game">
                                         {
-                                            item.rank
-                                                ?
-                                                Array.from({ length: 5 }, (_, i) => i + 1).map((i) =>
-                                                    <img key={`start-${i}`} src={`./icons/${i <= item.rank ? 'star' : 'unfilled-star'}.png`}
-                                                        width={18}
-                                                        height={18}
-                                                        alt="star"
-                                                    />
-                                                )
-                                                :
-                                                <span>
-                                                    Unranked
-                                                </span>
+                                            item.comingSoon ? 'Próximamente' : 'NUEVO'
                                         }
                                     </span>
                                 }
-                                <span className='game-list-page__tags'><AccessTimeIcon /> {`${item.minutes}min`}</span>
-                                <span className='game-list-page__tags'><PersonIcon /> {`${item.minPlayers == item.maxPlayers ? ` ${item.minPlayers} ` : `${item.minPlayers} - ${item.maxPlayers}`}`}</span>
-                                <span className='game-list-page__tags'><PsychologyIcon /> {item.difficulty}</span>
-                                {
-                                    item.lang ?
-                                        <span className='game-list-page__tags'><TranslateIcon /> {item.lang}</span> : null
-                                }
+                                <div className={`game-list-page__timer-container game-list-page__timer-container--${getTypeOfTime(item.minutes)}`}>
+                                    <AccessTimeIcon />
+                                </div>
+                                <div className="game-list-page__image-container">
+                                    <img
+                                        src={`${import.meta.env.VITE_PUBLIC_GITHUB_ORIGIN_PAGE}/img/games/${item.img}`}
+                                        alt={item.name}
+                                        className='image'
+                                        loading="lazy"
+                                        onError={(e) => {
+                                            e.target.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAO0AAADVCAMAAACMuod9AAAAVFBMVEXu7u5mZmbx8fFbW1vAwMDIyMj29vaFhYXz8/PT09Ojo6NZWVmxsbGBgYFjY2NgYGDn5+fY2Nh3d3fQ0NCdnZ1sbGzh4eF7e3tSUlJra2uOjo7d3d3UXWnYAAACyElEQVR4nO3b63aaQBSGYR2sDrEBD2Da5v7vs4AgCKNmhUnT/fq9P0NEnszm4FpmsXii3HcfwD9NWm7ScpOWm7TcpOUmLTdpuUnLTVpu0nKTlpu03KTlJi03ablJy01abtJyk5abtNyk5SYtN2m5SctNWm7ScpOWm7TcpOUmLTdpuUnLTVpu0nKTlpu03KTlJi03abl9gdZFK/6hxd/j/kesdtGPLfYOF77YJnH6lcY+ui/QvuSHTYzKxIR2+3Mdo9etEa2PsB8n7dx9Rt6ftJ9L2tn7jLw/ae++/80HRJ7Wrd9XqzT82zitO22SPE8OQS9Ou/udL6uyPMSiadd/GmzFLQMvgGndqcUul8lxehw07fGizQOvkHZu3zrJSafd4ibZ7cbvBb5K+WN5HP/4VELvQH6fZdn4KaJ+ukjyLe7pwqd5Vl2MJlzfPDkGD8Ku1qXLrB7Z5WSYgZ8K6jE+X44mw3w7q1qfttgH3OuLtlGtP49xx50Mc3ckRXnFtan1+wG2PnfDq+uLJD8MuSa1l3O2X9196HZcVLfebMi1qHXpCFt7p6tbrWyzZcA1qB2N8a1hXhftI/OAa0/rxmMcHmZfXD4f9Fxz2sk523OHkAG2et7quNa0LjTG02G+wvara0wbPGd7bjfM/iW53pS/NVxb2jsrO1zd5tYz2tSsrintA2zHHY1xu7qHnS3t3THuhzmIPQ+zt6N9uLItd3zODrh2tOuPYGvU5Jy9bDksNla07x/D3v1DvL7Z0CZFORtbP4HY+AZRHsFaZ0QbByvtzKSdl7TSQrRP9f1kl65iZeC758/1fwX/c9Jyk5abtNyk5SYtN2m5SctNWm7ScpOWm7TcpOUmLTdpuUnLTVpu0nKTlpu03KTlJi03ablJy01abtJyk5abtNyk5SYtN2m5SctNWm7ScpOWm7TcpOUmLTdpuUnL7cm0fwHDUS1mjADeeAAAAABJRU5ErkJggg=='
+                                        }}
+                                    />
+                                    <div className="game-list-page__add-to-trip-container">
+                                        <AddShoppingCartIcon onClick={() => handleAddGameToTrip(item)} />
+                                    </div>
+                                </div>
+                                <div className="game-list-page__main-info-container">
+                                    <h3 className="game-list-page__game-name">{item.name}</h3>
+                                    <div className="game-list-page__desc-container">
+                                        {item.desc ? <p className="game-list-page__desc">{item.desc}</p> : null}
+                                    </div>
+                                </div>
 
-                                {
+                                <div className='game-list-page__right game-list-page__tags-container'>
+                                    {
+                                        <span className='game-list-page__tags game-list-page__rank'>
+                                            {
+                                                item.rank
+                                                    ?
+                                                    Array.from({ length: 5 }, (_, i) => i + 1).map((i) =>
+                                                        <img key={`start-${i}`} src={`./icons/${i <= item.rank ? 'star' : 'unfilled-star'}.png`}
+                                                            width={18}
+                                                            height={18}
+                                                            alt="star"
+                                                        />
+                                                    )
+                                                    :
+                                                    <span>
+                                                        Unranked
+                                                    </span>
+                                            }
+                                        </span>
+                                    }
+                                    <span className='game-list-page__tags'><AccessTimeIcon /> {`${item.minutes}min`}</span>
+                                    <span className='game-list-page__tags'><PersonIcon /> {`${item.minPlayers == item.maxPlayers ? ` ${item.minPlayers} ` : `${item.minPlayers} - ${item.maxPlayers}`}`}</span>
+                                    <span className='game-list-page__tags'><PsychologyIcon /> {item.difficulty}</span>
+                                    {
+                                        item.lang ?
+                                            <span className='game-list-page__tags'><TranslateIcon /> {item.lang}</span> : null
+                                    }
 
-                                    (item.files) &&
-                                    <>
-                                        <Modal
-                                            open={openFileModal}
-                                            width={'100vw'}
-                                            height={'100vh'}
-                                            footer={null}
-                                            onCancel={() => setOpenFileModal(false)}
-                                            maskClosable={false}
-                                        >
-                                            <GameFiles files={item.files} title={item.name} />
-                                        </Modal>
-                                        <div className="game-list-page__files-container">
-                                            <button onClick={() => handleOpenFileMoal()}>Archivos <PictureAsPdfIcon /></button>
-                                        </div>
-                                    </>
-                                }
-                            </div>
-                        </div>)}
+                                    {
+
+                                        (item.files) &&
+                                        <>
+                                            <Modal
+                                                open={openFileModal}
+                                                width={'100vw'}
+                                                height={'100vh'}
+                                                footer={null}
+                                                onCancel={() => setOpenFileModal(false)}
+                                                maskClosable={false}
+                                            >
+                                                <GameFiles files={item.files} title={item.name} />
+                                            </Modal>
+                                            <div className="game-list-page__files-container">
+                                                <button onClick={() => handleOpenFileModal()}>Archivos <PictureAsPdfIcon /></button>
+                                            </div>
+                                        </>
+                                    }
+                                </div>
+                            </div>)}
+
+                        {
+                            openTripCart &&
+                            <Modal
+                                open={openTripCart}
+                                width={'100vw'}
+                                height={'100vh'}
+                                footer={null}
+                                onCancel={() => setOpenTripCart(false)}
+                                maskClosable={false}
+                            >
+                                <TripCart lstTripGames={lstTripGames} callbackRemoveFromList={handleRemoveGameFromTrip} />
+                            </Modal>
+                        }
+
+                    </div>
+                </div>
+
+                <div className="game-list-page__trip-cart-container">
+                    <ShoppingBagIcon onClick={() => handleOpenTripModal(true)} />
                 </div>
             </div>
+
         </>
     )
 }
