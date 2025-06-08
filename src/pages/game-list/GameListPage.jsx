@@ -9,7 +9,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import SortIcon from '@mui/icons-material/Sort';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import { Modal } from 'antd';
+import { message, Modal } from 'antd';
 import { GameFiles } from './components/game-files/GameFiles';
 import { TripCart } from './components/trip-cart/TripCart';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -33,6 +33,7 @@ export const GameListPage = () => {
     const [lstTripGames, setLstTripGames] = useState([]);
     const [openTripCart, setOpenTripCart] = useState(false);
     const { saveState, getLoadState } = useSaveState('trip-game-state');
+    const [messageApi, contextHolder] = message.useMessage();
 
     const handleSearchWordChange = (event) => {
         setFilters({
@@ -141,11 +142,17 @@ export const GameListPage = () => {
 
     const handleAddGameToTrip = (game) => {
         if (lstTripGames.find(item => item.name == game.name) != null) {
+            messageApi.open({
+                type: 'warning',
+                content: `"${game.name}" ya existe en la lista de viaje`
+            });
+
             return;
         }
         lstTripGames.push(game);
         setLstTripGames([...lstTripGames]);
         saveState([...lstTripGames]);
+        messageApi.info(`"${game.name}" agregado a lista de viaje`);
     }
 
     const handleRemoveGameFromTrip = (game) => {
@@ -169,7 +176,7 @@ export const GameListPage = () => {
     return (
         <>
             <Header />
-
+            {contextHolder}
             <div className="game-list-page game-list-page__filter-container">
                 <div className="game-list-page__inputs-container">
 
