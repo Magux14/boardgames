@@ -49,7 +49,7 @@ export const lstGames = [
         maxPlayers: 5,
         difficulty: 3,
         img: 'Cartas de Poker.webp',
-        rank: 2,
+        rank: 3,
         minutes: 40
     },
     {
@@ -70,7 +70,7 @@ export const lstGames = [
         difficulty: 3,
         lang: 'EN',
         img: 'Cartoon-Network-Crossover-Crisis.webp',
-        rank: 3,
+        rank: 4,
         minutes: 40
     },
     {
@@ -80,7 +80,7 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 3,
         img: 'catan.png',
-        rank: 1,
+        rank: 2,
         minutes: 60
     },
     {
@@ -91,7 +91,7 @@ export const lstGames = [
         difficulty: 1,
         lang: '',
         img: 'Conecta-4.png',
-        rank: 1,
+        rank: 2,
         minutes: 5
     },
     {
@@ -356,7 +356,7 @@ export const lstGames = [
         maxPlayers: 8,
         difficulty: 2,
         img: 'La-Polilla-Tramposa.png',
-        rank: 3,
+        rank: 2,
         minutes: 30
     },
     {
@@ -993,10 +993,10 @@ export const lstGames = [
         desc: 'Un juego de cartas de "push your luck" (tentar la suerte) donde los jugadores buscan acumular pelusas (cartas) para ganar puntos. Tienen que robar pelusas del montón central o robarlas a otros jugadores, pero corren el riesgo de perder todo si sacan una pelusa repetida.',
         minPlayers: 2,
         maxPlayers: 5,
-        difficulty: 2,
+        difficulty: 1,
         img: 'Pelusas.webp',
-        minutes: 20,
-        new: true,
+        minutes: 15,
+        rank: 4
     },
     {
         name: 'Party Panda Pirates',
