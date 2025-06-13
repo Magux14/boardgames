@@ -4,6 +4,10 @@
     --border-color: rgb(206, 206, 206);
 }
 
+* {
+ box-sizing: border-box;
+}
+
 .game-list-page {
 
     &__game-list-container {
@@ -24,19 +28,17 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 4%;
+        padding: 20px 10px;
 
         @media (min-width: $mobileMaxValue) {
             flex-direction: row;
             flex-wrap: wrap;
             gap: 10px;
         }
-
     }
 
     &__game {
         position: relative;
-        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -44,14 +46,19 @@
         border: 3px solid rgb(95, 95, 95);
         border-radius: 15px;
         background: rgba(255, 255, 255, 0.7);
-        min-height: 50vh;
 
         @media (min-width: $mobileMaxValue) {
             display: flex;
             flex-direction: column;
-            flex-basis: 30%;
-            height: 70vh;
-            height: 40vh;
+            flex-basis: calc(33.33% - 10px);
+        }
+
+        @media (min-width: 1800px) {
+            flex-basis: calc(25% - 10px);
+        }
+
+         @media (min-width: 2500px) {
+            flex-basis: calc(20% - 10px);
         }
     }
 
@@ -65,7 +72,7 @@
         padding: 20px;
         transform: rotate(4deg);
         animation: newBlink 0.5s infinite alternate;
-        z-index: 1;
+        z-index: 2;
 
         @keyframes newBlink {
             0% {
@@ -82,18 +89,12 @@
         position: relative;
         display: flex;
         justify-content: center;
-        height: 50%;
-
-        img {
-            width: 100%;
-            justify-content: center;
-            max-height: 250px;
-            object-fit: contain;
-            border-radius: 20px;
-            margin-bottom: 5px;
-            padding: 10px;
-            height: auto;
-        }
+        min-height: 200px;
+        background-size: 250%;
+        background-position: center;
+        background-repeat: no-repeat;
+        image-rendering: pixelated;
+        overflow: hidden;
 
         @media (min-width: $mobileMaxValue) {
             display: flex;
@@ -102,8 +103,33 @@
         }
     }
 
+    &__image-container::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: inherit;
+        background-size: inherit;
+        background-position: inherit;
+        background-repeat: inherit;
+        image-rendering: inherit;
+        filter: blur(4px) brightness(1.2);
+    }
+
+    &__image {
+        width: 100%;
+        justify-content: center;
+        max-height: 250px;
+        object-fit: contain;
+        border-radius: 20px;
+        margin-bottom: 5px;
+        padding: 10px;
+        height: auto;
+        filter: unset;
+        z-index: 1;
+    }
+
     &__main-info-container {
-        padding: 0 5% 0 5%;
+        padding: 5px 10px;
 
         h3 {
             text-transform: capitalize;
@@ -112,7 +138,6 @@
 
         @media (min-width: $mobileMaxValue) {
             font-size: 12px;
-            height: 55%;
             overflow-y: hidden;
         }
     }
@@ -233,6 +258,11 @@
         }
     }
 
+    &__desc {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
     &__timer-container {
         position: absolute;
         display: flex;
@@ -241,7 +271,7 @@
         border-radius: 8px;
         left: 8px;
         top: 8px;
-        z-index: 1;
+        z-index: 2;
 
         svg {
             fill: white;
@@ -309,6 +339,7 @@
         background: rgb(161, 161, 161, 0.7);
         border-radius: 100%;
         padding: 10px;
+        z-index: 2;
 
         &:active {
             opacity: 0.8;
@@ -326,7 +357,6 @@
         background: rgb(107, 74, 129, 0.8);
         border-radius: 100%;
         padding: 20px;
-        z-index: 2;
 
         &:active {
             opacity: 0.8;
