@@ -5,7 +5,7 @@
 }
 
 * {
- box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .game-list-page {
@@ -62,7 +62,7 @@
             flex-basis: calc(25% - 10px);
         }
 
-         @media (min-width: 2500px) {
+        @media (min-width: 2500px) {
             flex-basis: calc(20% - 10px);
         }
     }
@@ -100,6 +100,8 @@
         background-repeat: no-repeat;
         image-rendering: pixelated;
         overflow: hidden;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
 
         @media (min-width: $mobileMaxValue) {
             display: flex;
@@ -355,6 +357,7 @@
         background: rgb(107, 74, 129, 0.8);
         border-radius: 100%;
         padding: 20px;
+        z-index: 4;
 
         &:active {
             opacity: 0.8;

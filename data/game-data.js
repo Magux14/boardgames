@@ -1057,7 +1057,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'marea alta.webp',
         minutes: 30,
-        new: true,
+        rank: 3
     },
     {
         name: 'Lorcana',
