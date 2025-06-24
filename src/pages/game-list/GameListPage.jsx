@@ -28,7 +28,7 @@ export const GameListPage = () => {
     });
     const [lstFilteredItems, setlstFilteredItems] = useState(lstGames);
     const [filterType, setFilterType] = useState('nameAsc');
-    const [openFileModal, setOpenFileModal] = useState(false);
+    const [openFileModal, setOpenFileModal] = useState({ name: '', open: false });
 
     const [lstTripGames, setLstTripGames] = useState([]);
     const [openTripCart, setOpenTripCart] = useState(false);
@@ -132,8 +132,8 @@ export const GameListPage = () => {
         setlstFilteredItems(lstFiltered);
     }
 
-    const handleOpenFileModal = () => {
-        setOpenFileModal(true);
+    const handleOpenFileModal = (name) => {
+        setOpenFileModal({ name, open: true });
     }
 
     const handleOpenTripModal = () => {
@@ -276,7 +276,7 @@ export const GameListPage = () => {
                                 <div className={`game-list-page__timer-container game-list-page__timer-container--${getTypeOfTime(item.minutes)}`}>
                                     <AccessTimeIcon />
                                 </div>
-                                <div className="game-list-page__image-container" style={{backgroundImage: `url(${import.meta.env.VITE_PUBLIC_GITHUB_ORIGIN_PAGE}/img/games/${encodeURIComponent(item.img)})`}}>
+                                <div className="game-list-page__image-container" style={{ backgroundImage: `url(${import.meta.env.VITE_PUBLIC_GITHUB_ORIGIN_PAGE}/img/games/${encodeURIComponent(item.img)})` }}>
                                     <img
                                         src={`${import.meta.env.VITE_PUBLIC_GITHUB_ORIGIN_PAGE}/img/games/${item.img}`}
                                         alt={item.name}
@@ -326,23 +326,24 @@ export const GameListPage = () => {
                                     }
 
                                     {
+                                        openFileModal.name == item.name &&
+                                        <Modal
+                                            open={openFileModal.open}
+                                            width={'100vw'}
+                                            height={'100vh'}
+                                            footer={null}
+                                            onCancel={() => setOpenFileModal({ name: '', open: false })}
+                                            maskClosable={false}
+                                        >
+                                            <GameFiles files={item.files} title={item.name} />
+                                        </Modal>
+                                    }
 
+                                    {
                                         (item.files) &&
-                                        <>
-                                            <Modal
-                                                open={openFileModal}
-                                                width={'100vw'}
-                                                height={'100vh'}
-                                                footer={null}
-                                                onCancel={() => setOpenFileModal(false)}
-                                                maskClosable={false}
-                                            >
-                                                <GameFiles files={item.files} title={item.name} />
-                                            </Modal>
-                                            <div className="game-list-page__files-container">
-                                                <button onClick={() => handleOpenFileModal()}>Archivos <PictureAsPdfIcon /></button>
-                                            </div>
-                                        </>
+                                        <div className="game-list-page__files-container">
+                                            <button onClick={() => handleOpenFileModal(item.name)}>Archivos <PictureAsPdfIcon /></button>
+                                        </div>
                                     }
                                 </div>
                             </div>)}
@@ -362,11 +363,17 @@ export const GameListPage = () => {
                         }
 
                     </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
 
                 <div className="game-list-page__trip-cart-container">
                     <ShoppingBagIcon onClick={() => handleOpenTripModal(true)} />
                 </div>
+
             </div>
 
         </>

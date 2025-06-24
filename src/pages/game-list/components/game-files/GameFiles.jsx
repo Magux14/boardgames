@@ -15,7 +15,7 @@ export const GameFiles = ({ title, files }) => {
             </div>
             {
                 files.map(file =>
-                    <div className="game-files__file" onClick={() => openUrl(file.url)}>
+                    <div key={file.name} className="game-files__file" onClick={() => openUrl(file.url)}>
                         <span>
                             {file.name}
                         </span>

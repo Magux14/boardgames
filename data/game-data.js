@@ -1007,7 +1007,6 @@ export const lstGames = [
         img: 'party-panda-pirates.webp',
         minutes: 40,
         rank: 5,
-        new: true,
     },
     {
         name: 'Cakes!',
@@ -1057,7 +1056,13 @@ export const lstGames = [
         difficulty: 3,
         img: 'marea alta.webp',
         minutes: 30,
-        rank: 3
+        rank: 3,
+        files: [
+            {
+                name: 'Marea Alta - Instrucciones',
+                url: 'https://drive.google.com/file/d/1T586Gu-n4YOAH_Sxu3mi3IYznoimv-7K/view?usp=drive_link'
+            }
+        ]
     },
     {
         name: 'Lorcana',
@@ -1074,9 +1079,15 @@ export const lstGames = [
         desc: 'Zombicide Segunda Edición es un juego cooperativo que admite modo solitario y que te permite vivir toda la emoción de las películas de zombis en tu mesa. Las magníficas miniaturas y su mecánica que permite al personaje progresar te transportarán a un escenario lleno de tensión.',
         minPlayers: 1,
         maxPlayers: 6,
-        difficulty: 4,
+        difficulty: 5,
         img: 'zombicide.webp',
         minutes: 50,
-        new: true
+        rank: 5,
+        files: [
+            {
+                name: 'Zombicide - Reglamento',
+                url: 'https://drive.google.com/file/d/1F8Zcgt-tuUUzyE5Ef4CevvwRoUh7tRFy/view?usp=drive_link'
+            }
+        ]
     },
 ]
