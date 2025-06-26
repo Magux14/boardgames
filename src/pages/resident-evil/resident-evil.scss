@@ -1,0 +1,18 @@
+.resident-evil {
+    &__container {
+        min-height: 100dvh;
+        background: #060605;
+        padding: 10px;
+    }
+
+    &__guns-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: solid 5px gray;
+        background: #04037C;
+        border-radius: 10px;
+    }
+
+}
