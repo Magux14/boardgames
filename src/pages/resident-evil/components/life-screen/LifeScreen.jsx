@@ -77,7 +77,7 @@ L 1000,50
                             d="M 0,50 L 1000,50"
                             fill="none"
                             stroke={currentLifeColor}
-                            stroke-width="2"
+                            strokeWidth="2"
                         />
                 }
             </svg>
