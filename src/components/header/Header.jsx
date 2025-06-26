@@ -77,7 +77,7 @@ export const Header = () => {
                         </li>
 
                         <li onClick={() => goTo('/resident-evil')}>
-                            <span>Resident Evil</span> <img src="./img/games/tabu.png" alt="tabu" width={24} height={24} />
+                            <span>Resident Evil Life</span> <img src="./img/resident-evil/resident-evil.jpg" alt="tabu" width={24} height={24} />
                         </li>
                     </ul>
                 </div>

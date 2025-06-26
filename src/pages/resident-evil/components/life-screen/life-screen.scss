@@ -1,0 +1,24 @@
+.ecg-container {
+    width: 100%;
+    height: 100px;
+    background: black;
+    overflow: hidden;
+    position: relative;
+}
+
+.ecg-line {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    animation: scrollECG 6s linear infinite;
+}
+
+@keyframes scrollECG {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

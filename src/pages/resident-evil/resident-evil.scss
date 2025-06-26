@@ -15,9 +15,60 @@
         border-radius: 10px;
     }
 
-    &__life-points-container {
-        border: solid 5px gray;
-        background: black;
+    &__life-points-labels-container {
+        width: 100%;
+        display: flex;
+
     }
+
+    &__life-points-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: solid 2px gray;
+        background: black;
+        text-align: center;
+        text-transform: capitalize;
+        padding: 5px;
+        background: gray;
+        color: rgb(74, 74, 74);
+    }
+
+    &__life-points-controls-container {
+        display: flex;
+        width: 50%;
+        gap: 10px;
+
+        button {
+            padding: 0 10px;
+            border-radius: 10px;
+        }
+    }
+
+    &__life-points-screen {
+        width: 100%;
+        background: black;
+        border: 5px;
+        padding: 10px 5px;
+        border-radius: 10px;
+    }
+
+    &__life-status--bien {
+        color: lime;
+    }
+
+    &__life-status--cuidado {
+        color: rgb(255, 213, 0);
+    }
+
+    &__life-status--peligro {
+        color: rgb(189, 22, 22);
+    }
+
+    &__life-status--muerto {
+        color: white
+    }
+
 
 }

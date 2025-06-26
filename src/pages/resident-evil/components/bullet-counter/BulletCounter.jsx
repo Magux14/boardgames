@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './bullet-counter.scss';
 
-export const BulletCounter = ({ name, bullets, setBullets }) => {
+export const BulletCounter = ({ name, bullets, setBullets, defaultAddingValues = 1 }) => {
 
     return (
         <div className="bullet-counter__container">
@@ -9,12 +9,12 @@ export const BulletCounter = ({ name, bullets, setBullets }) => {
                 {name}
             </div>
             <div className="bullet-counter__controls">
-                <button onClick={(() => bullets > 0 ? setBullets(bullets - 1) : null)}>-</button>
+                <button onTouchStart={(() => bullets > 0 ? setBullets(bullets - defaultAddingValues) : null)}>-</button>
                 <div className="bullet-counter__image-container">
                     <img src={`./img/resident-evil/balas-${name}.png`} />
                     <div className="bullet-counter__counter-value">{bullets}</div>
                 </div>
-                <button onClick={(() => bullets < 99 ? setBullets(bullets + 1) : null)}>+</button>
+                <button onTouchStart={(() => bullets < 99 ? setBullets(bullets + defaultAddingValues) : null)}>+</button>
             </div>
         </div>
     )
