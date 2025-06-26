@@ -11,7 +11,10 @@ export const BulletCounter = ({ name, bullets, callbackSaveState }) => {
             </div>
             <div className="bullet-counter__controls">
                 <button onClick={(() => counter > 0 ? setCounter(counter - 1) : null)}>-</button>
-                <div className="">{counter}</div>
+                <div className="bullet-counter__image-container">
+                    <img src={`./img/resident-evil/balas-${name}.png`} />
+                    <div className="bullet-counter__counter-value">{counter}</div>
+                </div>
                 <button onClick={(() => counter < 99 ? setCounter(counter + 1) : null)}>+</button>
             </div>
         </div>
