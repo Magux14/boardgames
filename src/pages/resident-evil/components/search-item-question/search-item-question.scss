@@ -1,0 +1,32 @@
+.search-item-question {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__title-container {
+        // color: white;
+        font-size: 20px;
+    }
+
+    &__option-container {
+        width: 100%;
+
+        button {
+            width: 100%;
+            border-radius: 10px;
+            background: rgb(44, 44, 133);
+            color: white;
+            padding: 20px;
+        }
+
+        button:active {
+            transform: scale(.99);
+            background: rgb(47, 47, 117);
+        }
+
+    }
+}

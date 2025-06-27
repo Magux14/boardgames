@@ -48,11 +48,11 @@ export const lstResidentItems = [
         quantitytoSpawn: 1
     },
     {
-        name: 'ametralladora',
+        name: 'rifle de asalto',
         type: 'weapon',
         weapon: {
             minRange: 0,
-            maxRange: 1,
+            maxRange: 2,
             dices: 5,
             hit: 4,
             firePower: 1
@@ -60,15 +60,77 @@ export const lstResidentItems = [
         quantitytoSpawn: 1
     },
     {
-        name: 'spray curativo',
+        name: 'molotov',
+        type: 'weapon',
+        weapon: {
+            minRange: 1,
+            maxRange: 1,
+            dices: 0,
+            hit: 0,
+            firePower: 3
+        },
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'spray médico',
         type: 'health',
         recover: 2,
         quantitytoSpawn: 1
     },
     {
-        name: 'hierva verde',
+        name: 'palanca',
+        type: 'item',
+        desc: 'Podrás abrir puertas rojas cerradas',
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'hierba verde',
         type: 'health',
-        recover: 2,
+        desc: 'Recupera 1 punto de vida.',
+        recover: 1,
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'hierba roja',
+        type: 'health',
+        desc: 'Júntala con una "hierba verde" para recuperar 2 puntos de vida.',
+        recover: 0,
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'llave stars',
+        type: 'item',
+        desc: 'Con esta llave puedes abrir la bodega de armas',
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'pólvora a',
+        type: 'item',
+        desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'pólvora b',
+        type: 'item',
+        desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta" o 20 de "rifle de asalto"',
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'tarjeta rpd',
+        type: 'item',
+        desc: 'Quien posea esta tarjeta podrá tener 1 acción extra en su turno',
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'máquina de balas',
+        type: 'item',
+        desc: 'Teniendo pólvora puedes construir balas',
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'frituras',
+        type: 'item',
+        desc: 'Puedes consumir las frituras sin gastar ninguna acción para ganar 1 acción extra.',
         quantitytoSpawn: 1
     },
     {
@@ -115,10 +177,5 @@ export const lstResidentItems = [
             maxQuantity: 30,
         },
         quantitytoSpawn: 3
-    },
-    {
-        name: 'nada',
-        type: 'item',
-        quantitytoSpawn: 10
-    },
+    }
 ]

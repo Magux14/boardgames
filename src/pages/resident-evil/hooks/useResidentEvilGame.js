@@ -1,73 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useSaveState } from '../../../hooks/useSaveState';
+import { lstResidentItems } from '../../../../data/resident-evil-data';
 
 const defaultGameState = {
     life: 3,
     gunBullets: 7,
     shotgunBullets: 0,
     machinegunBullets: 0,
-    items: [
-        {
-            name: 'cuchillo',
-            type: 'weapon',
-            weapon: {
-                minRange: 0,
-                maxRange: 0,
-                dices: 1,
-                hit: 4,
-                firePower: 1
-            },
-            quantitytoSpawn: 0
-        },
-        {
-            name: 'hot dogger',
-            type: 'weapon',
-            weapon: {
-                minRange: 0,
-                maxRange: 0,
-                dices: 2,
-                hit: 3,
-                firePower: 2
-            },
-            quantitytoSpawn: 1
-        },
-        {
-            name: 'pistola g19',
-            type: 'weapon',
-            weapon: {
-                minRange: 0,
-                maxRange: 1,
-                dices: 1,
-                hit: 3,
-                firePower: 1,
-            },
-            quantitytoSpawn: 1
-        },
-        {
-            name: 'escopeta',
-            type: 'weapon',
-            weapon: {
-                minRange: 0,
-                maxRange: 1,
-                dices: 2,
-                hit: 3,
-                firePower: 2
-            },
-            quantitytoSpawn: 1
-        },
-        {
-            name: 'ametralladora',
-            type: 'weapon',
-            weapon: {
-                minRange: 0,
-                maxRange: 1,
-                dices: 5,
-                hit: 4,
-                firePower: 1
-            },
-            quantitytoSpawn: 1
-        },
-    ]
+    items: lstResidentItems.filter(item => item.type != 'activation'),
+    selectedItemIndex: 0
 }
 
 export const useResidentEvilGame = () => {
@@ -110,13 +51,6 @@ export const useResidentEvilGame = () => {
             // setGameState(lastSaveState);
         }
     }, []);
-
-    useEffect(() => {
-        if (!gameState.selectedItemIndex) {
-            gameState.selectedItemIndex = 0;
-            setGameState({ ...gameState });
-        }
-    }, [gameState]);
 
     return {
         gameState,

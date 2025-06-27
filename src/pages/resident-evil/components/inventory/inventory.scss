@@ -16,12 +16,37 @@
     &__current-item-container {
         display: flex;
         justify-content: space-around;
+        align-items: center;
         padding: 5px;
         background: rgb(26, 26, 94);
+        min-height: 84px;
+    }
+
+    &__current-item {
+        display: flex;
+        justify-content: center;
+        flex-basis: 40%;
+        width: 25vw;
+        height: 16vw;
+        border-radius: 5px;
+
+        img {
+            border-radius: 5px;
+            width: 25vw;
+            height: 16vw;
+        }
+    }
+
+    &__current-item-info-container {
+        flex-basis: 60%;
+        display: flex;
+        flex-direction: column;
     }
 
     &__current-item-stadistics-container {
         display: flex;
+        justify-content: center;
+        gap: 20px;
     }
 
     &__current-item-stadistic-container {
@@ -41,25 +66,46 @@
         }
     }
 
+    &__current-item-info-title {
+        display: flex;
+        justify-content: center;
+        color: white;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+
+    &__current-item-info-desc {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding: 5px;
+        font-size: 12px;
+    }
+
     &__items-container {
         width: 100%;
         display: flex;
         justify-content: center;
         padding: 5px;
-        gap: 5px;
+        gap: 2vw;
         flex-wrap: wrap;
     }
 
     &__item {
         position: relative;
-        width: 18vw;
-        height: 18vw;
+        width: 25vw;
+        height: 16vw;
         border-radius: 5px;
 
         img {
             border-radius: 5px;
             width: 100%;
             height: 100%;
+        }
+
+        &:active {
+            transform: scale(0.95);
         }
     }
 
@@ -72,5 +118,17 @@
         color: white;
         text-transform: capitalize;
         overflow: hidden;
+    }
+
+    &__item-search-container {
+        display: flex;
+        align-items: center;
+
+        button {
+            border-radius: 5px;
+            color: white;
+            background: rgb(34, 141, 34);
+            padding: 10px 25px
+        }
     }
 }
