@@ -1,7 +1,7 @@
 import { BulletCounter } from './components/bullet-counter/BulletCounter';
-import './resident-evil.scss';
 import { LifeScreen } from './components/life-screen/LifeScreen';
 import { useResidentEvilGame } from './hooks/useResidentEvilGame';
+import './resident-evil.scss';
 
 export const ResidentEvilPage = () => {
 

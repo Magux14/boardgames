@@ -32,9 +32,11 @@
 
     &__image-container {
         position: relative;
+        display: flex;
+        justify-content: center;
 
         img {
-            width: 100%;
+            width: 50%;
             height: auto;
         }
     }
