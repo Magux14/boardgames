@@ -1,4 +1,5 @@
 import { BulletCounter } from './components/bullet-counter/BulletCounter';
+import { Inventory } from './components/inventory/Inventory';
 import { LifeScreen } from './components/life-screen/LifeScreen';
 import { useResidentEvilGame } from './hooks/useResidentEvilGame';
 import './resident-evil.scss';
@@ -33,9 +34,11 @@ export const ResidentEvilPage = () => {
 
                 <LifeScreen lifePoints={gameState.life} />
 
-                <BulletCounter name="pistola" type="gun" bullets={gameState.gunBullets} setBullets={setGameValue} />
-                <BulletCounter name="escopeta" type="shotgun" bullets={gameState.shotgunBullets} setBullets={setGameValue} />
-                <BulletCounter name="ametralladora" type="machinegun" bullets={gameState.machinegunBullets} setBullets={setGameValue} defaultAddingValues={5} />
+                <Inventory selectedItemIndex={gameState.selectedItemIndex} items={gameState.items} callbackSelectItemIndex={setGameValue} />
+
+                <BulletCounter name="pistola" type="gunBullets" bullets={gameState.gunBullets} setBullets={setGameValue} />
+                <BulletCounter name="escopeta" type="shotgunBullets" bullets={gameState.shotgunBullets} setBullets={setGameValue} />
+                <BulletCounter name="ametralladora" type="machinegunBullets" bullets={gameState.machinegunBullets} setBullets={setGameValue} defaultAddingValues={5} />
             </div>
         </div>
     )

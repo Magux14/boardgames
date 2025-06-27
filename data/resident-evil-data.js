@@ -5,21 +5,21 @@ export const lstResidentItems = [
         weapon: {
             minRange: 0,
             maxRange: 0,
-            firePower: 1,
             dices: 1,
-            hit: 4
+            hit: 4,
+            firePower: 1
         },
         quantitytoSpawn: 0
     },
     {
-        name: 'cuchillo de combate',
+        name: 'hot dogger',
         type: 'weapon',
         weapon: {
             minRange: 0,
             maxRange: 0,
-            firePower: 2,
             dices: 2,
-            hit: 3
+            hit: 3,
+            firePower: 2
         },
         quantitytoSpawn: 1
     },
@@ -29,9 +29,9 @@ export const lstResidentItems = [
         weapon: {
             minRange: 0,
             maxRange: 1,
-            firePower: 1,
             dices: 1,
-            hit: 3
+            hit: 3,
+            firePower: 1,
         },
         quantitytoSpawn: 1
     },
@@ -41,9 +41,9 @@ export const lstResidentItems = [
         weapon: {
             minRange: 0,
             maxRange: 1,
-            firePower: 2,
             dices: 2,
-            hit: 3
+            hit: 3,
+            firePower: 2
         },
         quantitytoSpawn: 1
     },
@@ -53,9 +53,9 @@ export const lstResidentItems = [
         weapon: {
             minRange: 0,
             maxRange: 1,
-            firePower: 1,
             dices: 5,
-            hit: 4
+            hit: 4,
+            firePower: 1
         },
         quantitytoSpawn: 1
     },

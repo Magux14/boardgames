@@ -6,7 +6,7 @@
         width: 100%;
         border: solid 2px #060666;
         color: white;
-        padding: 20px 0;
+        padding: 10px 0;
     }
 
     &__gun-name {
@@ -21,7 +21,8 @@
         color: white;
 
         button {
-            padding: 15px 25px;
+            padding: 0px 25px;
+            height: auto;
             border-radius: 5px;
         }
 

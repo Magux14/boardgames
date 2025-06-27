@@ -1,0 +1,76 @@
+.inventory {
+    &__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background: gray;
+        color: white;
+    }
+
+    &__current-item-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 5px;
+        background: rgb(26, 26, 94);
+    }
+
+    &__current-item-stadistics-container {
+        display: flex;
+    }
+
+    &__current-item-stadistic-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__current-item-stadistic-number {
+        color: white;
+    }
+
+    &__current-item-stadistic-icon {
+        svg {
+            fill: white;
+        }
+    }
+
+    &__items-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        position: relative;
+        width: 18vw;
+        height: 18vw;
+        border-radius: 5px;
+
+        img {
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__item-name {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        left: 0;
+        bottom: 2px;
+        color: white;
+        text-transform: capitalize;
+        overflow: hidden;
+    }
+}
