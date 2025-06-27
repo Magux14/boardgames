@@ -1,6 +1,6 @@
 import './bullet-counter.scss';
 
-export const BulletCounter = ({ name, bullets, setBullets, defaultAddingValues = 1 }) => {
+export const BulletCounter = ({ name, type, bullets, setBullets, defaultAddingValues = 1 }) => {
 
     const cssBulletsValueClass = () => {
         if (bullets > 5) {
@@ -22,12 +22,12 @@ export const BulletCounter = ({ name, bullets, setBullets, defaultAddingValues =
                 {name}
             </div>
             <div className="bullet-counter__controls">
-                <button onTouchStart={(() => bullets > 0 ? setBullets(bullets - defaultAddingValues) : null)}>-</button>
+                <button onTouchStart={(() => bullets > 0 ? setBullets(type, bullets - defaultAddingValues) : null)}>-</button>
                 <div className="bullet-counter__image-container">
                     <img src={`./img/resident-evil/balas-${name}.png`} />
                     <div className={`bullet-counter__counter-value ${cssBulletsValueClass()}`}>{bullets}</div>
                 </div>
-                <button onTouchStart={(() => bullets < 99 ? setBullets(bullets + defaultAddingValues) : null)}>+</button>
+                <button onTouchStart={(() => bullets < 99 ? setBullets(type, bullets + defaultAddingValues) : null)}>+</button>
             </div>
         </div>
     )
