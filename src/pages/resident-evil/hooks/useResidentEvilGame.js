@@ -28,7 +28,9 @@ export const useResidentEvilGame = () => {
         } else if (type == 'selectedItemIndex') {
             gameState.selectedItemIndex = value;
         } else if (type == 'discardItemIndex') {
-            gameState.selectedItemIndex = -1;
+            if (gameState.selectedItemIndex == value) {
+                gameState.selectedItemIndex = -1;
+            }
             gameState.items.splice(value, 1);
         }
 

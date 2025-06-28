@@ -113,6 +113,10 @@
             background: rgb(34, 141, 34);
             padding: 10px 25px
         }
+
+        button:disabled {
+            opacity: 0.5;
+        }
     }
 
     &__modal {

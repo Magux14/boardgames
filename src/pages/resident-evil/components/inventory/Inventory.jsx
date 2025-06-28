@@ -108,7 +108,7 @@ export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, call
                     )
                 }
                 <div className="inventory__item-search-container" >
-                    <button onClick={() => handleOpenSearchQuestionModal(true)}>Buscar</button>
+                    <button onClick={() => handleOpenSearchQuestionModal(true)} disabled={items.length == 6}>Buscar</button>
                 </div>
             </div>
 
