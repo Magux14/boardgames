@@ -1,26 +1,44 @@
-import SocialDistanceIcon from '@mui/icons-material/SocialDistance';
-import CasinoIcon from '@mui/icons-material/Casino';
-import AdsClickIcon from '@mui/icons-material/AdsClick';
-import FlashOnIcon from '@mui/icons-material/FlashOn';
+
 
 import './inventory.scss';
 import { useState } from 'react';
 import { SearchItemQuestion } from '../search-item-question/SearchItemQuestion';
 import { Modal } from 'antd';
+import { ItemDetails } from '../item-details/ItemDetails';
+import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
 
-export const Inventory = ({ selectedItemIndex, items, callbackSelectItemIndex, callbackAddItemToInventory }) => {
+export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, callbackAddItemToInventory }) => {
 
     if (selectedItemIndex == null) {
         return <></>
     }
 
     const [openSearchQuestionModal, setOpenSearchQuestionModal] = useState(false);
+    const [itemDetailsModal, setItemDetailsModal] = useState({
+        open: false,
+        index: -1
+    });
+
     const handleSelectItemIndex = (index) => {
-        callbackSelectItemIndex('selectedItemIndex', index);
+        callbackSetGameValue('selectedItemIndex', index);
+        closeItemDetailsModal();
+    }
+
+    const handleDiscardItemIndex = (index) => {
+        callbackSetGameValue('discardItemIndex', index);
+        closeItemDetailsModal();
     }
 
     const handleOpenSearchQuestionModal = () => {
         setOpenSearchQuestionModal(true);
+    }
+
+    const handleOpenItemDetailsModal = (index) => {
+        setItemDetailsModal({
+            open: true,
+            index,
+            item: items[index]
+        });
     }
 
     const handleAddItemToInventory = (item) => {
@@ -28,44 +46,14 @@ export const Inventory = ({ selectedItemIndex, items, callbackSelectItemIndex, c
         setOpenSearchQuestionModal(false)
     }
 
-    const WeaponStadisctics = () => {
-        return (
-            <div className="inventory__current-item-stadistics-container">
-                <div className="inventory__current-item-stadistic-container">
-                    <div className="inventory__current-item-stadistic-icon">
-                        <SocialDistanceIcon />
-                    </div>
-                    <div className="inventory__current-item-stadistic-number">
-                        {items[selectedItemIndex].weapon.minRange} -  {items[selectedItemIndex].weapon.maxRange}
-                    </div>
-                </div>
-                <div className="inventory__current-item-stadistic-container">
-                    <div className="inventory__current-item-stadistic-icon">
-                        <CasinoIcon />
-                    </div>
-                    <div className="inventory__current-item-stadistic-number">
-                        {items[selectedItemIndex].weapon.dices}
-                    </div>
-                </div>
-                <div className="inventory__current-item-stadistic-container">
-                    <div className="inventory__current-item-stadistic-icon">
-                        <AdsClickIcon />
-                    </div>
-                    <div className="inventory__current-item-stadistic-number">
-                        {items[selectedItemIndex].weapon.hit}
-                    </div>
-                </div>
-                <div className="inventory__current-item-stadistic-container">
-                    <div className="inventory__current-item-stadistic-icon">
-                        <FlashOnIcon />
-                    </div>
-                    <div className="inventory__current-item-stadistic-number">
-                        {items[selectedItemIndex].weapon.firePower}
-                    </div>
-                </div>
-            </div>
-        )
+    const closeItemDetailsModal = () => {
+        setItemDetailsModal({
+            open: false,
+            index: -1
+        })
     }
+
+    console.log('itemDetailsModal', itemDetailsModal)
 
     return (
         <div className="inventory__container">
@@ -74,23 +62,32 @@ export const Inventory = ({ selectedItemIndex, items, callbackSelectItemIndex, c
             </div>
             <div className="inventory__current-item-container">
                 <div className="inventory__current-item">
-                    <img src={`./img/resident-evil/items/${items[selectedItemIndex].name}.webp`} />
+                    <img src={`./img/resident-evil/items/${items[selectedItemIndex] != null ? items[selectedItemIndex].name : 'empty'}.webp`} />
                 </div>
                 <div className="inventory__current-item-info-container">
                     <div className="inventory__current-item-info-title">
-                        {items[selectedItemIndex].name}
+                        {
+                            items[selectedItemIndex]
+                                ?
+                                <span>
+                                    {items[selectedItemIndex]?.name}
+                                </span>
+                                : <span>
+                                    Sin Equipo
+                                </span>
+                        }
                     </div>
                     {
-                        items[selectedItemIndex].desc != null &&
+                        items[selectedItemIndex]?.desc != null &&
                         <div className="inventory__current-item-info-desc">
                             {
-                                items[selectedItemIndex].desc
+                                items[selectedItemIndex]?.desc
                             }
                         </div>
                     }
                     {
-                        items[selectedItemIndex].type == 'weapon' &&
-                        <WeaponStadisctics />
+                        items[selectedItemIndex]?.type == 'weapon' &&
+                        <WeaponStadistics weapon={items[selectedItemIndex].weapon} />
                     }
                 </div>
 
@@ -98,7 +95,7 @@ export const Inventory = ({ selectedItemIndex, items, callbackSelectItemIndex, c
             <div className="inventory__items-container">
                 {
                     items.map((item, index) =>
-                        <div key={`${item.name}-${index}`} className="inventory__item" onClick={() => handleSelectItemIndex(index)}>
+                        <div key={`${item.name}-${index}`} className="inventory__item" onClick={() => handleOpenItemDetailsModal(index)}>
                             <img src={`./img/resident-evil/items/${item.name}.webp`} />
                         </div>
                     )
@@ -120,8 +117,26 @@ export const Inventory = ({ selectedItemIndex, items, callbackSelectItemIndex, c
                 footer={null}
                 onCancel={() => setOpenSearchQuestionModal(false)}
                 className="inventory__modal"
+                centered={true}
             >
                 <SearchItemQuestion callbackAddItemToInventory={handleAddItemToInventory} />
+            </Modal>
+
+            <Modal
+                open={itemDetailsModal.open}
+                footer={null}
+                onCancel={closeItemDetailsModal}
+                className="inventory__modal"
+                centered={true}
+            >
+                <ItemDetails
+                    itemDetails={{
+                        index: itemDetailsModal.index,
+                        item: itemDetailsModal.item
+                    }}
+                    callbackEquipItem={handleSelectItemIndex}
+                    callbackDiscardItem={handleDiscardItemIndex}
+                />
             </Modal>
         </div>
     )

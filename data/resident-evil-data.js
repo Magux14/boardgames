@@ -62,12 +62,14 @@ export const lstResidentItems = [
     {
         name: 'molotov',
         type: 'weapon',
+        desc: 'Al ser lanzada destruye a todo aquel que se encuentre en el area, no es necesario equiparla solo se descarta.',
         weapon: {
             minRange: 1,
             maxRange: 1,
             dices: 0,
             hit: 0,
-            firePower: 3
+            firePower: 3,
+            notEquipable: true
         },
         quantitytoSpawn: 1
     },

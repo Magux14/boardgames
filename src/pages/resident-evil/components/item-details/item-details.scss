@@ -1,0 +1,45 @@
+.item-details {
+
+    &__container {
+        min-height: 80dvh;
+        padding-top: 5dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__image-container {
+        img {
+            width: 100%;
+        }
+    }
+
+    &__name-container {
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        text-transform: capitalize;
+    }
+
+    &__description-container {
+        color: white;
+    }
+
+    &__button {
+        width: 100%;
+
+        border-radius: 10px;
+        padding: 15px 5px;
+    }
+
+    &__button--ok {
+        color: white;
+        background: green;
+    }
+
+    &__button--danger {
+        color: white;
+        background: rgb(153, 30, 30);
+    }
+}

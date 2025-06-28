@@ -43,29 +43,6 @@
         flex-direction: column;
     }
 
-    &__current-item-stadistics-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    &__current-item-stadistic-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    &__current-item-stadistic-number {
-        color: white;
-    }
-
-    &__current-item-stadistic-icon {
-        svg {
-            fill: white;
-        }
-    }
-
     &__current-item-info-title {
         display: flex;
         justify-content: center;
