@@ -1,13 +1,15 @@
 
 
 import './inventory.scss';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { SearchItemQuestion } from '../search-item-question/SearchItemQuestion';
 import { Modal } from 'antd';
 import { ItemDetails } from '../item-details/ItemDetails';
 import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
 
 export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, callbackAddItemToInventory }) => {
+
+    const prevLengthInventoryRef = useRef(items.length);
 
     if (selectedItemIndex == null) {
         return <></>
@@ -33,17 +35,18 @@ export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, call
         setOpenSearchQuestionModal(true);
     }
 
-    const handleOpenItemDetailsModal = (index) => {
+    const handleOpenItemDetailsModal = (index, justAdded) => {
         setItemDetailsModal({
             open: true,
             index,
-            item: items[index]
+            item: items[index],
+            justAdded
         });
     }
 
     const handleAddItemToInventory = (item) => {
         callbackAddItemToInventory(item);
-        setOpenSearchQuestionModal(false)
+        setOpenSearchQuestionModal(false);
     }
 
     const closeItemDetailsModal = () => {
@@ -53,7 +56,20 @@ export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, call
         })
     }
 
-    console.log('itemDetailsModal', itemDetailsModal)
+    const handleAddNewItemForOpenItemModal = () => {
+        const prevLength = prevLengthInventoryRef.current;
+        const currentLength = items.length;
+        if (currentLength > prevLength) {
+            console.log('La lista creció:', currentLength, 'antes era:', prevLength);
+            handleOpenItemDetailsModal(items.length - 1, true);
+        }
+
+        prevLengthInventoryRef.current = currentLength;
+    }
+
+    useEffect(() => {
+        handleAddNewItemForOpenItemModal();
+    }, [items]);
 
     return (
         <div className="inventory__container">
@@ -119,7 +135,10 @@ export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, call
                 className="inventory__modal"
                 centered={true}
             >
-                <SearchItemQuestion callbackAddItemToInventory={handleAddItemToInventory} />
+                <SearchItemQuestion
+                    callbackAddItemToInventory={handleAddItemToInventory}
+                    userItems={items}
+                />
             </Modal>
 
             <Modal
@@ -132,10 +151,12 @@ export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, call
                 <ItemDetails
                     itemDetails={{
                         index: itemDetailsModal.index,
-                        item: itemDetailsModal.item
+                        item: itemDetailsModal.item,
+                        justAdded: itemDetailsModal.justAdded
                     }}
                     callbackEquipItem={handleSelectItemIndex}
                     callbackDiscardItem={handleDiscardItemIndex}
+                    callbackClose={closeItemDetailsModal}
                 />
             </Modal>
         </div>

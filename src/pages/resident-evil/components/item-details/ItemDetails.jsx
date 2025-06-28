@@ -2,7 +2,7 @@
 import './item-details.scss';
 import '../inventory/inventory.scss';
 import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
-export const ItemDetails = ({ itemDetails, callbackEquipItem, callbackDiscardItem }) => {
+export const ItemDetails = ({ itemDetails, callbackEquipItem, callbackDiscardItem, callbackClose }) => {
 
     const handleEquipItem = () => {
         callbackEquipItem(itemDetails.index);
@@ -17,23 +17,34 @@ export const ItemDetails = ({ itemDetails, callbackEquipItem, callbackDiscardIte
             <div className="item-details__image-container">
                 <img src={`./img/resident-evil/items/${itemDetails.item.name}.webp`} />
             </div>
-            <div className="item-details__name-container">
-                {
-                    itemDetails.item.name
-                }
-            </div>
-            {
-                itemDetails.item.desc != null &&
-                <div className="item-details__description-container">
-                    {itemDetails.item.desc}
+            <div className="item-details__name-description-container">
+
+                <div className="item-details__name-container">
+                    {
+                        itemDetails.item.name
+                    }
                 </div>
-            }
+                {
+                    itemDetails.item.desc != null &&
+                    <div className="item-details__description-container">
+                        {itemDetails.item.desc}
+                    </div>
+                }
+            </div >
+
             {
-                itemDetails.item.type == 'weapon' && !itemDetails.item.weapon.notEquipable &&
+                itemDetails.item.type == 'weapon' &&
                 <>
                     <WeaponStadistics weapon={itemDetails.item.weapon} />
-                    <button className="item-details__button item-details__button--ok" onClick={handleEquipItem}>Equipar</button>
+                    {
+                        !itemDetails.item.weapon.notEquipable &&
+                        <button className="item-details__button item-details__button--ok" onClick={handleEquipItem}>Equipar</button>
+                    }
                 </>
+            }
+            {
+                itemDetails.justAdded &&
+                <button className="item-details__button item-details__button--ok" onClick={() => callbackClose()}>Guardar</button>
             }
             <button className="item-details__button item-details__button--danger" onClick={handleDiscardItem}>Descartar</button>
         </div >

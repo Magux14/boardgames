@@ -5,7 +5,7 @@ import './inventory-selection.scss';
 export const InventorySelection = ({ callbackAddItemToInventory }) => {
 
     const handleAddItemToInventory = (item) => {
-        callbackAddItemToInventory(item);
+        callbackAddItemToInventory(item, false);
     }
 
     const lstItems = JSON.parse(JSON.stringify(lstResidentItems.filter(item => item.type != 'activation' && item.type != 'bullets')));

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSaveState } from '../../../hooks/useSaveState';
 import { lstResidentItems } from '../../../../data/resident-evil-data';
 
@@ -54,6 +54,11 @@ export const useResidentEvilGame = () => {
         gameState.items.push(item);
         setGameState({ ...gameState });
         saveState(gameState);
+
+        return {
+            index: gameState.items.length,
+            item
+        }
     }
 
     useEffect(() => {

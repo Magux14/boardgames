@@ -37,7 +37,7 @@ export const ResidentEvilPage = () => {
 
                 <Inventory
                     selectedItemIndex={gameState.selectedItemIndex}
-                    items={gameState.items}
+                    items={[...gameState.items]}
                     callbackSetGameValue={setGameValue}
                     callbackAddItemToInventory={addItemToInventory}
                 />

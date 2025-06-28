@@ -9,7 +9,19 @@ export const lstResidentItems = [
             hit: 4,
             firePower: 1
         },
-        quantitytoSpawn: 0
+        probabilityToSpawn: 0
+    },
+    {
+        name: 'tubo',
+        type: 'weapon',
+        weapon: {
+            minRange: 0,
+            maxRange: 0,
+            dices: 2,
+            hit: 4,
+            firePower: 1
+        },
+        probabilityToSpawn: 15
     },
     {
         name: 'hot dogger',
@@ -21,7 +33,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 2
         },
-        quantitytoSpawn: 1
+        probabilityToSpawn: 5
     },
     {
         name: 'pistola g19',
@@ -33,7 +45,31 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 1,
         },
-        quantitytoSpawn: 1
+        probabilityToSpawn: 22
+    },
+    {
+        name: 'merc handgun',
+        type: 'weapon',
+        weapon: {
+            minRange: 0,
+            maxRange: 1,
+            dices: 2,
+            hit: 3,
+            firePower: 1
+        },
+        probabilityToSpawn: 7
+    },
+    {
+        name: 'sti eagle 6.0',
+        type: 'weapon',
+        weapon: {
+            minRange: 0,
+            maxRange: 1,
+            dices: 3,
+            hit: 3,
+            firePower: 1
+        },
+        probabilityToSpawn: 4
     },
     {
         name: 'escopeta',
@@ -45,7 +81,19 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 2
         },
-        quantitytoSpawn: 1
+        probabilityToSpawn: 18
+    },
+    {
+        name: 'escopeta western m37',
+        type: 'weapon',
+        weapon: {
+            minRange: 0,
+            maxRange: 1,
+            dices: 3,
+            hit: 3,
+            firePower: 2
+        },
+        probabilityToSpawn: 5
     },
     {
         name: 'rifle de asalto',
@@ -57,7 +105,19 @@ export const lstResidentItems = [
             hit: 4,
             firePower: 1
         },
-        quantitytoSpawn: 1
+        probabilityToSpawn: 15
+    },
+    {
+        name: 'gatlin gun',
+        type: 'weapon',
+        weapon: {
+            minRange: 0,
+            maxRange: 2,
+            dices: 5,
+            hit: 3,
+            firePower: 2
+        },
+        probabilityToSpawn: 2
     },
     {
         name: 'molotov',
@@ -71,150 +131,90 @@ export const lstResidentItems = [
             firePower: 3,
             notEquipable: true
         },
-        quantitytoSpawn: 1
-    },
-    {
-        name: 'merc handgun',
-        type: 'weapon',
-        weapon: {
-            minRange: 0,
-            maxRange: 1,
-            dices: 2,
-            hit: 3,
-            firePower: 1
-        },
-        quantitytoSpawn: 1
-    },
-    {
-        name: 'sti eagle 6.0',
-        type: 'weapon',
-        weapon: {
-            minRange: 0,
-            maxRange: 1,
-            dices: 3,
-            hit: 3,
-            firePower: 1
-        },
-        quantitytoSpawn: 1
-    },
-    {
-        name: 'gatlin gun',
-        type: 'weapon',
-        weapon: {
-            minRange: 0,
-            maxRange: 2,
-            dices: 5,
-            hit: 3,
-            firePower: 2
-        },
-        quantitytoSpawn: 1
-    },
-    {
-        name: 'escopeta western m37',
-        type: 'weapon',
-        weapon: {
-            minRange: 0,
-            maxRange: 1,
-            dices: 3,
-            hit: 3,
-            firePower: 2
-        },
-        quantitytoSpawn: 1
-    },
-    {
-        name: 'tubo',
-        type: 'weapon',
-        weapon: {
-            minRange: 0,
-            maxRange: 0,
-            dices: 2,
-            hit: 4,
-            firePower: 1
-        },
-        quantitytoSpawn: 1
+        probabilityToSpawn: 7
     },
     {
         name: 'spray médico',
         type: 'health',
         recover: 2,
-        quantitytoSpawn: 1
+        probabilityToSpawn: 2
     },
     {
         name: 'palanca',
         type: 'item',
         desc: 'Podrás abrir puertas rojas cerradas',
-        quantitytoSpawn: 1
+        probabilityToSpawn: 8
     },
     {
         name: 'hierba verde',
         type: 'health',
         desc: 'Recupera 1 punto de vida.',
         recover: 1,
-        quantitytoSpawn: 1
+        probabilityToSpawn: 4
     },
     {
         name: 'hierba roja',
         type: 'health',
         desc: 'Júntala con una "hierba verde" para recuperar 2 puntos de vida.',
         recover: 0,
-        quantitytoSpawn: 1
+        probabilityToSpawn: 7
     },
     {
         name: 'llave stars',
         type: 'item',
         desc: 'Con esta llave puedes abrir la bodega de armas',
-        quantitytoSpawn: 1
+        probabilityToSpawn: 4
     },
     {
         name: 'pólvora a',
         type: 'item',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
-        quantitytoSpawn: 1
+        probabilityToSpawn: 13
     },
     {
         name: 'pólvora b',
         type: 'item',
         desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta" o 20 de "rifle de asalto"',
-        quantitytoSpawn: 1
+        probabilityToSpawn: 13
     },
     {
         name: 'tarjeta rpd',
         type: 'item',
         desc: 'Quien posea esta tarjeta podrá tener 1 acción extra en su turno',
-        quantitytoSpawn: 1
+        probabilityToSpawn: 4
     },
     {
         name: 'máquina de balas',
         type: 'item',
         desc: 'Teniendo pólvora puedes construir balas',
-        quantitytoSpawn: 1
+        probabilityToSpawn: 0
     },
     {
         name: 'frituras',
         type: 'item',
         desc: 'Puedes consumir las frituras sin gastar ninguna acción para ganar 1 acción extra.',
-        quantitytoSpawn: 1
+        probabilityToSpawn: 7
     },
     {
         name: 'bebida energética',
         type: 'item',
         desc: 'tira un dado extra al atacar con un arma',
-        quantitytoSpawn: 1
+        probabilityToSpawn: 7
     },
     {
         name: 'Activación caminantes',
         type: 'activation',
-        quantitytoSpawn: 3
+        probabilityToSpawn: 5
     },
     {
         name: 'Activación corredores',
         type: 'activation',
-        quantitytoSpawn: 3
+        probabilityToSpawn: 5
     },
     {
         name: 'Activación brutos',
         type: 'activation',
-        quantitytoSpawn: 3
+        probabilityToSpawn: 5
     },
     {
         name: 'balas pistola',
@@ -224,7 +224,7 @@ export const lstResidentItems = [
             minQuantity: 3,
             maxQuantity: 10,
         },
-        quantitytoSpawn: 3
+        probabilityToSpawn: 6
     },
     {
         name: 'balas escopeta',
@@ -234,7 +234,7 @@ export const lstResidentItems = [
             minQuantity: 2,
             maxQuantity: 5,
         },
-        quantitytoSpawn: 3
+        probabilityToSpawn: 5
     },
     {
         name: 'balas ametralladora',
@@ -244,6 +244,6 @@ export const lstResidentItems = [
             minQuantity: 10,
             maxQuantity: 30,
         },
-        quantitytoSpawn: 3
+        probabilityToSpawn: 5
     }
 ]

@@ -15,7 +15,15 @@
         }
     }
 
+    &__name-description-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
     &__name-container {
+        display: flex;
+        justify-content: center;
         color: white;
         font-weight: bold;
         font-size: 20px;
@@ -23,7 +31,10 @@
     }
 
     &__description-container {
+        display: flex;
+        justify-content: center;
         color: white;
+        text-align: center;
     }
 
     &__button {
