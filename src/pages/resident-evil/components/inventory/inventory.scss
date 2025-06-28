@@ -109,6 +109,12 @@
         }
     }
 
+    &__item--empty {
+        &:active {
+            transform: unset
+        }
+    }
+
     &__item-name {
         position: absolute;
         text-align: center;
@@ -129,6 +135,12 @@
             color: white;
             background: rgb(34, 141, 34);
             padding: 10px 25px
+        }
+    }
+
+    &__modal {
+        .ant-modal-content {
+            background: rgb(13, 31, 110);
         }
     }
 }

@@ -7,7 +7,7 @@ const defaultGameState = {
     gunBullets: 7,
     shotgunBullets: 0,
     machinegunBullets: 0,
-    items: lstResidentItems.filter(item => item.type != 'activation'),
+    items: lstResidentItems.filter(item => item.name == 'cuchillo'),
     selectedItemIndex: 0
 }
 
@@ -45,6 +45,12 @@ export const useResidentEvilGame = () => {
         }
     }
 
+    const addItemToInventory = (item) => {
+        gameState.items.push(item);
+        setGameState({ ...gameState });
+        saveState(gameState);
+    }
+
     useEffect(() => {
         const lastSaveState = getLoadState();
         if (lastSaveState) {
@@ -55,7 +61,8 @@ export const useResidentEvilGame = () => {
     return {
         gameState,
         setGameValue,
-        currentLifeLabel: getCurrentLifeLabel(gameState.life)
+        currentLifeLabel: getCurrentLifeLabel(gameState.life),
+        addItemToInventory
     }
 
 }

@@ -72,6 +72,66 @@ export const lstResidentItems = [
         quantitytoSpawn: 1
     },
     {
+        name: 'merc handgun',
+        type: 'weapon',
+        weapon: {
+            minRange: 0,
+            maxRange: 1,
+            dices: 2,
+            hit: 3,
+            firePower: 1
+        },
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'sti eagle 6.0',
+        type: 'weapon',
+        weapon: {
+            minRange: 0,
+            maxRange: 1,
+            dices: 3,
+            hit: 3,
+            firePower: 1
+        },
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'gatlin gun',
+        type: 'weapon',
+        weapon: {
+            minRange: 0,
+            maxRange: 2,
+            dices: 5,
+            hit: 3,
+            firePower: 2
+        },
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'escopeta western m37',
+        type: 'weapon',
+        weapon: {
+            minRange: 0,
+            maxRange: 1,
+            dices: 3,
+            hit: 3,
+            firePower: 2
+        },
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'tubo',
+        type: 'weapon',
+        weapon: {
+            minRange: 0,
+            maxRange: 0,
+            dices: 2,
+            hit: 4,
+            firePower: 1
+        },
+        quantitytoSpawn: 1
+    },
+    {
         name: 'spray médico',
         type: 'health',
         recover: 2,
@@ -131,6 +191,12 @@ export const lstResidentItems = [
         name: 'frituras',
         type: 'item',
         desc: 'Puedes consumir las frituras sin gastar ninguna acción para ganar 1 acción extra.',
+        quantitytoSpawn: 1
+    },
+    {
+        name: 'bebida energética',
+        type: 'item',
+        desc: 'tira un dado extra al atacar con un arma',
         quantitytoSpawn: 1
     },
     {

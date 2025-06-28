@@ -9,7 +9,8 @@ export const ResidentEvilPage = () => {
     const {
         gameState,
         setGameValue,
-        currentLifeLabel
+        currentLifeLabel,
+        addItemToInventory
     } = useResidentEvilGame();
 
     return (
@@ -34,7 +35,12 @@ export const ResidentEvilPage = () => {
 
                 <LifeScreen lifePoints={gameState.life} />
 
-                <Inventory selectedItemIndex={gameState.selectedItemIndex} items={gameState.items} callbackSelectItemIndex={setGameValue} />
+                <Inventory
+                    selectedItemIndex={gameState.selectedItemIndex}
+                    items={gameState.items}
+                    callbackSelectItemIndex={setGameValue}
+                    callbackAddItemToInventory={addItemToInventory}
+                />
 
                 <BulletCounter name="pistola" type="gunBullets" bullets={gameState.gunBullets} setBullets={setGameValue} />
                 <BulletCounter name="escopeta" type="shotgunBullets" bullets={gameState.shotgunBullets} setBullets={setGameValue} />

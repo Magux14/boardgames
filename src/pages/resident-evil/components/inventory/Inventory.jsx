@@ -8,7 +8,11 @@ import { useState } from 'react';
 import { SearchItemQuestion } from '../search-item-question/SearchItemQuestion';
 import { Modal } from 'antd';
 
-export const Inventory = ({ selectedItemIndex, items, callbackSelectItemIndex }) => {
+export const Inventory = ({ selectedItemIndex, items, callbackSelectItemIndex, callbackAddItemToInventory }) => {
+
+    if (selectedItemIndex == null) {
+        return <></>
+    }
 
     const [openSearchQuestionModal, setOpenSearchQuestionModal] = useState(false);
     const handleSelectItemIndex = (index) => {
@@ -19,8 +23,9 @@ export const Inventory = ({ selectedItemIndex, items, callbackSelectItemIndex })
         setOpenSearchQuestionModal(true);
     }
 
-    if (selectedItemIndex == null) {
-        return <></>
+    const handleAddItemToInventory = (item) => {
+        callbackAddItemToInventory(item);
+        setOpenSearchQuestionModal(false)
     }
 
     const WeaponStadisctics = () => {
@@ -95,7 +100,13 @@ export const Inventory = ({ selectedItemIndex, items, callbackSelectItemIndex })
                     items.map((item, index) =>
                         <div key={`${item.name}-${index}`} className="inventory__item" onClick={() => handleSelectItemIndex(index)}>
                             <img src={`./img/resident-evil/items/${item.name}.webp`} />
-                            {/* <span className="inventory__item-name">{item.name}</span> */}
+                        </div>
+                    )
+                }
+                {
+                    new Array(6 - items.length >= 0 ? 6 - items.length : 0).fill(null).map((_, index) =>
+                        <div key={`empty-space-${index}`} className="inventory__item inventory__item--empty">
+                            <img src={`./img/resident-evil/items/empty.webp`} />
                         </div>
                     )
                 }
@@ -108,8 +119,9 @@ export const Inventory = ({ selectedItemIndex, items, callbackSelectItemIndex })
                 open={openSearchQuestionModal}
                 footer={null}
                 onCancel={() => setOpenSearchQuestionModal(false)}
+                className="inventory__modal"
             >
-                <SearchItemQuestion />
+                <SearchItemQuestion callbackAddItemToInventory={handleAddItemToInventory} />
             </Modal>
         </div>
     )
