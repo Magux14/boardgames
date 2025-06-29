@@ -1016,7 +1016,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'cakes!.webp',
         minutes: 15,
-        new: true,
+        rank: 3
     },
     {
         name: 'Catfé',
