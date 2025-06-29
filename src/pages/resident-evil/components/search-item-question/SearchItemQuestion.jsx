@@ -72,6 +72,12 @@ export const SearchItemQuestion = ({ callbackAddItemToInventory, userItems, inve
             <div className="search-item-question__title-container">
                 ¿Dónde estás buscando?
             </div>
+            {
+                inventoryFull &&
+                <div className="search-item-question__warning-message-container">
+                    Inventario lleno, descarte algún objeto antes de buscar de nuevo
+                </div>
+            }
             <div className="search-item-question__option-container">
                 <button
                     className="search-item-question__option-button search-item-question__option-button--ok"

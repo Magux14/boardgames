@@ -40,4 +40,11 @@
     &__option-button--danger {
         background: rgb(105, 21, 21);
     }
+
+    &__warning-message-container {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        color: rgb(207, 180, 27);
+        text-align: center;
+    }
 }
