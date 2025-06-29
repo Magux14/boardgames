@@ -26,9 +26,11 @@ export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, call
         closeItemDetailsModal();
     }
 
-    const handleDiscardItemIndex = (index) => {
+    const handleDiscardItemIndex = (index, closeModal = true) => {
         callbackSetGameValue('discardItemIndex', index);
-        closeItemDetailsModal();
+        if (closeModal) {
+            closeItemDetailsModal();
+        }
     }
 
     const handleOpenSearchQuestionModal = () => {
@@ -60,7 +62,6 @@ export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, call
         const prevLength = prevLengthInventoryRef.current;
         const currentLength = items.length;
         if (currentLength > prevLength) {
-            console.log('La lista creció:', currentLength, 'antes era:', prevLength);
             handleOpenItemDetailsModal(items.length - 1, true);
         }
 
@@ -147,6 +148,7 @@ export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, call
                 onCancel={closeItemDetailsModal}
                 className="inventory__modal"
                 centered={true}
+                destroyOnClose={true}
             >
                 <ItemDetails
                     itemDetails={{

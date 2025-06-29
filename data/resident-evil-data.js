@@ -219,7 +219,7 @@ export const lstResidentItems = [
     {
         name: 'balas pistola',
         type: 'bullets',
-        bulletConfig: {
+        bulletsConfig: {
             type: 'gun',
             minQuantity: 3,
             maxQuantity: 10,
@@ -229,7 +229,7 @@ export const lstResidentItems = [
     {
         name: 'balas escopeta',
         type: 'bullets',
-        bulletConfig: {
+        bulletsConfig: {
             type: 'shotgun',
             minQuantity: 2,
             maxQuantity: 5,
@@ -239,7 +239,7 @@ export const lstResidentItems = [
     {
         name: 'balas ametralladora',
         type: 'bullets',
-        bulletConfig: {
+        bulletsConfig: {
             type: 'machinegun',
             minQuantity: 10,
             maxQuantity: 30,

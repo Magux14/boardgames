@@ -50,15 +50,40 @@ export const useResidentEvilGame = () => {
         }
     }
 
-    const addItemToInventory = (item) => {
-        gameState.items.push(item);
-        setGameState({ ...gameState });
-        saveState(gameState);
+    const addBulletsAsItem = (item, gameState) => {
 
-        return {
-            index: gameState.items.length,
-            item
+        const getRandomNumer = (min, max) => {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
         }
+
+        item.bulletsAdded = getRandomNumer(item.bulletsConfig.minQuantity, item.bulletsConfig.maxQuantity);
+        item.instaDiscard = true;
+        const bulletType = item.bulletsConfig.type;
+        if (bulletType == 'gun') {
+            gameState.gunBullets += item.bulletsAdded;
+        } else if (bulletType == 'shotgun') {
+            gameState.shotgunBullets += item.bulletsAdded;
+        } else if (bulletType == 'machinegun') {
+            gameState.machinegunBullets += item.bulletsAdded;
+        }
+
+        gameState.items.push(item);
+        return gameState;
+    }
+
+    const addItemToInventory = (item) => {
+        item = JSON.parse(JSON.stringify(item));
+        let newGameState = { ...gameState };
+        if (item.type == 'bullets') {
+            newGameState = addBulletsAsItem(item, newGameState);
+        } else if (item.type == 'activation') {
+
+        } else {
+            newGameState.items.push(item);
+        }
+
+        setGameState(newGameState);
+        saveState(newGameState);
     }
 
     useEffect(() => {
