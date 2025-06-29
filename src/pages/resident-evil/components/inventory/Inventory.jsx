@@ -90,6 +90,8 @@ export const Inventory = ({
                 <SearchItemQuestion
                     callbackAddItemToInventory={handleAddItemToInventory}
                     userItems={items}
+                    inventoryFull={items.length >= 6}
+                    callbackClose={() => setOpenSearchQuestionModal(false)}
                 />
             </Modal>
 
@@ -165,7 +167,7 @@ export const Inventory = ({
                     )
                 }
                 <div className="inventory__item-search-container" >
-                    <button onClick={() => handleOpenSearchQuestionModal(true)} disabled={items.length == 6}>Buscar</button>
+                    <button onClick={() => handleOpenSearchQuestionModal(true)} >Buscar</button>
                 </div>
             </div>
         </div>

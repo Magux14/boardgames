@@ -9,7 +9,7 @@ export const lstResidentItems = [
             hit: 4,
             firePower: 1
         },
-        probabilityToSpawn: 0
+        probabilityToAppear: 0
     },
     {
         name: 'tubo',
@@ -21,7 +21,7 @@ export const lstResidentItems = [
             hit: 4,
             firePower: 1
         },
-        probabilityToSpawn: 15
+        probabilityToAppear: 15
     },
     {
         name: 'hot dogger',
@@ -33,7 +33,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 2
         },
-        probabilityToSpawn: 5
+        probabilityToAppear: 5
     },
     {
         name: 'pistola g19',
@@ -45,7 +45,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 1,
         },
-        probabilityToSpawn: 22
+        probabilityToAppear: 22
     },
     {
         name: 'merc handgun',
@@ -57,7 +57,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 1
         },
-        probabilityToSpawn: 7
+        probabilityToAppear: 7
     },
     {
         name: 'sti eagle 6.0',
@@ -69,7 +69,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 1
         },
-        probabilityToSpawn: 4
+        probabilityToAppear: 4
     },
     {
         name: 'escopeta',
@@ -81,7 +81,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 2
         },
-        probabilityToSpawn: 18
+        probabilityToAppear: 18
     },
     {
         name: 'escopeta western m37',
@@ -93,7 +93,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 2
         },
-        probabilityToSpawn: 5
+        probabilityToAppear: 5
     },
     {
         name: 'rifle de asalto',
@@ -105,7 +105,7 @@ export const lstResidentItems = [
             hit: 4,
             firePower: 1
         },
-        probabilityToSpawn: 15
+        probabilityToAppear: 15
     },
     {
         name: 'gatlin gun',
@@ -117,7 +117,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 2
         },
-        probabilityToSpawn: 2
+        probabilityToAppear: 2
     },
     {
         name: 'molotov',
@@ -131,90 +131,75 @@ export const lstResidentItems = [
             firePower: 3,
             notEquipable: true
         },
-        probabilityToSpawn: 7
+        probabilityToAppear: 7
     },
     {
         name: 'spray médico',
         type: 'health',
         recover: 2,
-        probabilityToSpawn: 2
+        probabilityToAppear: 2
     },
     {
         name: 'palanca',
         type: 'item',
         desc: 'Podrás abrir puertas rojas cerradas',
-        probabilityToSpawn: 8
+        probabilityToAppear: 8
     },
     {
         name: 'hierba verde',
         type: 'health',
         desc: 'Recupera 1 punto de vida.',
         recover: 1,
-        probabilityToSpawn: 4
+        probabilityToAppear: 4
     },
     {
         name: 'hierba roja',
         type: 'health',
         desc: 'Júntala con una "hierba verde" para recuperar 2 puntos de vida.',
         recover: 0,
-        probabilityToSpawn: 7
+        probabilityToAppear: 7
     },
     {
         name: 'llave stars',
         type: 'item',
         desc: 'Con esta llave puedes abrir la bodega de armas',
-        probabilityToSpawn: 4
+        probabilityToAppear: 4
     },
     {
         name: 'pólvora a',
         type: 'item',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
-        probabilityToSpawn: 13
+        probabilityToAppear: 13
     },
     {
         name: 'pólvora b',
         type: 'item',
         desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta" o 20 de "rifle de asalto"',
-        probabilityToSpawn: 13
+        probabilityToAppear: 13
     },
     {
         name: 'tarjeta rpd',
         type: 'item',
         desc: 'Quien posea esta tarjeta podrá tener 1 acción extra en su turno',
-        probabilityToSpawn: 4
+        probabilityToAppear: 4
     },
     {
         name: 'máquina de balas',
         type: 'item',
         desc: 'Teniendo pólvora puedes construir balas',
-        probabilityToSpawn: 0
+        probabilityToAppear: 0
     },
     {
         name: 'frituras',
         type: 'item',
         desc: 'Puedes consumir las frituras sin gastar ninguna acción para ganar 1 acción extra.',
-        probabilityToSpawn: 7
+        probabilityToAppear: 7
     },
     {
         name: 'bebida energética',
         type: 'item',
         desc: 'tira un dado extra al atacar con un arma',
-        probabilityToSpawn: 7
-    },
-    {
-        name: 'Activación caminantes',
-        type: 'activation',
-        probabilityToSpawn: 5
-    },
-    {
-        name: 'Activación corredores',
-        type: 'activation',
-        probabilityToSpawn: 5
-    },
-    {
-        name: 'Activación brutos',
-        type: 'activation',
-        probabilityToSpawn: 5
+        probabilityToAppear: 7
     },
     {
         name: 'balas pistola',
@@ -224,7 +209,7 @@ export const lstResidentItems = [
             minQuantity: 3,
             maxQuantity: 10,
         },
-        probabilityToSpawn: 6
+        probabilityToAppear: 6
     },
     {
         name: 'balas escopeta',
@@ -234,7 +219,7 @@ export const lstResidentItems = [
             minQuantity: 2,
             maxQuantity: 5,
         },
-        probabilityToSpawn: 5
+        probabilityToAppear: 5
     },
     {
         name: 'balas ametralladora',
@@ -244,6 +229,56 @@ export const lstResidentItems = [
             minQuantity: 10,
             maxQuantity: 30,
         },
-        probabilityToSpawn: 5
+        probabilityToAppear: 5
+    },
+    {
+        name: 'Activación caminantes',
+        type: 'activation',
+        probabilityToAppear: 5
+    },
+    {
+        name: 'Activación corredores',
+        type: 'activation',
+        probabilityToAppear: 5
+    },
+    {
+        name: 'Activación brutos',
+        type: 'activation',
+        probabilityToAppear: 5
+    }
+]
+
+export const lstResidentZombiesSpaws = [
+    {
+        name: 'walkers',
+        desc: 'Los Walkers avanzan 1 espacio por turno, mueren de 1 bala',
+        actions: 1,
+        min: 1,
+        max: 6,
+        probabilityToAppear: 40
+    },
+    {
+        name: 'walkers',
+        desc: 'Los Walkers avanzan 1 espacio por turno, mueren de 1 bala',
+        actions: 1,
+        min: 1,
+        max: 6,
+        probabilityToAppear: 40
+    },
+    {
+        name: 'runners',
+        desc: 'Los Walkers avanzan 2 espacios por turno, mueren de 1 bala',
+        actions: 2,
+        min: 1,
+        max: 5,
+        probabilityToAppear: 30
+    },
+    {
+        name: 'boomers',
+        desc: 'Los Bruts avanzan 1 espacio por turno, mueren de un golpe con armas nivel 2',
+        actions: 1,
+        min: 1,
+        max: 4,
+        probabilityToAppear: 30
     }
 ]

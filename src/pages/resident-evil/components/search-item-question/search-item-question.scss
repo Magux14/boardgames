@@ -9,26 +9,35 @@
     }
 
     &__title-container {
-        // color: white;
         font-size: 20px;
         color: white;
     }
 
     &__option-container {
         width: 100%;
+    }
 
-        button {
-            width: 100%;
-            border-radius: 10px;
-            background: rgb(16, 151, 16);
-            color: white;
-            padding: 20px;
-        }
+    &__option-button {
+        width: 100%;
+        border-radius: 10px;
+        color: white;
+        padding: 20px;
+    }
 
-        button:active {
-            transform: scale(.99);
-            background: rgb(47, 47, 117);
-        }
+    &__option-button:disabled {
+        opacity: 0.3;
+    }
 
+    &__option-button:active:not(:disabled) {
+        transform: scale(.99);
+        background: rgb(47, 47, 117);
+    }
+
+    &__option-button--ok {
+        background: rgb(16, 151, 16);
+    }
+
+    &__option-button--danger {
+        background: rgb(105, 21, 21);
     }
 }

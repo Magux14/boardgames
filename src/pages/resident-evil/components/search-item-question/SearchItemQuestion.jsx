@@ -4,10 +4,12 @@ import { Modal } from 'antd';
 import { InventorySelection } from '../inventory-selection/InventorySelection';
 import { lstResidentItems } from '../../../../../data/resident-evil-data';
 import './search-item-question.scss';
+import { ZombiePhase } from '../zombie-phase/ZombiePhase';
 
-export const SearchItemQuestion = ({ callbackAddItemToInventory, userItems }) => {
+export const SearchItemQuestion = ({ callbackAddItemToInventory, userItems, inventoryFull, callbackClose }) => {
 
     const [openInventorySelection, setOpenInventorySelection] = useState(false);
+    const [openZombiePhase, setOpenZombiePhase] = useState(false);
 
     const handleAddItemToInventory = (item, openConfirmationModal) => {
         callbackAddItemToInventory(item, openConfirmationModal);
@@ -23,12 +25,12 @@ export const SearchItemQuestion = ({ callbackAddItemToInventory, userItems }) =>
         }
 
         const getRandomItem = () => {
-            const total = lsItemsTobeGetted.reduce((acc, item) => acc + item.probabilityToSpawn, 0);
+            const total = lsItemsTobeGetted.reduce((acc, item) => acc + item.probabilityToAppear, 0);
             let selectedItem;
             const random = Math.random() * total;
             let acc = 0;
             for (const item of lsItemsTobeGetted) {
-                acc += item.probabilityToSpawn;
+                acc += item.probabilityToAppear;
                 if (random < acc) {
                     selectedItem = item;
                     break;
@@ -60,19 +62,50 @@ export const SearchItemQuestion = ({ callbackAddItemToInventory, userItems }) =>
         handleAddItemToInventory(selectedItem);
     }
 
+    const handleCloseZombiePhase = () => {
+        setOpenZombiePhase(false)
+        callbackClose();
+    }
+
     return (
         <div className="search-item-question__container">
             <div className="search-item-question__title-container">
                 ¿Dónde estás buscando?
             </div>
             <div className="search-item-question__option-container">
-                <button onClick={() => handleAddRandomItemToIventory('item')}>En una habitación</button>
+                <button
+                    className="search-item-question__option-button search-item-question__option-button--ok"
+                    onClick={() => handleAddRandomItemToIventory('item')}
+                    disabled={inventoryFull}
+                >
+                    En una habitación
+                </button>
             </div>
             <div className="search-item-question__option-container">
-                <button onClick={() => handleAddRandomItemToIventory('weapon')}>En una caja de armas</button>
+                <button
+                    className="search-item-question__option-button search-item-question__option-button--ok"
+                    onClick={() => handleAddRandomItemToIventory('weapon')}
+                    disabled={inventoryFull}
+                >
+                    En una caja de armas
+                </button>
             </div>
             <div className="search-item-question__option-container">
-                <button onClick={() => setOpenInventorySelection(true)}>Un compañero me está dando un objeto</button>
+                <button
+                    className="search-item-question__option-button search-item-question__option-button--ok"
+                    onClick={() => setOpenInventorySelection(true)}
+                    disabled={inventoryFull}
+                >
+                    Un compañero me está dando un objeto
+                </button>
+            </div>
+            <div className="search-item-question__option-container">
+                <button
+                    className="search-item-question__option-button search-item-question__option-button--danger"
+                    onClick={() => setOpenZombiePhase(true)}
+                >
+                    Fase de zombies
+                </button>
             </div>
 
             <Modal
@@ -83,6 +116,17 @@ export const SearchItemQuestion = ({ callbackAddItemToInventory, userItems }) =>
                 className="inventory__modal"
             >
                 <InventorySelection callbackAddItemToInventory={handleAddItemToInventory} />
+            </Modal>
+
+            <Modal
+                open={openZombiePhase}
+                onCancel={handleCloseZombiePhase}
+                footer={null}
+                centered={true}
+                className="inventory__modal"
+                destroyOnClose={true}
+            >
+                <ZombiePhase />
             </Modal>
         </div>
 
