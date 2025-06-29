@@ -3,7 +3,13 @@ import './item-details.scss';
 import '../inventory/inventory.scss';
 import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
 import { useEffect } from 'react';
-export const ItemDetails = ({ itemDetails, callbackEquipItem, callbackDiscardItem, callbackClose }) => {
+export const ItemDetails = ({
+    itemDetails,
+    callbackEquipItem,
+    callbackDiscardItem,
+    callbackClose,
+    callbackUseHealthItem
+}) => {
 
     const handleEquipItem = () => {
         callbackEquipItem(itemDetails.index);
@@ -13,16 +19,15 @@ export const ItemDetails = ({ itemDetails, callbackEquipItem, callbackDiscardIte
         callbackDiscardItem(itemDetails.index);
     }
 
+    const handleUseHealthItem = (pointsToRecover) => {
+        callbackDiscardItem(itemDetails.index);
+        callbackUseHealthItem(pointsToRecover);
+    }
+
     useEffect(() => {
-        console.log('useEffect itemdetails')
         if (itemDetails.item.instaDiscard) {
             callbackDiscardItem(itemDetails.index, false);
         }
-
-        return () => {
-            console.log('useEffect itemdetails unMOUNT')
-        }
-
     }, []);
 
     return (
@@ -52,6 +57,12 @@ export const ItemDetails = ({ itemDetails, callbackEquipItem, callbackDiscardIte
             </div >
 
             <div className="item-details__buttons-container">
+                {
+                    itemDetails.item.type == 'health' && itemDetails.item.recover > 0 &&
+                    <>
+                        <button className="item-details__button item-details__button--ok" onClick={() => handleUseHealthItem(itemDetails.item.recover)}>Usar</button>
+                    </>
+                }
                 {
                     !itemDetails.item.instaDiscard &&
                     <>

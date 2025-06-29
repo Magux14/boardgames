@@ -86,6 +86,17 @@ export const useResidentEvilGame = () => {
         saveState(newGameState);
     }
 
+    const recoverHealth = (points) => {
+        let newGameState = { ...gameState };
+        if (newGameState.life + points > 3) {
+            newGameState.life = 3
+        } else {
+            newGameState.life = newGameState.life + points;
+        }
+        setGameState(newGameState);
+        saveState(newGameState);
+    }
+
     useEffect(() => {
         const lastSaveState = getLoadState();
         if (lastSaveState) {
@@ -97,7 +108,8 @@ export const useResidentEvilGame = () => {
         gameState,
         setGameValue,
         currentLifeLabel: getCurrentLifeLabel(gameState.life),
-        addItemToInventory
+        addItemToInventory,
+        recoverHealth
     }
 
 }

@@ -7,7 +7,13 @@ import { Modal } from 'antd';
 import { ItemDetails } from '../item-details/ItemDetails';
 import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
 
-export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, callbackAddItemToInventory }) => {
+export const Inventory = ({
+    selectedItemIndex,
+    items,
+    callbackSetGameValue,
+    callbackAddItemToInventory,
+    callbackUseHealthItem
+}) => {
 
     const prevLengthInventoryRef = useRef(items.length);
 
@@ -104,6 +110,7 @@ export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, call
                     callbackEquipItem={handleSelectItemIndex}
                     callbackDiscardItem={handleDiscardItemIndex}
                     callbackClose={closeItemDetailsModal}
+                    callbackUseHealthItem={callbackUseHealthItem}
                 />
             </Modal>
 

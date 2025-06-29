@@ -11,7 +11,8 @@ export const ResidentEvilPage = () => {
         gameState,
         setGameValue,
         currentLifeLabel,
-        addItemToInventory
+        addItemToInventory,
+        recoverHealth
     } = useResidentEvilGame();
 
     const [editMode, setEditMode] = useState(false);
@@ -43,6 +44,7 @@ export const ResidentEvilPage = () => {
                     items={[...gameState.items]}
                     callbackSetGameValue={setGameValue}
                     callbackAddItemToInventory={addItemToInventory}
+                    callbackUseHealthItem={recoverHealth}
                 />
 
                 <BulletCounter

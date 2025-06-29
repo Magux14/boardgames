@@ -24,7 +24,6 @@ export const SearchItemQuestion = ({ callbackAddItemToInventory, userItems }) =>
 
         const getRandomItem = () => {
             const total = lsItemsTobeGetted.reduce((acc, item) => acc + item.probabilityToSpawn, 0);
-            console.log('total', total);
             let selectedItem;
             const random = Math.random() * total;
             let acc = 0;
