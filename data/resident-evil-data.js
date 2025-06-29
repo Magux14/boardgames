@@ -253,6 +253,15 @@ export const lstResidentItems = [
     }
 ]
 
+export const lstResidentCombinedItems = [
+    {
+        name: 'mix hierbas verde x roja',
+        type: 'health',
+        desc: 'Combinación de hierba verde y roja, recupera 2 de vida',
+        recover: 2
+    },
+]
+
 export const lstResidentZombiesSpaws = [
     {
         name: 'walkers',
