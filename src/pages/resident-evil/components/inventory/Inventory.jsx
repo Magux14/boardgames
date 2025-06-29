@@ -74,6 +74,39 @@ export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, call
 
     return (
         <div className="inventory__container">
+            <Modal
+                open={openSearchQuestionModal}
+                footer={null}
+                onCancel={() => setOpenSearchQuestionModal(false)}
+                className="inventory__modal"
+                centered={true}
+            >
+                <SearchItemQuestion
+                    callbackAddItemToInventory={handleAddItemToInventory}
+                    userItems={items}
+                />
+            </Modal>
+
+            <Modal
+                open={itemDetailsModal.open}
+                footer={null}
+                onCancel={closeItemDetailsModal}
+                className="inventory__modal"
+                centered={true}
+                destroyOnClose={true}
+            >
+                <ItemDetails
+                    itemDetails={{
+                        index: itemDetailsModal.index,
+                        item: itemDetailsModal.item,
+                        justAdded: itemDetailsModal.justAdded
+                    }}
+                    callbackEquipItem={handleSelectItemIndex}
+                    callbackDiscardItem={handleDiscardItemIndex}
+                    callbackClose={closeItemDetailsModal}
+                />
+            </Modal>
+
             <div className="inventory__title-container">
                 Inventario
             </div>
@@ -128,39 +161,6 @@ export const Inventory = ({ selectedItemIndex, items, callbackSetGameValue, call
                     <button onClick={() => handleOpenSearchQuestionModal(true)} disabled={items.length == 6}>Buscar</button>
                 </div>
             </div>
-
-            <Modal
-                open={openSearchQuestionModal}
-                footer={null}
-                onCancel={() => setOpenSearchQuestionModal(false)}
-                className="inventory__modal"
-                centered={true}
-            >
-                <SearchItemQuestion
-                    callbackAddItemToInventory={handleAddItemToInventory}
-                    userItems={items}
-                />
-            </Modal>
-
-            <Modal
-                open={itemDetailsModal.open}
-                footer={null}
-                onCancel={closeItemDetailsModal}
-                className="inventory__modal"
-                centered={true}
-                destroyOnClose={true}
-            >
-                <ItemDetails
-                    itemDetails={{
-                        index: itemDetailsModal.index,
-                        item: itemDetailsModal.item,
-                        justAdded: itemDetailsModal.justAdded
-                    }}
-                    callbackEquipItem={handleSelectItemIndex}
-                    callbackDiscardItem={handleDiscardItemIndex}
-                    callbackClose={closeItemDetailsModal}
-                />
-            </Modal>
         </div>
     )
 }

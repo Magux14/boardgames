@@ -29,6 +29,10 @@
         button:active {
             transform: scale(.98);
         }
+
+        button:disabled:active {
+            transform: unset
+        }
     }
 
     &__image-container {

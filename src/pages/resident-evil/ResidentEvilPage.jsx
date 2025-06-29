@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BulletCounter } from './components/bullet-counter/BulletCounter';
 import { Inventory } from './components/inventory/Inventory';
 import { LifeScreen } from './components/life-screen/LifeScreen';
@@ -13,22 +14,24 @@ export const ResidentEvilPage = () => {
         addItemToInventory
     } = useResidentEvilGame();
 
+    const [editMode, setEditMode] = useState(false);
+
     return (
         <div className="resident-evil__container">
             <div className="resident-evil__guns-container">
                 <div className="resident-evil__life-points-labels-container">
                     <div className="resident-evil__life-points-container">
-                        <div>
+                        <div onClick={() => setEditMode(!editMode)}>
                             Condición
                         </div>
                         <div className="resident-evil__life-points-controls-container">
-                            <button onTouchStart={(() => gameState.life > 0 ? setGameValue('life', gameState.life - 1) : null)}>-</button>
+                            <button onClick={(() => gameState.life > 0 ? setGameValue('life', gameState.life - 1) : null)}>-</button>
                             <div className="resident-evil__life-points-screen">
                                 <div className={`resident-evil__life-status resident-evil__life-status--${currentLifeLabel}`}>
                                     {currentLifeLabel}
                                 </div>
                             </div>
-                            <button onTouchStart={(() => gameState.life < 3 ? setGameValue('life', gameState.life + 1) : null)}>+</button>
+                            <button onClick={(() => gameState.life < 3 ? setGameValue('life', gameState.life + 1) : null)} disabled={!editMode}>+</button>
                         </div>
                     </div>
                 </div>
@@ -42,9 +45,30 @@ export const ResidentEvilPage = () => {
                     callbackAddItemToInventory={addItemToInventory}
                 />
 
-                <BulletCounter name="pistola" type="gunBullets" bullets={gameState.gunBullets} setBullets={setGameValue} />
-                <BulletCounter name="escopeta" type="shotgunBullets" bullets={gameState.shotgunBullets} setBullets={setGameValue} />
-                <BulletCounter name="ametralladora" type="machinegunBullets" bullets={gameState.machinegunBullets} setBullets={setGameValue} defaultAddingValues={5} />
+                <BulletCounter
+                    name="pistola"
+                    type="gunBullets"
+                    bullets={gameState.gunBullets}
+                    setBullets={setGameValue}
+                    editMode={editMode}
+                />
+
+                <BulletCounter
+                    name="escopeta"
+                    type="shotgunBullets"
+                    bullets={gameState.shotgunBullets}
+                    setBullets={setGameValue}
+                    editMode={editMode}
+                />
+
+                <BulletCounter
+                    name="ametralladora"
+                    type="machinegunBullets"
+                    bullets={gameState.machinegunBullets}
+                    setBullets={setGameValue}
+                    defaultAddingValues={5}
+                    editMode={editMode}
+                />
             </div>
         </div>
     )
