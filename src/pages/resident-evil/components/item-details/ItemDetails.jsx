@@ -33,14 +33,26 @@ export const ItemDetails = ({
     return (
         <div className="item-details__container">
             <div className="item-details__image-container">
-                <img src={`./img/resident-evil/items/${itemDetails.item.name}.webp`} />
+                {
+                    itemDetails.item.type == 'activation'
+                        ?
+                        <img src={`./img/resident-evil/zombies/${itemDetails.item.name}.webp`} />
+                        :
+                        <img src={`./img/resident-evil/items/${itemDetails.item.name}.webp`} />
+                }
             </div>
             <div className="item-details__name-description-container">
 
                 <div className="item-details__name-container">
                     {
-                        itemDetails.item.name
+                        itemDetails.item.type == 'activation' &&
+                        <span>Activación&nbsp;</span>
                     }
+                    <span>
+                        {
+                            itemDetails.item.name
+                        }
+                    </span>
                 </div>
                 {
                     itemDetails.item.desc != null &&

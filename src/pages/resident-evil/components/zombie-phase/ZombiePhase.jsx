@@ -13,6 +13,7 @@ export const ZombiePhase = () => {
     }
 
     const zombie = getRandomSpan();
+    const fastFoward = Math.random() < 0.20;
     const nemesisAppear = Math.random() < 0.25;
 
     return (
@@ -33,10 +34,17 @@ export const ZombiePhase = () => {
             <div className="zombie-phase__span-count-container">
                 x {getRandomNumer(zombie.min, zombie.max)}
             </div>
+
+            {
+                fastFoward &&
+                <div className="zombie-phase__fast-foward-container">
+                    + Movimiento impetuoso
+                </div>
+            }
             {
                 nemesisAppear &&
-                <div className="zombie-phase__span-count-container">
-                    Activación Némesis
+                <div className="zombie-phase__nemesis-container">
+                    + Activación Némesis
                 </div>
             }
         </div>

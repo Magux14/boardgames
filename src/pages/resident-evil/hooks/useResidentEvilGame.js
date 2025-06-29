@@ -4,9 +4,9 @@ import { lstResidentItems } from '../../../../data/resident-evil-data';
 
 const defaultGameState = {
     life: 3,
-    gunBullets: 7,
-    shotgunBullets: 0,
-    machinegunBullets: 0,
+    gunBullets: 8,
+    shotgunBullets: 2,
+    machinegunBullets: 10,
     items: lstResidentItems.filter(item => item.name == 'cuchillo'),
     selectedItemIndex: 0
 }
@@ -77,7 +77,8 @@ export const useResidentEvilGame = () => {
         if (item.type == 'bullets') {
             newGameState = addBulletsAsItem(item, newGameState);
         } else if (item.type == 'activation') {
-
+            item.instaDiscard = true;
+            newGameState.items.push(item);
         } else {
             newGameState.items.push(item);
         }

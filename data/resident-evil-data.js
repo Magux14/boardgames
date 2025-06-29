@@ -157,7 +157,7 @@ export const lstResidentItems = [
         type: 'health',
         desc: 'Júntala con una "hierba verde" para recuperar 2 puntos de vida.',
         recover: 0,
-        probabilityToAppear: 7
+        probabilityToAppear: 6
     },
     {
         name: 'llave stars',
@@ -169,13 +169,13 @@ export const lstResidentItems = [
         name: 'pólvora a',
         type: 'item',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
-        probabilityToAppear: 13
+        probabilityToAppear: 12
     },
     {
         name: 'pólvora b',
         type: 'item',
         desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta" o 20 de "rifle de asalto"',
-        probabilityToAppear: 13
+        probabilityToAppear: 12
     },
     {
         name: 'tarjeta rpd',
@@ -232,19 +232,24 @@ export const lstResidentItems = [
         probabilityToAppear: 5
     },
     {
-        name: 'Activación caminantes',
+        name: 'walkers',
         type: 'activation',
         probabilityToAppear: 5
     },
     {
-        name: 'Activación corredores',
+        name: 'runners',
         type: 'activation',
         probabilityToAppear: 5
     },
     {
-        name: 'Activación brutos',
+        name: 'boomers',
         type: 'activation',
         probabilityToAppear: 5
+    },
+    {
+        name: 'némesis',
+        type: 'activation',
+        probabilityToAppear: 3
     }
 ]
 
