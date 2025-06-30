@@ -27,7 +27,7 @@ export const BulletCounter = ({ name, type, bullets, setBullets, defaultAddingVa
                     <img src={`./img/resident-evil/balas-${name}.png`} />
                     <div className={`bullet-counter__counter-value ${cssBulletsValueClass()}`}>{bullets}</div>
                 </div>
-                <button onClick={(() => bullets < 99 ? setBullets(type, bullets + defaultAddingValues) : null)} disabled={!editMode}>+</button>
+                <button onClick={(() => bullets < 200 ? setBullets(type, bullets + defaultAddingValues) : null)} disabled={!editMode}>+</button>
             </div>
         </div>
     )

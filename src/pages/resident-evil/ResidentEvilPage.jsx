@@ -3,6 +3,9 @@ import { BulletCounter } from './components/bullet-counter/BulletCounter';
 import { Inventory } from './components/inventory/Inventory';
 import { LifeScreen } from './components/life-screen/LifeScreen';
 import { useResidentEvilGame } from './hooks/useResidentEvilGame';
+import SettingsIcon from '@mui/icons-material/Settings';
+import { Modal } from 'antd';
+import { ReSettings } from './components/re-settings/ReSettings';
 import './resident-evil.scss';
 
 export const ResidentEvilPage = () => {
@@ -12,17 +15,39 @@ export const ResidentEvilPage = () => {
         setGameValue,
         currentLifeLabel,
         addItemToInventory,
-        recoverHealth
+        recoverHealth,
+        setGameStateAndSave
     } = useResidentEvilGame();
 
     const [editMode, setEditMode] = useState(false);
+    const [openSettingsModal, setOpenSettingsModal] =useState(false);
+
+    const handleSaveAndCloseSettingsModal = (gameState) => {
+        setGameStateAndSave(gameState);
+        setOpenSettingsModal(false);
+    }
 
     return (
         <div className="resident-evil__container">
+
+                       <Modal
+                           open={openSettingsModal}
+                           footer={null}
+                           onCancel={() => setOpenSettingsModal(false)}
+                           className="inventory__modal"
+                           centered={true}
+                           destroyOnClose={true}
+                       >
+                          <ReSettings callbackSetDifficulty={handleSaveAndCloseSettingsModal}/>
+                       </Modal>
+
             <div className="resident-evil__guns-container">
                 <div className="resident-evil__life-points-labels-container">
                     <div className="resident-evil__life-points-container">
-                        <div onClick={() => setEditMode(!editMode)}>
+                        <div >
+                            <SettingsIcon onClick={() => setOpenSettingsModal(true)}/>
+                        </div>
+                        <div className="resident-evil__player-status-label-container" onClick={() => setEditMode(!editMode)}>
                             Condición
                         </div>
                         <div className="resident-evil__life-points-controls-container">

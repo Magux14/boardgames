@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useSaveState } from '../../../hooks/useSaveState';
-import { lstResidentItems } from '../../../../data/resident-evil-data';
 
 const defaultGameState = {
     life: 3,
     gunBullets: 8,
     shotgunBullets: 2,
     machinegunBullets: 10,
-    items: lstResidentItems.filter(item => item.name == 'cuchillo'),
+    items: [],
     selectedItemIndex: 0
 }
 
@@ -15,6 +14,12 @@ export const useResidentEvilGame = () => {
 
     const [gameState, setGameState] = useState(JSON.parse(JSON.stringify(defaultGameState)));
     const { saveState, getLoadState } = useSaveState('resident-evil');
+
+    const setGameStateAndSave = (gameState) => {
+        const newGameState = { ...gameState };
+        setGameState(newGameState);
+        saveState(newGameState);
+    }
 
     const setGameValue = (type, value) => {
         if (type == 'gunBullets') {
@@ -34,8 +39,7 @@ export const useResidentEvilGame = () => {
             gameState.items.splice(value, 1);
         }
 
-        setGameState({ ...gameState });
-        saveState(gameState);
+        setGameStateAndSave(gameState);
     }
 
     const getCurrentLifeLabel = (lifePoints) => {
@@ -83,8 +87,7 @@ export const useResidentEvilGame = () => {
             newGameState.items.push(item);
         }
 
-        setGameState(newGameState);
-        saveState(newGameState);
+        setGameStateAndSave(newGameState);
     }
 
     const recoverHealth = (points) => {
@@ -94,14 +97,13 @@ export const useResidentEvilGame = () => {
         } else {
             newGameState.life = newGameState.life + points;
         }
-        setGameState(newGameState);
-        saveState(newGameState);
+        setGameStateAndSave(newGameState);
     }
 
     useEffect(() => {
         const lastSaveState = getLoadState();
         if (lastSaveState) {
-            // setGameState(lastSaveState);
+            setGameState(lastSaveState);
         }
     }, []);
 
@@ -110,7 +112,8 @@ export const useResidentEvilGame = () => {
         setGameValue,
         currentLifeLabel: getCurrentLifeLabel(gameState.life),
         addItemToInventory,
-        recoverHealth
+        recoverHealth,
+        setGameStateAndSave
     }
 
 }

@@ -180,7 +180,7 @@ export const lstResidentItems = [
     {
         name: 'tarjeta rpd',
         type: 'item',
-        desc: 'Quien posea esta tarjeta podrá tener 1 acción extra en su turno',
+        desc: 'Quien posea esta tarjeta podrá tener 1 acción extra en su turno (limitado a una tarjeta por jugador)',
         probabilityToAppear: 4
     },
     {
@@ -268,7 +268,7 @@ export const lstResidentZombiesSpaws = [
         desc: 'Los Walkers avanzan 1 espacio por turno, mueren de 1 bala',
         actions: 1,
         min: 1,
-        max: 6,
+        max: 5,
         probabilityToAppear: 40
     },
     {
@@ -276,7 +276,7 @@ export const lstResidentZombiesSpaws = [
         desc: 'Los Walkers avanzan 1 espacio por turno, mueren de 1 bala',
         actions: 1,
         min: 1,
-        max: 6,
+        max: 5,
         probabilityToAppear: 40
     },
     {
@@ -284,7 +284,7 @@ export const lstResidentZombiesSpaws = [
         desc: 'Los Walkers avanzan 2 espacios por turno, mueren de 1 bala',
         actions: 2,
         min: 1,
-        max: 5,
+        max: 4,
         probabilityToAppear: 30
     },
     {

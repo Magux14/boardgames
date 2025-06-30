@@ -1,0 +1,41 @@
+.re-settings {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__titles-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+
+    &__title {
+        color: white;
+        font-size: 30px;
+    }
+
+    &__subtitle {
+        color: white;
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    &__buttons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__button {
+        width: 100%;
+        border-radius: 10px;
+        text-transform: uppercase;
+        padding: 10px 0;
+        background: rgb(243, 243, 190);
+        font-weight: bold;
+    }
+
+}

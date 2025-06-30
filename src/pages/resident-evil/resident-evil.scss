@@ -36,11 +36,11 @@
 
     &__life-points-controls-container {
         display: flex;
-        width: 50%;
+        width: 60%;
         gap: 10px;
 
         button {
-            padding: 0 10px;
+            padding: 0 15px;
             border-radius: 10px;
         }
     }
@@ -67,5 +67,9 @@
 
     &__life-status--muerto {
         color: white
+    }
+
+    &__player-status-label-container {
+        padding: 0 10px;
     }
 }

@@ -67,7 +67,7 @@ export const Inventory = ({
     const handleAddNewItemForOpenItemModal = () => {
         const prevLength = prevLengthInventoryRef.current;
         const currentLength = items.length;
-        if (currentLength > prevLength) {
+        if (prevLength + 1 == currentLength) {
             handleOpenItemDetailsModal(items.length - 1, true);
         }
 
