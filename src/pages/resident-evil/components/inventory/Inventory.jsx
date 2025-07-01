@@ -149,6 +149,7 @@ export const Inventory = ({
                         item: itemDetailsModal.item,
                         justAdded: itemDetailsModal.justAdded
                     }}
+                    equipedItem={items[selectedItemIndex]}
                     callbackEquipItem={handleSelectItemIndex}
                     callbackDiscardItem={handleDiscardItemIndex}
                     callbackClose={closeItemDetailsModal}

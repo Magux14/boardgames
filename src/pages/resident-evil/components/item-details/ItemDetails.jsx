@@ -3,13 +3,16 @@ import './item-details.scss';
 import '../inventory/inventory.scss';
 import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
 import { useEffect } from 'react';
+import SwapVertIcon from '@mui/icons-material/SwapVert';
+
 export const ItemDetails = ({
     itemDetails,
     callbackEquipItem,
     callbackDiscardItem,
     callbackClose,
     callbackUseHealthItem,
-    callbackSetItemToCombine
+    callbackSetItemToCombine,
+    equipedItem
 }) => {
 
     const handleEquipItem = () => {
@@ -88,7 +91,28 @@ export const ItemDetails = ({
                         {
                             itemDetails.item.type == 'weapon' &&
                             <>
-                                <WeaponStadistics weapon={itemDetails.item.weapon} />
+                                {
+                                    equipedItem?.weapon &&
+                                    <>
+                                    <div className="item-details__weapon-stadistics-container">
+                                        <img src={`./img/resident-evil/items/${equipedItem.name}.webp`} />
+                                        <div className="item-details__weapon-equiped">
+                                            EQUIP
+                                        </div>
+                                        <WeaponStadistics previousWeapon={itemDetails.item.weapon} weapon={equipedItem.weapon} />
+                                    </div>
+                                    <div className="item-details__swap-icon-container">
+                                        <SwapVertIcon/>
+                                    </div>
+                                    </>
+                                }
+                                <div className="item-details__weapon-stadistics-container">
+                                    {
+                                        equipedItem?.weapon &&
+                                        <img src={`./img/resident-evil/items/${itemDetails.item.name}.webp`} />
+                                    }
+                                    <WeaponStadistics previousWeapon={equipedItem?.weapon} weapon={itemDetails.item.weapon} />
+                                </div>
                                 {
                                     !itemDetails.item.weapon.notEquipable &&
                                     <button className="item-details__button item-details__button--ok" onClick={handleEquipItem}>Equipar</button>

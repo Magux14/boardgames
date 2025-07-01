@@ -66,4 +66,37 @@
         color: white;
         background: rgb(0, 162, 255);
     }
+
+    &__weapon-stadistics-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+
+        img {
+            width: 20dvw;
+        }
+    }
+
+    &__swap-icon-container {
+        display: flex;
+        justify-content: center;
+        margin-top: -20px;
+        margin-bottom: -20px;
+
+        svg {
+            fill: white;
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &__weapon-equiped {
+        position: absolute;
+        color: white;
+        bottom: 0;
+        left: 5px;
+        text-align: center;
+    }
+
 }

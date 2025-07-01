@@ -7,7 +7,7 @@ const defaultGameState = {
     shotgunBullets: 2,
     machinegunBullets: 10,
     items: [],
-    selectedItemIndex: 0
+    selectedItemIndex: -1
 }
 
 export const useResidentEvilGame = () => {
@@ -33,10 +33,14 @@ export const useResidentEvilGame = () => {
         } else if (type == 'selectedItemIndex') {
             gameState.selectedItemIndex = value;
         } else if (type == 'discardItemIndex') {
-            if (gameState.selectedItemIndex == value) {
+            const indexToDelete = value;
+            gameState.items.splice(indexToDelete, 1);
+            if (gameState.selectedItemIndex == indexToDelete) {
                 gameState.selectedItemIndex = -1;
+            } else if (indexToDelete < gameState.selectedItemIndex) {
+                gameState.selectedItemIndex -= 1;
             }
-            gameState.items.splice(value, 1);
+
         } else if (type == 'items') {
             gameState.items = value;
         }

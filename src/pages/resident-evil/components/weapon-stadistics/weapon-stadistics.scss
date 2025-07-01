@@ -21,4 +21,18 @@
             fill: white;
         }
     }
+
+    &__current-item-stadistic--better {
+        color: lime;
+        svg {
+            fill: lime;
+        }
+    }
+
+    &__current-item-stadistic--lower {
+        color: rgb(207, 104, 104);
+        svg {
+            fill: rgb(207, 104, 104);
+        }
+    }
 }
