@@ -104,14 +104,22 @@ export const Inventory = ({
 
     const combineItems = (itemAndIndexA, itemAndIndexB) => {
         for (let combinedItem of lstResidentCombinedItems) {
-            if (combinedItem.itemsToCombine.includes(itemAndIndexA.item.name) &&
-                combinedItem.itemsToCombine.includes(itemAndIndexB.item.name)) {
-                items = items.filter((_, index) => ![itemAndIndexA.index, itemAndIndexB.index].includes(index));
-                items.push(combinedItem);
-                callbackSetGameValue('items', items);
-                setSelectedForCombine();
-                break;
+            const lstItemsToCombine = [...combinedItem.itemsToCombine];
+            const indexFirstItem = lstItemsToCombine.findIndex(item => item == itemAndIndexA.item.name);
+            if (indexFirstItem == -1) {
+                continue;
             }
+            lstItemsToCombine.splice(indexFirstItem, 1);
+            const indexSecondItem = lstItemsToCombine.findIndex(item => item == itemAndIndexB.item.name);
+            if (indexSecondItem == -1) {
+                continue;
+            }
+
+            items = items.filter((_, index) => ![itemAndIndexA.index, itemAndIndexB.index].includes(index));
+            items.push(combinedItem);
+            callbackSetGameValue('items', items);
+            setSelectedForCombine();
+            break;
         }
     }
 

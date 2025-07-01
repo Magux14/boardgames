@@ -21,7 +21,7 @@ export const lstResidentItems = [
             hit: 4,
             firePower: 1
         },
-        probabilityToAppear: 15
+        probabilityToAppear: 14
     },
     {
         name: 'hot dogger',
@@ -45,7 +45,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 1,
         },
-        probabilityToAppear: 22
+        probabilityToAppear: 20
     },
     {
         name: 'merc handgun',
@@ -69,7 +69,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 1
         },
-        probabilityToAppear: 4
+        probabilityToAppear: 3
     },
     {
         name: 'escopeta',
@@ -81,7 +81,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 2
         },
-        probabilityToAppear: 18
+        probabilityToAppear: 15
     },
     {
         name: 'escopeta western m37',
@@ -122,13 +122,27 @@ export const lstResidentItems = [
     {
         name: 'molotov',
         type: 'weapon',
-        desc: 'Al ser lanzada destruye a todo aquel que se encuentre en el area, no es necesario equiparla solo se descarta.',
+        desc: 'Al ser lanzada destruye a todo aquel que se encuentre en el área, no es necesario equiparla solo se descarta.',
         weapon: {
             minRange: 1,
             maxRange: 1,
             dices: 0,
             hit: 0,
             firePower: 3,
+            notEquipable: true
+        },
+        probabilityToAppear: 7
+    },
+    {
+        name: 'granada de luz',
+        type: 'weapon',
+        desc: 'Al ser lanzada todos los zombies en el área quedarán "atontados" y podrás pasar por esa área sin tener que pagar 1 acción extra por cada zombie en el área.',
+        weapon: {
+            minRange: 1,
+            maxRange: 1,
+            dices: 0,
+            hit: 0,
+            firePower: 0,
             notEquipable: true
         },
         probabilityToAppear: 7
@@ -143,14 +157,14 @@ export const lstResidentItems = [
         name: 'palanca',
         type: 'item',
         desc: 'Podrás abrir puertas rojas cerradas',
-        probabilityToAppear: 8
+        probabilityToAppear: 6
     },
     {
         name: 'hierba verde',
         type: 'health',
         desc: 'Recupera 1 punto de vida.',
         recover: 1,
-        probabilityToAppear: 4,
+        probabilityToAppear: 6,
         lstToCombineItems: ['hierba roja', 'hierba verde']
     },
     {
@@ -158,20 +172,20 @@ export const lstResidentItems = [
         type: 'health',
         desc: 'Júntala con una "hierba verde" para recuperar 2 puntos de vida.',
         recover: 0,
-        probabilityToAppear: 6,
+        probabilityToAppear: 4,
         lstToCombineItems: ['hierba verde']
     },
     {
         name: 'llave stars',
         type: 'item',
         desc: 'Con esta llave puedes abrir la bodega de armas',
-        probabilityToAppear: 4
+        probabilityToAppear: 3
     },
     {
         name: 'pólvora a',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
-        probabilityToAppear: 12,
+        probabilityToAppear: 9,
         lstToCombineItems: ['pólvora a'],
         bulletsCreation: {
             amount: 10,
@@ -182,7 +196,7 @@ export const lstResidentItems = [
         name: 'pólvora b',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta"',
-        probabilityToAppear: 12,
+        probabilityToAppear: 6,
         lstToCombineItems: ['pólvora b'],
         bulletsCreation: {
             amount: 4,
@@ -193,7 +207,7 @@ export const lstResidentItems = [
         name: 'pólvora c',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 20 balas de "rifle de asalto"',
-        probabilityToAppear: 12,
+        probabilityToAppear: 6,
         lstToCombineItems: ['pólvora c'],
         bulletsCreation: {
             amount: 20,
@@ -215,14 +229,14 @@ export const lstResidentItems = [
     {
         name: 'frituras',
         type: 'item',
-        desc: 'Puedes consumir las frituras sin gastar ninguna acción para ganar 1 acción extra.',
-        probabilityToAppear: 7
+        desc: 'Tira un dado extra al atacar con un arma (usar este objeto no cuesta ninguna acción)',
+        probabilityToAppear: 6
     },
     {
         name: 'bebida energética',
         type: 'item',
-        desc: 'tira un dado extra al atacar con un arma',
-        probabilityToAppear: 7
+        desc: 'Gana una acción extra este turno (usar este objeto no cuesta ninguna acción)',
+        probabilityToAppear: 6
     },
     {
         name: 'balas pistola',
@@ -232,7 +246,7 @@ export const lstResidentItems = [
             minQuantity: 3,
             maxQuantity: 10,
         },
-        probabilityToAppear: 6
+        probabilityToAppear: 10
     },
     {
         name: 'balas escopeta',
@@ -242,7 +256,7 @@ export const lstResidentItems = [
             minQuantity: 2,
             maxQuantity: 5,
         },
-        probabilityToAppear: 5
+        probabilityToAppear: 7
     },
     {
         name: 'balas ametralladora',
@@ -252,7 +266,7 @@ export const lstResidentItems = [
             minQuantity: 10,
             maxQuantity: 30,
         },
-        probabilityToAppear: 5
+        probabilityToAppear: 7
     },
     {
         name: 'walkers',

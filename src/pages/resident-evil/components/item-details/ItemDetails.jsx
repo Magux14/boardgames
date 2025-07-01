@@ -93,6 +93,43 @@ export const ItemDetails = ({
 
             <div className="item-details__buttons-container">
                 {
+                    !itemDetails.item.instaDiscard &&
+                    itemDetails.item.type == 'weapon' &&
+                    <>
+                        {
+                            equipedItem?.weapon &&
+                            <>
+                                <div className="item-details__weapon-stadistics-container">
+                                    <img src={`./img/resident-evil/items/${equipedItem.name}.webp`} />
+                                    <div className="item-details__weapon-equiped">
+                                        EQUIP
+                                    </div>
+                                    <WeaponStadistics previousWeapon={itemDetails.item.weapon} weapon={equipedItem.weapon} />
+                                </div>
+                                <div className="item-details__swap-icon-container">
+                                    <SwapVertIcon />
+                                </div>
+                            </>
+                        }
+                        <div className="item-details__weapon-stadistics-container">
+                            {
+                                equipedItem?.weapon &&
+                                <img src={`./img/resident-evil/items/${itemDetails.item.name}.webp`} />
+                            }
+                            <WeaponStadistics previousWeapon={equipedItem?.weapon} weapon={itemDetails.item.weapon} />
+                        </div>
+                        {
+                            !itemDetails.item.weapon.notEquipable &&
+                            <button className="item-details__button item-details__button--ok" onClick={handleEquipItem}>Equipar</button>
+                        }
+                    </>
+                }
+                {
+                    !itemDetails.item.instaDiscard &&
+                    itemDetails.justAdded &&
+                    <button className="item-details__button item-details__button--ok" onClick={() => callbackClose()}>Guardar</button>
+                }
+                {
                     itemDetails.item.type == 'bulletsCreation' && itemDetails.item.bulletsCreation.amount > 0 &&
                     <>
                         <button className="item-details__button item-details__button--ok" onClick={() => setShowBulletsGunPowderModal(true)}>Usar</button>
@@ -105,50 +142,13 @@ export const ItemDetails = ({
                     </>
                 }
                 {
+                    !itemDetails.item.instaDiscard &&
+                    <button className="item-details__button item-details__button--danger" onClick={() => setShowConfirmDicardModal(true)}>Descartar</button>
+                }
+                {
                     itemDetails.item.lstToCombineItems?.length &&
                     <>
                         <button className="item-details__button item-details__button--combine" onClick={() => callbackSetItemToCombine(itemDetails.index, itemDetails.item)}>Combinar</button>
-                    </>
-                }
-                {
-                    !itemDetails.item.instaDiscard &&
-                    <>
-                        {
-                            itemDetails.item.type == 'weapon' &&
-                            <>
-                                {
-                                    equipedItem?.weapon &&
-                                    <>
-                                        <div className="item-details__weapon-stadistics-container">
-                                            <img src={`./img/resident-evil/items/${equipedItem.name}.webp`} />
-                                            <div className="item-details__weapon-equiped">
-                                                EQUIP
-                                            </div>
-                                            <WeaponStadistics previousWeapon={itemDetails.item.weapon} weapon={equipedItem.weapon} />
-                                        </div>
-                                        <div className="item-details__swap-icon-container">
-                                            <SwapVertIcon />
-                                        </div>
-                                    </>
-                                }
-                                <div className="item-details__weapon-stadistics-container">
-                                    {
-                                        equipedItem?.weapon &&
-                                        <img src={`./img/resident-evil/items/${itemDetails.item.name}.webp`} />
-                                    }
-                                    <WeaponStadistics previousWeapon={equipedItem?.weapon} weapon={itemDetails.item.weapon} />
-                                </div>
-                                {
-                                    !itemDetails.item.weapon.notEquipable &&
-                                    <button className="item-details__button item-details__button--ok" onClick={handleEquipItem}>Equipar</button>
-                                }
-                            </>
-                        }
-                        {
-                            itemDetails.justAdded &&
-                            <button className="item-details__button item-details__button--ok" onClick={() => callbackClose()}>Guardar</button>
-                        }
-                        <button className="item-details__button item-details__button--danger" onClick={() => setShowConfirmDicardModal(true)}>Descartar</button>
                     </>
                 }
                 {
