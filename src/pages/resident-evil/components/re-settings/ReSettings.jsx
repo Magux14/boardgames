@@ -18,8 +18,8 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             name: 'normal',
             desc: 'Juego estandar para gente que quiere disfrutar del juego sin complicaciones',
             weapons: ['pistola g19', 'cuchillo', 'hierba verde'],
-            gunBullets: 20,
-            shotgunBullets: 5,
+            gunBullets: 16,
+            shotgunBullets: 4,
             machinegunBullets: 40,
         },
         {
@@ -27,7 +27,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             desc: 'Para aquellos a los que les gustan los retos',
             weapons: ['cuchillo'],
             gunBullets: 8,
-            shotgunBullets: 4,
+            shotgunBullets: 2,
             machinegunBullets: 30,
         }
     ]

@@ -177,9 +177,16 @@ export const lstResidentItems = [
     {
         name: 'pólvora b',
         type: 'item',
-        desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta" o 20 de "rifle de asalto"',
+        desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta"',
         probabilityToAppear: 12,
         lstToCombineItems: ['pólvora b']
+    },
+    {
+        name: 'pólvora c',
+        type: 'item',
+        desc: 'Teniendo la "máquina de balas" puedes construir 20 balas de "rifle de asalto"',
+        probabilityToAppear: 12,
+        lstToCombineItems: ['pólvora c']
     },
     {
         name: 'tarjeta rpd',
@@ -290,10 +297,19 @@ export const lstResidentCombinedItems = [
     {
         name: 'pólvora bb',
         type: 'item',
-        desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de "escopeta" o 50 de "rifle de asalto"',
+        desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de "escopeta"',
         itemsToCombine: [
             'pólvora b',
             'pólvora b',
+        ]
+    },
+    {
+        name: 'pólvora cc',
+        type: 'item',
+        desc: 'Teniendo la "máquina de balas" puedes construir 50 balas de "rifle de asalto"',
+        itemsToCombine: [
+            'pólvora c',
+            'pólvora c',
         ]
     },
 ]

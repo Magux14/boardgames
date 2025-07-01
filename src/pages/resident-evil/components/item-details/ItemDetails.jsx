@@ -2,8 +2,9 @@
 import './item-details.scss';
 import '../inventory/inventory.scss';
 import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import SwapVertIcon from '@mui/icons-material/SwapVert';
+import ConfirmationModal from '../../../../components/confirmation-modal/ConfirmationModal';
 
 export const ItemDetails = ({
     itemDetails,
@@ -15,6 +16,7 @@ export const ItemDetails = ({
     equipedItem
 }) => {
 
+    const [showConfirmDiscardModal, setShowConfirmDicardModal] = useState(false);
     const handleEquipItem = () => {
         callbackEquipItem(itemDetails.index);
     }
@@ -36,6 +38,13 @@ export const ItemDetails = ({
 
     return (
         <div className="item-details__container">
+
+            <ConfirmationModal
+                showAlert={showConfirmDiscardModal}
+                description="¿En verdad deseas descartar este objeto?"
+                acceptCallback={handleDiscardItem}
+                closeCallback={() => setShowConfirmDicardModal(false)}
+            ></ConfirmationModal>
             <div className="item-details__image-container">
                 {
                     itemDetails.item.type == 'activation'
@@ -94,16 +103,16 @@ export const ItemDetails = ({
                                 {
                                     equipedItem?.weapon &&
                                     <>
-                                    <div className="item-details__weapon-stadistics-container">
-                                        <img src={`./img/resident-evil/items/${equipedItem.name}.webp`} />
-                                        <div className="item-details__weapon-equiped">
-                                            EQUIP
+                                        <div className="item-details__weapon-stadistics-container">
+                                            <img src={`./img/resident-evil/items/${equipedItem.name}.webp`} />
+                                            <div className="item-details__weapon-equiped">
+                                                EQUIP
+                                            </div>
+                                            <WeaponStadistics previousWeapon={itemDetails.item.weapon} weapon={equipedItem.weapon} />
                                         </div>
-                                        <WeaponStadistics previousWeapon={itemDetails.item.weapon} weapon={equipedItem.weapon} />
-                                    </div>
-                                    <div className="item-details__swap-icon-container">
-                                        <SwapVertIcon/>
-                                    </div>
+                                        <div className="item-details__swap-icon-container">
+                                            <SwapVertIcon />
+                                        </div>
                                     </>
                                 }
                                 <div className="item-details__weapon-stadistics-container">
@@ -123,7 +132,7 @@ export const ItemDetails = ({
                             itemDetails.justAdded &&
                             <button className="item-details__button item-details__button--ok" onClick={() => callbackClose()}>Guardar</button>
                         }
-                        <button className="item-details__button item-details__button--danger" onClick={handleDiscardItem}>Descartar</button>
+                        <button className="item-details__button item-details__button--danger" onClick={() => setShowConfirmDicardModal(true)}>Descartar</button>
                     </>
                 }
                 {
