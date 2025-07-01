@@ -13,7 +13,8 @@ export const Inventory = ({
     items,
     callbackSetGameValue,
     callbackAddItemToInventory,
-    callbackUseHealthItem
+    callbackUseHealthItem,
+    callbackAddBulletsByGunpowder
 }) => {
 
     const prevLengthInventoryRef = useRef(items.length);
@@ -114,6 +115,11 @@ export const Inventory = ({
         }
     }
 
+    const handleGainBulletsByGunPowder = (gunPodwerIndex, bulletsCreation) => {
+        callbackAddBulletsByGunpowder(gunPodwerIndex, bulletsCreation.type, bulletsCreation.amount);
+        closeItemDetailsModal();
+    }
+
     useEffect(() => {
         handleAddNewItemForOpenItemModal();
     }, [items]);
@@ -155,6 +161,7 @@ export const Inventory = ({
                     callbackClose={closeItemDetailsModal}
                     callbackUseHealthItem={callbackUseHealthItem}
                     callbackSetItemToCombine={setItemToCombine}
+                    callbackGainBulletsByGunPowder={handleGainBulletsByGunPowder}
                 />
             </Modal>
 

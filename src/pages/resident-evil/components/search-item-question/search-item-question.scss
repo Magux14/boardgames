@@ -37,8 +37,16 @@
         background: rgb(16, 151, 16);
     }
 
+    &__option-button--warning {
+        background: rgb(231, 180, 40);
+    }
+
     &__option-button--danger {
         background: rgb(105, 21, 21);
+    }
+
+    &__option-button--friend {
+        background: rgb(170, 50, 170);
     }
 
     &__warning-message-container {

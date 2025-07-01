@@ -169,24 +169,36 @@ export const lstResidentItems = [
     },
     {
         name: 'pólvora a',
-        type: 'item',
+        type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
         probabilityToAppear: 12,
-        lstToCombineItems: ['pólvora a']
+        lstToCombineItems: ['pólvora a'],
+        bulletsCreation: {
+            amount: 10,
+            type: 'gunBullets'
+        }
     },
     {
         name: 'pólvora b',
-        type: 'item',
+        type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta"',
         probabilityToAppear: 12,
-        lstToCombineItems: ['pólvora b']
+        lstToCombineItems: ['pólvora b'],
+        bulletsCreation: {
+            amount: 4,
+            type: 'shotgunBullets'
+        }
     },
     {
         name: 'pólvora c',
-        type: 'item',
+        type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 20 balas de "rifle de asalto"',
         probabilityToAppear: 12,
-        lstToCombineItems: ['pólvora c']
+        lstToCombineItems: ['pólvora c'],
+        bulletsCreation: {
+            amount: 20,
+            type: 'machinegunBullets'
+        }
     },
     {
         name: 'tarjeta rpd',
@@ -194,12 +206,12 @@ export const lstResidentItems = [
         desc: 'Quien posea esta tarjeta podrá tener 1 acción extra en su turno (limitado a una tarjeta por jugador)',
         probabilityToAppear: 4
     },
-    {
-        name: 'máquina de balas',
-        type: 'item',
-        desc: 'Teniendo pólvora puedes construir balas',
-        probabilityToAppear: 0
-    },
+    // {
+    //     name: 'máquina de balas',
+    //     type: 'item',
+    //     desc: 'Teniendo pólvora puedes construir balas',
+    //     probabilityToAppear: 0
+    // },
     {
         name: 'frituras',
         type: 'item',
@@ -283,34 +295,46 @@ export const lstResidentCombinedItems = [
         itemsToCombine: [
             'hierba verde',
             'hierba verde',
-        ]
+        ],
     },
     {
         name: 'pólvora aa',
-        type: 'item',
+        type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 25 balas de pistola',
         itemsToCombine: [
             'pólvora a',
             'pólvora a',
-        ]
+        ],
+        bulletsCreation: {
+            amount: 25,
+            type: 'gunBullets'
+        }
     },
     {
         name: 'pólvora bb',
-        type: 'item',
+        type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de "escopeta"',
         itemsToCombine: [
             'pólvora b',
             'pólvora b',
-        ]
+        ],
+        bulletsCreation: {
+            amount: 10,
+            type: 'shotgunBullets'
+        }
     },
     {
         name: 'pólvora cc',
-        type: 'item',
+        type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 50 balas de "rifle de asalto"',
         itemsToCombine: [
             'pólvora c',
             'pólvora c',
-        ]
+        ],
+        bulletsCreation: {
+            amount: 50,
+            type: 'machinegunBullets'
+        }
     },
 ]
 

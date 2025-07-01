@@ -13,10 +13,12 @@ export const ItemDetails = ({
     callbackClose,
     callbackUseHealthItem,
     callbackSetItemToCombine,
-    equipedItem
+    equipedItem,
+    callbackGainBulletsByGunPowder
 }) => {
 
     const [showConfirmDiscardModal, setShowConfirmDicardModal] = useState(false);
+    const [showBulletsGunPowderModal, setShowBulletsGunPowderModal] = useState(false);
     const handleEquipItem = () => {
         callbackEquipItem(itemDetails.index);
     }
@@ -45,6 +47,14 @@ export const ItemDetails = ({
                 acceptCallback={handleDiscardItem}
                 closeCallback={() => setShowConfirmDicardModal(false)}
             ></ConfirmationModal>
+
+            <ConfirmationModal
+                showAlert={showBulletsGunPowderModal}
+                description="¿Estás junto a una máquina de balas para poder crear las balas?"
+                acceptCallback={() => callbackGainBulletsByGunPowder(itemDetails.index, itemDetails.item.bulletsCreation)}
+                closeCallback={() => setShowBulletsGunPowderModal(false)}
+            ></ConfirmationModal>
+
             <div className="item-details__image-container">
                 {
                     itemDetails.item.type == 'activation'
@@ -82,6 +92,12 @@ export const ItemDetails = ({
             </div >
 
             <div className="item-details__buttons-container">
+                {
+                    itemDetails.item.type == 'bulletsCreation' && itemDetails.item.bulletsCreation.amount > 0 &&
+                    <>
+                        <button className="item-details__button item-details__button--ok" onClick={() => setShowBulletsGunPowderModal(true)}>Usar</button>
+                    </>
+                }
                 {
                     itemDetails.item.type == 'health' && itemDetails.item.recover > 0 &&
                     <>

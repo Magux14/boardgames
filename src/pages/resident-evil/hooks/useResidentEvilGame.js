@@ -60,6 +60,18 @@ export const useResidentEvilGame = () => {
         }
     }
 
+    const addBulletsByGunpowder = (gunPodwerIndex, type, value) => {
+        if (type == 'gunBullets') {
+            gameState.gunBullets += value;
+        } else if (type == 'shotgunBullets') {
+            gameState.shotgunBullets += value;
+        } else if (type == 'machinegunBullets') {
+            gameState.machinegunBullets += value;
+        }
+        gameState.items.splice(gunPodwerIndex, 1);
+        setGameStateAndSave(gameState);
+    }
+
     const addBulletsAsItem = (item, gameState) => {
 
         const getRandomNumer = (min, max) => {
@@ -119,7 +131,8 @@ export const useResidentEvilGame = () => {
         currentLifeLabel: getCurrentLifeLabel(gameState.life),
         addItemToInventory,
         recoverHealth,
-        setGameStateAndSave
+        setGameStateAndSave,
+        addBulletsByGunpowder
     }
 
 }

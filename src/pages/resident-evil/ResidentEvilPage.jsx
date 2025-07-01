@@ -16,11 +16,12 @@ export const ResidentEvilPage = () => {
         currentLifeLabel,
         addItemToInventory,
         recoverHealth,
-        setGameStateAndSave
+        setGameStateAndSave,
+        addBulletsByGunpowder
     } = useResidentEvilGame();
 
     const [editMode, setEditMode] = useState(false);
-    const [openSettingsModal, setOpenSettingsModal] =useState(false);
+    const [openSettingsModal, setOpenSettingsModal] = useState(false);
 
     const handleSaveAndCloseSettingsModal = (gameState) => {
         setGameStateAndSave(gameState);
@@ -30,22 +31,22 @@ export const ResidentEvilPage = () => {
     return (
         <div className="resident-evil__container">
 
-                       <Modal
-                           open={openSettingsModal}
-                           footer={null}
-                           onCancel={() => setOpenSettingsModal(false)}
-                           className="inventory__modal"
-                           centered={true}
-                           destroyOnClose={true}
-                       >
-                          <ReSettings callbackSetDifficulty={handleSaveAndCloseSettingsModal}/>
-                       </Modal>
+            <Modal
+                open={openSettingsModal}
+                footer={null}
+                onCancel={() => setOpenSettingsModal(false)}
+                className="inventory__modal"
+                centered={true}
+                destroyOnClose={true}
+            >
+                <ReSettings callbackSetDifficulty={handleSaveAndCloseSettingsModal} />
+            </Modal>
 
             <div className="resident-evil__guns-container">
                 <div className="resident-evil__life-points-labels-container">
                     <div className="resident-evil__life-points-container">
                         <div >
-                            <SettingsIcon onClick={() => setOpenSettingsModal(true)}/>
+                            <SettingsIcon onClick={() => setOpenSettingsModal(true)} />
                         </div>
                         <div className="resident-evil__player-status-label-container" onClick={() => setEditMode(!editMode)}>
                             Condición
@@ -70,6 +71,7 @@ export const ResidentEvilPage = () => {
                     callbackSetGameValue={setGameValue}
                     callbackAddItemToInventory={addItemToInventory}
                     callbackUseHealthItem={recoverHealth}
+                    callbackAddBulletsByGunpowder={addBulletsByGunpowder}
                 />
 
                 <BulletCounter

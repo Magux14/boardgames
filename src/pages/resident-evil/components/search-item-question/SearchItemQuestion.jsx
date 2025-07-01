@@ -89,7 +89,7 @@ export const SearchItemQuestion = ({ callbackAddItemToInventory, userItems, inve
             </div>
             <div className="search-item-question__option-container">
                 <button
-                    className="search-item-question__option-button search-item-question__option-button--ok"
+                    className="search-item-question__option-button search-item-question__option-button--warning"
                     onClick={() => handleAddRandomItemToIventory('weapon')}
                     disabled={inventoryFull}
                 >
@@ -98,7 +98,7 @@ export const SearchItemQuestion = ({ callbackAddItemToInventory, userItems, inve
             </div>
             <div className="search-item-question__option-container">
                 <button
-                    className="search-item-question__option-button search-item-question__option-button--ok"
+                    className="search-item-question__option-button search-item-question__option-button--friend"
                     onClick={() => setOpenInventorySelection(true)}
                     disabled={inventoryFull}
                 >
