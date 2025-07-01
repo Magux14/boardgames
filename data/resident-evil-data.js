@@ -171,13 +171,15 @@ export const lstResidentItems = [
         name: 'pólvora a',
         type: 'item',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
-        probabilityToAppear: 12
+        probabilityToAppear: 12,
+        lstToCombineItems: ['pólvora a']
     },
     {
         name: 'pólvora b',
         type: 'item',
         desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta" o 20 de "rifle de asalto"',
-        probabilityToAppear: 12
+        probabilityToAppear: 12,
+        lstToCombineItems: ['pólvora b']
     },
     {
         name: 'tarjeta rpd',
@@ -264,6 +266,34 @@ export const lstResidentCombinedItems = [
         itemsToCombine: [
             'hierba verde',
             'hierba roja',
+        ]
+    },
+    {
+        name: 'mix hierbas verde x verde',
+        type: 'health',
+        desc: 'Combinación de hierba verde y verde, recupera 2 de vida',
+        recover: 2,
+        itemsToCombine: [
+            'hierba verde',
+            'hierba verde',
+        ]
+    },
+    {
+        name: 'pólvora aa',
+        type: 'item',
+        desc: 'Teniendo la "máquina de balas" puedes construir 25 balas de pistola',
+        itemsToCombine: [
+            'pólvora a',
+            'pólvora a',
+        ]
+    },
+    {
+        name: 'pólvora bb',
+        type: 'item',
+        desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de "escopeta" o 50 de "rifle de asalto"',
+        itemsToCombine: [
+            'pólvora b',
+            'pólvora b',
         ]
     },
 ]

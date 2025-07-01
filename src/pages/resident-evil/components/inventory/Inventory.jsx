@@ -6,6 +6,7 @@ import { SearchItemQuestion } from '../search-item-question/SearchItemQuestion';
 import { Modal } from 'antd';
 import { ItemDetails } from '../item-details/ItemDetails';
 import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
+import { lstResidentCombinedItems } from '../../../../../data/resident-evil-data';
 
 export const Inventory = ({
     selectedItemIndex,
@@ -47,8 +48,9 @@ export const Inventory = ({
     const handleClickOnItem = (index, justAdded) => {
         if (selectedForCombine) {
             if (selectedForCombine.index == index) {
-                setSelectedForCombine(null);
-                return;
+                setSelectedForCombine();
+            } else {
+                combineItems(selectedForCombine, { index, item: items[index] });
             }
         } else {
             handleOpenItemDetailsModal(index, justAdded)
@@ -97,6 +99,19 @@ export const Inventory = ({
     const itemIsValidToCombine = (itemAndIndex, selectedToCombineItemAndIndex) => {
         return itemAndIndex.item.lstToCombineItems?.includes(selectedToCombineItemAndIndex.item.name)
             || itemAndIndex.index == selectedToCombineItemAndIndex.index;
+    }
+
+    const combineItems = (itemAndIndexA, itemAndIndexB) => {
+        for (let combinedItem of lstResidentCombinedItems) {
+            if (combinedItem.itemsToCombine.includes(itemAndIndexA.item.name) &&
+                combinedItem.itemsToCombine.includes(itemAndIndexB.item.name)) {
+                items = items.filter((_, index) => ![itemAndIndexA.index, itemAndIndexB.index].includes(index));
+                items.push(combinedItem);
+                callbackSetGameValue('items', items);
+                setSelectedForCombine();
+                break;
+            }
+        }
     }
 
     useEffect(() => {

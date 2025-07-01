@@ -37,6 +37,8 @@ export const useResidentEvilGame = () => {
                 gameState.selectedItemIndex = -1;
             }
             gameState.items.splice(value, 1);
+        } else if (type == 'items') {
+            gameState.items = value;
         }
 
         setGameStateAndSave(gameState);
