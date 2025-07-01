@@ -77,7 +77,7 @@ export const ItemDetails = ({
                     </>
                 }
                 {
-                    itemDetails.item.canBeCombined &&
+                    itemDetails.item.lstToCombineItems?.length &&
                     <>
                         <button className="item-details__button item-details__button--combine" onClick={() => callbackSetItemToCombine(itemDetails.index, itemDetails.item)}>Combinar</button>
                     </>

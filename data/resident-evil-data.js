@@ -151,14 +151,15 @@ export const lstResidentItems = [
         desc: 'Recupera 1 punto de vida.',
         recover: 1,
         probabilityToAppear: 4,
-        canBeCombined: true
+        lstToCombineItems: ['hierba roja', 'hierba verde']
     },
     {
         name: 'hierba roja',
         type: 'health',
         desc: 'Júntala con una "hierba verde" para recuperar 2 puntos de vida.',
         recover: 0,
-        probabilityToAppear: 6
+        probabilityToAppear: 6,
+        lstToCombineItems: ['hierba verde']
     },
     {
         name: 'llave stars',

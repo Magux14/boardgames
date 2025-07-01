@@ -94,6 +94,11 @@ export const Inventory = ({
         });
     }
 
+    const itemIsValidToCombine = (itemAndIndex, selectedToCombineItemAndIndex) => {
+        return itemAndIndex.item.lstToCombineItems?.includes(selectedToCombineItemAndIndex.item.name)
+            || itemAndIndex.index == selectedToCombineItemAndIndex.index;
+    }
+
     useEffect(() => {
         handleAddNewItemForOpenItemModal();
     }, [items]);
@@ -177,14 +182,19 @@ export const Inventory = ({
                     items.map((item, index) =>
                         <div
                             key={`${item.name}-${index}`}
-                            className={`inventory__item`}
+                            className={`inventory__item ${(selectedForCombine && !itemIsValidToCombine({
+                                item,
+                                index
+                            }, selectedForCombine)) ? 'inventory__item--not-able-to-combine' : ''}`}
                             onClick={() => handleClickOnItem(index)}
                         >
                             {
                                 selectedForCombine && index == selectedForCombine.index &&
                                 <div className="inventory__item--selected-for-combine" />
                             }
-                            <img src={`./img/resident-evil/items/${item.name}.webp`} />
+                            <img
+                                src={`./img/resident-evil/items/${item.name}.webp`}
+                            />
                         </div>
                     )
                 }

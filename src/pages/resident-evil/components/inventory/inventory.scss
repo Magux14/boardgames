@@ -85,6 +85,14 @@
         }
     }
 
+    &__item--not-able-to-combine {
+        opacity: 0.5;
+
+        &:active {
+            transform: unset;
+        }
+    }
+
     &__item--selected-for-combine {
         width: 100%;
         height: 100%;
