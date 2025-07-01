@@ -16,6 +16,7 @@ export const Inventory = ({
 }) => {
 
     const prevLengthInventoryRef = useRef(items.length);
+    const [selectedForCombine, setSelectedForCombine] = useState();
 
     if (selectedItemIndex == null) {
         return <></>
@@ -41,6 +42,17 @@ export const Inventory = ({
 
     const handleOpenSearchQuestionModal = () => {
         setOpenSearchQuestionModal(true);
+    }
+
+    const handleClickOnItem = (index, justAdded) => {
+        if (selectedForCombine) {
+            if (selectedForCombine.index == index) {
+                setSelectedForCombine(null);
+                return;
+            }
+        } else {
+            handleOpenItemDetailsModal(index, justAdded)
+        }
     }
 
     const handleOpenItemDetailsModal = (index, justAdded) => {
@@ -72,6 +84,14 @@ export const Inventory = ({
         }
 
         prevLengthInventoryRef.current = currentLength;
+    }
+
+    const setItemToCombine = (index, item) => {
+        closeItemDetailsModal();
+        setSelectedForCombine({
+            index,
+            item
+        });
     }
 
     useEffect(() => {
@@ -113,6 +133,7 @@ export const Inventory = ({
                     callbackDiscardItem={handleDiscardItemIndex}
                     callbackClose={closeItemDetailsModal}
                     callbackUseHealthItem={callbackUseHealthItem}
+                    callbackSetItemToCombine={setItemToCombine}
                 />
             </Modal>
 
@@ -154,7 +175,15 @@ export const Inventory = ({
             <div className="inventory__items-container">
                 {
                     items.map((item, index) =>
-                        <div key={`${item.name}-${index}`} className="inventory__item" onClick={() => handleOpenItemDetailsModal(index)}>
+                        <div
+                            key={`${item.name}-${index}`}
+                            className={`inventory__item`}
+                            onClick={() => handleClickOnItem(index)}
+                        >
+                            {
+                                selectedForCombine && index == selectedForCombine.index &&
+                                <div className="inventory__item--selected-for-combine" />
+                            }
                             <img src={`./img/resident-evil/items/${item.name}.webp`} />
                         </div>
                     )

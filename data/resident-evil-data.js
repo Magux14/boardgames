@@ -150,7 +150,8 @@ export const lstResidentItems = [
         type: 'health',
         desc: 'Recupera 1 punto de vida.',
         recover: 1,
-        probabilityToAppear: 4
+        probabilityToAppear: 4,
+        canBeCombined: true
     },
     {
         name: 'hierba roja',
@@ -258,26 +259,22 @@ export const lstResidentCombinedItems = [
         name: 'mix hierbas verde x roja',
         type: 'health',
         desc: 'Combinación de hierba verde y roja, recupera 2 de vida',
-        recover: 2
+        recover: 2,
+        itemsToCombine: [
+            'hierba verde',
+            'hierba roja',
+        ]
     },
 ]
 
-export const lstResidentZombiesSpaws = [
+export const lstResidentZombies = [
     {
         name: 'walkers',
         desc: 'Los Walkers avanzan 1 espacio por turno, mueren de 1 bala',
         actions: 1,
         min: 1,
         max: 5,
-        probabilityToAppear: 40
-    },
-    {
-        name: 'walkers',
-        desc: 'Los Walkers avanzan 1 espacio por turno, mueren de 1 bala',
-        actions: 1,
-        min: 1,
-        max: 5,
-        probabilityToAppear: 40
+        probabilityToAppear: 45
     },
     {
         name: 'runners',
@@ -285,14 +282,14 @@ export const lstResidentZombiesSpaws = [
         actions: 2,
         min: 1,
         max: 4,
-        probabilityToAppear: 30
+        probabilityToAppear: 35
     },
     {
         name: 'boomers',
         desc: 'Los Bruts avanzan 1 espacio por turno, mueren de un golpe con armas nivel 2',
         actions: 1,
         min: 1,
-        max: 4,
-        probabilityToAppear: 30
+        max: 3,
+        probabilityToAppear: 20
     }
 ]

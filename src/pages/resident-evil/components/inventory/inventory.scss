@@ -76,13 +76,31 @@
         border-radius: 5px;
 
         img {
-            border-radius: 5px;
             width: 100%;
             height: 100%;
         }
 
         &:active {
             transform: scale(0.95);
+        }
+    }
+
+    &__item--selected-for-combine {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        animation: blink 0.5s forwards infinite;
+
+        @keyframes blink {
+
+            0%,
+            40% {
+                border: 3px solid rgb(196, 16, 16);
+            }
+
+            100% {
+                background: unset;
+            }
         }
     }
 

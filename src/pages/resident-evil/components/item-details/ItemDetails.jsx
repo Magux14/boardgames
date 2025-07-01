@@ -8,7 +8,8 @@ export const ItemDetails = ({
     callbackEquipItem,
     callbackDiscardItem,
     callbackClose,
-    callbackUseHealthItem
+    callbackUseHealthItem,
+    callbackSetItemToCombine
 }) => {
 
     const handleEquipItem = () => {
@@ -73,6 +74,12 @@ export const ItemDetails = ({
                     itemDetails.item.type == 'health' && itemDetails.item.recover > 0 &&
                     <>
                         <button className="item-details__button item-details__button--ok" onClick={() => handleUseHealthItem(itemDetails.item.recover)}>Usar</button>
+                    </>
+                }
+                {
+                    itemDetails.item.canBeCombined &&
+                    <>
+                        <button className="item-details__button item-details__button--combine" onClick={() => callbackSetItemToCombine(itemDetails.index, itemDetails.item)}>Combinar</button>
                     </>
                 }
                 {
