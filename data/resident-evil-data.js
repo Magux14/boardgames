@@ -151,6 +151,7 @@ export const lstResidentItems = [
     {
         name: 'spray médico',
         type: 'health',
+        desc: 'Recupera 2 puntos de vida.',
         recover: 2,
         probabilityToAppear: 2
     },
@@ -345,7 +346,7 @@ export const lstResidentCombinedItems = [
             type: 'machinegunBullets'
         }
     },
-      {
+    {
         name: 'cuchillos duales',
         type: 'weapon',
         desc: 'Uno en cada mano, la versatilidad de esto es impresionante',

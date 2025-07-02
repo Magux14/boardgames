@@ -133,6 +133,8 @@ export const Inventory = ({
         handleAddNewItemForOpenItemModal();
     }, [items]);
 
+    console.log('selectedItemIndex', selectedItemIndex)
+
     return (
         <div className="inventory__container">
             <Modal
@@ -183,7 +185,12 @@ export const Inventory = ({
                     <div className="inventory__current-item-image-container">
                         <img src={`./img/resident-evil/items/${items[selectedItemIndex] != null ? items[selectedItemIndex].name : 'empty'}.webp`} />
                         <div className="inventory__weapon-equiped">
-                            EQUIPADO
+                            {
+                                selectedItemIndex != -1 &&
+                                <>
+                                    EQUIPADO
+                                </>
+                            }
                         </div>
                     </div>
                 </div>
@@ -247,6 +254,6 @@ export const Inventory = ({
                     <button onClick={() => handleOpenSearchQuestionModal(true)} >Buscar</button>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
