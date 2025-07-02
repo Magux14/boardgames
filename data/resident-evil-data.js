@@ -358,7 +358,7 @@ export const lstResidentZombies = [
         desc: 'Los Walkers avanzan 1 espacio por turno, mueren de 1 bala',
         actions: 1,
         min: 1,
-        max: 5,
+        max: 2,
         probabilityToAppear: 45
     },
     {
@@ -366,7 +366,7 @@ export const lstResidentZombies = [
         desc: 'Los Walkers avanzan 2 espacios por turno, mueren de 1 bala',
         actions: 2,
         min: 1,
-        max: 4,
+        max: 2,
         probabilityToAppear: 35
     },
     {
@@ -374,7 +374,7 @@ export const lstResidentZombies = [
         desc: 'Los Bruts avanzan 1 espacio por turno, mueren de un golpe con armas nivel 2',
         actions: 1,
         min: 1,
-        max: 3,
+        max: 2,
         probabilityToAppear: 20
     }
 ]
