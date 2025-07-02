@@ -369,7 +369,7 @@ export const lstResidentZombies = [
         desc: 'Los Walkers avanzan 1 espacio por turno, mueren de 1 bala',
         actions: 1,
         min: 1,
-        max: 2,
+        max: 1,
         probabilityToAppear: 65
     },
     {
@@ -377,7 +377,7 @@ export const lstResidentZombies = [
         desc: 'Los Walkers avanzan 2 espacios por turno, mueren de 1 bala',
         actions: 2,
         min: 1,
-        max: 2,
+        max: 1,
         probabilityToAppear: 25
     },
     {

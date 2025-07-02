@@ -8,25 +8,11 @@ export const ZombiePhase = ({ playersNum }) => {
 
     const [zombiePhase, setZombiePhase] = useState();
 
-    const setValues = () => {
-        const zombie = getRandomItem();
-        // const results = {};
-        // for (let i = 0; i < 1000; i++) {
-        //     const selected = getRandomItem();
-        //     results[selected.name] = (results[selected.name] || 0) + 1;
-        // }
-
-        const fastFoward = Math.random() < 0.20;
-        const nemesisAppear = Math.random() < 0.333;
-
-        setZombiePhase({
-            zombie,
-            fastFoward,
-            nemesisAppear
-        })
-    }
-
     const getRandomNumber = (min, max) => {
+        if(playersNum > 3){
+            playersNum = 3;
+        }
+        max = max + playersNum - 1;
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
@@ -45,16 +31,36 @@ export const ZombiePhase = ({ playersNum }) => {
         return selectedItem;
     }
 
-    useEffect(( )=> {
+    const setValues = () => {
+        const zombie = getRandomItem();
+
+        // const results = {};
+        // for (let i = 0; i < 1000; i++) {
+        //     const selected = getRandomItem();
+        //     results[selected.name] = (results[selected.name] || 0) + 1;
+        // }
+
+        const fastFoward = Math.random() < 0.20;
+        const nemesisAppear = Math.random() < 0.333;
+
+        setZombiePhase({
+            zombie,
+            fastFoward,
+            nemesisAppear,
+            key: (zombiePhase?.key || 0) + 1
+        });
+    }
+
+    useEffect(() => {
         setValues();
     }, [])
 
-    if(!zombiePhase){
+    if (!zombiePhase) {
         return <div className="zombie-phase__container"></div>
     }
 
     return (
-        <div className="zombie-phase__container">
+        <div key={zombiePhase.key} className="zombie-phase__container">
             <div className="zombie-phase__image-container">
                 <img src={`./img/resident-evil/zombies/${zombiePhase.zombie.name}.webp`} />
                 {
@@ -62,7 +68,7 @@ export const ZombiePhase = ({ playersNum }) => {
                     <img src={`./img/resident-evil/zombies/némesis.webp`} />
                 }
                 <div className="zombie-phase__refresh-container">
-                    <CachedIcon  onClick={setValues}/>
+                    <CachedIcon onClick={setValues} />
                 </div>
             </div>
 
