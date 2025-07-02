@@ -359,7 +359,7 @@ export const lstResidentZombies = [
         actions: 1,
         min: 1,
         max: 2,
-        probabilityToAppear: 45
+        probabilityToAppear: 65
     },
     {
         name: 'runners',
@@ -367,14 +367,14 @@ export const lstResidentZombies = [
         actions: 2,
         min: 1,
         max: 2,
-        probabilityToAppear: 35
+        probabilityToAppear: 25
     },
     {
         name: 'boomers',
         desc: 'Los Bruts avanzan 1 espacio por turno, mueren de un golpe con armas nivel 2',
         actions: 1,
         min: 1,
-        max: 2,
-        probabilityToAppear: 20
+        max: 1,
+        probabilityToAppear: 10
     }
 ]
