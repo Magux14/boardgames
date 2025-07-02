@@ -180,7 +180,7 @@ export const lstResidentItems = [
         name: 'pólvora a',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
-        probabilityToAppear: 9,
+        probabilityToAppear: 8,
         lstToCombineItems: ['pólvora a'],
         bulletsCreation: {
             amount: 10,
@@ -191,7 +191,7 @@ export const lstResidentItems = [
         name: 'pólvora b',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta"',
-        probabilityToAppear: 6,
+        probabilityToAppear: 5,
         lstToCombineItems: ['pólvora b'],
         bulletsCreation: {
             amount: 4,
@@ -202,7 +202,7 @@ export const lstResidentItems = [
         name: 'pólvora c',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 20 balas de "rifle de asalto"',
-        probabilityToAppear: 6,
+        probabilityToAppear: 5,
         lstToCombineItems: ['pólvora c'],
         bulletsCreation: {
             amount: 20,
@@ -281,7 +281,7 @@ export const lstResidentItems = [
     {
         name: 'némesis',
         type: 'activation',
-        probabilityToAppear: 3
+        probabilityToAppear: 9
     }
 ]
 
