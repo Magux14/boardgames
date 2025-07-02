@@ -6,7 +6,7 @@ import { lstResidentItems } from '../../../../../data/resident-evil-data';
 import './search-item-question.scss';
 import { ZombiePhase } from '../zombie-phase/ZombiePhase';
 
-export const SearchItemQuestion = ({ callbackAddItemToInventory, userItems, inventoryFull, callbackClose }) => {
+export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, userItems, inventoryFull, callbackClose }) => {
 
     const [openInventorySelection, setOpenInventorySelection] = useState(false);
     const [openZombiePhase, setOpenZombiePhase] = useState(false);
@@ -133,7 +133,7 @@ export const SearchItemQuestion = ({ callbackAddItemToInventory, userItems, inve
                 className="inventory__modal"
                 destroyOnClose={true}
             >
-                <ZombiePhase />
+                <ZombiePhase playersNum={gameState.playersNum}/>
             </Modal>
         </div>
 

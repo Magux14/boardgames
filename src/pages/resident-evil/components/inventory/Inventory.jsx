@@ -9,6 +9,7 @@ import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
 import { lstResidentCombinedItems } from '../../../../../data/resident-evil-data';
 
 export const Inventory = ({
+    gameState,
     selectedItemIndex,
     items,
     callbackSetGameValue,
@@ -142,6 +143,7 @@ export const Inventory = ({
                 centered={true}
             >
                 <SearchItemQuestion
+                    gameState={gameState}
                     callbackAddItemToInventory={handleAddItemToInventory}
                     userItems={items}
                     inventoryFull={items.length >= 6}
@@ -178,7 +180,12 @@ export const Inventory = ({
             </div>
             <div className="inventory__current-item-container">
                 <div className="inventory__current-item">
-                    <img src={`./img/resident-evil/items/${items[selectedItemIndex] != null ? items[selectedItemIndex].name : 'empty'}.webp`} />
+                    <div className="inventory__current-item-image-container">
+                        <img src={`./img/resident-evil/items/${items[selectedItemIndex] != null ? items[selectedItemIndex].name : 'empty'}.webp`} />
+                        <div className="inventory__weapon-equiped">
+                            EQUIPADO
+                        </div>
+                    </div>
                 </div>
                 <div className="inventory__current-item-info-container">
                     <div className="inventory__current-item-info-title">
@@ -231,7 +238,7 @@ export const Inventory = ({
                 }
                 {
                     new Array(6 - items.length >= 0 ? 6 - items.length : 0).fill(null).map((_, index) =>
-                        <div key={`empty-space-${index}`} className="inventory__item inventory__item--empty">
+                        <div key={`empty-space-${index}`} className={`inventory__item inventory__item--empty ${selectedForCombine ? 'inventory__item--not-able-to-combine' : ''}`}>
                             <img src={`./img/resident-evil/items/empty.webp`} />
                         </div>
                     )

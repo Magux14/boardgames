@@ -102,7 +102,7 @@ export const ItemDetails = ({
                                 <div className="item-details__weapon-stadistics-container">
                                     <img src={`./img/resident-evil/items/${equipedItem.name}.webp`} />
                                     <div className="item-details__weapon-equiped">
-                                        EQUIP
+                                        EQUIPADO
                                     </div>
                                     <WeaponStadistics previousWeapon={itemDetails.item.weapon} weapon={equipedItem.weapon} />
                                 </div>

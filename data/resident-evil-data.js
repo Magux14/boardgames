@@ -9,7 +9,8 @@ export const lstResidentItems = [
             hit: 4,
             firePower: 1
         },
-        probabilityToAppear: 0
+        probabilityToAppear: 0,
+        lstToCombineItems: ['cuchillo']
     },
     {
         name: 'tubo',
@@ -154,17 +155,11 @@ export const lstResidentItems = [
         probabilityToAppear: 2
     },
     {
-        name: 'palanca',
-        type: 'item',
-        desc: 'Podrás abrir puertas rojas cerradas',
-        probabilityToAppear: 6
-    },
-    {
         name: 'hierba verde',
         type: 'health',
         desc: 'Recupera 1 punto de vida.',
         recover: 1,
-        probabilityToAppear: 6,
+        probabilityToAppear: 7,
         lstToCombineItems: ['hierba roja', 'hierba verde']
     },
     {
@@ -172,14 +167,14 @@ export const lstResidentItems = [
         type: 'health',
         desc: 'Júntala con una "hierba verde" para recuperar 2 puntos de vida.',
         recover: 0,
-        probabilityToAppear: 4,
+        probabilityToAppear: 5,
         lstToCombineItems: ['hierba verde']
     },
     {
         name: 'llave stars',
         type: 'item',
         desc: 'Con esta llave puedes abrir la bodega de armas',
-        probabilityToAppear: 3
+        probabilityToAppear: 4
     },
     {
         name: 'pólvora a',
@@ -349,6 +344,22 @@ export const lstResidentCombinedItems = [
             amount: 50,
             type: 'machinegunBullets'
         }
+    },
+      {
+        name: 'cuchillos duales',
+        type: 'weapon',
+        desc: 'Uno en cada mano, la versatilidad de esto es impresionante',
+        weapon: {
+            minRange: 0,
+            maxRange: 0,
+            dices: 3,
+            hit: 4,
+            firePower: 1
+        },
+        itemsToCombine: [
+            'cuchillo',
+            'cuchillo',
+        ],
     },
 ]
 

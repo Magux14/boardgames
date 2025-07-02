@@ -7,7 +7,8 @@ const defaultGameState = {
     shotgunBullets: 2,
     machinegunBullets: 10,
     items: [],
-    selectedItemIndex: -1
+    selectedItemIndex: -1,
+    playersNum: 2
 }
 
 export const useResidentEvilGame = () => {

@@ -66,6 +66,7 @@ export const ResidentEvilPage = () => {
                 <LifeScreen lifePoints={gameState.life} />
 
                 <Inventory
+                    gameState={gameState}
                     selectedItemIndex={gameState.selectedItemIndex}
                     items={[...gameState.items]}
                     callbackSetGameValue={setGameValue}
