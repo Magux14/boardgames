@@ -153,11 +153,11 @@ export const Inventory = ({
 
             {
                 itemDetailsModal.open &&
-                <audio src={`./music/resident evil/open-inventory.mp4`} autoPlay></audio>
+                <audio src={`./music/resident evil/open-inventory.mp3`} autoPlay></audio>
             }
             {
                 !itemDetailsModal.open &&
-                <audio src={`./music/resident evil/close-inventory.mp4`} autoPlay></audio>
+                <audio src={`./music/resident evil/close-inventory.mp3`} autoPlay></audio>
             }
             <Modal
                 open={itemDetailsModal.open}
