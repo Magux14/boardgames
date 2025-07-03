@@ -1139,7 +1139,7 @@ export const lstGames = [
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 3,
-        img: '´phase 10.webp',
+        img: 'phase 10.webp',
         minutes: 40,
         new: true,
         comingSoon: true
