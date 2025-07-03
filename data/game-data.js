@@ -1090,4 +1090,69 @@ export const lstGames = [
             }
         ]
     },
+    {
+        name: 'Cuidado con Beetlejuice',
+        desc: '¡Los fantasmas están sueltos y Beetlejuice también! En Cuidado con Beetlejuice, tú y tus amigos deben espantar vivos de su hogar encantado… pero cuidado, que decir su nombre podría invocarlo y arruinarlo todo. ¿Te atreves a tentar a la suerte?',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'cuidado con beetlejuice.webp',
+        minutes: 30,
+        rank: 2,
+    },
+    {
+        name: '3 up 3 down',
+        desc: 'Tu objetivo es deshacerte de ellas antes que los demás jugadores. Esto se consigue jugando cartas del mismo número o mayor que la última carta jugada. Si no puedes jugar una carta, debes recoger todas las cartas de la pila de descarte.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: '3 up 3 down.webp',
+        minutes: 15,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'Deep Sea Adventure',
+        desc: 'En Deep Sea Adventure deberás bucear muy profundo utilizando los dados. el objetivo del juego es conseguir más tesoros que tus oponentes y llevártelos de vuelva al submarino.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 3,
+        img: 'deep sea adventure.webp',
+        minutes: 30,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'Battlevessel',
+        desc: 'Juego de mesa marino, estrategia tradicional con acorazados y portaaviones',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 1,
+        img: 'battlevessel.webp',
+        minutes: 20,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'Phase 10',
+        desc: 'Juego de cartas tipo Rummy en el que el objetivo es ser el primer jugador en completar 10 fases diferentes. Cada fase consiste en combinar cartas de ciertas maneras, como dos tríos, una secuencia de siete cartas, o siete cartas del mismo color',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 3,
+        img: '´phase 10.webp',
+        minutes: 40,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'Villains - Las Gemas del Poder',
+        desc: 'juego de mesa de estrategia y roles ocultos donde los jugadores deben determinar si son villanos o hadas, y actuar en consecuencia para obtener las gemas de poder o proteger el castillo, respectivamente.',
+        minPlayers: 3,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'villains las gemas del poder.webp',
+        minutes: 45,
+        new: true,
+        comingSoon: true
+    },
 ]
