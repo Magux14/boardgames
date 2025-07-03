@@ -133,8 +133,6 @@ export const Inventory = ({
         handleAddNewItemForOpenItemModal();
     }, [items]);
 
-    console.log('selectedItemIndex', selectedItemIndex)
-
     return (
         <div className="inventory__container">
             <Modal
@@ -153,6 +151,14 @@ export const Inventory = ({
                 />
             </Modal>
 
+            {
+                itemDetailsModal.open &&
+                <audio src={`./music/resident evil/open-inventory.mp4`} autoPlay></audio>
+            }
+            {
+                !itemDetailsModal.open &&
+                <audio src={`./music/resident evil/close-inventory.mp4`} autoPlay></audio>
+            }
             <Modal
                 open={itemDetailsModal.open}
                 footer={null}
@@ -207,14 +213,6 @@ export const Inventory = ({
                                 </span>
                         }
                     </div>
-                    {
-                        items[selectedItemIndex]?.desc != null &&
-                        <div className="inventory__current-item-info-desc">
-                            {
-                                items[selectedItemIndex]?.desc
-                            }
-                        </div>
-                    }
                     {
                         items[selectedItemIndex]?.type == 'weapon' &&
                         <WeaponStadistics weapon={items[selectedItemIndex].weapon} />
