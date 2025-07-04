@@ -133,6 +133,20 @@ export const Inventory = ({
         handleAddNewItemForOpenItemModal();
     }, [items]);
 
+    useEffect(() => {
+        let audio;
+        if (itemDetailsModal.open) {
+            audio = new Audio(`./music/resident evil/open-inventory.mp3`);
+        } else {
+            audio = new Audio(`./music/resident evil/close-inventory.mp3`);
+        }
+        audio.volume = 1;
+        audio.play().catch(err => {
+            console.warn('No se pudo reproducir el audio automáticamente:', err);
+        });
+
+    }, [itemDetailsModal.open])
+
     return (
         <div className="inventory__container">
             <Modal
@@ -151,14 +165,6 @@ export const Inventory = ({
                 />
             </Modal>
 
-            {
-                itemDetailsModal.open &&
-                <audio src={`./music/resident evil/open-inventory.mp3`} autoPlay></audio>
-            }
-            {
-                !itemDetailsModal.open &&
-                <audio src={`./music/resident evil/close-inventory.mp3`} autoPlay></audio>
-            }
             <Modal
                 open={itemDetailsModal.open}
                 footer={null}
