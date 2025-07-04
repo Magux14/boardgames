@@ -1036,7 +1036,7 @@ export const lstGames = [
         difficulty: 4,
         img: 'las torres errantes.webp',
         minutes: 30,
-        new: true,
+        rank: 5
     },
     {
         name: 'Optimus',
@@ -1142,7 +1142,6 @@ export const lstGames = [
         img: 'phase 10.webp',
         minutes: 40,
         new: true,
-        comingSoon: true
     },
     {
         name: 'Villains - Las Gemas del Poder',
@@ -1153,6 +1152,5 @@ export const lstGames = [
         img: 'villains las gemas del poder.webp',
         minutes: 45,
         new: true,
-        comingSoon: true
     },
 ]
