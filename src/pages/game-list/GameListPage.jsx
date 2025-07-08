@@ -27,7 +27,7 @@ export const GameListPage = () => {
         hardSearch: false
     });
     const [lstFilteredItems, setlstFilteredItems] = useState(lstGames);
-    const [filterType, setFilterType] = useState('nameAsc');
+    const [filterType, setFilterType] = useState('random');
     const [openFileModal, setOpenFileModal] = useState({ name: '', open: false });
 
     const [lstTripGames, setLstTripGames] = useState([]);
@@ -58,6 +58,13 @@ export const GameListPage = () => {
 
     const sortList = (type, lstSorted) => {
         switch (type) {
+            case 'random': {
+                for (let i = lstSorted.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [lstSorted[i], lstSorted[j]] = [lstSorted[j], lstSorted[i]];
+                }
+                break;
+            }
             case 'nameAsc':
                 lstSorted = lstSorted.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
                 break;
@@ -198,6 +205,7 @@ export const GameListPage = () => {
                             <SortIcon />
                         </label>
                         <select name="Máximo de jugadores" value={filterType} onChange={(ev) => handleSort(ev.target.value, lstFilteredItems)}>
+                            <option value="random">Random</option>
                             <option value="nameAsc">Nombre ↓</option>
                             <option value="nameDesc">Nombre ↑</option>
                             <option value="rankDesc">Rank ↓</option>
