@@ -121,6 +121,19 @@ export const lstResidentItems = [
         probabilityToAppear: 2
     },
     {
+        name: 'rifle francotirador',
+        desc: 'Este rifle tiene daño perforante, esto quiere decir que atravieza enemigos, si un enemigo cruza la linea de visión también recibirá el impacto',
+        type: 'weapon',
+        weapon: {
+            minRange: 1,
+            maxRange: 3,
+            dices: 1,
+            hit: 2,
+            firePower: 1
+        },
+        probabilityToAppear: 2
+    },
+    {
         name: 'molotov',
         type: 'weapon',
         desc: 'Al ser lanzada destruye a todo aquel que se encuentre en el área, no es necesario equiparla solo se descarta.',
@@ -183,7 +196,7 @@ export const lstResidentItems = [
         name: 'pólvora a',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
-        probabilityToAppear: 7,
+        probabilityToAppear: 5,
         lstToCombineItems: ['pólvora a'],
         bulletsCreation: {
             amount: 10,
@@ -194,7 +207,7 @@ export const lstResidentItems = [
         name: 'pólvora b',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta"',
-        probabilityToAppear: 5,
+        probabilityToAppear: 3,
         lstToCombineItems: ['pólvora b'],
         bulletsCreation: {
             amount: 4,
@@ -205,7 +218,7 @@ export const lstResidentItems = [
         name: 'pólvora c',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 20 balas de "rifle de asalto"',
-        probabilityToAppear: 5,
+        probabilityToAppear: 3,
         lstToCombineItems: ['pólvora c'],
         bulletsCreation: {
             amount: 20,
@@ -244,9 +257,9 @@ export const lstResidentItems = [
         bulletsConfig: {
             type: 'gun',
             minQuantity: 3,
-            maxQuantity: 10,
+            maxQuantity: 7,
         },
-        probabilityToAppear: 11
+        probabilityToAppear: 12
     },
     {
         name: 'balas escopeta',
@@ -256,7 +269,7 @@ export const lstResidentItems = [
             minQuantity: 2,
             maxQuantity: 5,
         },
-        probabilityToAppear: 7
+        probabilityToAppear: 8
     },
     {
         name: 'balas ametralladora',
@@ -267,6 +280,16 @@ export const lstResidentItems = [
             maxQuantity: 30,
         },
         probabilityToAppear: 7
+    },
+    {
+        name: 'balas francotirador',
+        type: 'bullets',
+        bulletsConfig: {
+            type: 'sniper',
+            minQuantity: 1,
+            maxQuantity: 4,
+        },
+        probabilityToAppear: 4
     },
     {
         name: 'walkers',

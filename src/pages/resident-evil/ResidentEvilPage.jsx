@@ -99,6 +99,15 @@ export const ResidentEvilPage = () => {
                     defaultAddingValues={5}
                     editMode={editMode}
                 />
+
+                <BulletCounter
+                    name="francotirador"
+                    type="sniperBullets"
+                    bullets={gameState.sniperBullets}
+                    setBullets={setGameValue}
+                    defaultAddingValues={1}
+                    editMode={editMode}
+                />
             </div>
         </div>
     )

@@ -6,6 +6,7 @@ const defaultGameState = {
     gunBullets: 0,
     shotgunBullets: 0,
     machinegunBullets: 0,
+    sniperBullets: 0,
     items: [],
     selectedItemIndex: -1,
     playersNum: 2
@@ -29,6 +30,8 @@ export const useResidentEvilGame = () => {
             gameState.shotgunBullets = value;
         } else if (type == 'machinegunBullets') {
             gameState.machinegunBullets = value;
+        } else if (type == 'sniperBullets') {
+            gameState.sniperBullets = value;
         } else if (type == 'life') {
             gameState.life = value;
         } else if (type == 'selectedItemIndex') {
@@ -88,6 +91,8 @@ export const useResidentEvilGame = () => {
             gameState.shotgunBullets += item.bulletsAdded;
         } else if (bulletType == 'machinegun') {
             gameState.machinegunBullets += item.bulletsAdded;
+        } else if (bulletType == 'sniper') {
+            gameState.sniperBullets += item.bulletsAdded;
         }
 
         gameState.items.push(item);

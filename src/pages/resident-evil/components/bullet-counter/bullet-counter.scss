@@ -13,6 +13,7 @@
         text-align: center;
         color: white;
         text-transform: capitalize;
+        margin-bottom: -5px;
     }
 
     &__controls {
@@ -41,7 +42,7 @@
         justify-content: center;
 
         img {
-            width: 50%;
+            width: 40%;
             height: auto;
         }
     }

@@ -13,6 +13,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             gunBullets: 16,
             shotgunBullets: 20,
             machinegunBullets: 200,
+            sniperBullets: 10
         },
         {
             name: 'normal',
@@ -21,6 +22,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             gunBullets: 16,
             shotgunBullets: 4,
             machinegunBullets: 40,
+            sniperBullets: 5
         },
         {
             name: 'difícil',
@@ -29,6 +31,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             gunBullets: 8,
             shotgunBullets: 2,
             machinegunBullets: 30,
+            sniperBullets: 2
         },
         {
             name: 'legendario',
@@ -37,6 +40,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             gunBullets: 8,
             shotgunBullets: 2,
             machinegunBullets: 15,
+            sniperBullets: 1
         }
     ]
 
@@ -59,6 +63,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             gunBullets: difficulty.gunBullets,
             shotgunBullets: difficulty.shotgunBullets,
             machinegunBullets: difficulty.machinegunBullets,
+            sniperBullets: difficulty.sniperBullets,
             items: difficulty.weapons.map(name => getItemByName(name)),
             selectedItemIndex: 0,
             playersNum: isNaN(playersNum) ? 2 : playersNum
