@@ -7,6 +7,7 @@ import { Modal } from 'antd';
 import { ItemDetails } from '../item-details/ItemDetails';
 import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
 import { lstResidentCombinedItems } from '../../../../../data/resident-evil-data';
+import { useResidentAudio } from '../../hooks/useResidentAudio';
 
 export const Inventory = ({
     gameState,
@@ -20,6 +21,7 @@ export const Inventory = ({
 
     const prevLengthInventoryRef = useRef(items.length);
     const [selectedForCombine, setSelectedForCombine] = useState();
+    const { playOpenInventory } = useResidentAudio();
 
     if (selectedItemIndex == null) {
         return <></>
@@ -52,6 +54,7 @@ export const Inventory = ({
             if (selectedForCombine.index == index) {
                 setSelectedForCombine();
             } else {
+                playOpenInventory();
                 combineItems(selectedForCombine, { index, item: items[index] });
             }
         } else {
@@ -134,21 +137,14 @@ export const Inventory = ({
     }, [items]);
 
     useEffect(() => {
-        let audio;
         if (itemDetailsModal.open) {
-            audio = new Audio(`./music/resident evil/open-inventory.mp3`);
-        } else {
-            audio = new Audio(`./music/resident evil/close-inventory.mp3`);
+            playOpenInventory();
         }
-        audio.volume = 1;
-        audio.play().catch(err => {
-            console.warn('No se pudo reproducir el audio automáticamente:', err);
-        });
-
     }, [itemDetailsModal.open])
 
     return (
         <div className="inventory__container">
+
             <Modal
                 open={openSearchQuestionModal}
                 footer={null}

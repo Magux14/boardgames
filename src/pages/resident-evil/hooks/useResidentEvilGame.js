@@ -3,9 +3,9 @@ import { useSaveState } from '../../../hooks/useSaveState';
 
 const defaultGameState = {
     life: 3,
-    gunBullets: 8,
-    shotgunBullets: 2,
-    machinegunBullets: 10,
+    gunBullets: 0,
+    shotgunBullets: 0,
+    machinegunBullets: 0,
     items: [],
     selectedItemIndex: -1,
     playersNum: 2

@@ -9,7 +9,7 @@ export const lstResidentItems = [
             hit: 4,
             firePower: 1
         },
-        probabilityToAppear: 0,
+        probabilityToAppear: 5,
         lstToCombineItems: ['cuchillo']
     },
     {
@@ -22,7 +22,7 @@ export const lstResidentItems = [
             hit: 4,
             firePower: 1
         },
-        probabilityToAppear: 14
+        probabilityToAppear: 12
     },
     {
         name: 'hot dogger',
@@ -46,7 +46,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 1,
         },
-        probabilityToAppear: 20
+        probabilityToAppear: 18
     },
     {
         name: 'merc handgun',
@@ -82,7 +82,7 @@ export const lstResidentItems = [
             hit: 3,
             firePower: 2
         },
-        probabilityToAppear: 15
+        probabilityToAppear: 14
     },
     {
         name: 'escopeta western m37',
@@ -132,7 +132,8 @@ export const lstResidentItems = [
             firePower: 3,
             notEquipable: true
         },
-        probabilityToAppear: 7
+        probabilityToAppear: 7,
+        instantUse: true
     },
     {
         name: 'granada de luz',
@@ -146,7 +147,8 @@ export const lstResidentItems = [
             firePower: 0,
             notEquipable: true
         },
-        probabilityToAppear: 7
+        probabilityToAppear: 7,
+        instantUse: true
     },
     {
         name: 'spray médico',
@@ -160,7 +162,7 @@ export const lstResidentItems = [
         type: 'health',
         desc: 'Recupera 1 punto de vida.',
         recover: 1,
-        probabilityToAppear: 7,
+        probabilityToAppear: 8,
         lstToCombineItems: ['hierba roja', 'hierba verde']
     },
     {
@@ -181,7 +183,7 @@ export const lstResidentItems = [
         name: 'pólvora a',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
-        probabilityToAppear: 8,
+        probabilityToAppear: 7,
         lstToCombineItems: ['pólvora a'],
         bulletsCreation: {
             amount: 10,
@@ -226,13 +228,15 @@ export const lstResidentItems = [
         name: 'frituras',
         type: 'item',
         desc: 'Tira un dado extra al atacar con un arma (usar este objeto no cuesta ninguna acción)',
-        probabilityToAppear: 6
+        probabilityToAppear: 8,
+        instantUse: true
     },
     {
         name: 'bebida energética',
         type: 'item',
         desc: 'Gana una acción extra este turno (usar este objeto no cuesta ninguna acción)',
-        probabilityToAppear: 6
+        probabilityToAppear: 8,
+        instantUse: true
     },
     {
         name: 'balas pistola',
@@ -242,7 +246,7 @@ export const lstResidentItems = [
             minQuantity: 3,
             maxQuantity: 10,
         },
-        probabilityToAppear: 10
+        probabilityToAppear: 11
     },
     {
         name: 'balas escopeta',
@@ -272,17 +276,17 @@ export const lstResidentItems = [
     {
         name: 'runners',
         type: 'activation',
-        probabilityToAppear: 5
+        probabilityToAppear: 3
     },
     {
         name: 'boomers',
         type: 'activation',
-        probabilityToAppear: 5
+        probabilityToAppear: 3
     },
     {
         name: 'némesis',
         type: 'activation',
-        probabilityToAppear: 9
+        probabilityToAppear: 8
     }
 ]
 

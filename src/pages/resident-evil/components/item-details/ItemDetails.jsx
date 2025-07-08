@@ -5,6 +5,7 @@ import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
 import { useEffect, useState } from 'react';
 import SwapVertIcon from '@mui/icons-material/SwapVert';
 import ConfirmationModal from '../../../../components/confirmation-modal/ConfirmationModal';
+import { useResidentAudio } from '../../hooks/useResidentAudio';
 
 export const ItemDetails = ({
     itemDetails,
@@ -19,27 +20,52 @@ export const ItemDetails = ({
 
     const [showConfirmDiscardModal, setShowConfirmDicardModal] = useState(false);
     const [showBulletsGunPowderModal, setShowBulletsGunPowderModal] = useState(false);
+    const [openOneUseQuestionModal, setOpenOneUseQuestionModal] = useState(false);
+
+    const { playOpenInventory, playCloseInventory } = useResidentAudio();
+
     const handleEquipItem = () => {
         callbackEquipItem(itemDetails.index);
+        playOpenInventory();
     }
 
     const handleDiscardItem = () => {
         callbackDiscardItem(itemDetails.index);
+        playCloseInventory();
     }
 
     const handleUseHealthItem = (pointsToRecover) => {
         callbackDiscardItem(itemDetails.index);
         callbackUseHealthItem(pointsToRecover);
+        playOpenInventory();
+    }
+
+    const handleKeepItem = () => {
+        callbackClose();
+        playCloseInventory();
+    }
+
+    const handleUseAndDiscard = () => {
+        callbackDiscardItem(itemDetails.index);
+        playOpenInventory();
     }
 
     useEffect(() => {
         if (itemDetails.item.instaDiscard) {
             callbackDiscardItem(itemDetails.index, false);
+            playOpenInventory();
         }
     }, []);
 
     return (
         <div className="item-details__container">
+
+            <ConfirmationModal
+                showAlert={openOneUseQuestionModal}
+                description="¿Deseas utilizar este objeto? Después de usarse se descartará"
+                acceptCallback={handleUseAndDiscard}
+                closeCallback={() => setOpenOneUseQuestionModal(false)}
+            ></ConfirmationModal>
 
             <ConfirmationModal
                 showAlert={showConfirmDiscardModal}
@@ -51,7 +77,10 @@ export const ItemDetails = ({
             <ConfirmationModal
                 showAlert={showBulletsGunPowderModal}
                 description="¿Estás junto a una máquina de balas para poder crear las balas?"
-                acceptCallback={() => callbackGainBulletsByGunPowder(itemDetails.index, itemDetails.item.bulletsCreation)}
+                acceptCallback={() => {
+                    callbackGainBulletsByGunPowder(itemDetails.index, itemDetails.item.bulletsCreation);
+                    playOpenInventory();
+                }}
                 closeCallback={() => setShowBulletsGunPowderModal(false)}
             ></ConfirmationModal>
 
@@ -127,12 +156,18 @@ export const ItemDetails = ({
                 {
                     !itemDetails.item.instaDiscard &&
                     itemDetails.justAdded &&
-                    <button className="item-details__button item-details__button--ok" onClick={() => callbackClose()}>Guardar</button>
+                    <button className="item-details__button item-details__button--ok" onClick={() => handleKeepItem()}>Guardar</button>
                 }
                 {
                     itemDetails.item.type == 'bulletsCreation' && itemDetails.item.bulletsCreation.amount > 0 &&
                     <>
                         <button className="item-details__button item-details__button--ok" onClick={() => setShowBulletsGunPowderModal(true)}>Usar</button>
+                    </>
+                }
+                {
+                    itemDetails.item.instantUse &&
+                    <>
+                        <button className="item-details__button item-details__button--ok" onClick={() => setOpenOneUseQuestionModal(true)}>Usar</button>
                     </>
                 }
                 {
@@ -154,7 +189,7 @@ export const ItemDetails = ({
                 {
                     itemDetails.item.instaDiscard &&
                     <>
-                        <button className="item-details__button item-details__button--ok" onClick={() => callbackClose()}>Entiendo</button>
+                        <button className="item-details__button item-details__button--ok" onClick={() => handleKeepItem()}>Entiendo</button>
                     </>
                 }
             </div>
