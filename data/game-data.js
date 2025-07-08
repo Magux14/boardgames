@@ -1153,4 +1153,24 @@ export const lstGames = [
         minutes: 45,
         new: true,
     },
+    {
+        name: 'Exploding Kittens',
+        desc: '¡Como una ruleta rusa, trata de no explotar! Usa las carta de acción para moverte y evitar que explotes, haz que los demás jugadores jalen más cartas del maso para que ellos mueran, pero si explotas, pero si explotas... ¡se acabó!',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 3,
+        img: 'Exploding Kittens.webp',
+        minutes: 15,
+        new: true
+    },
+    {
+        name: 'Coffe Rush',
+        desc: 'Vuestra cafetería se encuentra en una de las calles más ajetreadas de la ciudad, junto con otras muchas cafeterías. Tiene un ambiente acogedor, un café delicioso y éxito en las redes sociales. Pese a que los clientes vienen a relajarse, la barra puede convertirse en un auténtico campo de batalla a la hora de preparar los pedidos, ya que no completarlos a tiempo puede suponer un problema para el negocio: la cafetería puede prosperar con muchos «Me gusta», pero no tanto con los «No me gusta». ¡Completa los pedidos y conviértete en el mejor barista!',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 4,
+        img: 'coffe rush.webp',
+        minutes: 30,
+        new: true
+    },
 ]
