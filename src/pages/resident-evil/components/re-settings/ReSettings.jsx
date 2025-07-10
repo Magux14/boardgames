@@ -66,7 +66,8 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             sniperBullets: difficulty.sniperBullets,
             items: difficulty.weapons.map(name => getItemByName(name)),
             selectedItemIndex: 0,
-            playersNum: isNaN(playersNum) ? 2 : playersNum
+            playersNum: isNaN(playersNum) ? 2 : Number(playersNum),
+            difficulty: difficulty.name
         }
         callbackSetDifficulty(gameState);
     }

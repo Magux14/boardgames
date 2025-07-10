@@ -9,7 +9,7 @@ export const ZombiePhase = ({ playersNum }) => {
     const [zombiePhase, setZombiePhase] = useState();
 
     const getRandomNumber = (min, max) => {
-        if(playersNum > 3){
+        if (playersNum > 3) {
             playersNum = 3;
         }
         max = max + playersNum - 1;

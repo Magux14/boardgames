@@ -1109,7 +1109,6 @@ export const lstGames = [
         img: '3 up 3 down.webp',
         minutes: 15,
         new: true,
-        comingSoon: true
     },
     {
         name: 'Deep Sea Adventure',
@@ -1120,7 +1119,6 @@ export const lstGames = [
         img: 'deep sea adventure.webp',
         minutes: 30,
         new: true,
-        comingSoon: true
     },
     {
         name: 'Battlevessel',
@@ -1131,7 +1129,6 @@ export const lstGames = [
         img: 'battlevessel.webp',
         minutes: 20,
         new: true,
-        comingSoon: true
     },
     {
         name: 'Phase 10',

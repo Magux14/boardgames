@@ -16,10 +16,34 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
         setOpenInventorySelection(false);
     }
 
+    const removePosibleWeaponsByDifficulty = (lsItemsTobeGetted) => {
+
+        if (gameState.difficulty == 'normal' || gameState.difficulty == 'díficil' || gameState.difficulty == 'legendario') {
+            lsItemsTobeGetted = lstResidentItems.filter(item =>
+                item.name != 'gatlin gun'
+            );
+        }
+
+        if (gameState.difficulty == 'díficil' || gameState.difficulty == 'legendario') {
+            lsItemsTobeGetted = lstResidentItems.filter(item =>
+                item.name != 'sti eagle 6.0'
+            );
+        }
+
+        if (gameState.difficulty == 'legendario') {
+            lsItemsTobeGetted = lstResidentItems.filter(item =>
+                item.name != 'escopeta western m37' ||
+                item.name != 'hot dogger'
+            );
+        }
+
+        return lsItemsTobeGetted;
+    }
+
     const handleAddRandomItemToIventory = (type) => {
         let lsItemsTobeGetted = []
         if (type == 'weapon') {
-            lsItemsTobeGetted = lstResidentItems.filter(item => item.type == 'weapon');
+            lsItemsTobeGetted = removePosibleWeaponsByDifficulty(lstResidentItems.filter(item => item.type == 'weapon'));
         } else if (type == 'item') {
             lsItemsTobeGetted = lstResidentItems.filter(item => item.type != 'weapon');
         }
@@ -111,7 +135,7 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
                     className="search-item-question__option-button search-item-question__option-button--danger"
                     onClick={() => setOpenZombiePhase(true)}
                 >
-                    Fase de zombies
+                    Zombies
                 </button>
             </div>
 
@@ -133,7 +157,7 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
                 className="inventory__modal"
                 destroyOnClose={true}
             >
-                <ZombiePhase playersNum={gameState.playersNum}/>
+                <ZombiePhase playersNum={gameState.playersNum} />
             </Modal>
         </div>
 
