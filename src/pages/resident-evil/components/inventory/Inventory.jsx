@@ -21,7 +21,7 @@ export const Inventory = ({
 
     const prevLengthInventoryRef = useRef(items.length);
     const [selectedForCombine, setSelectedForCombine] = useState();
-    const { playOpenInventory } = useResidentAudio();
+    const { playOpenInventory, playCloseInventory } = useResidentAudio();
 
     if (selectedItemIndex == null) {
         return <></>
@@ -164,7 +164,10 @@ export const Inventory = ({
             <Modal
                 open={itemDetailsModal.open}
                 footer={null}
-                onCancel={closeItemDetailsModal}
+                onCancel={() => {
+                    closeItemDetailsModal();
+                    playCloseInventory();
+                }}
                 className="inventory__modal"
                 centered={true}
                 destroyOnClose={true}
