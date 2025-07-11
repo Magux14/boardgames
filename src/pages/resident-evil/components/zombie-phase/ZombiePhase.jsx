@@ -1,8 +1,9 @@
 
-import './zombie-phase.scss';
 import { lstResidentZombies } from '../../../../../data/resident-evil-data';
 import CachedIcon from '@mui/icons-material/Cached';
 import { useEffect, useState } from 'react';
+import WarningIcon from '@mui/icons-material/Warning';
+import './zombie-phase.scss';
 
 export const ZombiePhase = ({ playersNum }) => {
 
@@ -28,11 +29,18 @@ export const ZombiePhase = ({ playersNum }) => {
                 break;
             }
         }
-        return selectedItem;
+        return {
+            zombie: selectedItem,
+            fastFoward: Math.random() < 0.20
+        };
     }
 
     const setValues = () => {
-        const zombie = getRandomItem();
+        const lstZombies = [];
+        const numOfZombies = getRandomNumber(1, 2);
+        for (let i = 0; i < numOfZombies; i++) {
+            lstZombies.push(getRandomItem());
+        }
 
         // const results = {};
         // for (let i = 0; i < 1000; i++) {
@@ -40,12 +48,9 @@ export const ZombiePhase = ({ playersNum }) => {
         //     results[selected.name] = (results[selected.name] || 0) + 1;
         // }
 
-        const fastFoward = Math.random() < 0.20;
         const nemesisAppear = Math.random() < 0.333;
-
         setZombiePhase({
-            zombie,
-            fastFoward,
+            lstZombies,
             nemesisAppear,
             key: (zombiePhase?.key || 0) + 1
         });
@@ -61,36 +66,47 @@ export const ZombiePhase = ({ playersNum }) => {
 
     return (
         <div key={zombiePhase.key} className="zombie-phase__container">
-            <div className="zombie-phase__image-container">
-                <img src={`./img/resident-evil/zombies/${zombiePhase.zombie.name}.webp`} />
+            <div key={zombiePhase.key} className="zombie-phase__zombies-container">
+                {
+                    zombiePhase.lstZombies.map(zombieItem =>
+                        <>
+                            <div className="zombie-phase__zombie-container">
+                                <img src={`./img/resident-evil/zombies/${zombieItem.zombie.name}.webp`} />
+                                <div className="zombie-phase__name-container">
+                                    {zombieItem.zombie.name}
+                                </div>
+                                {
+                                    zombieItem.fastFoward &&
+                                    <div className="zombie-phase__activation-container">
+                                        <WarningIcon />
+                                    </div>
+                                }
+
+                            </div>
+
+                            {/* <div className="zombie-phase__span-count-container">
+                            x {getRandomNumber(zombiePhase.zombie.min, zombiePhase.zombie.max)}
+                        </div> */}
+                        </>
+                    )
+                }
                 {
                     zombiePhase.nemesisAppear &&
-                    <img src={`./img/resident-evil/zombies/némesis.webp`} />
+                    <div className="zombie-phase__zombie-container">
+                        <img src={`./img/resident-evil/zombies/némesis.webp`} />
+                        <div className="zombie-phase__name-container">
+                            Némesis
+                        </div>
+                        <div className="zombie-phase__activation-container">
+                            <WarningIcon />
+                        </div>
+                    </div>
                 }
-                <div className="zombie-phase__refresh-container">
-                    <CachedIcon onClick={setValues} />
-                </div>
             </div>
 
-            <div className="zombie-phase__name-container">
-                {zombiePhase.zombie.name}
+            <div className="zombie-phase__refresh-container">
+                <CachedIcon onClick={setValues} />
             </div>
-            <div className="zombie-phase__span-count-container">
-                x {getRandomNumber(zombiePhase.zombie.min, zombiePhase.zombie.max)}
-            </div>
-
-            {
-                zombiePhase.fastFoward &&
-                <div className="zombie-phase__fast-foward-container">
-                    + Movimiento impetuoso
-                </div>
-            }
-            {
-                zombiePhase.nemesisAppear &&
-                <div className="zombie-phase__nemesis-container">
-                    + Activación Némesis
-                </div>
-            }
         </div>
     )
 }

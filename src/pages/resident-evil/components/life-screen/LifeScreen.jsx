@@ -2,7 +2,6 @@ import './life-screen.scss';
 
 export const LifeScreen = ({ lifePoints }) => {
 
-
     const getCurrentLifeColor = (lifePoints) => {
         if (lifePoints >= 4) {
             return 'lime';

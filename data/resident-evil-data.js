@@ -393,7 +393,7 @@ export const lstResidentCombinedItems = [
 
 export const lstResidentZombies = [
     {
-        name: 'walkers',
+        name: 'walker',
         desc: 'Los Walkers avanzan 1 espacio por turno, mueren de 1 bala',
         actions: 1,
         min: 1,
@@ -401,7 +401,7 @@ export const lstResidentZombies = [
         probabilityToAppear: 65
     },
     {
-        name: 'runners',
+        name: 'runner',
         desc: 'Los Walkers avanzan 2 espacios por turno, mueren de 1 bala',
         actions: 2,
         min: 1,
@@ -409,7 +409,7 @@ export const lstResidentZombies = [
         probabilityToAppear: 25
     },
     {
-        name: 'boomers',
+        name: 'boomer',
         desc: 'Los Bruts avanzan 1 espacio por turno, mueren de un golpe con armas nivel 2',
         actions: 1,
         min: 1,
