@@ -58,7 +58,7 @@ export const ResidentEvilPage = () => {
                                     {currentLifeLabel}
                                 </div>
                             </div>
-                            <button onClick={(() => gameState.life < 3 ? setGameValue('life', gameState.life + 1) : null)} disabled={!editMode}>+</button>
+                            <button onClick={(() => gameState.life < 4 ? setGameValue('life', gameState.life + 1) : null)} disabled={!editMode}>+</button>
                         </div>
                     </div>
                 </div>

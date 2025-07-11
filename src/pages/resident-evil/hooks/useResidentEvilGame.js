@@ -53,10 +53,12 @@ export const useResidentEvilGame = () => {
     }
 
     const getCurrentLifeLabel = (lifePoints) => {
-        if (lifePoints >= 3) {
+        if (lifePoints >= 4) {
             return 'bien';
-        } else if (lifePoints == 2) {
+        } else if (lifePoints == 3) {
             return 'cuidado';
+        } else if (lifePoints == 2) {
+            return 'dañado';
         } else if (lifePoints == 1) {
             return 'peligro';
         } else {
@@ -116,8 +118,8 @@ export const useResidentEvilGame = () => {
 
     const recoverHealth = (points) => {
         let newGameState = { ...gameState };
-        if (newGameState.life + points > 3) {
-            newGameState.life = 3
+        if (newGameState.life + points > 4) {
+            newGameState.life = 4
         } else {
             newGameState.life = newGameState.life + points;
         }

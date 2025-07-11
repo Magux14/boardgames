@@ -167,7 +167,7 @@ export const lstResidentItems = [
         name: 'spray médico',
         type: 'health',
         desc: 'Recupera 2 puntos de vida.',
-        recover: 2,
+        recover: 3,
         probabilityToAppear: 2
     },
     {
@@ -318,7 +318,7 @@ export const lstResidentCombinedItems = [
         name: 'mix hierbas verde x roja',
         type: 'health',
         desc: 'Combinación de hierba verde y roja, recupera 2 de vida',
-        recover: 2,
+        recover: 3,
         itemsToCombine: [
             'hierba verde',
             'hierba roja',

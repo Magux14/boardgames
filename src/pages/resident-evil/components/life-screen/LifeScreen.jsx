@@ -4,10 +4,12 @@ export const LifeScreen = ({ lifePoints }) => {
 
 
     const getCurrentLifeColor = (lifePoints) => {
-        if (lifePoints >= 3) {
+        if (lifePoints >= 4) {
             return 'lime';
-        } else if (lifePoints == 2) {
+        } else if (lifePoints == 3) {
             return 'rgb(255, 213, 0)';
+        } else if (lifePoints == 2) {
+            return 'rgb(255, 153, 0)';
         } else if (lifePoints == 1) {
             return 'rgb(189, 22, 22)';
         } else {
