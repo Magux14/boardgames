@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useSaveState } from '../../../../hooks/useSaveState';
-import { BlockbusterTimer } from '../../../../components/blockbuster-timer/BlockbusterTimer';
+import { Timer } from '../../../../components/timer/Timer';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SyncIcon from '@mui/icons-material/Sync';
 import { Modal, Slider } from 'antd';
@@ -122,7 +122,7 @@ export const TabuGame = () => {
             <br />
             {
                 showTimer &&
-                <BlockbusterTimer defaultTime={60} typeOfTimer='pause' />
+                <Timer defaultTime={60} typeOfTimer='pause' />
             }
             <br />
             <div className="tabu-game__slider-container">

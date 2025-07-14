@@ -3,6 +3,7 @@ import './Header.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChecklistIcon from '@mui/icons-material/Checklist';
 import CasinoIcon from '@mui/icons-material/Casino';
+import AvTimerIcon from '@mui/icons-material/AvTimer';
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
@@ -35,8 +36,13 @@ export const Header = () => {
                         <li onClick={() => goTo('/')}>
                             <span>Lista de juegos</span> <ChecklistIcon />
                         </li>
+
                         <li onClick={() => goTo('/dice')}>
                             <span>Dados</span> <CasinoIcon />
+                        </li>
+
+                        <li onClick={() => goTo('/timer')}>
+                            <span>Timer</span> <AvTimerIcon />
                         </li>
 
                         <li onClick={() => goTo('/counting')}>
@@ -47,10 +53,14 @@ export const Header = () => {
                             <span>Phasmophobia</span> <img id="phasmophobia-icon" src="./icons/phasmophobia-icon.png"></img>
                         </li>
 
+
+                        <li onClick={() => goTo('/resident-evil')}>
+                            <span>Resident Evil</span> <img src="./img/resident-evil/resident-evil.jpg" alt="tabu" width={24} height={24} />
+                        </li>
+
                         <li onClick={() => goTo('/blockbuster')}>
                             <span>Blockbuster</span> <img id="phasmophobia-icon" src="./img/blockbuster/logo.png"></img>
                         </li>
-
 
                         {/* <li onClick={() => goTo('/knowledge-race')}>
                             <span>Knowledge Race</span> <TimeToLeaveIcon />
@@ -74,10 +84,6 @@ export const Header = () => {
 
                         <li onClick={() => goTo('/tabu')}>
                             <span>Tabú</span> <img src="./img/games/tabu.png" alt="tabu" width={24} height={24} />
-                        </li>
-
-                        <li onClick={() => goTo('/resident-evil')}>
-                            <span>Resident Evil</span> <img src="./img/resident-evil/resident-evil.jpg" alt="tabu" width={24} height={24} />
                         </li>
                     </ul>
                 </div>

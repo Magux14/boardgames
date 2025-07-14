@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { GameListPage } from './pages/game-list/GameListPage';
 import { DicePage } from './pages/dice/DicePage';
@@ -13,6 +12,7 @@ import { MarioPartyPage } from './pages/mario-party/MarioPartyPage';
 import { TabuGame } from './pages/tabu/components/tabu-game/TabuGame';
 import { CountingPoints } from './pages/counting-points/CountingPoints';
 import { ResidentEvilPage } from './pages/resident-evil/ResidentEvilPage';
+import { TimerPage } from './pages/timer-page/TimerPage';
 
 export const App = () => {
 
@@ -32,6 +32,7 @@ export const App = () => {
                 <Route path="/tabu" element={<TabuGame />} />
                 <Route path="/counting" element={<CountingPoints />} />
                 <Route path="/resident-evil" element={<ResidentEvilPage />} />
+                <Route path="/timer" element={<TimerPage />} />
             </Routes>
         </BrowserRouter>
     )

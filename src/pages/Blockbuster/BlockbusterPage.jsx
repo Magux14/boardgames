@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BlockbusterTimer } from '../../components/blockbuster-timer/BlockbusterTimer';
+import { Timer } from '../../components/timer/Timer';
 import { blockbusterMovies, blockbusterThings } from '../../../data/blockbuster';
 import { BlockbusterSelectMovies } from './components/blockbuster-select-movies/BlockbusterSelectMovies';
 import { BlockbusterGuessMovies } from './components/blockbuster-guess-movies/BlockbusterGuessMovies';
@@ -180,7 +180,7 @@ export const BlockbusterPage = () => {
                                     <br />
                                     <span>{`"${randomThing}"...`}</span>
                                 </div>
-                                <BlockbusterTimer defaultTime={15} />
+                                <Timer defaultTime={15} />
                             </div>
                         </Modal>
                     }
@@ -247,7 +247,7 @@ export const BlockbusterPage = () => {
                         <CachedIcon className="blockbuster-page__save-icon" onClick={handleSaveStateRefresh} />
                     </div>
                     <div className="blockbuster-page__logo-container">
-                        <img src="./img/blockbuster/logo.png" alt="blockbuster-logo"/>
+                        <img src="./img/blockbuster/logo.png" alt="blockbuster-logo" />
                     </div>
 
                     <div className="blockbuster-page__content-container">

@@ -1,0 +1,40 @@
+.timer-page {
+    &__container {
+        background-color: rgb(160, 107, 107);
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    &__buttons-container {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        button {
+            color: blue;
+            border-radius: 100%;
+            flex: calc(33% - 10px);
+            min-height: 100px;
+            font-weight: bold;
+            color: white;
+            background: rgb(160, 52, 52);
+        }
+    }
+
+    .timer {
+        background: transparent;
+
+        &__button-reset-timer {
+            background: rgb(207, 106, 123);
+            color: white;
+        }
+
+        &__button-reset-timer--stopped {
+            background: grey;
+            color: rgb(180, 180, 180);
+        }
+    }
+}

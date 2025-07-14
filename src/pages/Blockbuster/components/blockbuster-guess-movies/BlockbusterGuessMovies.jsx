@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { BlockbusterTimer } from '../../../../components/blockbuster-timer/BlockbusterTimer';
+import { Timer } from '../../../../components/timer/Timer';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import PublishedWithChangesIcon from '@mui/icons-material/PublishedWithChanges';
 import CloseIcon from '@mui/icons-material/Close';
@@ -81,11 +81,11 @@ export const BlockbusterGuessMovies = ({ lstMovies = [], timeToGuessMovies, call
                 </div>
 
                 <span hidden={!((isWinnerTeam && !stealPoints) || (!isWinnerTeam && stealPoints))}>
-                    <BlockbusterTimer defaultTime={timeToGuessMovies} typeOfTimer='pause' />
+                    <Timer defaultTime={timeToGuessMovies} typeOfTimer='pause' />
                 </span>
 
                 <span hidden={!((isWinnerTeam && stealPoints) || (!isWinnerTeam && !stealPoints))}>
-                    <BlockbusterTimer defaultTime={timeToGuessMovies} typeOfTimer='pause' />
+                    <Timer defaultTime={timeToGuessMovies} typeOfTimer='pause' />
                 </span>
 
                 <div className="blockbuster-guess-movies__instructions-container">

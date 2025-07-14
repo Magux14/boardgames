@@ -1,13 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './blockbuster-timer.scss';
+import './timer.scss';
 
-export const BlockbusterTimer = ({ defaultTime, typeOfTimer = 'restart' }) => {
+export const Timer = ({ defaultTime, typeOfTimer = 'restart', newInjectedTime }) => {
     const [timer, setTimer] = useState();
     const [timerIsTicking, setTimerIsTicking] = useState(false);
     const [isTouchingButton, setIsTouchingButton] = useState(false);
     const [forceTimerUpdate, setForceTimerUpdate] = useState();
     const intervalRef = useRef(null);
     const isMobile = window.innerWidth < 768;
+
+    if (newInjectedTime) {
+        defaultTime = newInjectedTime;
+    }
 
     const restartTimer = () => {
         if (intervalRef) {
@@ -69,13 +73,20 @@ export const BlockbusterTimer = ({ defaultTime, typeOfTimer = 'restart' }) => {
         return () => clearInterval(intervalRef.current);
     }, [timer, forceTimerUpdate, timerIsTicking]);
 
+    useEffect(() => {
+        console.log('eseffect injected', newInjectedTime)
+        if (newInjectedTime) {
+            handleClick();
+        }
+    }, [newInjectedTime])
+
     return (
-        <div className="blockbuster-timer blockbuster-timer__timer-container">
+        <div className="timer timer__timer-container">
             <audio id="action-sound">
                 <source type="audio/mp3" />
             </audio>
             <button
-                className={`blockbuster-timer__button-reset-timer ${typeOfTimer == 'restart' ? 'blockbuster-timer__button-reset-timer--battle' : ''} ${!timerIsTicking ? 'blockbuster-timer__button-reset-timer--stopped' : ''} ${(isTouchingButton && isMobile) ? 'blockbuster-timer__on-touch-start-button' : ''}`}
+                className={`timer__button-reset-timer ${typeOfTimer == 'restart' ? 'timer__button-reset-timer--battle' : ''} ${!timerIsTicking ? 'timer__button-reset-timer--stopped' : ''} ${(isTouchingButton && isMobile) ? 'timer__on-touch-start-button' : ''}`}
                 {
                 ...isMobile
                     ? {
@@ -92,7 +103,7 @@ export const BlockbusterTimer = ({ defaultTime, typeOfTimer = 'restart' }) => {
             >
                 {
                     (timer == null || timer <= 0) &&
-                    <span className={`blockbuster-timer__button-reset-timer--font-smaller`}>
+                    <span className={`timer__button-reset-timer--font-smaller`}>
                         {
                             timer == null ? '!TURNO!' : '¡TIEMPO!'
                         }

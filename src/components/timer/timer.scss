@@ -1,8 +1,6 @@
 @use '../../pages/blockbuster/blockbuster-page.scss' as *;
 
-.blockbuster-timer {
-
-    background: $blockbuster-yellow;
+.timer {
 
     * {
         user-select: none;
