@@ -1158,7 +1158,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'Exploding Kittens.webp',
         minutes: 15,
-        new: true
+        rank: 4
     },
     {
         name: 'Coffe Rush',
@@ -1168,6 +1168,6 @@ export const lstGames = [
         difficulty: 4,
         img: 'coffe rush.webp',
         minutes: 30,
-        new: true
+        rank: 5
     },
 ]
