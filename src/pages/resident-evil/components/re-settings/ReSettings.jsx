@@ -59,7 +59,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             return lstResidentItems.find(item => item.name == name);
         }
         const gameState = {
-            life: 3,
+            life: 4,
             gunBullets: difficulty.gunBullets,
             shotgunBullets: difficulty.shotgunBullets,
             machinegunBullets: difficulty.machinegunBullets,

@@ -292,17 +292,17 @@ export const lstResidentItems = [
         probabilityToAppear: 4
     },
     {
-        name: 'walkers',
+        name: 'walker',
         type: 'activation',
         probabilityToAppear: 5
     },
     {
-        name: 'runners',
+        name: 'runner',
         type: 'activation',
         probabilityToAppear: 3
     },
     {
-        name: 'boomers',
+        name: 'boomer',
         type: 'activation',
         probabilityToAppear: 3
     },
