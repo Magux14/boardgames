@@ -19,19 +19,19 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
     const removePosibleWeaponsByDifficulty = (lsItemsTobeGetted) => {
 
         if (gameState.difficulty == 'normal' || gameState.difficulty == 'díficil' || gameState.difficulty == 'legendario') {
-            lsItemsTobeGetted = lstResidentItems.filter(item =>
+            lsItemsTobeGetted = lsItemsTobeGetted.filter(item =>
                 item.name != 'gatlin gun'
             );
         }
 
         if (gameState.difficulty == 'díficil' || gameState.difficulty == 'legendario') {
-            lsItemsTobeGetted = lstResidentItems.filter(item =>
+            lsItemsTobeGetted = lsItemsTobeGetted.filter(item =>
                 item.name != 'sti eagle 6.0'
             );
         }
 
         if (gameState.difficulty == 'legendario') {
-            lsItemsTobeGetted = lstResidentItems.filter(item =>
+            lsItemsTobeGetted = lsItemsTobeGetted.filter(item =>
                 item.name != 'escopeta western m37' ||
                 item.name != 'hot dogger'
             );
