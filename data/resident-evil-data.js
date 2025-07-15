@@ -103,7 +103,7 @@ export const lstResidentItems = [
             minRange: 0,
             maxRange: 2,
             dices: 5,
-            hit: 4,
+            hit: 5,
             firePower: 1
         },
         probabilityToAppear: 15
@@ -115,7 +115,7 @@ export const lstResidentItems = [
             minRange: 0,
             maxRange: 2,
             dices: 5,
-            hit: 3,
+            hit: 4,
             firePower: 2
         },
         probabilityToAppear: 2
