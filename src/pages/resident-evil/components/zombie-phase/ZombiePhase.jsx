@@ -10,8 +10,8 @@ export const ZombiePhase = ({ playersNum }) => {
     const [zombiePhase, setZombiePhase] = useState();
 
     const getRandomNumber = (min, max) => {
-        if (playersNum > 3) {
-            playersNum = 3;
+        if (playersNum > 2) {
+            playersNum = 2;
         }
         max = max + playersNum - 1;
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -37,7 +37,7 @@ export const ZombiePhase = ({ playersNum }) => {
 
     const setValues = () => {
         const lstZombies = [];
-        const numOfZombies = getRandomNumber(1, 2);
+        const numOfZombies = getRandomNumber(1, playersNum);
         for (let i = 0; i < numOfZombies; i++) {
             lstZombies.push(getRandomItem());
         }
