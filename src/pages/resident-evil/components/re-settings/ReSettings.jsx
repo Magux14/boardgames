@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { lstResidentItems } from '../../../../../data/resident-evil-data';
 import ConfirmationModal from '../../../../components/confirmation-modal/ConfirmationModal';
 import './re-settings.scss';
+import { ResidentRules } from '../resident-rules/ResidentRules';
 
 export const ReSettings = ({ callbackSetDifficulty }) => {
 
@@ -105,6 +106,8 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
                     )
                 }
             </div>
+
+            <ResidentRules />
 
         </div>
     )
