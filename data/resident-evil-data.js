@@ -417,3 +417,65 @@ export const lstResidentZombies = [
         probabilityToAppear: 10
     }
 ]
+
+export const residentRooms = {
+    upper: [
+        'balcony',
+        'attic',
+        'bedroom',
+        'master bedroom',
+        'gallery',
+        'tower',
+    ],
+    ground: [
+        'ball room',
+        'coal chute',
+        'dining room',
+        'gardens',
+        'patio',
+        'graveyard',
+    ],
+    basement: [
+        'underground lake',
+        'furnace room',
+        'catacombs',
+        'storeroom',
+        'wine cellar',
+        'larder',
+        'pentagram chamber',
+        'crypt',
+        'chasm',
+        'stairs from basement',
+    ],
+    sharedRooms: {
+        upperGround: [
+            'charred room',
+            'conservatory',
+            'chapel',
+            'collapsed room',
+            'bloody room',
+            'library',
+        ],
+        groundBasement: [
+            'abandoned room',
+            'kitchen',
+        ],
+        upperGroundBasement: [
+            'game room',
+            'junk room',
+            'organ room',
+            'mystic elevator',
+            'dusty hallway',
+            'statuary corridor',
+            'creaky hallway',
+        ],
+        upperBasement: [
+            'vault',
+            'stored room',
+            'gymnasium',
+            'research laboratory',
+            'operating laboratory',
+            'servants quarters',
+        ],
+    }
+}
