@@ -38,11 +38,22 @@
         font-weight: bold;
     }
 
-    &__players-container {
+    &__fields-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__field-container {
         display: flex;
         align-items: center;
         gap: 10px;
         color: white;
+
+        input[type="checkbox"] {
+            width: 30px;
+            height: 30px;
+        }        
     }
 
     &__players-label {

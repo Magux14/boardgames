@@ -13,7 +13,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             weapons: ['rifle de asalto', 'escopeta', 'tubo', 'spray médico'],
             gunBullets: 16,
             shotgunBullets: 20,
-            machinegunBullets: 200,
+            machinegunBullets: 100,
             sniperBullets: 10
         },
         {
@@ -22,7 +22,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             weapons: ['pistola g19', 'tubo', 'hierba verde'],
             gunBullets: 16,
             shotgunBullets: 4,
-            machinegunBullets: 40,
+            machinegunBullets: 20,
             sniperBullets: 5
         },
         {
@@ -31,7 +31,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             weapons: ['pistola g19', 'cuchillo'],
             gunBullets: 8,
             shotgunBullets: 2,
-            machinegunBullets: 30,
+            machinegunBullets: 10,
             sniperBullets: 2
         },
         {
@@ -40,7 +40,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             weapons: ['cuchillo'],
             gunBullets: 8,
             shotgunBullets: 2,
-            machinegunBullets: 15,
+            machinegunBullets: 5,
             sniperBullets: 1
         }
     ]
@@ -48,6 +48,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
     const [selectedDifficulty, setSelectedDifficulty] = useState(null);
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
     const [playersNum, setPlayersNum] = useState(2);
+    const [isHost, setIsHost] = useState(false);
 
     const handleOpenConfirmationModal = (difficulty) => {
         setShowConfirmationModal(true);
@@ -68,7 +69,9 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             items: difficulty.weapons.map(name => getItemByName(name)),
             selectedItemIndex: 0,
             playersNum: isNaN(playersNum) ? 2 : Number(playersNum),
-            difficulty: difficulty.name
+            difficulty: difficulty.name,
+            isHost,
+            lstRoomsWithItems: []
         }
         callbackSetDifficulty(gameState);
     }
@@ -95,9 +98,15 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
                 </div>
             </div>
 
-            <div className="re-settings__players-container">
+            <div className="re-settings__fields-container">
+            <div className="re-settings__field-container">
                 <div className="re-settings__players-label" >Número de jugadores:</div>
                 <input type="number" className="re-settings__players-input" value={playersNum} onChange={($ev) => setPlayersNum($ev.target.value)}></input>
+            </div>
+              <div className="re-settings__field-container">
+                <div className="re-settings__players-label" >Soy el Host de la partida</div>
+                <input type="checkbox" className="re-settings__players-input" checked={isHost} onChange={($ev) => setIsHost($ev.target.checked)}></input>
+            </div>
             </div>
             <div className="re-settings__buttons-container">
                 {

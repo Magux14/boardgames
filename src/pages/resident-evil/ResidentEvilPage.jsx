@@ -7,6 +7,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import { Modal } from 'antd';
 import { ReSettings } from './components/re-settings/ReSettings';
 import './resident-evil.scss';
+import { ResidentRooms } from './components/resident-rooms/ResidentRooms';
 
 export const ResidentEvilPage = () => {
 
@@ -30,7 +31,6 @@ export const ResidentEvilPage = () => {
 
     return (
         <div className="resident-evil__container">
-
             <Modal
                 open={openSettingsModal}
                 footer={null}
@@ -108,6 +108,11 @@ export const ResidentEvilPage = () => {
                     defaultAddingValues={1}
                     editMode={editMode}
                 />
+
+                {
+                    gameState.isHost &&
+                    <ResidentRooms gameState={gameState} setGameValue={setGameValue} />
+                }
             </div>
         </div>
     )

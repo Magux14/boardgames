@@ -1,0 +1,51 @@
+.resident-rooms {
+
+    &__container {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        color: white;
+    }
+
+    &__fields-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__field-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        color: white;
+        text-transform: capitalize;
+
+        input[type="checkbox"] {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &__item-label {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item-label--objective {
+        color: rgb(197, 104, 104);
+        font-size: 12px;
+    }
+
+    &__item-label--weapon {
+        color: rgb(255, 208, 0);
+        font-size: 12px;
+    }
+
+}

@@ -44,9 +44,10 @@ export const useResidentEvilGame = () => {
             } else if (indexToDelete < gameState.selectedItemIndex) {
                 gameState.selectedItemIndex -= 1;
             }
-
         } else if (type == 'items') {
             gameState.items = value;
+        } else if (type == 'lstRoomsWithItems') {
+            gameState.lstRoomsWithItems = value;
         }
 
         setGameStateAndSave(gameState);
