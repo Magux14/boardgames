@@ -482,6 +482,19 @@ export const residentRooms = {
 
 export const lstZombiesSpawnPerRoom = [
     {
+        danger: 0,
+        lstProbability: [
+            {
+                numOfZombies: 0,
+                probabilityToAppear: 75
+            },
+            {
+                numOfZombies: 1,
+                probabilityToAppear: 25
+            },
+        ]
+    },
+    {
         danger: 1,
         lstProbability: [
             {

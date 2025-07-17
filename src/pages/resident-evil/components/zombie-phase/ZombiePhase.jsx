@@ -9,14 +9,6 @@ export const ZombiePhase = ({ playersNum }) => {
 
     const [zombiePhase, setZombiePhase] = useState();
 
-    const getRandomNumber = (min, max) => {
-        if (playersNum > 2) {
-            playersNum = 2;
-        }
-        max = max + playersNum - 1;
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
     const getRandomItem = () => {
         const total = lstResidentZombies.reduce((acc, item) => acc + item.probabilityToAppear, 0);
         let selectedItem;
@@ -118,13 +110,16 @@ export const ZombiePhase = ({ playersNum }) => {
 
             <div className="zombie-phase__buttons-container">
                 <button className="zombie-phase__button" onClick={() => setZombieData(1)}>
-                    <img src={`./img/resident-evil/events/basic.webp`} />
+                    <img src={`./img/resident-evil/rooms/danger-1.webp`} />
                 </button>
                 <button className="zombie-phase__button" onClick={() => setZombieData(2)}>
-                    <img src={`./img/resident-evil/events/warning.webp`} />
+                    <img src={`./img/resident-evil/rooms/danger-2.webp`} />
                 </button>
                 <button className="zombie-phase__button" onClick={() => setZombieData(3)}>
-                    <img src={`./img/resident-evil/events/danger.webp`} />
+                    <img src={`./img/resident-evil/rooms/danger-3.webp`} />
+                </button>
+                <button className="zombie-phase__button" onClick={() => setZombieData(0)}>
+                    <img src={`./img/resident-evil/rooms/danger-0.webp`} />
                 </button>
             </div>
 
