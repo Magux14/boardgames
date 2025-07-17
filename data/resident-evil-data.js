@@ -158,21 +158,6 @@ export const lstResidentItems = [
         instantUse: true
     },
     {
-        name: 'granada de luz',
-        type: 'weapon',
-        desc: 'Al ser lanzada todos los zombies en el área quedarán "atontados" y podrás pasar por esa área sin tener que pagar 1 acción extra por cada zombie en el área.',
-        weapon: {
-            minRange: 1,
-            maxRange: 1,
-            dices: 0,
-            hit: 0,
-            firePower: 0,
-            notEquipable: true
-        },
-        probabilityToAppear: 7,
-        instantUse: true
-    },
-    {
         name: 'spray médico',
         type: 'health',
         desc: 'Recupera 2 puntos de vida.',
@@ -235,10 +220,25 @@ export const lstResidentItems = [
         }
     },
     {
+        name: 'granada de luz',
+        type: 'item',
+        desc: 'Al ser lanzada (rango de lanzamiento 1-1) todos los zombies en el área quedarán "atontados" y podrás pasar por esa área sin tener que pagar dados de salvación por cada zombie en el área.',
+        weapon: {
+            minRange: 1,
+            maxRange: 1,
+            dices: 0,
+            hit: 0,
+            firePower: 0,
+            notEquipable: true
+        },
+        probabilityToAppear: 4,
+        instantUse: true
+    },
+    {
         name: 'tarjeta rpd',
         type: 'item',
         desc: 'Quien posea esta tarjeta podrá tener 1 acción extra en su turno (limitado a una tarjeta por jugador)',
-        probabilityToAppear: 4
+        probabilityToAppear: 2
     },
     // {
     //     name: 'máquina de balas',
@@ -250,7 +250,7 @@ export const lstResidentItems = [
         name: 'frituras',
         type: 'item',
         desc: 'Tira un dado extra al atacar con un arma (usar este objeto no cuesta ninguna acción)',
-        probabilityToAppear: 8,
+        probabilityToAppear: 6,
         instantUse: true
     },
     {
@@ -319,7 +319,13 @@ export const lstResidentItems = [
         name: 'némesis',
         type: 'activation',
         probabilityToAppear: 8
-    }
+    },
+    {
+        name: 'muestra virus t',
+        type: 'objective',
+        desc: 'Una muestra del virus T, por esto vinimos aquí',
+        probabilityToAppear: 0,
+    },
 ]
 
 export const lstResidentCombinedItems = [

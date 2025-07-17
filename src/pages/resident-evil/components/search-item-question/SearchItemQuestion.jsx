@@ -40,6 +40,11 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
         return lsItemsTobeGetted;
     }
 
+    const handleAddObjective = () => {
+        const lsItemsTobeGetted = lstResidentItems.filter(item => item.type == 'objective');
+        handleAddItemToInventory(lsItemsTobeGetted[0]);
+    }
+
     const handleAddRandomItemToIventory = (type) => {
         let lsItemsTobeGetted = []
         if (type == 'weapon') {
@@ -123,6 +128,15 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
             </div>
             <div className="search-item-question__option-container">
                 <button
+                    className="search-item-question__option-button search-item-question__option-button--objective"
+                    onClick={() => handleAddObjective()}
+                    disabled={inventoryFull}
+                >
+                    Un objetivo
+                </button>
+            </div>
+            <div className="search-item-question__option-container">
+                <button
                     className="search-item-question__option-button search-item-question__option-button--friend"
                     onClick={() => setOpenInventorySelection(true)}
                     disabled={inventoryFull}
@@ -157,7 +171,7 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
                 className="inventory__modal"
                 destroyOnClose={true}
             >
-                <ZombiePhase playersNum={gameState.playersNum} />
+                <ZombiePhase />
             </Modal>
         </div>
 

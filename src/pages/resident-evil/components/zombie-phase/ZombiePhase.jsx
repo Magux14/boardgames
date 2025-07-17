@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import WarningIcon from '@mui/icons-material/Warning';
 import './zombie-phase.scss';
 
-export const ZombiePhase = ({ playersNum }) => {
+export const ZombiePhase = () => {
 
     const [zombiePhase, setZombiePhase] = useState();
 
