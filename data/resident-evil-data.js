@@ -7,7 +7,8 @@ export const lstResidentItems = [
             maxRange: 0,
             dices: 1,
             hit: 4,
-            firePower: 1
+            firePower: 1,
+            critic: 6
         },
         probabilityToAppear: 5,
         lstToCombineItems: ['cuchillo']
@@ -20,7 +21,8 @@ export const lstResidentItems = [
             maxRange: 0,
             dices: 2,
             hit: 4,
-            firePower: 1
+            firePower: 1,
+            critic: 12
         },
         probabilityToAppear: 12
     },
@@ -32,7 +34,8 @@ export const lstResidentItems = [
             maxRange: 0,
             dices: 2,
             hit: 3,
-            firePower: 2
+            firePower: 2,
+            critic: 12
         },
         probabilityToAppear: 5
     },
@@ -45,6 +48,7 @@ export const lstResidentItems = [
             dices: 1,
             hit: 3,
             firePower: 1,
+            critic: 6
         },
         probabilityToAppear: 18
     },
@@ -56,7 +60,8 @@ export const lstResidentItems = [
             maxRange: 1,
             dices: 2,
             hit: 3,
-            firePower: 1
+            firePower: 1,
+            critic: 12
         },
         probabilityToAppear: 7
     },
@@ -68,7 +73,8 @@ export const lstResidentItems = [
             maxRange: 1,
             dices: 3,
             hit: 3,
-            firePower: 1
+            firePower: 1,
+            critic: 15
         },
         probabilityToAppear: 3
     },
@@ -80,7 +86,8 @@ export const lstResidentItems = [
             maxRange: 1,
             dices: 2,
             hit: 3,
-            firePower: 2
+            firePower: 2,
+            critic: 12
         },
         probabilityToAppear: 14
     },
@@ -92,7 +99,8 @@ export const lstResidentItems = [
             maxRange: 1,
             dices: 3,
             hit: 3,
-            firePower: 2
+            firePower: 2,
+            critic: 15
         },
         probabilityToAppear: 5
     },
@@ -129,7 +137,8 @@ export const lstResidentItems = [
             maxRange: 3,
             dices: 1,
             hit: 2,
-            firePower: 1
+            firePower: 1,
+            critic: 6
         },
         probabilityToAppear: 2
     },

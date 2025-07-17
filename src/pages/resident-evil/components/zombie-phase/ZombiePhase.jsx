@@ -1,6 +1,5 @@
 
 import { lstResidentZombies, lstZombiesSpawnPerRoom } from '../../../../../data/resident-evil-data';
-import CachedIcon from '@mui/icons-material/Cached';
 import { useEffect, useState } from 'react';
 import WarningIcon from '@mui/icons-material/Warning';
 import './zombie-phase.scss';
