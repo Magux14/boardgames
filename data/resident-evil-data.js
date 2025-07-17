@@ -479,3 +479,59 @@ export const residentRooms = {
         ],
     }
 }
+
+export const lstZombiesSpawnPerRoom = [
+    {
+        danger: 1,
+        lstProbability: [
+            {
+                numOfZombies: 0,
+                probabilityToAppear: 40
+            },
+            {
+                numOfZombies: 1,
+                probabilityToAppear: 58
+            },
+            {
+                numOfZombies: 2,
+                probabilityToAppear: 2
+            },
+
+        ]
+    },
+    {
+        danger: 2,
+        lstProbability: [
+            {
+                numOfZombies: 0,
+                probabilityToAppear: 20
+            },
+            {
+                numOfZombies: 1,
+                probabilityToAppear: 70
+            },
+            {
+                numOfZombies: 2,
+                probabilityToAppear: 10
+            },
+        ]
+    },
+    {
+        danger: 3,
+        lstProbability: [
+            {
+                numOfZombies: 0,
+                probabilityToAppear: 2
+            },
+            {
+                numOfZombies: 1,
+                probabilityToAppear: 18
+            },
+            {
+                numOfZombies: 2,
+                probabilityToAppear: 80
+            },
+
+        ]
+    }
+]

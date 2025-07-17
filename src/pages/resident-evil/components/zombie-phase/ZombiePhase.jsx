@@ -1,5 +1,5 @@
 
-import { lstResidentZombies } from '../../../../../data/resident-evil-data';
+import { lstResidentZombies, lstZombiesSpawnPerRoom } from '../../../../../data/resident-evil-data';
 import CachedIcon from '@mui/icons-material/Cached';
 import { useEffect, useState } from 'react';
 import WarningIcon from '@mui/icons-material/Warning';
@@ -35,42 +35,47 @@ export const ZombiePhase = ({ playersNum }) => {
         };
     }
 
-    const setValues = () => {
+    const setZombieData = (typeOfDanger = 1) => {
+        const total = 100;
+        const random = Math.random() * total;
+        const zombiesSpanByDanger = lstZombiesSpawnPerRoom.find(item => item.danger == typeOfDanger);
+        const lstProbabilityByDanger = zombiesSpanByDanger.lstProbability;
+        let acc = 0;
+        let selectedItem;
+        for (const item of lstProbabilityByDanger) {
+            acc += item.probabilityToAppear;
+            if (random < acc) {
+                selectedItem = item;
+                break;
+            }
+        }
+
         const lstZombies = [];
-        const numOfZombies = getRandomNumber(1, playersNum);
+        const numOfZombies = selectedItem.numOfZombies;
         for (let i = 0; i < numOfZombies; i++) {
             lstZombies.push(getRandomItem());
         }
 
-        // const results = {};
-        // for (let i = 0; i < 1000; i++) {
-        //     const selected = getRandomItem();
-        //     results[selected.name] = (results[selected.name] || 0) + 1;
-        // }
-
-        const nemesisAppear = Math.random() < 0.333;
+        const nemesisAppear = Math.random() < 0.25;
         setZombiePhase({
             lstZombies,
             nemesisAppear,
             key: (zombiePhase?.key || 0) + 1
         });
+
     }
 
     useEffect(() => {
-        setValues();
     }, [])
 
-    if (!zombiePhase) {
-        return <div className="zombie-phase__container"></div>
-    }
-
     return (
-        <div key={zombiePhase.key} className="zombie-phase__container">
-            <div key={zombiePhase.key} className="zombie-phase__zombies-container">
-                {
-                    zombiePhase.lstZombies.map(zombieItem =>
-                        <>
-                            <div className="zombie-phase__zombie-container">
+        <div className="zombie-phase__container">
+            {
+                zombiePhase &&
+                <div key={`zombie-phase-${zombiePhase.key}`} className="zombie-phase__zombies-container">
+                    {
+                        zombiePhase.lstZombies.map((zombieItem, index) =>
+                            <div key={`zombie-item-${index}`} className="zombie-phase__zombie-container">
                                 <img src={`./img/resident-evil/zombies/${zombieItem.zombie.name}.webp`} />
                                 <div className="zombie-phase__name-container">
                                     {zombieItem.zombie.name}
@@ -81,32 +86,48 @@ export const ZombiePhase = ({ playersNum }) => {
                                         <WarningIcon />
                                     </div>
                                 }
-
                             </div>
+                        )
+                    }
+                    {
+                        !zombiePhase.lstZombies.length &&
+                        <div className="zombie-phase__zombie-container">
+                            <img src={`./img/resident-evil/zombies/clear.webp`} />
+                            <div className="zombie-phase__name-container">
+                                Despejado
+                            </div>
+                        </div>
+                    }
+                    {
+                        zombiePhase.nemesisAppear &&
+                        <div className="zombie-phase__zombie-container">
+                            <img src={`./img/resident-evil/zombies/némesis.webp`} />
+                            <div className="zombie-phase__name-container">
+                                Némesis
+                            </div>
+                            <div className="zombie-phase__activation-container">
+                                <WarningIcon />
+                            </div>
+                        </div>
+                    }
+                    {/* <div className="zombie-phase__refresh-container">
+                        <CachedIcon onClick={setValues} />
+                    </div> */}
+                </div>
+            }
 
-                            {/* <div className="zombie-phase__span-count-container">
-                            x {getRandomNumber(zombiePhase.zombie.min, zombiePhase.zombie.max)}
-                        </div> */}
-                        </>
-                    )
-                }
-                {
-                    zombiePhase.nemesisAppear &&
-                    <div className="zombie-phase__zombie-container">
-                        <img src={`./img/resident-evil/zombies/némesis.webp`} />
-                        <div className="zombie-phase__name-container">
-                            Némesis
-                        </div>
-                        <div className="zombie-phase__activation-container">
-                            <WarningIcon />
-                        </div>
-                    </div>
-                }
+            <div className="zombie-phase__buttons-container">
+                <button className="zombie-phase__button" onClick={() => setZombieData(1)}>
+                    <img src={`./img/resident-evil/events/basic.webp`} />
+                </button>
+                <button className="zombie-phase__button" onClick={() => setZombieData(2)}>
+                    <img src={`./img/resident-evil/events/warning.webp`} />
+                </button>
+                <button className="zombie-phase__button" onClick={() => setZombieData(3)}>
+                    <img src={`./img/resident-evil/events/danger.webp`} />
+                </button>
             </div>
 
-            <div className="zombie-phase__refresh-container">
-                <CachedIcon onClick={setValues} />
-            </div>
         </div>
     )
 }

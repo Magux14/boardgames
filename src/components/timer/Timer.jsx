@@ -74,7 +74,6 @@ export const Timer = ({ defaultTime, typeOfTimer = 'restart', newInjectedTime })
     }, [timer, forceTimerUpdate, timerIsTicking]);
 
     useEffect(() => {
-        console.log('eseffect injected', newInjectedTime)
         if (newInjectedTime) {
             handleClick();
         }

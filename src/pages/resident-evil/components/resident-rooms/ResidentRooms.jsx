@@ -22,14 +22,10 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
                 ...residentRooms.sharedRooms.upperGround]
         }
 
-        console.log('remainingRooms', remainingRooms);
         //objectives
         const obj1 = pickRoom(remainingRooms.upper);
         const obj2 = pickRoom(remainingRooms.ground);
         const obj3 = pickRoom(remainingRooms.basement);
-
-        console.log(obj1, obj2, obj3);
-        console.log('remainingRooms', remainingRooms);
 
         const weapon1 = pickRoom(remainingRooms.upper);
         const weapon2 = pickRoom(remainingRooms.ground);
@@ -91,7 +87,6 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
 
             return 0;
         });
-        console.log('lstRoomsWithItems', lstRoomsWithItems);
         gameState.lstRoomsWithItems = lstRoomsWithItems;
         setGameValue('lstRoomsWithItems', lstRoomsWithItems);
     }
