@@ -10,7 +10,7 @@ export const lstResidentItems = [
             firePower: 1,
             critic: 6
         },
-        probabilityToAppear: 5,
+        probabilityToAppear: 10,
         lstToCombineItems: ['cuchillo']
     },
     {
@@ -41,6 +41,7 @@ export const lstResidentItems = [
     },
     {
         name: 'pistola g19',
+        desc: 'Arma ligera, incluso si tienes otra podrías usar una en cada mano',
         type: 'weapon',
         weapon: {
             minRange: 0,
@@ -50,7 +51,8 @@ export const lstResidentItems = [
             firePower: 1,
             critic: 6
         },
-        probabilityToAppear: 18
+        probabilityToAppear: 18,
+        lstToCombineItems: ['pistola g19']
     },
     {
         name: 'merc handgun',
@@ -403,6 +405,23 @@ export const lstResidentCombinedItems = [
         itemsToCombine: [
             'cuchillo',
             'cuchillo',
+        ],
+    },
+    {
+        name: 'pistolas g19 duales',
+        desc: 'Una en cada mano, tu decides si disparas las 2 o solo una por acción (1 dado por disparo) se gastan balas por disparo',
+        type: 'weapon',
+        weapon: {
+            minRange: 0,
+            maxRange: 1,
+            dices: 2,
+            hit: 3,
+            firePower: 1,
+            critic: 6
+        },
+        itemsToCombine: [
+            'pistola g19',
+            'pistola g19',
         ],
     },
 ]
