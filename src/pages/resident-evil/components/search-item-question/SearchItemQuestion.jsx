@@ -51,6 +51,9 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
             lsItemsTobeGetted = removePosibleWeaponsByDifficulty(lstResidentItems.filter(item => item.type == 'weapon'));
         } else if (type == 'item') {
             lsItemsTobeGetted = lstResidentItems.filter(item => item.type != 'weapon');
+            if (!gameState.isNemesisActive) {
+                lsItemsTobeGetted = lsItemsTobeGetted.filter(item => item.name != 'némesis');
+            }
         }
 
         const getRandomItem = () => {

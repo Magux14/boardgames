@@ -79,9 +79,6 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
         ]
 
         lstRoomsWithItems = lstRoomsWithItems.sort((a, b) => {
-            // if (a.type > b.type) return -1;
-            // if (a.type < b.type) return 1;
-            debugger
             if (a.name.includes('???')) {
                 return 1;
             } else {

@@ -180,17 +180,17 @@ export const lstResidentItems = [
         probabilityToAppear: 5,
         lstToCombineItems: ['hierba verde']
     },
-    {
-        name: 'llave stars',
-        type: 'item',
-        desc: 'Con esta llave puedes abrir la bodega de armas',
-        probabilityToAppear: 4
-    },
+    // {
+    //     name: 'llave stars',
+    //     type: 'item',
+    //     desc: 'Con esta llave puedes abrir la bodega de armas',
+    //     probabilityToAppear: 4
+    // },
     {
         name: 'pólvora a',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
-        probabilityToAppear: 5,
+        probabilityToAppear: 3,
         lstToCombineItems: ['pólvora a'],
         bulletsCreation: {
             amount: 10,
@@ -231,7 +231,7 @@ export const lstResidentItems = [
             firePower: 0,
             notEquipable: true
         },
-        probabilityToAppear: 4,
+        probabilityToAppear: 5,
         instantUse: true
     },
     {
@@ -288,7 +288,7 @@ export const lstResidentItems = [
             minQuantity: 10,
             maxQuantity: 30,
         },
-        probabilityToAppear: 7
+        probabilityToAppear: 8
     },
     {
         name: 'balas francotirador',
@@ -298,7 +298,7 @@ export const lstResidentItems = [
             minQuantity: 1,
             maxQuantity: 4,
         },
-        probabilityToAppear: 4
+        probabilityToAppear: 5
     },
     {
         name: 'walker',
@@ -397,7 +397,8 @@ export const lstResidentCombinedItems = [
             maxRange: 0,
             dices: 3,
             hit: 4,
-            firePower: 1
+            firePower: 1,
+            critic: 15
         },
         itemsToCombine: [
             'cuchillo',
@@ -454,7 +455,6 @@ export const residentRooms = {
         'underground lake',
         'furnace room',
         'catacombs',
-        'storeroom',
         'wine cellar',
         'larder',
         'pentagram chamber',
