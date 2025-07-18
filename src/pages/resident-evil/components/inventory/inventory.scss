@@ -141,20 +141,28 @@
         overflow: hidden;
     }
 
-    &__item-search-container {
+    &__buttons-container {
         display: flex;
         align-items: center;
+        gap: 10px;
 
         button {
             border-radius: 5px;
             color: white;
-            background: rgb(34, 141, 34);
             padding: 10px 25px
         }
 
         button:disabled {
             opacity: 0.5;
         }
+    }
+
+    &__button--search {
+        background: rgb(34, 141, 34);
+    }
+
+    &__button--zombies {
+        background: rgb(114, 12, 26);
     }
 
     &__modal {

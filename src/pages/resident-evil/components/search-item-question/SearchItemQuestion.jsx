@@ -4,12 +4,10 @@ import { Modal } from 'antd';
 import { InventorySelection } from '../inventory-selection/InventorySelection';
 import { lstResidentItems } from '../../../../../data/resident-evil-data';
 import './search-item-question.scss';
-import { ZombiePhase } from '../zombie-phase/ZombiePhase';
 
 export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, userItems, inventoryFull, callbackClose }) => {
 
     const [openInventorySelection, setOpenInventorySelection] = useState(false);
-    const [openZombiePhase, setOpenZombiePhase] = useState(false);
 
     const handleAddItemToInventory = (item, openConfirmationModal) => {
         callbackAddItemToInventory(item, openConfirmationModal);
@@ -95,11 +93,6 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
         handleAddItemToInventory(selectedItem);
     }
 
-    const handleCloseZombiePhase = () => {
-        setOpenZombiePhase(false)
-        callbackClose();
-    }
-
     return (
         <div className="search-item-question__container">
             <div className="search-item-question__title-container">
@@ -147,14 +140,6 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
                     Un compañero me está dando un objeto
                 </button>
             </div>
-            <div className="search-item-question__option-container">
-                <button
-                    className="search-item-question__option-button search-item-question__option-button--danger"
-                    onClick={() => setOpenZombiePhase(true)}
-                >
-                    Zombies
-                </button>
-            </div>
 
             <Modal
                 open={openInventorySelection}
@@ -166,16 +151,6 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
                 <InventorySelection callbackAddItemToInventory={handleAddItemToInventory} />
             </Modal>
 
-            <Modal
-                open={openZombiePhase}
-                onCancel={handleCloseZombiePhase}
-                footer={null}
-                centered={true}
-                className="inventory__modal"
-                destroyOnClose={true}
-            >
-                <ZombiePhase gameState={gameState} />
-            </Modal>
         </div>
 
     )

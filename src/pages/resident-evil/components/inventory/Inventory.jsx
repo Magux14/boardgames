@@ -8,6 +8,7 @@ import { ItemDetails } from '../item-details/ItemDetails';
 import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
 import { lstResidentCombinedItems } from '../../../../../data/resident-evil-data';
 import { useResidentAudio } from '../../hooks/useResidentAudio';
+import { ZombiePhase } from '../zombie-phase/ZombiePhase';
 
 export const Inventory = ({
     gameState,
@@ -21,6 +22,7 @@ export const Inventory = ({
 
     const prevLengthInventoryRef = useRef(items.length);
     const [selectedForCombine, setSelectedForCombine] = useState();
+    const [openZombiePhase, setOpenZombiePhase] = useState(false);
     const { playOpenInventory, playCloseInventory } = useResidentAudio();
 
     if (selectedItemIndex == null) {
@@ -132,6 +134,10 @@ export const Inventory = ({
         closeItemDetailsModal();
     }
 
+    const handleCloseZombiePhase = () => {
+        setOpenZombiePhase(false)
+    }
+
     useEffect(() => {
         handleAddNewItemForOpenItemModal();
     }, [items]);
@@ -186,6 +192,17 @@ export const Inventory = ({
                     callbackSetItemToCombine={setItemToCombine}
                     callbackGainBulletsByGunPowder={handleGainBulletsByGunPowder}
                 />
+            </Modal>
+
+            <Modal
+                open={openZombiePhase}
+                onCancel={handleCloseZombiePhase}
+                footer={null}
+                centered={true}
+                className="inventory__modal"
+                destroyOnClose={true}
+            >
+                <ZombiePhase gameState={gameState} />
             </Modal>
 
             <div className="inventory__title-container">
@@ -253,8 +270,17 @@ export const Inventory = ({
                         </div>
                     )
                 }
-                <div className="inventory__item-search-container" >
-                    <button onClick={() => handleOpenSearchQuestionModal(true)} >Buscar</button>
+                <div className="inventory__buttons-container" >
+                    <button className="inventory__button--search" onClick={() => handleOpenSearchQuestionModal(true)} >Buscar</button>
+                    {
+                        gameState.isHost &&
+                        <button
+                            className="inventory__button--zombies"
+                            onClick={() => setOpenZombiePhase(true)}
+                        >
+                            Zombies
+                        </button>
+                    }
                 </div>
             </div>
         </div >
