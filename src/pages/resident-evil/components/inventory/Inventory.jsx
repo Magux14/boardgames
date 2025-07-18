@@ -9,9 +9,11 @@ import { WeaponStadistics } from '../weapon-stadistics/WeaponStadistics';
 import { lstResidentCombinedItems } from '../../../../../data/resident-evil-data';
 import { useResidentAudio } from '../../hooks/useResidentAudio';
 import { ZombiePhase } from '../zombie-phase/ZombiePhase';
+import { ResidentRooms } from '../resident-rooms/ResidentRooms';
 
 export const Inventory = ({
     gameState,
+    setGameValue,
     selectedItemIndex,
     items,
     callbackSetGameValue,
@@ -23,6 +25,7 @@ export const Inventory = ({
     const prevLengthInventoryRef = useRef(items.length);
     const [selectedForCombine, setSelectedForCombine] = useState();
     const [openZombiePhase, setOpenZombiePhase] = useState(false);
+    const [openRooms, setOpenRooms] = useState(false);
     const { playOpenInventory, playCloseInventory } = useResidentAudio();
 
     if (selectedItemIndex == null) {
@@ -205,6 +208,17 @@ export const Inventory = ({
                 <ZombiePhase gameState={gameState} />
             </Modal>
 
+            <Modal
+                open={openRooms}
+                onCancel={() => setOpenRooms(false)}
+                footer={null}
+                centered={true}
+                className="inventory__modal"
+            >
+                <ResidentRooms gameState={gameState} setGameValue={setGameValue} />
+            </Modal>
+
+
             <div className="inventory__title-container">
                 Inventario
             </div>
@@ -279,6 +293,15 @@ export const Inventory = ({
                             onClick={() => setOpenZombiePhase(true)}
                         >
                             Zombies
+                        </button>
+                    }
+                    {
+                        gameState.isHost &&
+                        <button
+                            className="inventory__button--rooms"
+                            onClick={() => setOpenRooms(true)}
+                        >
+                            Mapa
                         </button>
                     }
                 </div>

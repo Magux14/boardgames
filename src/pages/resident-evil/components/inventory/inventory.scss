@@ -147,7 +147,7 @@
         gap: 10px;
 
         button {
-            border-radius: 5px;
+            border-radius: 8px;
             color: white;
             padding: 10px 25px
         }
@@ -163,6 +163,10 @@
 
     &__button--zombies {
         background: rgb(114, 12, 26);
+    }
+
+    &__button--rooms {
+        background: rgb(16, 150, 155);
     }
 
     &__modal {

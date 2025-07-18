@@ -7,8 +7,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import { Modal } from 'antd';
 import { ReSettings } from './components/re-settings/ReSettings';
 import './resident-evil.scss';
-import { ResidentRooms } from './components/resident-rooms/ResidentRooms';
-
 export const ResidentEvilPage = () => {
 
     const {
@@ -67,6 +65,7 @@ export const ResidentEvilPage = () => {
 
                 <Inventory
                     gameState={gameState}
+                    setGameValue={setGameValue}
                     selectedItemIndex={gameState.selectedItemIndex}
                     items={[...gameState.items]}
                     callbackSetGameValue={setGameValue}
@@ -108,11 +107,6 @@ export const ResidentEvilPage = () => {
                     defaultAddingValues={1}
                     editMode={editMode}
                 />
-
-                {
-                    gameState.isHost &&
-                    <ResidentRooms gameState={gameState} setGameValue={setGameValue} />
-                }
             </div>
         </div>
     )

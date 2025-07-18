@@ -31,7 +31,7 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
         const weapon2 = pickRoom(remainingRooms.ground, 'PB');
         const weapon3 = pickRoom(remainingRooms.basement, 'S');
 
-        const extraWeaponsSpans = gameState.playersNum;
+        const extraWeaponsSpans = gameState.playersNum * 2;
         const lstExtraWeapons = []
         for (let i = 0; i < extraWeaponsSpans; i++) {
             lstExtraWeapons.push(pickRoom(remainingRooms.sharedRooms))
