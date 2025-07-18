@@ -56,7 +56,7 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
 
         const getRandomItem = () => {
             const total = lsItemsTobeGetted.reduce((acc, item) => acc + item.probabilityToAppear, 0);
-            console.log('total probablity lsItemsTobeGetted: ', total);
+            // console.log('total probablity lsItemsTobeGetted: ', total);
             let selectedItem;
             const random = Math.random() * total;
             let acc = 0;

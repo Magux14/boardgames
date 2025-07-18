@@ -91,7 +91,7 @@ export const lstResidentItems = [
             firePower: 2,
             critic: 12
         },
-        probabilityToAppear: 14
+        probabilityToAppear: 16
     },
     {
         name: 'escopeta western m37',
@@ -104,7 +104,7 @@ export const lstResidentItems = [
             firePower: 2,
             critic: 15
         },
-        probabilityToAppear: 5
+        probabilityToAppear: 4
     },
     {
         name: 'rifle de asalto',
@@ -142,7 +142,7 @@ export const lstResidentItems = [
             firePower: 1,
             critic: 6
         },
-        probabilityToAppear: 2
+        probabilityToAppear: 4
     },
     {
         name: 'molotov',
@@ -156,7 +156,7 @@ export const lstResidentItems = [
             firePower: 3,
             notEquipable: true
         },
-        probabilityToAppear: 7,
+        probabilityToAppear: 6,
         instantUse: true
     },
     {
@@ -192,7 +192,7 @@ export const lstResidentItems = [
         name: 'pólvora a',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
-        probabilityToAppear: 3,
+        probabilityToAppear: 4,
         lstToCombineItems: ['pólvora a'],
         bulletsCreation: {
             amount: 10,
@@ -203,7 +203,7 @@ export const lstResidentItems = [
         name: 'pólvora b',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta"',
-        probabilityToAppear: 3,
+        probabilityToAppear: 5,
         lstToCombineItems: ['pólvora b'],
         bulletsCreation: {
             amount: 4,
@@ -327,6 +327,13 @@ export const lstResidentItems = [
         type: 'objective',
         desc: 'Una muestra del virus T, por esto vinimos aquí',
         probabilityToAppear: 0,
+    },
+    {
+        name: 'botella vacía',
+        type: 'item',
+        desc: 'Al utilizarla, rango (0-1) un zombie quedará "atontado" haciendo que tu tiro se salvación disminuya 2 puntos del requerido para esquivarlo',
+        probabilityToAppear: 8,
+        instantUse: true
     },
 ]
 
