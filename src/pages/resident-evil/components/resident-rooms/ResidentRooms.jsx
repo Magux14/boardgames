@@ -3,10 +3,10 @@ import './resident-rooms.scss';
 import { residentRooms } from '../../../../../data/resident-evil-data';
 export const ResidentRooms = ({ gameState, setGameValue }) => {
 
-    const pickRoom = (remainingRooms) => {
+    const pickRoom = (remainingRooms, floor = '???') => {
         const randomIndex = Math.floor(Math.random() * remainingRooms.length);
         let room = remainingRooms.splice(randomIndex, 1)[0];
-        return room;
+        return `${floor} - ${room}`;
     }
 
     const fillWeaponsAndObjectives = () => {
@@ -23,13 +23,13 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
         }
 
         //objectives
-        const obj1 = pickRoom(remainingRooms.upper);
-        const obj2 = pickRoom(remainingRooms.ground);
-        const obj3 = pickRoom(remainingRooms.basement);
+        const obj1 = pickRoom(remainingRooms.upper, '1F');
+        const obj2 = pickRoom(remainingRooms.ground, 'PB');
+        const obj3 = pickRoom(remainingRooms.basement, 'S');
 
-        const weapon1 = pickRoom(remainingRooms.upper);
-        const weapon2 = pickRoom(remainingRooms.ground);
-        const weapon3 = pickRoom(remainingRooms.basement);
+        const weapon1 = pickRoom(remainingRooms.upper, '1F');
+        const weapon2 = pickRoom(remainingRooms.ground, 'PB');
+        const weapon3 = pickRoom(remainingRooms.basement, 'S');
 
         const extraWeaponsSpans = gameState.playersNum;
         const lstExtraWeapons = []
@@ -81,9 +81,13 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
         lstRoomsWithItems = lstRoomsWithItems.sort((a, b) => {
             // if (a.type > b.type) return -1;
             // if (a.type < b.type) return 1;
-
-            if (a.name < b.name) return -1;
-            if (a.name > b.name) return 1;
+            debugger
+            if (a.name.includes('???')) {
+                return 1;
+            } else {
+                if (a.name < b.name) return -1;
+                if (a.name > b.name) return 1;
+            }
 
             return 0;
         });

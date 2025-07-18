@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import WarningIcon from '@mui/icons-material/Warning';
 import './zombie-phase.scss';
 
-export const ZombiePhase = () => {
+export const ZombiePhase = ({ gameState }) => {
 
     const [zombiePhase, setZombiePhase] = useState();
 
@@ -47,7 +47,7 @@ export const ZombiePhase = () => {
             lstZombies.push(getRandomItem());
         }
 
-        const nemesisAppear = Math.random() < 0.25;
+        const nemesisAppear = gameState.nemesisIsActive ? Math.random() < 0.25 : false;
         setZombiePhase({
             lstZombies,
             nemesisAppear,

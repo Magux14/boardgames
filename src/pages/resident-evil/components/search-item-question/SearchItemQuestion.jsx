@@ -171,7 +171,7 @@ export const SearchItemQuestion = ({ gameState, callbackAddItemToInventory, user
                 className="inventory__modal"
                 destroyOnClose={true}
             >
-                <ZombiePhase />
+                <ZombiePhase gameState={gameState} />
             </Modal>
         </div>
 

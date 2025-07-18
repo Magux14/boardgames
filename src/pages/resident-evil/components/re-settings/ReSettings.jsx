@@ -49,6 +49,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
     const [playersNum, setPlayersNum] = useState(2);
     const [isHost, setIsHost] = useState(false);
+    const [nemesisIsActive, setNemesisIsActive] = useState(false);
 
     const handleOpenConfirmationModal = (difficulty) => {
         setShowConfirmationModal(true);
@@ -71,7 +72,8 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             playersNum: isNaN(playersNum) ? 2 : Number(playersNum),
             difficulty: difficulty.name,
             isHost,
-            lstRoomsWithItems: []
+            lstRoomsWithItems: [],
+            nemesisIsActive
         }
         callbackSetDifficulty(gameState);
     }
@@ -99,14 +101,18 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             </div>
 
             <div className="re-settings__fields-container">
-            <div className="re-settings__field-container">
-                <div className="re-settings__players-label" >Número de jugadores:</div>
-                <input type="number" className="re-settings__players-input" value={playersNum} onChange={($ev) => setPlayersNum($ev.target.value)}></input>
-            </div>
-              <div className="re-settings__field-container">
-                <div className="re-settings__players-label" >Soy el Host de la partida</div>
-                <input type="checkbox" className="re-settings__players-input" checked={isHost} onChange={($ev) => setIsHost($ev.target.checked)}></input>
-            </div>
+                <div className="re-settings__field-container">
+                    <div className="re-settings__players-label" >Número de jugadores:</div>
+                    <input type="number" className="re-settings__players-input" value={playersNum} onChange={($ev) => setPlayersNum($ev.target.value)}></input>
+                </div>
+                <div className="re-settings__field-container">
+                    <div className="re-settings__players-label" >Soy el Host de la partida</div>
+                    <input type="checkbox" className="re-settings__players-input" checked={isHost} onChange={($ev) => setIsHost($ev.target.checked)}></input>
+                </div>
+                <div className="re-settings__field-container">
+                    <div className="re-settings__players-label" >Activar a Némesis</div>
+                    <input type="checkbox" className="re-settings__players-input" checked={nemesisIsActive} onChange={($ev) => setNemesisIsActive($ev.target.checked)}></input>
+                </div>
             </div>
             <div className="re-settings__buttons-container">
                 {
