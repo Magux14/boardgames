@@ -1170,4 +1170,24 @@ export const lstGames = [
         minutes: 30,
         rank: 5
     },
+    {
+        name: 'Star Wars - The Mandalorian - La Búsqueda',
+        desc: 'Disfruta de horas de diversión garantizada con este increíble juego de mesa. Descubre personajes, poderes, accesorios, locales y vive la experiencia de La Búsqueda con tus amigos y familia. Si eres fan de esta enigmática...',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 4,
+        img: 'the mandalorian.webp',
+        minutes: 30,
+        new: true
+    },
+    {
+        name: 'Resident Evil - Recovery Operation',
+        desc: 'Adentrate al mundo de Resident Evil, en esta ocasión entrarás a la mansión del científico creador del virus T, deberás encontrar las muestras del virus y escapar, no mueras...',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 4,
+        img: 'resident evil.webp',
+        minutes: 45,
+        rank: 5
+    },
 ]
