@@ -331,7 +331,7 @@ export const lstResidentItems = [
     {
         name: 'botella vacía',
         type: 'item',
-        desc: 'Al utilizarla, rango (0-1) un zombie quedará "atontado" haciendo que tu tiro se salvación disminuya 2 puntos del requerido para esquivarlo',
+        desc: 'Al utilizarla, rango (0-1) un zombie quedará "atontado" haciendo que tu tiro de salvación disminuya 2 puntos del requerido para esquivarlo',
         probabilityToAppear: 8,
         instantUse: true
     },
