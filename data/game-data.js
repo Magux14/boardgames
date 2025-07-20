@@ -1026,7 +1026,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'catfé.webp',
         minutes: 15,
-        rank: 3
+        rank: 2
     },
     {
         name: 'Las Torres Errantes',
@@ -1182,12 +1182,22 @@ export const lstGames = [
     },
     {
         name: 'Resident Evil - Recovery Operation',
-        desc: 'Adentrate al mundo de Resident Evil, en esta ocasión entrarás a la mansión del científico creador del virus T, deberás encontrar las muestras del virus y escapar, no mueras...',
+        desc: 'Adentrate al mundo de Resident Evil, en esta ocasión entrarás a la mansión del científico creador del virus T, deberás encontrar las muestras del virus y escapar, no mueras... (Partes de otros juegos necesarias: "Bretayal at the Hill House" y "Zombicide"',
         minPlayers: 2,
         maxPlayers: 2,
         difficulty: 4,
         img: 'resident evil.webp',
         minutes: 45,
         rank: 5
+    },
+    {
+        name: 'Tetris Speed',
+        desc: 'Tetris Speed es un juego de cartas rápido y dinámico basado en el clásico juego de Tetris. El objetivo es ser el primero en deshacerse de todas las cartas, haciendo coincidir las piezas de Tetris que aparecen en las cartas con la carta superior visible',
+        minPlayers: 2,
+        maxPlayers: 8,
+        difficulty: 1,
+        img: 'tetris speed.webp',
+        minutes: 5,
+        rank: 3
     },
 ]
