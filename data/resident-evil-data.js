@@ -33,7 +33,7 @@ export const lstResidentItems = [
             minRange: 0,
             maxRange: 0,
             dices: 2,
-            hit: 3,
+            hit: 4,
             firePower: 2,
             critic: 12
         },
@@ -162,7 +162,7 @@ export const lstResidentItems = [
     {
         name: 'spray médico',
         type: 'health',
-        desc: 'Recupera 2 puntos de vida.',
+        desc: 'Recupera toda tu salud',
         recover: 3,
         probabilityToAppear: 2
     },
@@ -177,7 +177,7 @@ export const lstResidentItems = [
     {
         name: 'hierba roja',
         type: 'health',
-        desc: 'Júntala con una "hierba verde" para recuperar 2 puntos de vida.',
+        desc: 'Júntala con una "hierba verde" para recuperar toda tu salud',
         recover: 0,
         probabilityToAppear: 5,
         lstToCombineItems: ['hierba verde']
@@ -268,7 +268,7 @@ export const lstResidentItems = [
         bulletsConfig: {
             type: 'gun',
             minQuantity: 3,
-            maxQuantity: 7,
+            maxQuantity: 6,
         },
         probabilityToAppear: 12
     },
@@ -288,7 +288,7 @@ export const lstResidentItems = [
         bulletsConfig: {
             type: 'machinegun',
             minQuantity: 10,
-            maxQuantity: 30,
+            maxQuantity: 20,
         },
         probabilityToAppear: 8
     },
@@ -331,7 +331,7 @@ export const lstResidentItems = [
     {
         name: 'botella vacía',
         type: 'item',
-        desc: 'Al utilizarla, rango (0-1) un zombie quedará "atontado" haciendo que tu tiro se salvación disminuya 2 puntos del requerido para esquivarlo',
+        desc: 'Al utilizarla, rango (0-1) un zombie quedará "atontado" haciendo que tu tiro se salvación disminuya 1 punto de los requeridos para esquivarlo',
         probabilityToAppear: 8,
         instantUse: true
     },
@@ -341,7 +341,7 @@ export const lstResidentCombinedItems = [
     {
         name: 'mix hierbas verde x roja',
         type: 'health',
-        desc: 'Combinación de hierba verde y roja, recupera 2 de vida',
+        desc: 'Combinación de hierba verde y roja, recupera toda tu salud',
         recover: 3,
         itemsToCombine: [
             'hierba verde',

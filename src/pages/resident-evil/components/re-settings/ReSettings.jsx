@@ -22,7 +22,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             weapons: ['pistola g19', 'cuchillo', 'hierba verde'],
             gunBullets: 16,
             shotgunBullets: 4,
-            machinegunBullets: 20,
+            machinegunBullets: 15,
             sniperBullets: 5
         },
         {
