@@ -3,6 +3,7 @@ import { lstResidentItems } from '../../../../../data/resident-evil-data';
 import ConfirmationModal from '../../../../components/confirmation-modal/ConfirmationModal';
 import './re-settings.scss';
 import { ResidentRules } from '../resident-rules/ResidentRules';
+import { useResidentAudio } from '../../hooks/useResidentAudio';
 
 export const ReSettings = ({ callbackSetDifficulty }) => {
 
@@ -50,6 +51,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
     const [playersNum, setPlayersNum] = useState(2);
     const [isHost, setIsHost] = useState(false);
     const [nemesisIsActive, setNemesisIsActive] = useState(false);
+    const { playIntro } = useResidentAudio();
 
     const handleOpenConfirmationModal = (difficulty) => {
         setShowConfirmationModal(true);
@@ -76,6 +78,7 @@ export const ReSettings = ({ callbackSetDifficulty }) => {
             nemesisIsActive
         }
         callbackSetDifficulty(gameState);
+        playIntro();
     }
 
     return (

@@ -1,8 +1,34 @@
 .resident-evil {
     &__container {
+        position: relative;
         min-height: 100dvh;
         background: #060605;
         padding: 10px;
+    }
+
+    &__white-screen {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: white;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        animation: blink 1s ease-out;
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
     }
 
     &__guns-container {

@@ -1,6 +1,9 @@
+import { useResidentAudio } from '../../hooks/useResidentAudio';
 import './bullet-counter.scss';
 
 export const BulletCounter = ({ name, type, bullets, setBullets, defaultAddingValues = 1, editMode }) => {
+
+    const { playFallingBullets } = useResidentAudio();
 
     const cssBulletsValueClass = () => {
         if (bullets > 5) {
@@ -16,18 +19,23 @@ export const BulletCounter = ({ name, type, bullets, setBullets, defaultAddingVa
         return cssClass;
     }
 
+    const handleSetBullets = (type, value) => {
+        setBullets(type, value);
+        playFallingBullets();
+    }
+
     return (
         <div className="bullet-counter__container">
             <div className="bullet-counter__gun-name">
                 {name}
             </div>
             <div className="bullet-counter__controls">
-                <button onClick={(() => bullets > 0 ? setBullets(type, bullets - defaultAddingValues) : null)}>-</button>
+                <button onClick={(() => bullets > 0 ? handleSetBullets(type, bullets - defaultAddingValues) : null)}>-</button>
                 <div className="bullet-counter__image-container">
                     <img src={`./img/resident-evil/balas-${name}.png`} />
                     <div className={`bullet-counter__counter-value ${cssBulletsValueClass()}`}>{bullets}</div>
                 </div>
-                <button onClick={(() => bullets < 200 ? setBullets(type, bullets + defaultAddingValues) : null)} disabled={!editMode}>+</button>
+                <button onClick={(() => bullets < 200 ? handleSetBullets(type, bullets + defaultAddingValues) : null)} disabled={!editMode}>+</button>
             </div>
         </div>
     )

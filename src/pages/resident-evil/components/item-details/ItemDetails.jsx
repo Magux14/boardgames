@@ -22,7 +22,7 @@ export const ItemDetails = ({
     const [showBulletsGunPowderModal, setShowBulletsGunPowderModal] = useState(false);
     const [openOneUseQuestionModal, setOpenOneUseQuestionModal] = useState(false);
 
-    const { playOpenInventory, playCloseInventory } = useResidentAudio();
+    const { playOpenInventory, playCloseInventory, playReload } = useResidentAudio();
 
     const handleEquipItem = () => {
         callbackEquipItem(itemDetails.index);
@@ -41,6 +41,10 @@ export const ItemDetails = ({
     }
 
     const handleKeepItem = () => {
+        if (itemDetails.item.type == 'bullets' && itemDetails.item.bulletsAdded) {
+            playReload();
+        }
+
         callbackClose();
         playCloseInventory();
     }
@@ -78,6 +82,7 @@ export const ItemDetails = ({
                 showAlert={showBulletsGunPowderModal}
                 description="¿Estás junto a una máquina de balas para poder crear las balas?"
                 acceptCallback={() => {
+                    playReload();
                     callbackGainBulletsByGunPowder(itemDetails.index, itemDetails.item.bulletsCreation);
                     playOpenInventory();
                 }}

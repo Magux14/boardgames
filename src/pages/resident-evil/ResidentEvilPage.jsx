@@ -21,14 +21,24 @@ export const ResidentEvilPage = () => {
 
     const [editMode, setEditMode] = useState(false);
     const [openSettingsModal, setOpenSettingsModal] = useState(false);
+    const [showWhiteScreen, setShowWhiteScreen] = useState(false);
 
     const handleSaveAndCloseSettingsModal = (gameState) => {
         setGameStateAndSave(gameState);
         setOpenSettingsModal(false);
+        setShowWhiteScreen(true);
+
+        setTimeout(() => {
+            setShowWhiteScreen(false);
+        }, 1_000);
     }
 
     return (
         <div className="resident-evil__container">
+            {
+                showWhiteScreen &&
+                <div className="resident-evil__white-screen" />
+            }
             <Modal
                 open={openSettingsModal}
                 footer={null}

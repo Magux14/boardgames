@@ -18,8 +18,32 @@ export const useResidentAudio = () => {
         playAudio(path);
     }
 
+    const playIntro = () => {
+        const path = `./music/resident evil/intro.mp3`;
+        playAudio(path);
+    }
+
+    const playItemInteraction = () => {
+        const path = `./music/resident evil/falling-bullet.wav`;
+        playAudio(path);
+    }
+
+    const playFallingBullets = () => {
+        const path = `./music/resident evil/falling-bullet.wav`;
+        playAudio(path);
+    }
+
+    const playReload = () => {
+        const path = `./music/resident evil/reload.wav`;
+        playAudio(path);
+    }
+
     return {
         playOpenInventory,
-        playCloseInventory
+        playCloseInventory,
+        playIntro,
+        playItemInteraction,
+        playReload,
+        playFallingBullets
     }
 }
