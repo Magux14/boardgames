@@ -194,7 +194,7 @@ export const lstResidentItems = [
         name: 'pólvora a',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 10 balas de pistola',
-        probabilityToAppear: 4,
+        probabilityToAppear: 3,
         lstToCombineItems: ['pólvora a'],
         bulletsCreation: {
             amount: 10,
@@ -205,7 +205,7 @@ export const lstResidentItems = [
         name: 'pólvora b',
         type: 'bulletsCreation',
         desc: 'Teniendo la "máquina de balas" puedes construir 4 balas de "escopeta"',
-        probabilityToAppear: 5,
+        probabilityToAppear: 3,
         lstToCombineItems: ['pólvora b'],
         bulletsCreation: {
             amount: 4,
@@ -242,7 +242,7 @@ export const lstResidentItems = [
         name: 'tarjeta rpd',
         type: 'item',
         desc: 'Quien posea esta tarjeta podrá tener 1 acción extra en su turno (limitado a una tarjeta por jugador)',
-        probabilityToAppear: 2
+        probabilityToAppear: 1
     },
     // {
     //     name: 'máquina de balas',
@@ -254,14 +254,14 @@ export const lstResidentItems = [
         name: 'frituras',
         type: 'item',
         desc: 'Suma un punto extra al atacar con un arma (usar este objeto no cuesta ninguna acción)',
-        probabilityToAppear: 6,
+        probabilityToAppear: 5,
         instantUse: true
     },
     {
         name: 'bebida energética',
         type: 'item',
         desc: 'Gana una acción extra este turno (usar este objeto no cuesta ninguna acción)',
-        probabilityToAppear: 8,
+        probabilityToAppear: 7,
         instantUse: true
     },
     {
@@ -322,7 +322,7 @@ export const lstResidentItems = [
     {
         name: 'némesis',
         type: 'activation',
-        probabilityToAppear: 8
+        probabilityToAppear: 6
     },
     {
         name: 'muestra virus t',
@@ -334,8 +334,15 @@ export const lstResidentItems = [
         name: 'botella vacía',
         type: 'item',
         desc: 'Al utilizarla, rango (0-1) un zombie quedará "atontado" haciendo que tu tiro se salvación disminuya 1 punto de los requeridos para esquivarlo',
-        probabilityToAppear: 8,
+        probabilityToAppear: 5,
         instantUse: true
+    },
+    {
+        name: 'empty',
+        type: 'nada',
+        desc: 'No encontraste nada útil en esta habitación',
+        instaDiscard: true,
+        probabilityToAppear: 9,
     },
 ]
 

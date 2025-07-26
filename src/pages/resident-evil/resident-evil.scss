@@ -14,9 +14,9 @@
         left: 0;
         top: 0;
         z-index: 2;
-        animation: blink 1s ease-out;
+        animation: white-blink 1s ease-out;
 
-        @keyframes blink {
+        @keyframes white-blink {
             0% {
                 opacity: 1;
             }
