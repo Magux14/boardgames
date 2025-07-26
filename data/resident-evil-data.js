@@ -18,11 +18,11 @@ export const lstResidentItems = [
         type: 'weapon',
         weapon: {
             minRange: 0,
-            maxRange: 0,
-            dices: 2,
+            maxRange: 1,
+            dices: 1,
             hit: 4,
             firePower: 1,
-            critic: 12
+            critic: 6
         },
         probabilityToAppear: 12
     },
@@ -32,10 +32,9 @@ export const lstResidentItems = [
         weapon: {
             minRange: 0,
             maxRange: 0,
-            dices: 2,
+            dices: 1,
             hit: 4,
-            firePower: 2,
-            critic: 12
+            firePower: 2
         },
         probabilityToAppear: 5
     },
@@ -61,7 +60,7 @@ export const lstResidentItems = [
             minRange: 0,
             maxRange: 1,
             dices: 2,
-            hit: 3,
+            hit: 4,
             firePower: 1,
             critic: 12
         },
@@ -73,10 +72,10 @@ export const lstResidentItems = [
         weapon: {
             minRange: 0,
             maxRange: 1,
-            dices: 3,
+            dices: 1,
             hit: 3,
             firePower: 1,
-            critic: 15
+            critic: 5
         },
         probabilityToAppear: 3
     },
@@ -86,23 +85,24 @@ export const lstResidentItems = [
         weapon: {
             minRange: 0,
             maxRange: 1,
-            dices: 2,
+            dices: 1,
             hit: 3,
             firePower: 2,
-            critic: 12
+            critic: 6
         },
-        probabilityToAppear: 16
+        probabilityToAppear: 14
     },
     {
         name: 'escopeta western m37',
         type: 'weapon',
+        desc: 'Escopeta de doble cañon, dispara 2 balas por acción',
         weapon: {
             minRange: 0,
             maxRange: 1,
-            dices: 3,
-            hit: 3,
+            dices: 2,
+            hit: 4,
             firePower: 2,
-            critic: 15
+            critic: 6
         },
         probabilityToAppear: 4
     },
@@ -114,9 +114,10 @@ export const lstResidentItems = [
             maxRange: 2,
             dices: 5,
             hit: 5,
-            firePower: 1
+            firePower: 1,
+            damagePerDice: true
         },
-        probabilityToAppear: 15
+        probabilityToAppear: 13
     },
     {
         name: 'gatlin gun',
@@ -126,7 +127,8 @@ export const lstResidentItems = [
             maxRange: 2,
             dices: 5,
             hit: 4,
-            firePower: 2
+            firePower: 2,
+            damagePerDice: true
         },
         probabilityToAppear: 2
     },
@@ -142,7 +144,7 @@ export const lstResidentItems = [
             firePower: 1,
             critic: 6
         },
-        probabilityToAppear: 4
+        probabilityToAppear: 8
     },
     {
         name: 'molotov',
@@ -224,7 +226,7 @@ export const lstResidentItems = [
     {
         name: 'granada de luz',
         type: 'item',
-        desc: 'Al ser lanzada (rango de lanzamiento 1-1) todos los zombies en el área quedarán "atontados" y podrás pasar por esa área sin tener que pagar dados de salvación por cada zombie en el área.',
+        desc: 'Al ser lanzada (rango de lanzamiento 0-1) todos los zombies en el área quedarán "atontados" por le resto de la fase de jugadores y podrás pasar por esa área sin tener que pagar dados de salvación por cada zombie en el área.',
         weapon: {
             minRange: 1,
             maxRange: 1,
@@ -251,7 +253,7 @@ export const lstResidentItems = [
     {
         name: 'frituras',
         type: 'item',
-        desc: 'Tira un dado extra al atacar con un arma (usar este objeto no cuesta ninguna acción)',
+        desc: 'Suma un punto extra al atacar con un arma (usar este objeto no cuesta ninguna acción)',
         probabilityToAppear: 6,
         instantUse: true
     },
@@ -400,14 +402,15 @@ export const lstResidentCombinedItems = [
     {
         name: 'cuchillos duales',
         type: 'weapon',
-        desc: 'Uno en cada mano, la versatilidad de esto es impresionante',
+        desc: 'Uno en cada mano (cada dado equivale a un golpe), la versatilidad de esto es impresionante',
         weapon: {
             minRange: 0,
             maxRange: 0,
-            dices: 3,
+            dices: 2,
             hit: 4,
             firePower: 1,
-            critic: 15
+            critic: 8,
+            damagePerDice: true
         },
         itemsToCombine: [
             'cuchillo',
@@ -422,9 +425,10 @@ export const lstResidentCombinedItems = [
             minRange: 0,
             maxRange: 1,
             dices: 2,
-            hit: 3,
+            hit: 4,
             firePower: 1,
-            critic: 6
+            critic: 6,
+            damagePerDice: true
         },
         itemsToCombine: [
             'pistola g19',

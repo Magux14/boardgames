@@ -2,18 +2,18 @@
 
     &__container {
         min-height: 80dvh;
-        padding-top: 5dvh;
+        padding-top: 3dvh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 15px;
     }
 
     &__buttons-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 20px;
         width: 100%;
     }
 

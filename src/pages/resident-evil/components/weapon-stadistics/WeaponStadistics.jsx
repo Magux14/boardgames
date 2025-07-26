@@ -58,7 +58,7 @@ export const WeaponStadistics = ({ previousWeapon, weapon }) => {
                     <AdsClickIcon />
                 </div>
                 <div className={`weapon-stadistics__current-item-stadistic-number ${getWeaponValueClass('hit')}`}>
-                    {weapon.hit}
+                    {weapon.hit}{weapon.damagePerDice ? 'PD' : ''}
                 </div>
             </div>
             <div className="weapon-stadistics__current-item-stadistic-container">
