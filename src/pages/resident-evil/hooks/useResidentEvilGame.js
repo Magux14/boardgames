@@ -24,19 +24,7 @@ export const useResidentEvilGame = () => {
     }
 
     const setGameValue = (type, value) => {
-        if (type == 'gunBullets') {
-            gameState.gunBullets = value;
-        } else if (type == 'shotgunBullets') {
-            gameState.shotgunBullets = value;
-        } else if (type == 'machinegunBullets') {
-            gameState.machinegunBullets = value;
-        } else if (type == 'sniperBullets') {
-            gameState.sniperBullets = value;
-        } else if (type == 'life') {
-            gameState.life = value;
-        } else if (type == 'selectedItemIndex') {
-            gameState.selectedItemIndex = value;
-        } else if (type == 'discardItemIndex') {
+        if (type == 'discardItemIndex') {
             const indexToDelete = value;
             gameState.items.splice(indexToDelete, 1);
             if (gameState.selectedItemIndex == indexToDelete) {
@@ -44,10 +32,8 @@ export const useResidentEvilGame = () => {
             } else if (indexToDelete < gameState.selectedItemIndex) {
                 gameState.selectedItemIndex -= 1;
             }
-        } else if (type == 'items') {
-            gameState.items = value;
-        } else if (type == 'lstRoomsWithItems') {
-            gameState.lstRoomsWithItems = value;
+        } else {
+            gameState[type] = value;
         }
 
         setGameStateAndSave(gameState);

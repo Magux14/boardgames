@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import './resident-rooms.scss';
 import { residentRooms } from '../../../../../data/resident-evil-data';
+import './resident-rooms.scss';
+
 export const ResidentRooms = ({ gameState, setGameValue }) => {
 
     const pickRoom = (remainingRooms, floor = '???') => {
@@ -100,6 +101,10 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
         }
     }
 
+    const handleActivateNemesis = (active) => {
+        setGameValue('nemesisIsActive', active);
+    }
+
     useEffect(() => {
         if (!gameState.lstRoomsWithItems.length) {
             fillWeaponsAndObjectives();
@@ -110,6 +115,20 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
     return (
         <div className="resident-rooms__container">
             <div className="resident-rooms__fields-container">
+                <div className="resident-rooms__title">
+                    Eventos
+                </div>
+                <div className="resident-rooms__field-container">
+                    <div className="resident-rooms__item-label" >
+                        {/* <span className={`resident-rooms__item-label--${room.type == 'objetivo' ? 'objective' : 'weapon'}`}>
+
+                        </span> */}
+                        <span>
+                            Nemesis
+                        </span>
+                    </div>
+                    <input type="checkbox" className="resident-rooms__players-input" checked={gameState.nemesisIsActive} onChange={($ev) => handleActivateNemesis($ev.target.checked)}></input>
+                </div>
                 <div className="resident-rooms__title">
                     Ubicaciones
                 </div>
