@@ -74,39 +74,42 @@ export const ResidentEvilPage = () => {
                     callbackAddBulletsByGunpowder={addBulletsByGunpowder}
                 />
 
-                <BulletCounter
-                    name="pistola"
-                    type="gunBullets"
-                    bullets={gameState.gunBullets}
-                    setBullets={setGameValue}
-                    editMode={editMode}
-                />
+                <div className="resident-evil__bullets-container">
 
-                <BulletCounter
-                    name="escopeta"
-                    type="shotgunBullets"
-                    bullets={gameState.shotgunBullets}
-                    setBullets={setGameValue}
-                    editMode={editMode}
-                />
+                    <BulletCounter
+                        name="pistola"
+                        type="gunBullets"
+                        bullets={gameState.gunBullets}
+                        setBullets={setGameValue}
+                        editMode={editMode}
+                    />
 
-                <BulletCounter
-                    name="ametralladora"
-                    type="machinegunBullets"
-                    bullets={gameState.machinegunBullets}
-                    setBullets={setGameValue}
-                    defaultAddingValues={5}
-                    editMode={editMode}
-                />
+                    <BulletCounter
+                        name="escopeta"
+                        type="shotgunBullets"
+                        bullets={gameState.shotgunBullets}
+                        setBullets={setGameValue}
+                        editMode={editMode}
+                    />
 
-                <BulletCounter
-                    name="francotirador"
-                    type="sniperBullets"
-                    bullets={gameState.sniperBullets}
-                    setBullets={setGameValue}
-                    defaultAddingValues={1}
-                    editMode={editMode}
-                />
+                    <BulletCounter
+                        name="ametralladora"
+                        type="machinegunBullets"
+                        bullets={gameState.machinegunBullets}
+                        setBullets={setGameValue}
+                        defaultAddingValues={5}
+                        editMode={editMode}
+                    />
+
+                    <BulletCounter
+                        name="francotirador"
+                        type="sniperBullets"
+                        bullets={gameState.sniperBullets}
+                        setBullets={setGameValue}
+                        defaultAddingValues={1}
+                        editMode={editMode}
+                    />
+                </div>
             </div>
         </div>
     )
