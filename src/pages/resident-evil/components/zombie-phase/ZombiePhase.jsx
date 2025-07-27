@@ -50,10 +50,32 @@ export const ZombiePhase = ({ gameState }) => {
         const nemesisAppear = gameState.nemesisIsActive ? Math.random() < 0.25 : false;
         setZombiePhase({
             lstZombies,
-            nemesisAppear,
+            nemesisAppear: false, //temporal
             key: (zombiePhase?.key || 0) + 1
         });
 
+    }
+
+    const setNemesisData = (typeOfDanger = 4) => {
+        const total = 100;
+        const random = Math.random() * total;
+        const zombiesSpanByDanger = lstZombiesSpawnPerRoom.find(item => item.danger == typeOfDanger);
+        const lstProbabilityByDanger = zombiesSpanByDanger.lstProbability;
+        let acc = 0;
+        let selectedItem;
+        for (const item of lstProbabilityByDanger) {
+            acc += item.probabilityToAppear;
+            if (random < acc) {
+                selectedItem = item;
+                break;
+            }
+        }
+        setZombiePhase({
+            lstZombies: [],
+            actions: selectedItem.numOfZombies,
+            nemesisAppear: true,
+            key: (zombiePhase?.key || 0) + 1
+        });
     }
 
     useEffect(() => {
@@ -81,7 +103,7 @@ export const ZombiePhase = ({ gameState }) => {
                         )
                     }
                     {
-                        !zombiePhase.lstZombies.length &&
+                        !zombiePhase.lstZombies.length && !zombiePhase.nemesisAppear &&
                         <div className="zombie-phase__zombie-container">
                             <img src={`./img/resident-evil/zombies/clear.webp`} />
                             <div className="zombie-phase__name-container">
@@ -94,7 +116,7 @@ export const ZombiePhase = ({ gameState }) => {
                         <div className="zombie-phase__zombie-container">
                             <img src={`./img/resident-evil/zombies/némesis.webp`} />
                             <div className="zombie-phase__name-container">
-                                Némesis
+                                Némesis + {zombiePhase.actions}
                             </div>
                             <div className="zombie-phase__activation-container">
                                 <WarningIcon />
@@ -119,6 +141,9 @@ export const ZombiePhase = ({ gameState }) => {
                 </button>
                 <button className="zombie-phase__button" onClick={() => setZombieData(0)}>
                     <img src={`./img/resident-evil/rooms/danger-0.webp`} />
+                </button>
+                <button className="zombie-phase__button" onClick={() => setNemesisData(4)}>
+                    <img src={`./img/resident-evil/rooms/nemesis.webp`} />
                 </button>
             </div>
 
