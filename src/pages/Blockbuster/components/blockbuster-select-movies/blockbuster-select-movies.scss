@@ -3,7 +3,6 @@
 .blockbuster-select-movies {
 
     &__container {
-        padding: 20px 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -44,7 +43,6 @@
         padding: 8px;
         text-align: center;
         text-transform: uppercase;
-        width: 100%;
         font-family: 'blockbuster', 'Courier New', Courier, monospace;
 
         &:active {
@@ -61,7 +59,6 @@
         }
 
         &--continue {
-            padding: 8px 20px;
             background: $blockbuster-blue;
             color: white;
         }

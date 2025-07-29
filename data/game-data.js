@@ -891,8 +891,8 @@ export const lstGames = [
         maxPlayers: 6,
         difficulty: 1,
         img: 'slapburger.png',
-        minutes: 15,
-        new: true
+        minutes: 5,
+        rank: 4
     },
     {
         name: 'Rat A Tat Cat',

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Timer } from '../../components/timer/Timer';
 import { blockbusterMovies, blockbusterThings } from '../../../data/blockbuster';
 import { BlockbusterSelectMovies } from './components/blockbuster-select-movies/BlockbusterSelectMovies';
@@ -6,10 +6,10 @@ import { BlockbusterGuessMovies } from './components/blockbuster-guess-movies/Bl
 import { useSearchParams } from 'react-router-dom';
 import { Modal } from 'antd';
 import { Header } from '../../components/header/Header'
-import './blockbuster-page.scss';
-import CachedIcon from '@mui/icons-material/Cached';
 import { useSaveState } from '../../hooks/useSaveState';
 import { ModalConfirm } from '../../components/modal-confirm/ModalConfirm';
+import CachedIcon from '@mui/icons-material/Cached';
+import './blockbuster-page.scss';
 
 const defaultShowModals = {
     faceToFace: false,
@@ -18,11 +18,14 @@ const defaultShowModals = {
     saveStateRefresh: false
 }
 
+const defaultGameState = {
+    lstBlockbusterThings: [...blockbusterThings],
+    lstBlockbusterMovies: [...blockbusterMovies],
+    gameStartedDate: null
+}
+
 export const BlockbusterPage = () => {
 
-    const [gameStartedDate, setGameStartedDate] = useState(null);
-    const [lstBlockbusterThings, setLstBlockbusterThings] = useState([...blockbusterThings]);
-    const [lstBlockbusterMovies, setLstBlockbusterMovies] = useState([...blockbusterMovies]);
     const [lastStateWasLoaded, setLastStateWasLoaded] = useState(false);
     const [showModal, setShowModal] = useState(defaultShowModals);
     const [randomMovies, setRandomMovies] = useState([]);
@@ -31,7 +34,8 @@ export const BlockbusterPage = () => {
     const [fontLoaded, setFontLoaded] = useState(false);
     const [searchParams] = useSearchParams();
     const timeToGuessMovies = searchParams.get('t') || 60;
-    const { saveState, getLoadState, deleteState } = useSaveState('blockcbuster');
+    const { saveState, getLoadState, deleteState } = useSaveState('blockbuster');
+    const [gameState, setGameState] = useState(defaultGameState);
 
     const handleShowFaceToFace = () => {
         setRandomThing(getFaceToFaceThing());
@@ -51,10 +55,13 @@ export const BlockbusterPage = () => {
     }
 
     const getFaceToFaceThing = () => {
-        let remainingThings = lstBlockbusterThings;
+        let remainingThings = gameState.lstBlockbusterThings;
         if (remainingThings.length == 0) {
             remainingThings = [...blockbusterThings];
-            setLstBlockbusterThings([...remainingThings]);
+            setGameState({
+                ...gameState,
+                lstBlockbusterThings: remainingThings
+            });
         }
 
         const randomIndex = Math.floor(Math.random() * remainingThings.length);
@@ -65,10 +72,13 @@ export const BlockbusterPage = () => {
 
     const getMoviesList = (numberOfMovies) => {
         const lstMovies = [];
-        let remainingMovies = lstBlockbusterMovies;
+        let remainingMovies = gameState.lstBlockbusterMovies;
         if (remainingMovies.length < 6) {
             remainingMovies = [...blockbusterMovies];
-            setLstBlockbusterMovies(remainingMovies);
+            setGameState({
+                ...gameState,
+                lstBlockbusterMovies: remainingMovies
+            });
         }
 
         for (let i = 0; i < numberOfMovies; i++) {
@@ -112,26 +122,26 @@ export const BlockbusterPage = () => {
     }
 
     const saveCurrentState = () => {
-
         if (!lastStateWasLoaded) {
             return;
         }
 
-        const state = {
-            lstBlockbusterThings,
-            lstBlockbusterMovies,
-            gameStartedDate: gameStartedDate ?? getFriendlyDate()
+        if (!gameState.gameStartedDate) {
+            gameState.gameStartedDate = getFriendlyDate();
+            setGameState({
+                ...gameState
+            });
         }
-        saveState(state);
+        console.log(gameState);
+        saveState(gameState);
     }
 
     const loadLastState = () => {
         const obj = getLoadState();
         if (obj) {
-            setLstBlockbusterThings(obj.lstBlockbusterThings);
-            setLstBlockbusterMovies(obj.lstBlockbusterMovies);
-            setGameStartedDate(obj.gameStartedDate);
+            setGameState(obj);
         }
+        console.log(obj);
         setLastStateWasLoaded(true);
     }
 
@@ -148,9 +158,9 @@ export const BlockbusterPage = () => {
             ...defaultShowModals,
             saveStateRefresh: false
         });
-        setLstBlockbusterThings([...blockbusterThings]);
-        setLstBlockbusterMovies([...blockbusterMovies]);
-        setGameStartedDate(null);
+        setGameState({
+            ...defaultGameState
+        });
     }
 
     useEffect(() => {
@@ -238,9 +248,9 @@ export const BlockbusterPage = () => {
                     <div className="blockbuster-page__game-status-container">
                         <div>
                             {
-                                gameStartedDate &&
+                                gameState.gameStartedDate &&
                                 <span>
-                                    Partida: {gameStartedDate}
+                                    Partida: {gameState.gameStartedDate}
                                 </span>
                             }
                         </div>
