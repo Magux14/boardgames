@@ -21,7 +21,8 @@ const defaultShowModals = {
 const defaultGameState = {
     lstBlockbusterThings: [...blockbusterThings],
     lstBlockbusterMovies: [...blockbusterMovies],
-    gameStartedDate: null
+    gameStartedDate: null,
+    lastSelectedMovies: null
 }
 
 export const BlockbusterPage = () => {
@@ -33,9 +34,9 @@ export const BlockbusterPage = () => {
     const [selectedMovies, setSelectedMovies] = useState([]);
     const [fontLoaded, setFontLoaded] = useState(false);
     const [searchParams] = useSearchParams();
-    const timeToGuessMovies = searchParams.get('t') || 60;
-    const { saveState, getLoadState, deleteState } = useSaveState('blockbuster');
     const [gameState, setGameState] = useState(defaultGameState);
+    const { saveState, getLoadState, deleteState } = useSaveState('blockbuster');
+    const timeToGuessMovies = searchParams.get('t') || 60;
 
     const handleShowFaceToFace = () => {
         setRandomThing(getFaceToFaceThing());
@@ -51,6 +52,14 @@ export const BlockbusterPage = () => {
         setShowModal({
             ...defaultShowModals,
             selectMovies: true
+        });
+    }
+
+    const handleShowLastMovies = () => {
+        setSelectedMovies(gameState.lastSelectedMovies);
+        setShowModal({
+            ...defaultShowModals,
+            guessMovies: true
         });
     }
 
@@ -97,6 +106,8 @@ export const BlockbusterPage = () => {
             ...defaultShowModals,
             guessMovies: true
         });
+        gameState.lastSelectedMovies = lstMovies;
+        saveCurrentState()
     }
 
     useEffect(() => {
@@ -128,10 +139,11 @@ export const BlockbusterPage = () => {
 
         if (!gameState.gameStartedDate) {
             gameState.gameStartedDate = getFriendlyDate();
-            setGameState({
-                ...gameState
-            });
         }
+
+        setGameState({
+            ...gameState
+        });
         console.log(gameState);
         saveState(gameState);
     }
@@ -263,6 +275,7 @@ export const BlockbusterPage = () => {
                     <div className="blockbuster-page__content-container">
                         <button className="blockbuster-page__button" onClick={handleShowFaceToFace}>Cara a Cara</button>
                         <button className="blockbuster-page__button" onClick={handleShowMovies}>Adivina la película</button>
+                        <button className="blockbuster-page__button blockbuster-page__button--danger" onClick={handleShowLastMovies} disabled={!gameState.lastSelectedMovies}>Últimas películas seleccionadas</button>
                     </div>
                 </div>
             }

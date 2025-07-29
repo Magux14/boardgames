@@ -80,13 +80,16 @@ export const BlockbusterGuessMovies = ({ lstMovies = [], timeToGuessMovies, call
                     </button>
                 </div>
 
-                <span hidden={!((isWinnerTeam && !stealPoints) || (!isWinnerTeam && stealPoints))}>
-                    <Timer defaultTime={timeToGuessMovies} typeOfTimer='pause' />
-                </span>
+                <div className="blockbuster-guess-movies__timer-container">
+                    <span hidden={!((isWinnerTeam && !stealPoints) || (!isWinnerTeam && stealPoints))}>
+                        <Timer defaultTime={timeToGuessMovies} typeOfTimer='pause' showResetButton={true} />
+                    </span>
 
-                <span hidden={!((isWinnerTeam && stealPoints) || (!isWinnerTeam && !stealPoints))}>
-                    <Timer defaultTime={timeToGuessMovies} typeOfTimer='pause' />
-                </span>
+                    <span hidden={!((isWinnerTeam && stealPoints) || (!isWinnerTeam && !stealPoints))}>
+                        <Timer defaultTime={timeToGuessMovies} typeOfTimer='pause' showResetButton={true} />
+                    </span>
+
+                </div>
 
                 <div className="blockbuster-guess-movies__instructions-container">
                     {/* Tu equipo debe adivinar cada una de las siguientes películas, pero solo puedes elegir una forma de adivinar por cada una:

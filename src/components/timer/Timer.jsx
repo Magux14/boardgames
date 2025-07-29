@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import CachedIcon from '@mui/icons-material/Cached';
 import './timer.scss';
 
-export const Timer = ({ defaultTime, typeOfTimer = 'restart', newInjectedTime }) => {
+export const Timer = ({ defaultTime, typeOfTimer = 'restart', newInjectedTime, showResetButton }) => {
     const [timer, setTimer] = useState();
     const [timerIsTicking, setTimerIsTicking] = useState(false);
     const [isTouchingButton, setIsTouchingButton] = useState(false);
@@ -41,8 +42,8 @@ export const Timer = ({ defaultTime, typeOfTimer = 'restart', newInjectedTime })
         }
     }
 
-    const pauseTimer = () => {
-        if (timerIsTicking) { // pausa
+    const pauseTimer = (forcePause = false) => {
+        if (timerIsTicking || forcePause) { // pausa
             setTimerIsTicking(false);
             if (intervalRef) {
                 clearInterval(intervalRef.current);
@@ -115,6 +116,14 @@ export const Timer = ({ defaultTime, typeOfTimer = 'restart', newInjectedTime })
                     </span>
                 }
             </button>
+            {
+                showResetButton &&
+                <CachedIcon className="timer__restart-timer-icon" onClick={() => {
+                    restartTimer();
+                    playMusic('action-sound', './music/blockbuster/button-click.mp3');
+                    pauseTimer(true);
+                }} />
+            }
         </div>
     )
 }

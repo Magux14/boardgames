@@ -83,4 +83,13 @@
         font-size: 30vw;
     }
 
+    &__restart-timer-icon {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 40px !important;
+        height: 40px !important;
+        fill: white !important;
+    }
+
 }
