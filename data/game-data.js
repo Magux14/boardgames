@@ -1102,7 +1102,7 @@ export const lstGames = [
     },
     {
         name: '3 up 3 down',
-        desc: 'Tu objetivo es deshacerte de ellas antes que los demás jugadores. Esto se consigue jugando cartas del mismo número o mayor que la última carta jugada. Si no puedes jugar una carta, debes recoger todas las cartas de la pila de descarte.',
+        desc: 'El objetivo es deshacerte de tus cartas antes que los demás jugadores. Esto se consigue jugando cartas del mismo número o mayor que la última carta jugada. Si no puedes jugar una carta, debes recoger todas las cartas de la pila de descarte.',
         minPlayers: 2,
         maxPlayers: 6,
         difficulty: 2,
