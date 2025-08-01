@@ -1,6 +1,3 @@
-
-
-
 export const phasmophobiaEquipment = [
     {
         name: 'Medidor EMF 5',
@@ -227,7 +224,7 @@ export const phasmophobiaTarotCards = [
         img: 'muerte.webp',
         probability: 12
     },
-     {
+    {
         name: 'Movimiento Antinatural',
         description: '+ 3 puntos de acción este turno',
         img: 'the_fool.webp',

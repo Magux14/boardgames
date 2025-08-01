@@ -1046,7 +1046,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'optimus.webp',
         minutes: 30,
-        new: true,
+        rank: 3
     },
     {
         name: 'Marea Alta',
