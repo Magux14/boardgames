@@ -1243,4 +1243,15 @@ export const lstGames = [
         minutes: 15,
         new: true,
     },
+    {
+        name: 'Sky Team',
+        desc: 'SkyTeam es una alianza global de aerolíneas que facilita los viajes a través de una red extensa y conexiones eficientes entre sus aerolíneas miembros. Además, existe un juego de mesa cooperativo llamado Sky Team, donde dos jugadores asumen los roles de piloto y copiloto para aterrizar un avión juntos.',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 4,
+        img: 'sky team.webp',
+        minutes: 15,
+        new: true,
+        comingSoon: true
+    },
 ]
