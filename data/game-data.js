@@ -1200,4 +1200,47 @@ export const lstGames = [
         minutes: 5,
         rank: 3
     },
+    {
+        name: 'Pesca cartas',
+        desc: 'Juego de cartas donde el objetivo principal es formar conjuntos de cuatro cartas del mismo valor, como en un póker, recolectando cartas de otros jugadores o robando del mazo.',
+        minPlayers: 3,
+        maxPlayers: 5,
+        difficulty: 3,
+        img: 'pesca cartas.webp',
+        minutes: 5,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'I\'m a banana',
+        desc: 'Juego party, hay un doctor y ¡pacientes locos! el doctor tiene que adivinar que se cree cada loco y los locos tienen que saber que loco es cada quien sin que se de cuenta el doctor.',
+        minPlayers: 3,
+        maxPlayers: 5,
+        difficulty: 3,
+        img: 'I\'m a banana.webp',
+        minutes: 5,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'Búsqueda Del Tesoro Inca',
+        desc: 'Juego party, hay un doctor y ¡pacientes locos! el doctor tiene que adivinar que se cree cada loco y los locos tienen que saber que loco es cada quien sin que se de cuenta el doctor.',
+        minPlayers: 3,
+        maxPlayers: 8,
+        difficulty: 3,
+        img: 'búsqueda del tesoro inca.webp',
+        minutes: 5,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'Trivia Lista',
+        desc: 'Juego de mesa donde los jugadores son aventureros que exploran un templo inca en busca de tesoros. Cada jugador, en su turno, revela una carta que puede contener tesoros o peligros',
+        minPlayers: 2,
+        maxPlayers: 10,
+        difficulty: 2,
+        img: 'trivia lista.webp',
+        minutes: 15,
+        new: true,
+    },
 ]

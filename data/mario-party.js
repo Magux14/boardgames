@@ -35,9 +35,4 @@ export const lstMarioPartyGames = [
         title: "6 de la suerte",
         desc: "El objetivo del juego es sacar 6 en todos los dados. Cada jugador tirará sus 5 dados (todos al mismo tiempo) si cualquiera de ellos sale en 6 se separa y se vuelven a tirar los restantes, esto se repite hasta que en todos se saque 6, el primero en lograrlo gana"
     },
-    // {
-    //     title: "",
-    //     desc: ""
-    // },
-
 ]
