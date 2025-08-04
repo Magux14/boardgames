@@ -60,8 +60,12 @@ export const Header = () => {
                     </div>
 
                     <ul>
+                        <li onClick={() => goTo('/basta')}>
+                            <span>Basta</span> <img src="./img/basta/logo.png" />
+                        </li>
+
                         <li onClick={() => goTo('/blockbuster')}>
-                            <span>Blockbuster</span> <img id="phasmophobia-icon" src="./img/blockbuster/logo.png" />
+                            <span>Blockbuster</span> <img src="./img/blockbuster/logo.png" />
                         </li>
 
                         <li onClick={() => goTo('/cow-mind')}>

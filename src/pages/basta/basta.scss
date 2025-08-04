@@ -1,0 +1,42 @@
+.basta {
+    background: rgb(49, 7, 49);
+    min-height: 100%;
+
+    &__card-content {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 20px;
+        background: red;
+    }
+
+    &__card--back {
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    &__card-inside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        font-weight: bold;
+        background: white;
+        border-radius: 30px;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__card-title {
+        font-size: 25px;
+    }
+
+    &__card-desc {
+        font-size: 38px;
+        overflow-x: hidden;
+    }
+
+    &__button {
+        background: rgb(33, 158, 189);
+    }
+}

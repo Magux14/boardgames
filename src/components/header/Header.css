@@ -65,9 +65,11 @@
             background: rgb(100, 100, 100);
         }
 
-        #phasmophobia-icon {
+        #phasmophobia-icon,
+        img {
             height: 18px;
             width: 24px;
+            border-radius: 2px;
         }
     }
 

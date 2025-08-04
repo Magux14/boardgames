@@ -13,6 +13,7 @@ import { TabuGame } from './pages/tabu/components/tabu-game/TabuGame';
 import { CountingPoints } from './pages/counting-points/CountingPoints';
 import { ResidentEvilPage } from './pages/resident-evil/ResidentEvilPage';
 import { TimerPage } from './pages/timer-page/TimerPage';
+import { Basta } from './pages/basta/basta';
 
 export const App = () => {
 
@@ -20,19 +21,20 @@ export const App = () => {
         <BrowserRouter basename={import.meta.env.VITE_PUBLIC_URL}>
             <Routes>
                 <Route path="/" element={<GameListPage />} />
+                <Route path="/basta" element={<Basta />} />
+                <Route path="/blockbuster" element={<BlockbusterPage />} />
+                <Route path="/counting" element={<CountingPoints />} />
+                <Route path="/cow-mind" element={<CowMind />} />
                 <Route path="/dice" element={<DicePage />} />
+                <Route path="/knowledge-race" element={<KnowledgeRace />} />
+                <Route path="/mario-party" element={<MarioPartyPage />} />
+                <Route path="/no-mames" element={<NoMamesPage />} />
                 <Route path="/phasmophobia-filter" element={<PhasmophobiaFilterPage />} />
                 <Route path="/phasmophobia-game" element={<PhasmophobiaGamePage />} />
-                <Route path="/knowledge-race" element={<KnowledgeRace />} />
-                <Route path="/cow-mind" element={<CowMind />} />
-                <Route path="/blockbuster" element={<BlockbusterPage />} />
-                <Route path="/yo-nunca-nunca" element={<YoNuncaNuncaPage />} />
-                <Route path="/no-mames" element={<NoMamesPage />} />
-                <Route path="/mario-party" element={<MarioPartyPage />} />
-                <Route path="/tabu" element={<TabuGame />} />
-                <Route path="/counting" element={<CountingPoints />} />
                 <Route path="/resident-evil" element={<ResidentEvilPage />} />
+                <Route path="/tabu" element={<TabuGame />} />
                 <Route path="/timer" element={<TimerPage />} />
+                <Route path="/yo-nunca-nunca" element={<YoNuncaNuncaPage />} />
             </Routes>
         </BrowserRouter>
     )

@@ -1108,7 +1108,7 @@ export const lstGames = [
         difficulty: 2,
         img: '3 up 3 down.webp',
         minutes: 15,
-        new: true,
+        rank: 4
     },
     {
         name: 'Deep Sea Adventure',
