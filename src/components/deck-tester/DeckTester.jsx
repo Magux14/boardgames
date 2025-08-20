@@ -107,6 +107,19 @@ export const DeckTester = () => {
         };
     }, []);
 
+    useEffect(() => {
+        const preventPullToRefresh = (e) => {
+            if (window.scrollY === 0 && e.touches[0].clientY > 0) {
+                e.preventDefault();
+            }
+        };
+
+        document.addEventListener('touchmove', preventPullToRefresh, { passive: false });
+
+        return () => {
+            document.removeEventListener('touchmove', preventPullToRefresh);
+        };
+    }, []);
 
     useEffect(() => {
         console.log('lstDeck: ', lstDeckCards)
