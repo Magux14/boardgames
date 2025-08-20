@@ -5,9 +5,9 @@
         flex-direction: column;
         gap: 30px;
         padding: 10px 10px;
-        min-height: 100dvh;
+        min-height: 100vh;
         background: url('../img/deck-tester/table.jpg');
-        background-size: cover;
+        background-size: 100% 100%;
         overflow-y: auto;
         overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch;
@@ -28,8 +28,8 @@
         margin-top: 2dvh;
 
         img {
-            height: 50dvh;
-            width: 60dvw;
+            height: 50vh;
+            width: 70dvw;
         }
     }
 

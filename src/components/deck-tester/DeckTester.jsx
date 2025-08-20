@@ -51,8 +51,13 @@ export const DeckTester = () => {
 
     const getCards = (cardsNum) => {
         let remainingCards = lstDeckCards;
-        if (remainingCards.length <= 0) {
-            remainingCards = [...lstOriginalList];
+        if (remainingCards.length <= 1) {
+            remainingCards = [...lstOriginalList].map(item => {
+                return {
+                    ...item,
+                    id: uuidv4()
+                }
+            });
             setGameState({
                 ...gameState,
                 lstDeckCards: remainingCards
@@ -68,7 +73,7 @@ export const DeckTester = () => {
 
         setGameState({
             ...gameState,
-            lstDeckCards: lstDeckCards,
+            lstDeckCards: remainingCards,
             lstHandCards: lstHandCards.concat(lstNewCards)
         })
     }
@@ -108,7 +113,6 @@ export const DeckTester = () => {
     }, []);
 
     const touchStartY = useRef(0);
-
     useEffect(() => {
         const handleTouchStart = (e) => {
             touchStartY.current = e.touches[0].clientY;
@@ -133,11 +137,6 @@ export const DeckTester = () => {
         };
     }, []);
 
-    useEffect(() => {
-        console.log('lstDeck: ', lstDeckCards)
-        console.log('lstHand: ', lstHandCards)
-    }, [gameState])
-
     return (
         <div className="deck-tester__container">
             {
@@ -153,7 +152,7 @@ export const DeckTester = () => {
             <div className={`deck-tester__hand-container ${(currentCard && isAtTop) ? 'deck-tester__blur' : ''}`}>
                 {lstHandCards.map((img) => (
                     <img
-                        key={img.filename}
+                        key={img.id}
                         src={img.url}
                         alt={img.filename}
                         className={`deck-tester__card-shadow ${img.id == currentCard?.id ? 'deck-tester__selected-card-on-hand' : ''}`}
