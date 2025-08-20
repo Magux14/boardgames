@@ -13,6 +13,7 @@ const defaultGameState = {
 
 export const DeckTester = () => {
     const [gameState, setGameState] = useState(defaultGameState);
+    const [isAtTop, setIsAtTop] = useState(true);
     const { lstDeckCards, lstHandCards, lstDiscardedCards, currentCard, lstOriginalList } = { ...gameState };
 
     const handleFileUpload = async (event) => {
@@ -93,9 +94,23 @@ export const DeckTester = () => {
     }
 
     useEffect(() => {
+        const handleScroll = () => {
+            setIsAtTop(window.scrollY === 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        handleScroll();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
+    useEffect(() => {
         console.log('lstDeck: ', lstDeckCards)
         console.log('lstHand: ', lstHandCards)
-
     }, [gameState])
 
     return (
@@ -103,20 +118,20 @@ export const DeckTester = () => {
             {
                 currentCard &&
                 <div className="deck-tester__current-card-container">
-                    <img src={currentCard.url} alt={currentCard.filename} />
+                    <img src={currentCard.url} alt={currentCard.filename} className="deck-tester__card-shadow" />
                     <div className="deck-tester__current-card-button-container">
                         <button className="deck-tester__discard-button" onClick={() => handleDiscardCard(currentCard.id)}>Discard</button>
                     </div>
                 </div>
             }
 
-            <div className="deck-tester__hand-container">
+            <div className={`deck-tester__hand-container ${(currentCard && isAtTop) ? 'deck-tester__blur' : ''}`}>
                 {lstHandCards.map((img) => (
                     <img
                         key={img.filename}
                         src={img.url}
                         alt={img.filename}
-                        className={`${img.id == currentCard?.id ? 'deck-tester__selected-card-on-hand' : ''}`}
+                        className={`deck-tester__card-shadow ${img.id == currentCard?.id ? 'deck-tester__selected-card-on-hand' : ''}`}
                         onClick={() => handleSetCurrentCard(img)} />
                 ))}
             </div>
@@ -126,19 +141,18 @@ export const DeckTester = () => {
                     lstDiscardedCards.length > 0 &&
                     <img
                         src={lstDiscardedCards[lstDiscardedCards.length - 1].url}
+                        className="deck-tester__card-shadow"
                         alt={'discardPile-card'} />
                 }
-
                 {
                     lstDeckCards.length > 0 &&
                     <img
                         src={'./img/deck-tester/back.jpg'}
+                        className="deck-tester__card-shadow"
                         alt={'back-card'}
                         onClick={() => getCards(1)} />
                 }
-
             </div>
-
 
             <input
                 type="file"

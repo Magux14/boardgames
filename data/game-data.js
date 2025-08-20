@@ -975,7 +975,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'Sea, Salt and Paper.png',
         minutes: 40,
-        new: true,
+        rank: 3
     },
     {
         name: 'Super Hazard Quest',
