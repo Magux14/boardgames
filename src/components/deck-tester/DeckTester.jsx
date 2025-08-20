@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import JSZip from 'jszip';
 import { v4 as uuidv4 } from 'uuid';
 import './deck-tester.scss';
@@ -104,6 +104,32 @@ export const DeckTester = () => {
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const touchStartY = useRef(0);
+
+    useEffect(() => {
+        const handleTouchStart = (e) => {
+            touchStartY.current = e.touches[0].clientY;
+        };
+
+        const handleTouchMove = (e) => {
+            const touchCurrentY = e.touches[0].clientY;
+            const scrollTop = window.scrollY;
+
+            // Solo prevenir pull-to-refresh si estamos en el top y arrastrando hacia abajo
+            if (scrollTop === 0 && touchCurrentY > touchStartY.current) {
+                e.preventDefault();
+            }
+        };
+
+        document.addEventListener('touchstart', handleTouchStart, { passive: true });
+        document.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+        return () => {
+            document.removeEventListener('touchstart', handleTouchStart);
+            document.removeEventListener('touchmove', handleTouchMove);
         };
     }, []);
 
