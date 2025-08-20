@@ -1,0 +1,70 @@
+.deck-tester {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 10px 10px;
+        min-height: 100dvh;
+    }
+
+    &__current-card-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+
+        img {
+            height: 65dvh;
+        }
+    }
+
+    &__discard-button {
+        background: rgb(203, 65, 65);
+        color: white;
+        border-radius: 8px;
+        padding: 5px 10px;
+    }
+
+    &__current-card-button-container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__decks-container {
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+
+        img {
+            width: 20%;
+            margin-right: -15px;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__hand-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        img {
+            width: 20%;
+            margin-right: -7.5px;
+            margin-left: -7.5px;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__selected-card-on-hand {
+        border: 1px solid white;
+        transform: scale(1.1);
+    }
+}

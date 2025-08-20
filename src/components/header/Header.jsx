@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import './Header.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChecklistIcon from '@mui/icons-material/Checklist';
 import CasinoIcon from '@mui/icons-material/Casino';
 import AvTimerIcon from '@mui/icons-material/AvTimer';
 import { useNavigate } from "react-router-dom";
+import StyleIcon from '@mui/icons-material/Style';
+import './Header.css';
 
 export const Header = () => {
 
@@ -43,6 +44,10 @@ export const Header = () => {
 
                         <li onClick={() => goTo('/dice')}>
                             <span>Dados</span> <CasinoIcon />
+                        </li>
+
+                        <li onClick={() => goTo('/deck-tester')}>
+                            <span>Deck Tester</span> <StyleIcon />
                         </li>
 
                         <li onClick={() => goTo('/')}>
