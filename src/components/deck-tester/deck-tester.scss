@@ -8,6 +8,8 @@
         min-height: 100dvh;
         background: url('../img/deck-tester/table.jpg');
         background-size: cover;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
     }
 
     &__card-shadow {
