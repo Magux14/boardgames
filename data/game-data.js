@@ -943,8 +943,8 @@ export const lstGames = [
         difficulty: 4,
         img: 'Betrayal at House on The Hill.webp',
         minutes: 60,
-        new: true,
         lang: 'EN',
+        new: true,
     },
     {
         name: 'Cabo',
@@ -1148,7 +1148,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'villains las gemas del poder.webp',
         minutes: 45,
-        new: true,
+        rank: 3
     },
     {
         name: 'Exploding Kittens',
@@ -1209,7 +1209,6 @@ export const lstGames = [
         img: 'pesca cartas.webp',
         minutes: 5,
         new: true,
-        comingSoon: true
     },
     {
         name: 'I\'m a banana',
@@ -1219,8 +1218,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'I\'m a banana.webp',
         minutes: 5,
-        new: true,
-        comingSoon: true
+        rank: 4
     },
     {
         name: 'Búsqueda Del Tesoro Inca',
@@ -1231,12 +1229,10 @@ export const lstGames = [
         img: 'búsqueda del tesoro inca.webp',
         minutes: 5,
         new: true,
-        comingSoon: true
     },
     {
         name: 'Trivia Lista',
-        desc: 'Juego de mesa donde los jugadores son aventureros que exploran un templo inca en busca de tesoros. Cada jugador, en su turno, revela una carta que puede contener tesoros o peligros',
-        minPlayers: 2,
+        desc: 'En el juego Trivia Lista, los jugadores tienen todas las respuestas, ¡solo deben colocarlas en el orden correcto! Este dinámico juego electrónico de preguntas se juega en apenas 15 minutos. Juega contra otro jugador o en equipos. En cada ronda, comienza colocando una carta de preguntas con 6 respuestas en la torre de juego. A continuación, cada equipo se turna para adivinar el orden correcto de las respuestas y acumular puntos. Por ejemplo, ordena 6 primeros álbumes desde el menos reciente al más reciente.', minPlayers: 2,
         maxPlayers: 10,
         difficulty: 2,
         img: 'trivia lista.webp',

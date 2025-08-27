@@ -193,7 +193,7 @@ export const PhasmophobiaGamePage = () => {
                         <br />
 
                         <div className="tests-dice-container">
-                            <div>
+                            <div className="phasmophobia-game__equipment-buttons-container">
                                 <label className="test-title">Pruebas</label>
                                 <div className="phasmophobia-game__equipment-button-container">
                                     {
@@ -228,7 +228,7 @@ export const PhasmophobiaGamePage = () => {
                             </div>
                         </div>
 
-                         <div className="phasmophobia-game__extra-buttons-container">
+                        <div className="phasmophobia-game__extra-buttons-container">
                             <button onClick={setRandomLimitEnergyValue}>Resetar Energía Maldita</button>
                         </div>
                     </>
