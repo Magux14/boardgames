@@ -31,7 +31,7 @@ export const Header = () => {
             <div id="side-menu-container">
                 <div className={`sidebar ${isOpen ? 'open' : ''}`}>
                     <div className='menu-title'>
-                        <h2>Menú</h2>
+                        Menú
                     </div>
 
                     <div className='menu-sub-title'>
