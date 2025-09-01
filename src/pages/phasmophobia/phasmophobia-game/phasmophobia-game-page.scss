@@ -10,6 +10,10 @@
         user-select: none;
     }
 
+    *button {
+        font-family: 'tragicMarker', 'Courier New', Courier, monospace;
+    }
+
     &__container {
         min-height: 100vh;
         display: flex;
@@ -193,6 +197,11 @@
             padding: 10px 30px;
             border-radius: 15px;
         }
+    }
+
+    &__equipment-buttons-container {
+        display: flex;
+        flex-direction: column;
     }
 
     &__equipment-button-container {

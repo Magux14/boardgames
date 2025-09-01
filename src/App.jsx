@@ -14,6 +14,7 @@ import { CountingPoints } from './pages/counting-points/CountingPoints';
 import { ResidentEvilPage } from './pages/resident-evil/ResidentEvilPage';
 import { TimerPage } from './pages/timer-page/TimerPage';
 import { Basta } from './pages/basta/basta';
+import { DeckTester } from './components/deck-tester/DeckTester';
 
 export const App = () => {
 
@@ -25,6 +26,7 @@ export const App = () => {
                 <Route path="/blockbuster" element={<BlockbusterPage />} />
                 <Route path="/counting" element={<CountingPoints />} />
                 <Route path="/cow-mind" element={<CowMind />} />
+                <Route path="/deck-tester" element={<DeckTester />} />
                 <Route path="/dice" element={<DicePage />} />
                 <Route path="/knowledge-race" element={<KnowledgeRace />} />
                 <Route path="/mario-party" element={<MarioPartyPage />} />

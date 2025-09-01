@@ -299,7 +299,7 @@ export const GameListPage = () => {
                                     </div>
                                 </div>
                                 <div className="game-list-page__main-info-container">
-                                    <h3 className="game-list-page__game-name">{item.name}</h3>
+                                    <div className="game-list-page__game-name">{item.name}</div>
                                     <div className="game-list-page__desc-container">
                                         {item.desc ? <p className="game-list-page__desc">{item.desc}</p> : null}
                                     </div>
