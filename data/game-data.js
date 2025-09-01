@@ -1254,4 +1254,48 @@ export const lstGames = [
         new: true,
         comingSoon: true
     },
+    {
+        name: 'Faraway',
+        desc: 'Embárcate en una expedición mística por Alula en Faraway. Explora regiones cambiantes, cumple misiones y gana fama al revés. ¡Planifica tu viaje y descubre los secretos del continente!',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 4,
+        img: 'faraway.webp',
+        minutes: 25,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'Deduckto',
+        desc: 'Adivina tu sospechoso secreto: un juego de estilo de deducción simple en el que tendrás que usar pistas para deducir qué personaje eres e identificar el animal, el disfraz y la ubicación.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 3,
+        img: 'deduckto.webp',
+        minutes: 15,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'Sail',
+        desc: 'En Sail nos metemos en el papel de un pirata que, junto a un compañero de fatigas, van a intentar que su barco llegue a buen puerto evitando al Kraken y los obstáculos que hay por el camino. Es un juego cooperativo con una mecánica de bazas que resulta de lo más interesante.',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 3,
+        img: 'sail.webp',
+        minutes: 20,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'Trio',
+        desc: 'Trio es un juego de cartas en el que los jugadores tendrán que reunir tres cartas iguales teniendo que ir desvelándolas de una en una y eligiendo de donde desvelarlas, pudiendo ser del centro de la mesa o de algún jugador. Si las cartas que desvelan son del mismo número, continuará su turno.Si no, se devuelven las cartas donde estaban y juega el siguiente jugador. Ganarás si reúnes tres cartas del mismo número, pero, cuidado, porque si un jugador consigue el conjunto de tres sietes o consigue dos conjuntos que sumando o restando tenga como resultado siete, pierdes.',
+        minPlayers: 3,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'trio.webp',
+        minutes: 15,
+        new: true,
+        comingSoon: true
+    },
 ]
