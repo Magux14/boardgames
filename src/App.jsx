@@ -15,6 +15,7 @@ import { ResidentEvilPage } from './pages/resident-evil/ResidentEvilPage';
 import { TimerPage } from './pages/timer-page/TimerPage';
 import { Basta } from './pages/basta/basta';
 import { DeckTester } from './components/deck-tester/DeckTester';
+import { Unanimo } from './pages/unanimo/Unanimo';
 
 export const App = () => {
 
@@ -34,6 +35,7 @@ export const App = () => {
                 <Route path="/phasmophobia-filter" element={<PhasmophobiaFilterPage />} />
                 <Route path="/phasmophobia-game" element={<PhasmophobiaGamePage />} />
                 <Route path="/resident-evil" element={<ResidentEvilPage />} />
+                <Route path="/unanimo" element={<Unanimo />} />
                 <Route path="/tabu" element={<TabuGame />} />
                 <Route path="/timer" element={<TimerPage />} />
                 <Route path="/yo-nunca-nunca" element={<YoNuncaNuncaPage />} />

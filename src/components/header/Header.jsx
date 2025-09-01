@@ -30,6 +30,8 @@ export const Header = () => {
 
             <div id="side-menu-container">
                 <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+                    <div className="sidebar-content-container">
+
                     <div className='menu-title'>
                         Menú
                     </div>
@@ -89,14 +91,19 @@ export const Header = () => {
                             <span>Resident Evil</span> <img src="./img/resident-evil/resident-evil.jpg" alt="tabu" width={24} height={24} />
                         </li>
 
+                         <li onClick={() => goTo('/unanimo')}>
+                            <span>Unánimo</span> <img src="./img/unánimo/back.webp" alt="cow" width={24} height={24} />
+                        </li>
+
                         <li onClick={() => goTo('/tabu')}>
                             <span>Tabú</span> <img src="./img/games/tabu.png" alt="tabu" width={24} height={24} />
                         </li>
+
                         <li onClick={() => goTo('/yo-nunca-nunca')}>
                             <span>Yo Nunca Nunca</span> <img src="./img/yo-nunca-nunca/back.png" alt="cow" width={24} height={24} />
                         </li>
                     </ul>
-
+                    </div>
                 </div>
                 <div className={`overlay ${isOpen ? 'active' : ''}`} onClick={toggleMenu}></div>
             </div>
