@@ -1247,8 +1247,7 @@ export const lstGames = [
         difficulty: 4,
         img: 'sky team.webp',
         minutes: 15,
-        new: true,
-        comingSoon: true
+        new: true
     },
     {
         name: 'Faraway',
@@ -1294,4 +1293,14 @@ export const lstGames = [
         new: true,
         comingSoon: true
     },
+    {
+        name: 'heat',
+        desc: 'Heat es un juego con mecánicas sencillas e intuitivas que te pone al mando de un coche de carreras de los años 60. Pero el coche no lo es todo, ¡al final tu pericia al volante será la clave que te conduzca a la victoria! Experimenta toda la adrenalina propia de las carreras de coches, bajo un sistema de cartas trataremos de ser el piloto más veloz para llevarnos la victoria sin tener ningún percance por el camino.',
+        minPlayers: 1,
+        maxPlayers: 6,
+        difficulty: 3,
+        img: 'heat.webp',
+        minutes: 50,
+        new: true,
+    }
 ]
