@@ -1115,10 +1115,10 @@ export const lstGames = [
         desc: 'En Deep Sea Adventure deberás bucear muy profundo utilizando los dados. el objetivo del juego es conseguir más tesoros que tus oponentes y llevártelos de vuelva al submarino.',
         minPlayers: 2,
         maxPlayers: 6,
-        difficulty: 3,
+        difficulty: 2,
         img: 'deep sea adventure.webp',
         minutes: 30,
-        new: true,
+        rank: 3
     },
     {
         name: 'Battlevessel',
@@ -1128,7 +1128,7 @@ export const lstGames = [
         difficulty: 1,
         img: 'battlevessel.webp',
         minutes: 20,
-        new: true,
+        rank: 4
     },
     {
         name: 'Phase 10',
@@ -1258,7 +1258,6 @@ export const lstGames = [
         img: 'faraway.webp',
         minutes: 25,
         new: true,
-        comingSoon: true
     },
     {
         name: 'Deduckto',
@@ -1269,7 +1268,6 @@ export const lstGames = [
         img: 'deduckto.webp',
         minutes: 15,
         new: true,
-        comingSoon: true
     },
     {
         name: 'Sail',
@@ -1280,7 +1278,6 @@ export const lstGames = [
         img: 'sail.webp',
         minutes: 20,
         new: true,
-        comingSoon: true
     },
     {
         name: 'Trio',
@@ -1291,10 +1288,9 @@ export const lstGames = [
         img: 'trio.webp',
         minutes: 15,
         new: true,
-        comingSoon: true
     },
     {
-        name: 'heat',
+        name: 'Heat',
         desc: 'Heat es un juego con mecánicas sencillas e intuitivas que te pone al mando de un coche de carreras de los años 60. Pero el coche no lo es todo, ¡al final tu pericia al volante será la clave que te conduzca a la victoria! Experimenta toda la adrenalina propia de las carreras de coches, bajo un sistema de cartas trataremos de ser el piloto más veloz para llevarnos la victoria sin tener ningún percance por el camino.',
         minPlayers: 1,
         maxPlayers: 6,
@@ -1302,5 +1298,15 @@ export const lstGames = [
         img: 'heat.webp',
         minutes: 50,
         new: true,
+    },
+        {
+        name: 'Unánimo (Digital)',
+        desc: 'Un party game que no ha dejado indiferente a ningún grupo con el que lo hemos jugado, ya que se trata de encontrar nuestra conexión mental con los demás jugadores. Con el objetivo de leerles la mente para coincidir con el resto de propuestas escritas, que surgen a raíz de tarjetas que se revelan ronda tras ronda. Seguro que nos sorprendemos con las salidas de más de uno de nuestros «aparentes» conocidos. Vamos a descubrir con quién tenemos más feeling y con quiénes somos antónimos en ocurrencias. Siempre recordando que es un gracioso juego, nada de separaciones en mesa, que no estamos ante un juego de confrontación, sino no de similitudes.',
+        minPlayers: 3,
+        maxPlayers: 10,
+        difficulty: 1,
+        img: 'unánimo.webp',
+        minutes: 20,
+        new: true
     }
 ]
