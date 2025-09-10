@@ -1307,6 +1307,12 @@ export const lstGames = [
         difficulty: 1,
         img: 'unánimo.webp',
         minutes: 20,
-        new: true
+        new: true,
+        files: [
+            {
+                name: 'Manual Unánimo',
+                url: 'https://drive.google.com/file/d/1cPT_KYTm7TGek0gMVuXKFfW2hrXcp3aQ/view?usp=drive_link'
+            }
+        ]
     }
 ]
