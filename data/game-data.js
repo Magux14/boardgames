@@ -1246,8 +1246,14 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 4,
         img: 'sky team.webp',
-        minutes: 15,
-        new: true
+        minutes: 20,
+        rank: 4,
+        files: [
+            {
+                name: 'Sky Team Manual',
+                url: 'https://drive.google.com/file/d/1wTXCPNmLUAOsfMa-YBAb3mOF0aMG-rle/view?usp=drive_link'
+            }
+        ]
     },
     {
         name: 'Faraway',
@@ -1299,7 +1305,7 @@ export const lstGames = [
         minutes: 50,
         new: true,
     },
-        {
+    {
         name: 'Unánimo (Digital)',
         desc: 'Un party game que no ha dejado indiferente a ningún grupo con el que lo hemos jugado, ya que se trata de encontrar nuestra conexión mental con los demás jugadores. Con el objetivo de leerles la mente para coincidir con el resto de propuestas escritas, que surgen a raíz de tarjetas que se revelan ronda tras ronda. Seguro que nos sorprendemos con las salidas de más de uno de nuestros «aparentes» conocidos. Vamos a descubrir con quién tenemos más feeling y con quiénes somos antónimos en ocurrencias. Siempre recordando que es un gracioso juego, nada de separaciones en mesa, que no estamos ante un juego de confrontación, sino no de similitudes.',
         minPlayers: 3,
