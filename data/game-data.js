@@ -1320,5 +1320,15 @@ export const lstGames = [
                 url: 'https://drive.google.com/file/d/1cPT_KYTm7TGek0gMVuXKFfW2hrXcp3aQ/view?usp=drive_link'
             }
         ]
-    }
+    },
+    {
+        name: 'El Jardinero',
+        desc: 'Un juego para toda la familia, simple y dinámico, donde podrás aprovechar la suerte de los demás.Utilizando el dado, deberás ordenar tus cartas, del 1 al 7, acorde al crecimiento de una planta. Quien primero lo logre, será el ganador.',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 2,
+        img: 'el jardinero.webp',
+        minutes: 15,
+        new: true,
+    },
 ]
