@@ -74,7 +74,7 @@ export const lstYoNuncaNunca = [
     "Le he hecho un baile erótico a mi pareja",
     "He fingido un orgasmo",
     "Me he besado con alguien del mismo sexo",
-    "Me he reasurado el culo",
+    "Me he rasurado el culo",
     "He fantaseado con mi maestra/o",
     "He creado una cuenta falsa para espiar a mi ex",
     "He pasado más de 3 días sin bañarme",

@@ -13,24 +13,15 @@ export const NoMamesPage = () => {
   })
 
   return (
-    <>
-    <Header/>
     <div className="no-mames">
       <Deck
-          cards={lstCards}
-          backImgPath={`./img/no-mames/back.png`}
-          classes={
-            {
-                cardClassMargin: "no-mames__card-content",
-                cardClassInside: "no-mames__card-inside",
-                cardClassTitle: "no-mames__card-title",
-                cardClassDesc: "no-mames__card-desc",
-                cardClassBack: "no-mames__card--back",
-                button: "no-mames__button"
-            }
-          }
-        />
+        cards={lstCards}
+        backImgPath={`./img/no-mames/back.png`}
+        styles={{
+          frontBorder: '20px solid #F5D749',
+          buttonBackground: '#127c8eff'
+        }}
+      />
     </div>
-    </>
   )
 }

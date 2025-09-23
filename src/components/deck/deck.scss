@@ -1,4 +1,6 @@
 .deck {
+    min-height: 100%;
+
     &__container {
         display: flex;
         flex-direction: column;
@@ -15,6 +17,7 @@
         text-align: center;
         transition: transform 0.6s;
         transform-style: preserve-3d;
+        border-radius: 10px;
     }
 
     &__card--flip {
@@ -29,20 +32,50 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 10px;
         border-radius: 20px;
         background: white;
         font-size: 20%;
+        font-size: 10vw;
+        border: 20px solid rgb(240, 240, 240);
     }
 
-    &__card-inside-content {}
+    &__card-inside-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        gap: 10%;
+        padding: 10px;
+        width: 100%;
+    }
+
+    &__card-inside-content-title-and-content {
+        justify-content: unset;
+    }
+
+    &__title {
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    &__text-content {
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
 
     &__card--revealed {
         backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     &__card--back {
         transform: rotateY(180deg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     .deck__card--revealed+.deck__card--back {
@@ -52,7 +85,7 @@
     &__button {
         width: 80%;
         color: white;
-        background: red;
+        background: rgb(40, 60, 132);
         border-radius: 8px;
         font-weight: bold;
         font-size: 20px;

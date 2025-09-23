@@ -1,7 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './deck.scss';
 
-export const Deck = ({ cards = [], callbackButtonFunction, backImgPath, classes, infinite = true, showNextButton = true, buttonText = "Siguiente" }) => {
+export const Deck = ({
+    cards = [],
+    callbackButtonFunction,
+    backImgPath,
+    infinite = true,
+    showNextButton = true,
+    buttonText = "Siguiente",
+    styles
+}) => {
 
     const [lstRemainingCards, setLstRemainingCards] = useState(cards);
     const [currentCard, setCurrentCard] = useState();
@@ -40,18 +48,49 @@ export const Deck = ({ cards = [], callbackButtonFunction, backImgPath, classes,
     return (
         <div className="deck deck__container"  >
             <div className={`deck__card ${revealed ? '' : 'deck__card--flip'}`} >
-                <div className={`deck__card-inside deck__card--revealed deck__card--back ${classes?.cardClassBack}`} style={{ backgroundImage: `url('${backImgPath}')` }} alt="card" />
-                <div className={`deck__card-inside deck__card--revealed ${classes?.cardClassMargin}`}>
-                    <div className={`deck__card-inside-content ${classes?.cardClassInside}`}>
+                <div
+                    className={`deck__card-inside deck__card--revealed deck__card--back`}
+                    style={{
+                        backgroundImage: `url('${backImgPath}')`,
+                        border: styles?.backBorder ?? ''
+                    }}
+                    alt="card"
+                />
+                <div
+                    className={`deck__card-inside deck__card--revealed`}
+                    style={{ border: styles?.frontBorder ?? '' }}
+                >
+                    <div
+                        className={`deck__card-inside-content ${currentCard?.title ? 'deck__card-inside-content-title-and-content' : ''}`}
+                        style={{
+                            background: styles?.frontBackground ?? '',
+                            backgroundImage: styles?.frontBackground ?? ''
+                        }}
+                    >
                         {
                             currentCard &&
                             <>
-                                <div className={`${classes?.cardClassTitle}`}>
-                                    {currentCard.title}
-                                </div>
-                                <div className={`${classes?.cardClassDesc}`}>
-                                    {currentCard.desc}
-                                </div>
+                                {
+                                    currentCard.title &&
+                                    <div
+                                        className="deck__title"
+                                        style={{
+                                            color: styles?.titleColor ?? '',
+                                        }}>
+                                        {currentCard.title}
+                                    </div>
+                                }
+                                {
+                                    currentCard.desc &&
+                                    <div
+                                        className="deck__text-content"
+                                        style={{
+                                            color: styles?.contentColor ?? '',
+                                        }}>
+                                        {currentCard.desc}
+                                    </div>
+                                }
+
                             </>
                         }
                     </div>
@@ -59,7 +98,13 @@ export const Deck = ({ cards = [], callbackButtonFunction, backImgPath, classes,
             </div>
             {
                 showNextButton &&
-                <button className={`deck__button ${classes?.button}`} onClick={() => onButtonClick()}>{buttonText}</button>
+                <button
+                    className={`deck__button`}
+                    style={{
+                        background: styles?.buttonBackground ?? '',
+                    }}
+                    onClick={() => onButtonClick()}
+                >{buttonText}</button>
             }
         </div>
     )

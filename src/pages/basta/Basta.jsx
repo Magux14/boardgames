@@ -13,24 +13,18 @@ export const Basta = () => {
   })
 
   return (
-    <>
-      <Header />
-      <div className="basta">
-        <Deck
-          cards={lstCards}
-          backImgPath={`./img/basta/back.png`}
-          classes={
-            {
-              cardClassMargin: "basta__card-content",
-              cardClassInside: "basta__card-inside",
-              cardClassTitle: "basta__card-title",
-              cardClassDesc: "basta__card-desc",
-              cardClassBack: "basta__card--back",
-              button: "basta__button"
-            }
-          }
-        />
-      </div>
-    </>
+    <div className="basta">
+      <Deck
+        cards={lstCards}
+        backImgPath={`./img/basta/back.png`}
+        styles={{
+          frontBorder: '20px solid #ca0000ff',
+          backBorder: '20px solid #ca0000ff',
+          frontBackground: 'linear-gradient(180deg,rgba(237, 221, 83, 1) 0%, rgba(255, 250, 173, 1) 100%)',
+          titleColor: '#f54f49ff',
+          buttonBackground: '#e59501ff'
+        }}
+      />
+    </div>
   )
 }
