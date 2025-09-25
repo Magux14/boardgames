@@ -6,19 +6,49 @@ import './basta.scss';
 
 export const Basta = () => {
 
-  const lstCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'K', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V'];
+  const lstCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'V'];
   const getRandomCharacter = () => lstCharacters[Math.floor(Math.random() * lstCharacters.length)];
   const timerRef = useRef();
+
+  const resetButtons = () => {
+    return [
+      {
+        id: 1,
+        used: false,
+        character: getRandomCharacter()
+      },
+      {
+        id: 2,
+        used: false,
+        character: getRandomCharacter()
+      },
+      {
+        id: 3,
+        used: false,
+        character: getRandomCharacter()
+      },
+      {
+        id: 4,
+        used: false,
+        character: getRandomCharacter()
+      }
+    ]
+  }
+
   const [gameState, setGameState] = useState({
-    lstActiveCharacters: [getRandomCharacter(), getRandomCharacter(), getRandomCharacter(), getRandomCharacter()]
+    lstActiveCharacters: resetButtons()
   });
 
   const handlePressButton = (index) => {
-    let newCharacter = getRandomCharacter();
-    if (newCharacter == gameState.lstActiveCharacters[index]) {
-      newCharacter = getRandomCharacter();
+    if (gameState.lstActiveCharacters[index].used) {
+      return;
     }
-    gameState.lstActiveCharacters[index] = newCharacter;
+
+    if (gameState.lstActiveCharacters.filter(item => !item.used).length > 1) {
+      gameState.lstActiveCharacters[index].used = true;
+    } else {
+      gameState.lstActiveCharacters = resetButtons();
+    }
     timerRef.current.handleClick()
     setGameState({ ...gameState });
   }
@@ -34,12 +64,13 @@ export const Basta = () => {
     <div className="basta">
       <Deck
         cards={lstCards}
-        backImgPath={`./img/basta/back.png`}
+        backImgPath={`./img/basta/back.webp`}
         styles={{
-          frontBorder: '20px solid #ca0000ff',
-          backBorder: '20px solid #ca0000ff',
-          frontBackground: 'linear-gradient(180deg,rgba(237, 221, 83, 1) 0%, rgba(255, 250, 173, 1) 100%)',
+          frontBorder: '20px solid white',
+          backBorder: '20px solid white',
+          frontBackground: 'linear-gradient(45deg,rgba(145, 18, 18, 1) 0%, rgba(167, 24, 24, 1) 100%)',
           titleColor: '#f54f49ff',
+          contentColor: 'white',
           buttonBackground: '#e59501ff'
         }}
       />
@@ -47,9 +78,14 @@ export const Basta = () => {
       <div className="basta__game-container">
         <Timer defaultTime={10} timerRef={timerRef} />
         {
-          gameState.lstActiveCharacters.map((character, index) =>
-            <button key={index} className="basta__character-to-select" onTouchStart={() => handlePressButton(index)}>
-              {character}
+          gameState.lstActiveCharacters.map((item, index) =>
+            <button
+              key={`tile-${item.id}`}
+              className={`basta__character-to-select ${gameState.lstActiveCharacters[index].used ? 'basta__character-to-select--used' : ''}`}
+              onTouchStart={() => handlePressButton(index)}
+              disabled={gameState.lstActiveCharacters[index].used}
+            >
+              {item.character}
             </button>
           )
         }

@@ -24,6 +24,7 @@
         border-radius: 10px;
         font-weight: bold;
         margin: 10px;
+        user-select: none;
 
         &:active {
             font-size: 17vw;
@@ -32,11 +33,23 @@
         }
     }
 
+    &__character-to-select--used {
+        background: grey;
+        color: rgb(94, 94, 94);
+
+        &:active {
+            font-size: 20vw;
+            background: grey;
+            color: rgb(94, 94, 94);
+        }
+    }
+
     .timer {
         pointer-events: none;
 
         &__button-reset-timer {
             background: rgb(160, 2, 2);
+            color: white;
         }
     }
 }

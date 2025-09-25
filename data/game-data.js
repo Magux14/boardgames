@@ -1331,4 +1331,14 @@ export const lstGames = [
         minutes: 15,
         new: true,
     },
+    {
+        name: 'Basta Speed (Digital)',
+        desc: 'Se da una palabra o frase y cada jugador debe decir una palabra con una de las letras disponibles, ¡solo tienes 10 segundos!',
+        minPlayers: 2,
+        maxPlayers: 10,
+        difficulty: 1,
+        img: 'basta.webp',
+        minutes: 15,
+        new: true,
+    },
 ]

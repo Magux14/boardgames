@@ -1,6 +1,5 @@
 import { lstUnaminoCards } from "../../../data/unanimo";
 import { Deck } from "../../components/deck/Deck";
-import { Header } from "../../components/header/Header";
 
 export const Unanimo = () => {
 
@@ -12,17 +11,14 @@ export const Unanimo = () => {
   })
 
   return (
-    <>
-      <Header />
-      <div className="unanimo">
-        <Deck
-          cards={lstCards}
-          backImgPath={`./img/unánimo/back.webp`}
-          styles={{
-            frontBorder: '20px solid #388CEB',
-          }}
-        />
-      </div>
-    </>
+    <div className="unanimo">
+      <Deck
+        cards={lstCards}
+        backImgPath={`./img/unánimo/back.webp`}
+        styles={{
+          frontBorder: '20px solid #388CEB',
+        }}
+      />
+    </div>
   )
 }
