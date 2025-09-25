@@ -1,14 +1,18 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import CachedIcon from '@mui/icons-material/Cached';
 import './timer.scss';
 
-export const Timer = ({ defaultTime, typeOfTimer = 'restart', newInjectedTime, showResetButton }) => {
+export const Timer = ({ defaultTime, typeOfTimer = 'restart', newInjectedTime, showResetButton, timerRef }) => {
     const [timer, setTimer] = useState();
     const [timerIsTicking, setTimerIsTicking] = useState(false);
     const [isTouchingButton, setIsTouchingButton] = useState(false);
     const [forceTimerUpdate, setForceTimerUpdate] = useState();
     const intervalRef = useRef(null);
     const isMobile = window.innerWidth < 768;
+
+    useImperativeHandle(timerRef, () => ({
+        handleClick,
+    }));
 
     if (newInjectedTime) {
         defaultTime = newInjectedTime;

@@ -1,9 +1,27 @@
-import { Header } from '../../components/header/Header';
 import { Deck } from '../../components/deck/Deck';
 import { lstBastaQuestions } from '../../../data/basta';
+import { useRef, useState } from 'react';
+import { Timer } from '../../components/timer/Timer';
 import './basta.scss';
 
 export const Basta = () => {
+
+  const lstCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'K', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V'];
+  const getRandomCharacter = () => lstCharacters[Math.floor(Math.random() * lstCharacters.length)];
+  const timerRef = useRef();
+  const [gameState, setGameState] = useState({
+    lstActiveCharacters: [getRandomCharacter(), getRandomCharacter(), getRandomCharacter(), getRandomCharacter()]
+  });
+
+  const handlePressButton = (index) => {
+    let newCharacter = getRandomCharacter();
+    if (newCharacter == gameState.lstActiveCharacters[index]) {
+      newCharacter = getRandomCharacter();
+    }
+    gameState.lstActiveCharacters[index] = newCharacter;
+    timerRef.current.handleClick()
+    setGameState({ ...gameState });
+  }
 
   const lstCards = lstBastaQuestions.map(item => {
     return {
@@ -25,6 +43,17 @@ export const Basta = () => {
           buttonBackground: '#e59501ff'
         }}
       />
+
+      <div className="basta__game-container">
+        <Timer defaultTime={10} timerRef={timerRef} />
+        {
+          gameState.lstActiveCharacters.map((character, index) =>
+            <button key={index} className="basta__character-to-select" onTouchStart={() => handlePressButton(index)}>
+              {character}
+            </button>
+          )
+        }
+      </div>
     </div>
   )
 }
