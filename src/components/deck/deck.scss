@@ -61,6 +61,7 @@
 
     &__text-content {
         font-weight: bold;
+        word-wrap: break-word;
 
         &::first-letter {
             text-transform: uppercase;
