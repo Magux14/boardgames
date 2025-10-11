@@ -17,7 +17,7 @@ export const lstGames = [
         difficulty: 4,
         lang: '',
         img: 'ajedrez.jpg',
-        rank: 2,
+        rank: 3,
         minutes: 15
     },
     {
@@ -28,7 +28,7 @@ export const lstGames = [
         difficulty: 3,
         lang: '',
         img: 'azul.jpg',
-        rank: 4,
+        rank: 5,
         minutes: 35
     },
     {
@@ -102,7 +102,7 @@ export const lstGames = [
         difficulty: 2,
         lang: '',
         img: 'Coup.jpg',
-        rank: 3,
+        rank: 4,
         minutes: 15
     },
     {
@@ -216,7 +216,7 @@ export const lstGames = [
         difficulty: 1,
         img: 'escape-of-the-dead.png',
         minutes: 15,
-        rank: 3
+        rank: 2
     },
     {
         name: 'Fire Tower',
@@ -226,7 +226,7 @@ export const lstGames = [
         difficulty: 3,
         lang: 'EN',
         img: 'fire-tower.webp',
-        rank: 4,
+        rank: 5,
         minutes: 25
     },
     {
@@ -1293,7 +1293,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'heat.webp',
         minutes: 50,
-        new: true,
+        rank: 5
     },
     {
         name: 'Unánimo (Digital)',
@@ -1319,7 +1319,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'el jardinero.webp',
         minutes: 15,
-        new: true,
+        rank: 3
     },
     {
         name: 'Basta Speed (Digital)',
@@ -1329,6 +1329,6 @@ export const lstGames = [
         difficulty: 1,
         img: 'basta.webp',
         minutes: 15,
-        new: true,
+        rank: 3
     },
 ]
