@@ -209,16 +209,6 @@ export const lstGames = [
         minutes: 30
     },
     {
-        name: 'El Rebaño',
-        desc: '¿Te has sentido alguna vez como una oveja? Son inquietas, están hambrientas y son asustadizas, sobre todo cuando viene el lobo. Menos mal que el perro y el pastor están con ellas. Estate muy atentos a tus ovejas para seguir la actividad del redil e ir descartando cartas. El primero que se quede sin cartas, gana.',
-        minPlayers: 3,
-        maxPlayers: 5,
-        difficulty: 2,
-        img: 'el rebaño.webp',
-        minutes: 15,
-        new: true
-    },
-    {
         name: 'Escape of the dead',
         desc: 'Escape of the Dead es un juego para un solo jugador. Intentas reparar el coche mientras te defiendes de hordas de zombis. Recibes 4 dados de acción por turno, que se distribuyen en 3 fases (disparando al zombi, reparando la barricada o reparando el coche). Tira para determinar el éxito en cada fase. Cualquier zombi que sobreviva atacará la barricada.',
         minPlayers: 1,
@@ -1187,7 +1177,7 @@ export const lstGames = [
         maxPlayers: 2,
         difficulty: 4,
         img: 'resident evil.webp',
-        minutes: 45,
+        minutes: 120,
         rank: 5
     },
     {
@@ -1222,7 +1212,7 @@ export const lstGames = [
     },
     {
         name: 'Búsqueda Del Tesoro Inca',
-        desc: 'Juego party, hay un doctor y ¡pacientes locos! el doctor tiene que adivinar que se cree cada loco y los locos tienen que saber que loco es cada quien sin que se de cuenta el doctor.',
+        desc: 'Un juego donde los jugadores son exploradores que se adentran en un templo inca para recolectar tesoros. Cada turno se revelan cartas de tesoro o peligros; los jugadores deben decidir si se retiran con lo acumulado o arriesgan más en la exploración. Si se revela el mismo peligro dos veces en una ronda, el templo se derrumba y todos los que aún estén dentro pierden su botín de esa ronda.',
         minPlayers: 3,
         maxPlayers: 8,
         difficulty: 3,
