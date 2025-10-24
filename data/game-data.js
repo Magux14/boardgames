@@ -636,7 +636,7 @@ export const lstGames = [
         minutes: 30
     },
     {
-        name: 'splendor duel',
+        name: 'Splendor Duel',
         desc: 'Splendor Duel es una versión para dos jugadores del juego Splendor, manteniendo la esencia de la construcción de motores y gestión de recursos, pero con un enfoque más compacto y dinámico.',
         minPlayers: 2,
         maxPlayers: 2,

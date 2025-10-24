@@ -75,6 +75,10 @@ export const Header = () => {
                                 <span>Blockbuster</span> <img src="./img/blockbuster/logo.png" />
                             </li>
 
+                             <li onClick={() => goTo('/ice-breaker')}>
+                                <span>Ice Breaker</span> <img src="./img/ice-breaker/back.png" alt="ice-breaker" width={24} height={24} />
+                            </li>
+
                             <li onClick={() => goTo('/cow-mind')}>
                                 <span>Mente Vacuna</span> <img src="./icons/cow.png" alt="cow" width={24} height={24} />
                             </li>
