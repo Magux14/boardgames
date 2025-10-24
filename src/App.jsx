@@ -16,6 +16,7 @@ import { TimerPage } from './pages/timer-page/TimerPage';
 import { Basta } from './pages/basta/basta';
 import { DeckTester } from './components/deck-tester/DeckTester';
 import { Unanimo } from './pages/unanimo/Unanimo';
+import { IceBreaker } from './pages/ice-breaker/IceBreaker';
 
 export const App = () => {
 
@@ -39,6 +40,7 @@ export const App = () => {
                 <Route path="/tabu" element={<TabuGame />} />
                 <Route path="/timer" element={<TimerPage />} />
                 <Route path="/yo-nunca-nunca" element={<YoNuncaNuncaPage />} />
+                <Route path="/ice-breaker" element={<IceBreaker />} />
             </Routes>
         </BrowserRouter>
     )
