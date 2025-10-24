@@ -1,14 +1,19 @@
 .basta {
     background: rgb(57, 146, 197);
-    min-height: 100%;
 
     &__game-container {
         min-height: 100dvh;
         display: flex;
+        flex-direction: column;
+        color: white;
+        gap: 20px;
+    }
+
+    &__game-row {
+        display: flex;
         align-items: center;
         justify-content: space-around;
         flex-wrap: wrap;
-        color: white;
     }
 
     &__character-to-select {

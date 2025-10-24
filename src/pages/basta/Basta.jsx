@@ -49,8 +49,12 @@ export const Basta = () => {
     } else {
       gameState.lstActiveCharacters = resetButtons();
     }
-    timerRef.current.handleClick()
+    resetTimer();
     setGameState({ ...gameState });
+  }
+
+  const resetTimer = () => {
+    timerRef.current.handleClick()
   }
 
   const lstCards = lstBastaQuestions.map(item => {
@@ -62,33 +66,36 @@ export const Basta = () => {
 
   return (
     <div className="basta">
-      <Deck
-        cards={lstCards}
-        backImgPath={`./img/basta/back.webp`}
-        styles={{
-          frontBorder: '20px solid white',
-          backBorder: '20px solid white',
-          frontBackground: 'linear-gradient(45deg,rgba(145, 18, 18, 1) 0%, rgba(167, 24, 24, 1) 100%)',
-          titleColor: '#f54f49ff',
-          contentColor: 'white',
-          buttonBackground: '#e59501ff'
-        }}
-      />
-
       <div className="basta__game-container">
-        <Timer defaultTime={10} timerRef={timerRef} />
-        {
-          gameState.lstActiveCharacters.map((item, index) =>
-            <button
-              key={`tile-${item.id}`}
-              className={`basta__character-to-select ${gameState.lstActiveCharacters[index].used ? 'basta__character-to-select--used' : ''}`}
-              onTouchStart={() => handlePressButton(index)}
-              disabled={gameState.lstActiveCharacters[index].used}
-            >
-              {item.character}
-            </button>
-          )
-        }
+        <Deck
+          cards={lstCards}
+          backImgPath={`./img/basta/back.webp`}
+          styles={{
+            frontBorder: '20px solid white',
+            backBorder: '20px solid white',
+            frontBackground: 'linear-gradient(45deg,rgba(145, 18, 18, 1) 0%, rgba(167, 24, 24, 1) 100%)',
+            titleColor: '#f54f49ff',
+            contentColor: 'white',
+            buttonBackground: '#e59501ff'
+          }}
+        />
+        <div className="basta__game-row" onClick={() => resetTimer()}>
+          <Timer defaultTime={10} timerRef={timerRef} />
+        </div>
+        <div className="basta__game-row">
+          {
+            gameState.lstActiveCharacters.map((item, index) =>
+              <button
+                key={`tile-${item.id}`}
+                className={`basta__character-to-select ${gameState.lstActiveCharacters[index].used ? 'basta__character-to-select--used' : ''}`}
+                onTouchStart={() => handlePressButton(index)}
+                disabled={gameState.lstActiveCharacters[index].used}
+              >
+                {item.character}
+              </button>
+            )
+          }
+        </div>
       </div>
     </div>
   )

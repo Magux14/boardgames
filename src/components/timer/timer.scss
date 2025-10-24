@@ -15,14 +15,14 @@
         max-width: 80vw;
         max-height: 80vw;
         padding: 20px;
-        font-size: 40vw;
         border-radius: 100%;
         background: blue;
         color: $blockbuster-yellow;
         font-family: 'blockbuster', 'Courier New', Courier, monospace;
+        font-size: 200px;
 
         @media (min-width: 990px) {
-            font-size: 100px;
+            font-size: 300px;
             width: 300px;
             height: 300px;
         }
@@ -58,7 +58,7 @@
     }
 
     &__button-reset-timer--font-smaller {
-        font-size: 15vw;
+        font-size: 50px;
 
         @media (min-width: 990px) {
             font-size: 70px;
