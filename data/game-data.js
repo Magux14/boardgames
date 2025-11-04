@@ -117,16 +117,6 @@ export const lstGames = [
         minutes: 45
     },
     {
-        name: 'Dino Fiesta',
-        desc: '"Dino Fiesta" es un juego de cartas explosivo donde los jugadores, en una celebración prehistórica, deben construir una pirámide de dinosaurios, cantando y bailando, para salvar a sus dinosaurios de la extinción.',
-        minPlayers: 2,
-        maxPlayers: 6,
-        difficulty: 2,
-        img: 'dino-fiesta.webp',
-        minutes: 15,
-        new: true
-    },
-    {
         name: 'Disney trivia',
         desc: 'El maravilloso mundo de Disney Trivia es un juego de mesa diseñado para jugadores de todas las edades que disfrutan del maravilloso mundo de Disney. Está basado en formato trivial, donde debe haber un mínimo de 2 jugadores y con duración aprox. de 45 min. Asegurate de ver todas las películas de Disney, demuestra quién sabe más y quién tiene mejor memoria.',
         minPlayers: 2,
@@ -240,16 +230,6 @@ export const lstGames = [
         rank: 5
     },
     {
-        name: 'Guarro Pig',
-        desc: 'Trata de lograr que todos tus cerdos se ensucien antes que tus oponentes. Ante ti, tienes una pandilla de relucientes cerdos que están deseando llenarse de barro. Tu misión es lograrlo y hacerlos felices antes de que lo consigan el resto de jugadores y jugadoras.',
-        minPlayers: 2,
-        maxPlayers: 6,
-        difficulty: 2,
-        img: 'guarro-pig.jpg',
-        minutes: 10,
-        new: true
-    },
-    {
         name: 'Ghost Blitz',
         desc: 'Fantasma Blitz es un juego que permite a entre 2-8 jugadores enfrentarse en rápidas y divertidas partidas de no más de 20 minutos. Es un juego con un marcado carácter infantil, ideal para introducir a los más peques de la casa en el mundo de los juegos de mesa modernos.',
         minPlayers: 2,
@@ -357,16 +337,6 @@ export const lstGames = [
         difficulty: 1,
         img: 'mente-vacuna.png',
         rank: 4,
-        minutes: 20
-    },
-    {
-        name: 'Mini Torre del beber',
-        desc: 'Emocionante y divertida mini torre de Jenga, con 48 bloques de madera y desafiantes retos para vivir en pareja o con amigos. Un juego para mayores de 18 años. ¿Te atreves a vivirlo? ¡No dejes caer la torre o perderás!',
-        minPlayers: 2,
-        maxPlayers: 8,
-        difficulty: 1,
-        img: 'Mini-Torre-del-beber.png',
-        rank: 2,
         minutes: 20
     },
     {
@@ -557,16 +527,6 @@ export const lstGames = [
         img: 'serpientes y escaleras.jpg',
         rank: 2,
         minutes: 20
-    },
-    {
-        name: 'Shopping List',
-        desc: 'Un juego para niños rápido y sencillo de comprender, en el cual los jugadores deben completar la lista de productos del supermercado que les ha tocado y llenar su carrito, turnándose para descubrir las diferentes tarjetas del tablero.',
-        minPlayers: 2,
-        maxPlayers: 4,
-        difficulty: 1,
-        img: 'shopping-list.webp',
-        minutes: 15,
-        rank: 3
     },
     {
         name: 'Sin memoria',
@@ -809,12 +769,12 @@ export const lstGames = [
         minutes: 40
     },
     {
-        name: 'Villanious Disney',
+        name: 'Villanious Disney (Expansión)',
         desc: '¡Los villanos entran en escena, los héroes quien que pierdas! Descubre sus habilidades únicas y lleva a cabo sus planes malvados para conseguir la victoria. Un juego donde personificas a un villano de Disney, cada personaje tiene un modo de juego diferente, completa sus objetivos para ganar, el más astuto y malvado villano ganará.',
         minPlayers: 2,
-        maxPlayers: 6,
+        maxPlayers: 3,
         difficulty: 5,
-        img: 'Villanious-Disney.png',
+        img: 'Villanious-Disney.webp',
         rank: 3,
         minutes: 80
     },
@@ -1079,16 +1039,6 @@ export const lstGames = [
                 url: 'https://drive.google.com/file/d/1F8Zcgt-tuUUzyE5Ef4CevvwRoUh7tRFy/view?usp=drive_link'
             }
         ]
-    },
-    {
-        name: 'Cuidado con Beetlejuice',
-        desc: '¡Los fantasmas están sueltos y Beetlejuice también! En Cuidado con Beetlejuice, tú y tus amigos deben espantar vivos de su hogar encantado… pero cuidado, que decir su nombre podría invocarlo y arruinarlo todo. ¿Te atreves a tentar a la suerte?',
-        minPlayers: 2,
-        maxPlayers: 6,
-        difficulty: 2,
-        img: 'cuidado con beetlejuice.webp',
-        minutes: 30,
-        rank: 2,
     },
     {
         name: '3 up 3 down',
