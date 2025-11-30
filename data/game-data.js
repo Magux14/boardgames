@@ -1153,9 +1153,9 @@ export const lstGames = [
     {
         name: 'I\'m a banana',
         desc: 'Juego party, hay un doctor y ¡pacientes locos! el doctor tiene que adivinar que se cree cada loco y los locos tienen que saber que loco es cada quien sin que se de cuenta el doctor.',
-        minPlayers: 3,
-        maxPlayers: 5,
-        difficulty: 3,
+        minPlayers: 4,
+        maxPlayers: 8,
+        difficulty: 2,
         img: 'I\'m a banana.webp',
         minutes: 5,
         rank: 4
