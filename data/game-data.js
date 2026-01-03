@@ -626,6 +626,16 @@ export const lstGames = [
         minutes: 15
     },
     {
+        name: 'Sushi Go Party!',
+        desc: '¿Se te antoja un Sushi? Te invitamos a preparar y elegir platillo para tener la mejor comida posible. Sushi Go! es un divertido y rápido juego de cartas en el que los jugadores tratan de comer el menú perfecto de su comida favorita.Saber qué platillos quedarte y qué platillos dejar pasar es la clave para ganar la ronda, pero ten cuidado con el sushi que los demás oponentes se llevan, podría ser justo lo que necesitan para la victoria.',
+        minPlayers: 2,
+        maxPlayers: 8,
+        difficulty: 2,
+        img: 'Sushi-Go-Party!.webp',
+        minutes: 20,
+        new: true
+    },
+    {
         name: 'Taco Gato Cabra Queso Pizza',
         desc: 'En el juego de cartas Taco Gato Cabra Queso Pizza, debes ser el más rápido. Cuando un jugador se deshaga de una carta que coincida con la palabra que dice, coloca tu mano sobre el montón central. ¡El último en poner la mano se queda con todas las cartas del montón!',
         minPlayers: 2,
@@ -1233,7 +1243,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'trio.webp',
         minutes: 15,
-        new: true,
+        rank: 4
     },
     {
         name: 'Heat',
@@ -1280,5 +1290,69 @@ export const lstGames = [
         img: 'basta.webp',
         minutes: 15,
         rank: 3
+    },
+    {
+        name: 'EXIT - La caballa abandonada',
+        desc: 'Buscando refugio para pasar la noche, luego que que nuestro coche se averiara, encontramos una cabaña abandonada a la mitad del bosque. Poco antes del amanecer descubres con horror que la puerta de entrada ha sido asegurada con una cerradura de combinación, y por más que intentas forzarla, esta no cede. También descubres que las ventanas tienen barrotes que te impiden usarlas como salida. ¡Estás completamente atrapado! Mientras buscas desesperadamente una salida descubres que sobre la mesa hay un extraño cuaderno y un curioso disco que parecen ser tus únicas pistas para salir de aquí ¿Podrás escapar de LA CABAÑA ABANDONADA?',
+        minPlayers: 1,
+        maxPlayers: 6,
+        difficulty: 4,
+        img: 'exit-cabaña.webp',
+        minutes: 90,
+        rank: 2
+    },
+    {
+        name: 'Kniting Circle',
+        desc: 'Knitting Circle es una secuela independiente del juego de rompecabezas Calico. En este juego de colocación de fichas para toda la familia, los jugadores son tejedores que compiten para crear la colección de prendas más acogedora y bonita.',
+        minPlayers: 1,
+        maxPlayers: 4,
+        difficulty: 3,
+        img: 'kniting-circle.webp',
+        minutes: 30,
+        new: true
+    },
+    {
+        name: 'Snailed It',
+        desc: 'Grítalo, hazlo, evita que lo gane: ¡consigue la menor cantidad de puntos para ganar! Cada turno, los jugadores colocan una carta numérica en 1 de 4 filas de cartas. Si su tarjeta deja un espacio numérico, otros pueden gritar "SNAILED IT!" y darles cartas que puedan añadir puntos',
+        minPlayers: 3,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'snailed-it.webp',
+        minutes: 20,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'Confusing Lands',
+        desc: 'Confusing Lands es un juego de cartas para 2 jugadores en el que cada jugador crea su propio y alocado paisaje flotante. ¡Prepárate para descubrir majestuosas montañas, recorrer ríos y encontrarte con algún que otro cervatillo!',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 2,
+        img: 'confusing-lands.webp',
+        minutes: 10,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: 'Odin',
+        desc: 'En Odin, los jugadores asumen el papel de guerreros vikingos que compiten por deshacerse de todas sus cartas antes que los demás, mientras intentan acumular la menor cantidad de puntos posible. La partida se desarrolla a lo largo de varias manos, cada una compuesta por rondas en las que los jugadores alternan turnos. En su turno, el jugador activo puede jugar una combinación de cartas que supere en valor a la anterior.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 2,
+        img: 'odin.webp',
+        minutes: 15,
+        new: true,
+        comingSoon: true
+    },
+    {
+        name: '5 Towers',
+        desc: '5 Torres es un juego de cartas donde serán arquitectos. ¡Construye las torres más altas y ganarás!',
+        minPlayers: 2,
+        maxPlayers: 5,
+        difficulty: 3,
+        img: '5-towers.webp',
+        minutes: 25,
+        new: true,
+        comingSoon: true
     },
 ]
