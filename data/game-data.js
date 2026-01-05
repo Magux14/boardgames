@@ -1309,6 +1309,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'kniting-circle.webp',
         minutes: 30,
+        lang: 'en',
         new: true
     },
     {
@@ -1354,5 +1355,16 @@ export const lstGames = [
         minutes: 25,
         new: true,
         comingSoon: true
+    },
+    {
+        name: 'Boss Monster The Next Level',
+        desc: 'En Boss Monster 2 los jugadores seleccionan un monstruo y se dedican cada turno a construir un “dungeon” para protegerse y destruir a los héroes que se aventuran a explorarlo y, en el proceso, arruinar los planes de los otros jugadores.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 3,
+        img: 'boss-monster-2.webp',
+        minutes: 35,
+        lang: 'en',
+        new: true,
     },
 ]
