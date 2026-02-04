@@ -44,7 +44,7 @@ export const lstBastaQuestions = [
     'Estado',
     'Personaje de Disney',
     'Cosas en una guardería',
-    'Cosa asquerosaa',
+    'Cosas asquerosas',
     'Pecados',
     'Telenovelas',
     'Cosas en un refrigerador',

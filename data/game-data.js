@@ -1168,7 +1168,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'I\'m a banana.webp',
         minutes: 5,
-        rank: 4
+        rank: 5
     },
     {
         name: 'Búsqueda Del Tesoro Inca',
@@ -1263,7 +1263,7 @@ export const lstGames = [
         difficulty: 1,
         img: 'unánimo.webp',
         minutes: 20,
-        new: true,
+        rank: 3,
         files: [
             {
                 name: 'Manual Unánimo',
@@ -1321,7 +1321,6 @@ export const lstGames = [
         img: 'snailed-it.webp',
         minutes: 20,
         new: true,
-        comingSoon: true
     },
     {
         name: 'Confusing Lands',
@@ -1332,7 +1331,6 @@ export const lstGames = [
         img: 'confusing-lands.webp',
         minutes: 10,
         new: true,
-        comingSoon: true
     },
     {
         name: 'Odin',
@@ -1343,18 +1341,16 @@ export const lstGames = [
         img: 'odin.webp',
         minutes: 15,
         new: true,
-        comingSoon: true
     },
     {
         name: '5 Towers',
         desc: '5 Torres es un juego de cartas donde serán arquitectos. ¡Construye las torres más altas y ganarás!',
         minPlayers: 2,
         maxPlayers: 5,
-        difficulty: 3,
+        difficulty: 2,
         img: '5-towers.webp',
         minutes: 25,
-        new: true,
-        comingSoon: true
+        rank: 2
     },
     {
         name: 'Boss Monster The Next Level',
@@ -1375,7 +1371,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'weapon-wars.webp',
         minutes: 20,
-        new: true,
+        rank: 5
     },
     {
         name: 'Spectrum',
