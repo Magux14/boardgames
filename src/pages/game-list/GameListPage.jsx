@@ -15,6 +15,7 @@ import { TripCart } from './components/trip-cart/TripCart';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { useSaveState } from '../../hooks/useSaveState';
+import { useNavigate } from 'react-router-dom';
 
 const shortTime = 15;
 const mediumTime = 40;
@@ -29,11 +30,21 @@ export const GameListPage = () => {
     const [lstFilteredItems, setlstFilteredItems] = useState(lstGames);
     const [filterType, setFilterType] = useState('random');
     const [openFileModal, setOpenFileModal] = useState({ name: '', open: false });
-
     const [lstTripGames, setLstTripGames] = useState([]);
     const [openTripCart, setOpenTripCart] = useState(false);
     const { saveState, getLoadState } = useSaveState('trip-game-state');
     const [messageApi, contextHolder] = message.useMessage();
+
+    const params = new URLSearchParams(window.location.search);
+    let redirectPath = params.get('redirect');
+    const navigate = useNavigate();
+
+    if (redirectPath) {
+        if (redirectPath == 'phasmophobia') {
+            redirectPath = 'phasmophobia-filter';
+        }
+        navigate(redirectPath, { replace: true });
+    }
 
     const handleSearchWordChange = (event) => {
         setFilters({

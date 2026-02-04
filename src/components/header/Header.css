@@ -10,6 +10,12 @@
 #side-menu-container {
     position: relative;
 
+    ul {
+        li {
+            user-select: none;
+        }
+    }
+
     .menu-title {
         display: flex;
         justify-content: center;
