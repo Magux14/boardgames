@@ -30,7 +30,7 @@ export const Header = () => {
             () => {
                 const link = `${window.location.origin}/boardgames?redirect=${path}`;
                 navigator.clipboard.writeText(link);
-                messageApi.info(`"${link}" copiado!`);
+                messageApi.info(`"${link}" ¡copiado!`);
             },
             () => { },
             600
