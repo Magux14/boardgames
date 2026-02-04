@@ -28,7 +28,7 @@ export const Header = () => {
     const copySharedLink = (path) => {
         return useLongPress(
             () => {
-                const link = `${window.location.origin}?redirect=${path}`;
+                const link = `${window.location.origin}/boardgames?redirect=${path}`;
                 navigator.clipboard.writeText(link);
                 messageApi.info(`"${link}" copiado!`);
             },
