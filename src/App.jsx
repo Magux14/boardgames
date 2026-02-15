@@ -17,6 +17,7 @@ import { Basta } from './pages/basta/basta';
 import { DeckTester } from './components/deck-tester/DeckTester';
 import { Unanimo } from './pages/unanimo/Unanimo';
 import { IceBreaker } from './pages/ice-breaker/IceBreaker';
+import { CodigoSecretoPage } from './pages/codigo-secreto/CodigoSecretoPage';
 
 export const App = () => {
 
@@ -26,6 +27,7 @@ export const App = () => {
                 <Route path="/" element={<GameListPage />} />
                 <Route path="/basta" element={<Basta />} />
                 <Route path="/blockbuster" element={<BlockbusterPage />} />
+                <Route path="/codigo-secreto" element={<CodigoSecretoPage />} />
                 <Route path="/counting" element={<CountingPoints />} />
                 <Route path="/cow-mind" element={<CowMind />} />
                 <Route path="/deck-tester" element={<DeckTester />} />

@@ -1383,4 +1383,14 @@ export const lstGames = [
         minutes: 30,
         new: true,
     },
+    {
+        name: 'Código secreto (Digital)',
+        desc: 'Requiere papel y pluma para jugar. Es un popular juego de mesa de deducción y estrategia donde dos equipos (rojo y azul) compiten por contactar a todos sus agentes, representados por palabras en una cuadrícula de 5x5.',
+        minPlayers: 2,
+        maxPlayers: 8,
+        difficulty: 2,
+        img: 'codigo-secreto.png',
+        minutes: 15,
+        new: true,
+    },
 ]
