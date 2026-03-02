@@ -594,6 +594,16 @@ export const blockbusterMovies = [
     "zombieland",
     "zoolander",
     "zootopia",
+    "la hora de la desaparición (weapons)",
+    "mickey 17",
+    "kpop demon hunters",
+    "ayuda",
+    "la empleada",
+    "super mario bros",
+    "frankenstein",
+    "una batalla tras otra",
+    "marty supreme",
+    "los pecadores"
 ]
 
 export const blockbusterThings = [
@@ -792,5 +802,5 @@ export const blockbusterThings = [
     "videojuegos",
     "villanos que ganan",
     "volcanes",
-    "zombies",
+    "zombies"
 ]

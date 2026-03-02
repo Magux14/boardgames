@@ -84,15 +84,15 @@ export const Header = () => {
 
                         <ul>
                             <li onClick={() => goTo('/basta')} {...copySharedLink('basta')}>
-                                <span>Basta</span> <img src="./img/basta/logo.webp" />
+                                <span>Basta</span> <img src="./img/basta/logo.webp" alt="basta"/>
                             </li>
 
                             <li onClick={() => goTo('/blockbuster')} {...copySharedLink('blockbuster')}>
-                                <span>Blockbuster</span> <img src="./img/blockbuster/logo.png" />
+                                <span>Blockbuster</span> <img src="./img/blockbuster/logo.png" alt="blockbuster" />
                             </li>
 
                             <li onClick={() => goTo('/codigo-secreto')} {...copySharedLink('codigo-secreto')}>
-                                <span>Código Secreto</span> <img src="./img/games/codigo-secreto.png" />
+                                <span>Código Secreto</span> <img src="./img/games/codigo-secreto.png" alt="codigo-secreto" />
                             </li>
 
                             <li onClick={() => goTo('/ice-breaker')} {...copySharedLink('ice-breaker')}>
@@ -104,11 +104,11 @@ export const Header = () => {
                             </li>
 
                             <li onClick={() => goTo('/no-mames')} {...copySharedLink('no-mames')}>
-                                <span>No mames</span> <img src="./img/no-mames/back.png" alt="cow" width={24} height={24} />
+                                <span>No mames</span> <img src="./img/no-mames/back.png" alt="no-mame" width={24} height={24} />
                             </li>
 
                             <li onClick={() => goTo('/phasmophobia-filter')} {...copySharedLink('phasmophobia')}>
-                                <span>Phasmophobia</span> <img id="phasmophobia-icon" src="./icons/phasmophobia-icon.png" />
+                                <span>Phasmophobia</span> <img id="phasmophobia-icon" src="./icons/phasmophobia-icon.png" alt="phasmophobia" />
                             </li>
 
                             <li onClick={() => goTo('/resident-evil')} {...copySharedLink('resident-evil')}>
