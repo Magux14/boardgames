@@ -1418,20 +1418,20 @@ export const lstGames = [
         desc: 'King of Tokyo Duel es un juego de dados para dos jugadores, elige tu monstruo con poderes únicos y tira nuevos dados para atraer las fichas de fama y destrucción hacia ti… ¡O aplasta a tu rival con nuevas cartas de poder especial para convertirte en el Rey de Tokio definitivo!',
         minPlayers: 2,
         maxPlayers: 2,
-        difficulty: 3,
+        difficulty: 4,
         img: 'king-tokyo-duel.webp',
-        minutes: 15,
-        new: true,
+        minutes: 20,
+        rank: 4
     },
     {
         name: 'Rabbitz & Robots',
         desc: 'Se acerca la primavera y, como cada año, el miedo se apodera de la Huerta... ¡Los RabbitZ!, una temible horda de conejos zombis mutantes, salen de su madriguera con un único objetivo... ¡COMER! La Huerta y el pueblo hortaliza están en peligro… ¡Pero esta vez estamos preparadas!',
         minPlayers: 1,
         maxPlayers: 5,
-        difficulty: 3,
+        difficulty: 4,
         img: 'rabbitz-and-robots.webp',
         minutes: 20,
-        new: true,
+        rank: 2
     },
     {
         name: 'Dibujimnasio',
@@ -1441,6 +1441,6 @@ export const lstGames = [
         difficulty: 1,
         img: 'dibujimnasio.webp',
         minutes: 20,
-        new: true,
+        rank: 4
     },
 ]
