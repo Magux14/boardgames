@@ -1443,4 +1443,14 @@ export const lstGames = [
         minutes: 20,
         rank: 4
     },
+    {
+        name: 'Skip-bo',
+        desc: 'En Skip-Bo, cada jugador intenta deshacerse de su montón principal jugando cartas en el centro de la mesa en orden ascendente del 1 al 12.',
+        minPlayers: 2,
+        maxPlayers: 6,
+        difficulty: 1,
+        img: 'skip-bo.webp',
+        minutes: 25,
+        new: true
+    },
 ]
