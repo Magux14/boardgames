@@ -1435,7 +1435,7 @@ export const lstGames = [
     },
     {
         name: 'Dibujimnasio',
-        desc: 'Un juego de cartas para ejercitar tu creatividad dibujando.Crea dibujos únicos y divertidos con los tres modos distintos de juego pensados para uno o más jugadores de cualquier edad.No necesitas saber dibujar porque en Dibujimnasio no hay ganadores, ni perdedores.',
+        desc: 'Un juego de cartas para ejercitar tu creatividad dibujando. Crea dibujos únicos y divertidos con los tres modos distintos de juego pensados para uno o más jugadores de cualquier edad.No necesitas saber dibujar porque en Dibujimnasio no hay ganadores, ni perdedores.',
         minPlayers: 1,
         maxPlayers: 14,
         difficulty: 1,
