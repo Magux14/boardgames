@@ -1454,12 +1454,12 @@ export const lstGames = [
         new: true
     },
     {
-        name: 'Jumaji',
+        name: 'Jumanji',
         desc: '¡no empieces si no tienes intención de acabar El juego de mesa Jumanji en su versión española os transportará a ti y a tus compañeros aventureros a la selva, donde tendréis que resolver acertijos y completar desafíos mientras intentáis conservar vuestras fichas de vida',
         minPlayers: 2,
         maxPlayers: 4,
         difficulty: 3,
-        img: 'jumaji.webp',
+        img: 'jumanji.webp',
         minutes: 60,
         new: true
     },
