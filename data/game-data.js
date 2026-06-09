@@ -413,7 +413,6 @@ export const lstGames = [
         maxPlayers: 4,
         difficulty: 2,
         img: 'parchis.webp',
-        new: true,
         minutes: 30
     },
     {
@@ -1411,7 +1410,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'survive-the-island.webp',
         minutes: 45,
-        new: true,
+        rank: 4
     },
     {
         name: 'King Tokyo Duel',
@@ -1461,6 +1460,26 @@ export const lstGames = [
         difficulty: 3,
         img: 'jumanji.webp',
         minutes: 60,
+        new: true
+    },
+    {
+        name: 'Abalone GO',
+        desc: 'Juego de estrategia abstracta para dos jugadores que se juega sobre un tablero hexagonal con 28 canicas en total (14 blancas y 14 negras). El objetivo es muy sencillo: ser el primero en empujar 6 canicas de tu oponente fuera del tablero.',
+        minPlayers: 2,
+        maxPlayers: 2,
+        difficulty: 2,
+        img: 'abalone.webp',
+        minutes: 20,
+        new: true
+    },
+    {
+        name: 'Labyrinth: Disney Villains',
+        desc: 'Juego de mesa donde eliges a un villano icónico como Maléfica, Scar, Hades o Úrsula. Tu misión es recorrer un laberinto en constante cambio para encontrar a tus secuaces, mientras bloqueas el camino a tus amigos.',
+        minPlayers: 2,
+        maxPlayers: 4,
+        difficulty: 3,
+        img: 'labyrinth.webp',
+        minutes: 20,
         new: true
     },
 ]
