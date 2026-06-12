@@ -1232,7 +1232,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'sail.webp',
         minutes: 20,
-        new: true,
+        rank: 1
     },
     {
         name: 'Trio',
@@ -1470,7 +1470,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'abalone.webp',
         minutes: 20,
-        new: true
+        rank: 3
     },
     {
         name: 'Labyrinth: Disney Villains',
