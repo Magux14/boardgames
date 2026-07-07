@@ -6,13 +6,66 @@ export const ResidentRules = () => {
                 Reglas
             </div>
             <div className="resident-rules__title">
+                Objetivo del juego
+            </div>
+            <div className="resident-rules__desc">
+                Recuperar las 3 muestras del T-Virus y Salir con vida.
+            </div>
+            <div className="resident-rules__title">
+                ¿Cómo jugar?
+            </div>
+            <div className="resident-rules__desc">
+                La partida necesitará a un "Dungeon master", quien será encargado de seguir las reglas y activar los efectos correspondientes en el juego.
+                <br />
+                Cada ronda consta de 3 fases:
+                <ol>
+                    <li>Movimiento de jugadores</li>
+                    <li>Fase de los zombies</li>
+                    <li>Fase de resurrección</li>
+                </ol>
+                <div className="resident-rules__subtitle">
+                    Movimiento de jugadores
+                </div>
+                Los jugadores tienen 4 acciones al iniciar su turno, cada acción puede ser una de las siguientes:
+                <br />
+                <ol>
+                    <li>Moverse un espacio en el mapa</li>
+                    <li>Mirar con cuidado otro cuarto sin entrar para ver que hay dentro</li>
+                    <li>Disparar</li>
+                    <li>Buscar un item (esto solo se puede hacer una vez por turno)</li>
+                    <li>Entregar un item a un compañero (tienen que estar en el mismo cuarto)</li>
+                </ol>
+                Cosas que no se cuenta como una acción:
+                <ol>
+                    <li>Lanzar una botella</li>
+                    <li>Cambiar de arma</li>
+                    <li>Combinar armas</li>
+                </ol>
+                <div className="resident-rules__subtitle">
+                    Fase de los zombies
+                </div>
+                Los zombies se mueven en automático por linea de visión dando prioridad al jugador más cercano.
+                <br />
+                Ver sección "Zombies" para saber su rango de movimiento.
+                <br />
+                Si un zombie te ataca, después de recibir el daño, podrás empujarlo a un cuarto adyacente al tuyo (con excepción de nemesis y los boomers), con esto igual podrás descubrir nuevas zonas.
+                <br />
+                <br />
+                <div className="resident-rules__subtitle">
+                    Fase de resurrección
+                </div>
+                por cada habitación que tenga un cuervo o un toro se utilizará el botón de resurrección y se pondrá al o a los zombies indicados en la app
+            </div>
+            <div className="resident-rules__title">
                 Armas
             </div>
             <div className="resident-rules__subtitle">
                 En general
             </div>
             <div className="resident-rules__desc">
-                Cada arma tiene un número de dados a tirar y el daño que hacen, al menos un dado tiene que sacar el número mímimo de golpe para poder acertar, solo es un golpe por tirada de dados (excepto la ametralladora)
+                Cada arma tiene un número de dados a tirar y el daño que hacen, al menos un dado tiene que sacar el número mímimo de golpe para poder acertar, solo es un golpe por tirada de dados (excepto la ametralladora).
+                <br />
+                Las armas pueden combinarse para tener mayores efectos.
             </div>
             <div className="resident-rules__subtitle">
                 Ametralladora
@@ -34,8 +87,7 @@ export const ResidentRules = () => {
                 <br />
                 Bommers: 3 de vida
                 <br />
-                Némsis: Inmortal (con 5 de daño puedes inhabilitarlo temporalmente hasta que se vuelva a activar)
-                <br />
+                Némesis: Inmortal (con 5 de daño puedes inhabilitarlo temporalmente hasta que se vuelva a activar)
             </div>
 
             <div className="resident-rules__title">
@@ -60,9 +112,6 @@ export const ResidentRules = () => {
                 <br />
                 Némesis: 1 posición
                 <br />
-                <br />
-                Depués del movimiento, en cada zona contectada por una puerta abierta, por cada habitación oscura se tirará un dado + un dado extra (ejemplo: 5 zonas oscuras = 6 dados)
-                por cada dado donde se saque 6 un zombie nuevo aparecerá en la zona más alejada de cada jugador si esto ocurre Némesis también se activará
             </div>
 
             <div className="resident-rules__title">

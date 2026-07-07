@@ -1,9 +1,14 @@
 .resident-evil {
+
     &__container {
         position: relative;
         min-height: 100dvh;
         background: #060605;
         padding: 10px;
+
+        *:disabled {
+            opacity: 90%;
+        }
     }
 
     &__white-screen {
