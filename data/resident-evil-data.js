@@ -2,6 +2,7 @@ export const lstResidentItems = [
     {
         name: 'cuchillo',
         type: 'weapon',
+        subtype: 'melee',
         weapon: {
             minRange: 0,
             maxRange: 0,
@@ -16,6 +17,7 @@ export const lstResidentItems = [
     {
         name: 'tubo',
         type: 'weapon',
+        subtype: 'melee',
         weapon: {
             minRange: 0,
             maxRange: 1,
@@ -29,6 +31,7 @@ export const lstResidentItems = [
     {
         name: 'hot dogger',
         type: 'weapon',
+        subtype: 'melee',
         weapon: {
             minRange: 0,
             maxRange: 0,
@@ -42,6 +45,7 @@ export const lstResidentItems = [
         name: 'pistola g19',
         desc: 'Arma ligera, incluso si tienes otra podrías usar una en cada mano',
         type: 'weapon',
+        subtype: 'gun',
         weapon: {
             minRange: 0,
             maxRange: 1,
@@ -56,6 +60,7 @@ export const lstResidentItems = [
     {
         name: 'merc handgun',
         type: 'weapon',
+        subtype: 'gun',
         weapon: {
             minRange: 0,
             maxRange: 1,
@@ -69,6 +74,7 @@ export const lstResidentItems = [
     {
         name: 'sti eagle 6.0',
         type: 'weapon',
+        subtype: 'gun',
         weapon: {
             minRange: 0,
             maxRange: 1,
@@ -82,6 +88,7 @@ export const lstResidentItems = [
     {
         name: 'escopeta',
         type: 'weapon',
+        subtype: 'shotgun',
         weapon: {
             minRange: 0,
             maxRange: 1,
@@ -95,6 +102,7 @@ export const lstResidentItems = [
     {
         name: 'escopeta western m37',
         type: 'weapon',
+        subtype: 'shotgun',
         desc: 'Escopeta de doble cañon, dispara 2 balas por acción',
         weapon: {
             minRange: 0,
@@ -109,6 +117,7 @@ export const lstResidentItems = [
     {
         name: 'rifle de asalto',
         type: 'weapon',
+        subtype: 'machinegun',
         weapon: {
             minRange: 0,
             maxRange: 2,
@@ -122,6 +131,7 @@ export const lstResidentItems = [
     {
         name: 'gatlin gun',
         type: 'weapon',
+        subtype: 'machinegun',
         weapon: {
             minRange: 0,
             maxRange: 2,
@@ -136,6 +146,7 @@ export const lstResidentItems = [
         name: 'rifle francotirador',
         desc: 'Este rifle tiene daño perforante, esto quiere decir que atravieza enemigos, si un enemigo cruza la linea de visión también recibirá el impacto',
         type: 'weapon',
+        subtype: 'sniper',
         weapon: {
             minRange: 1,
             maxRange: 3,
