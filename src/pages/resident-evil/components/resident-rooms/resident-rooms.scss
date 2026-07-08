@@ -5,6 +5,7 @@
         padding: 20px;
         display: flex;
         flex-direction: column;
+        background: rgb(48, 48, 48);
     }
 
     &__title {
@@ -16,7 +17,7 @@
     &__fields-container {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
     }
 
     &__field-container {
@@ -27,7 +28,8 @@
         color: white;
         text-transform: capitalize;
         border-top: 1px solid rgba(255, 255, 255, 0.5);
-        padding: 5px 0;
+        padding: 10px;
+        border-radius: 10px;
 
         input[type="checkbox"] {
             width: 30px;
@@ -48,6 +50,18 @@
     &__item-label--weapon {
         color: rgb(255, 208, 0);
         font-size: 12px;
+    }
+
+    &__floor--1F {
+        background: rgb(54, 105, 19);
+    }
+
+    &__floor--PB {
+        background: rgb(8, 54, 16);
+    }
+
+    &__floor--S {
+        background: rgb(6, 34, 4);
     }
 
 }

@@ -66,6 +66,21 @@ export const ResidentRules = () => {
                 Cada arma tiene un número de dados a tirar y el daño que hacen, al menos un dado tiene que sacar el número mímimo de golpe para poder acertar, solo es un golpe por tirada de dados (excepto la ametralladora).
                 <br />
                 Las armas pueden combinarse para tener mayores efectos.
+                <br />
+                <br />
+
+                <div className="resident-rules__subtitle">
+                    Stats de las Armas
+                </div>
+                En orden las armas tienen estos stats:
+                <ol>
+                    <li>Alcance en distancia entre habitaciones</li>
+                    <li>Dados utilizados para el ataque</li>
+                    <li>Resultado mínimo requerido en el dado para acertar</li>
+                    <li>Resultado mínimo requerido en el dado para dar un critico (daño se multiplica)</li>
+                    <li>Daño</li>
+                </ol>
+
             </div>
             <div className="resident-rules__subtitle">
                 Ametralladora

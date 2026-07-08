@@ -208,7 +208,7 @@ export const Inventory = ({
                 <ZombiePhase gameState={gameState} />
             </Modal>
 
-            <Modal
+            {/* <Modal
                 open={openRooms}
                 onCancel={() => setOpenRooms(false)}
                 footer={null}
@@ -216,7 +216,7 @@ export const Inventory = ({
                 className="inventory__modal"
             >
                 <ResidentRooms gameState={gameState} setGameValue={setGameValue} />
-            </Modal>
+            </Modal> */}
 
 
             <div className="inventory__title-container">
@@ -295,7 +295,7 @@ export const Inventory = ({
                             Zombies
                         </button>
                     }
-                    {
+                    {/* {
                         gameState.isHost &&
                         <button
                             className="inventory__button--rooms"
@@ -303,7 +303,7 @@ export const Inventory = ({
                         >
                             Mapa
                         </button>
-                    }
+                    } */}
                 </div>
             </div>
         </div >

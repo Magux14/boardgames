@@ -20,6 +20,9 @@ export const BulletCounter = ({ name, type, bullets, setBullets, defaultAddingVa
     }
 
     const handleSetBullets = (type, value) => {
+        if (value < 0) {
+            value = 0;
+        }
         setBullets(type, value);
         playFallingBullets();
     }

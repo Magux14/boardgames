@@ -7,7 +7,7 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
     const pickRoom = (remainingRooms, floor = '???') => {
         const randomIndex = Math.floor(Math.random() * remainingRooms.length);
         let room = remainingRooms.splice(randomIndex, 1)[0];
-        return `${floor} - ${room}`;
+        return `${room}`;
     }
 
     const fillWeaponsAndObjectives = () => {
@@ -23,74 +23,102 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
                 ...residentRooms.sharedRooms.upperGround]
         }
 
-        //objectives
-        const obj1 = pickRoom(remainingRooms.upper, '1F');
-        const obj2 = pickRoom(remainingRooms.ground, 'PB');
-        const obj3 = pickRoom(remainingRooms.basement, 'S');
+        const sortByMultiple = (array, keys) => {
+            return [...array].sort((a, b) => {
+                for (const key of keys) {
+                    const valueA = a[key] ?? "";
+                    const valueB = b[key] ?? "";
 
-        const weapon1 = pickRoom(remainingRooms.upper, '1F');
-        const weapon2 = pickRoom(remainingRooms.ground, 'PB');
-        const weapon3 = pickRoom(remainingRooms.basement, 'S');
+                    const comparison = String(valueA).localeCompare(String(valueB), undefined, {
+                        numeric: true,
+                        sensitivity: "base",
+                    });
 
-        const extraWeaponsSpans = gameState.playersNum;
-        const lstExtraWeapons = []
-        for (let i = 0; i < extraWeaponsSpans; i++) {
-            lstExtraWeapons.push(pickRoom(remainingRooms.sharedRooms))
+                    if (comparison !== 0) {
+                        return comparison;
+                    }
+                }
+
+                return 0;
+            });
         }
 
+        //objectives
         let lstRoomsWithItems = [
             {
-                name: obj1,
+                name: pickRoom(remainingRooms.upper, '1F'),
+                floor: '1F',
                 type: 'objetivo',
                 checked: false
             },
             {
-                name: obj2,
+                name: pickRoom(remainingRooms.upper, '1F'),
+                floor: '1F',
+                type: 'arma',
+                checked: false
+            },
+            {
+                name: pickRoom(remainingRooms.upper, '1F'),
+                floor: '1F',
+                type: 'arma',
+                checked: false
+            },
+            {
+                name: pickRoom(remainingRooms.upper, '1F'),
+                floor: '1F',
+                type: 'arma',
+                checked: false
+            },
+            {
+                name: pickRoom(remainingRooms.ground, 'PB'),
+                floor: 'PB',
                 type: 'objetivo',
                 checked: false
             },
             {
-                name: obj3,
+                name: pickRoom(remainingRooms.ground, 'PB'),
+                floor: 'PB',
+                type: 'arma',
+                checked: false
+            },
+            {
+                name: pickRoom(remainingRooms.ground, 'PB'),
+                floor: 'PB',
+                type: 'arma',
+                checked: false
+            },
+            {
+                name: pickRoom(remainingRooms.ground, 'PB'),
+                floor: 'PB',
+                type: 'arma',
+                checked: false
+            },
+            {
+                name: pickRoom(remainingRooms.basement, 'basement'),
+                floor: 'S',
                 type: 'objetivo',
                 checked: false
             },
             {
-                name: weapon1,
+                name: pickRoom(remainingRooms.basement, 'basement'),
+                floor: 'S',
                 type: 'arma',
                 checked: false
             },
             {
-                name: weapon2,
+                name: pickRoom(remainingRooms.basement, 'basement'),
+                floor: 'S',
                 type: 'arma',
                 checked: false
             },
             {
-                name: weapon3,
+                name: pickRoom(remainingRooms.basement, 'basement'),
+                floor: 'S',
                 type: 'arma',
                 checked: false
             },
-            ...lstExtraWeapons.map(item => {
-                return {
-                    name: item,
-                    type: 'arma',
-                    checked: false
-                }
-            })
-
         ]
-
-        lstRoomsWithItems = lstRoomsWithItems.sort((a, b) => {
-            if (a.name.includes('???')) {
-                return 1;
-            } else {
-                if (a.name < b.name) return -1;
-                if (a.name > b.name) return 1;
-            }
-
-            return 0;
-        });
-        gameState.lstRoomsWithItems = lstRoomsWithItems;
-        setGameValue('lstRoomsWithItems', lstRoomsWithItems);
+        setGameValue('lstRoomsWithItems', [...sortByMultiple(lstRoomsWithItems, ['floor', 'name'])]);
     }
 
     const handleSetItemAsTaken = (roomName, value) => {
@@ -111,18 +139,20 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
         }
     }, [gameState.lstRoomsWithItems]);
 
+    useEffect(() => {
+        console.log('gameState.lstRoomsWithItems');
+        console.log(gameState.lstRoomsWithItems);
+    }, []);
+
 
     return (
         <div className="resident-rooms__container">
             <div className="resident-rooms__fields-container">
                 <div className="resident-rooms__title">
-                    Eventos
+                    Mapa
                 </div>
-                <div className="resident-rooms__field-container">
+                {/* <div className="resident-rooms__field-container">
                     <div className="resident-rooms__item-label" >
-                        {/* <span className={`resident-rooms__item-label--${room.type == 'objetivo' ? 'objective' : 'weapon'}`}>
-
-                        </span> */}
                         <span>
                             Nemesis
                         </span>
@@ -131,13 +161,13 @@ export const ResidentRooms = ({ gameState, setGameValue }) => {
                 </div>
                 <div className="resident-rooms__title">
                     Ubicaciones
-                </div>
+                </div> */}
                 {
                     gameState.lstRoomsWithItems.map(room =>
-                        <div key={room.name} className="resident-rooms__field-container">
+                        <div key={room.name} className={`resident-rooms__field-container resident-rooms__floor--${room.floor}`}>
                             <div className="resident-rooms__item-label" >
-                                <span className={`resident-rooms__item-label--${room.type == 'objetivo' ? 'objective' : 'weapon'}`}>
-                                    {room.type}
+                                <span className={`resident-rooms__item-label--${room.type == 'objetivo' ? 'objective' : 'weapon'} `}>
+                                    {room.floor} - {room.type}
                                 </span>
                                 <span>
                                     {room.name}

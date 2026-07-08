@@ -3,9 +3,10 @@ import { BulletCounter } from './components/bullet-counter/BulletCounter';
 import { Inventory } from './components/inventory/Inventory';
 import { LifeScreen } from './components/life-screen/LifeScreen';
 import { useResidentEvilGame } from './hooks/useResidentEvilGame';
-import SettingsIcon from '@mui/icons-material/Settings';
 import { Modal } from 'antd';
 import { ReSettings } from './components/re-settings/ReSettings';
+import { ResidentRooms } from './components/resident-rooms/ResidentRooms';
+import SettingsIcon from '@mui/icons-material/Settings';
 import './resident-evil.scss';
 export const ResidentEvilPage = () => {
 
@@ -120,6 +121,12 @@ export const ResidentEvilPage = () => {
                         editMode={editMode}
                     />
                 </div>
+
+                {
+                    gameState.isHost &&
+                    <ResidentRooms gameState={gameState} setGameValue={setGameValue} />
+                }
+
             </div>
         </div>
     )
