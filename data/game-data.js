@@ -1133,7 +1133,7 @@ export const lstGames = [
         name: 'Resident Evil - Recovery Operation',
         desc: 'Adentrate al mundo de Resident Evil, en esta ocasión entrarás a la mansión del científico creador del virus T, deberás encontrar las muestras del virus y escapar, no mueras... (Partes de otros juegos necesarias: "Bretayal at the Hill House" y "Zombicide"',
         minPlayers: 2,
-        maxPlayers: 2,
+        maxPlayers: 3,
         difficulty: 4,
         img: 'resident evil.webp',
         minutes: 120,

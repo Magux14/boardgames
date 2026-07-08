@@ -8,6 +8,7 @@ import { ReSettings } from './components/re-settings/ReSettings';
 import { ResidentRooms } from './components/resident-rooms/ResidentRooms';
 import SettingsIcon from '@mui/icons-material/Settings';
 import './resident-evil.scss';
+import { useResidentAudio } from './hooks/useResidentAudio';
 export const ResidentEvilPage = () => {
 
     const {
@@ -23,6 +24,8 @@ export const ResidentEvilPage = () => {
     const [editMode, setEditMode] = useState(false);
     const [openSettingsModal, setOpenSettingsModal] = useState(false);
     const [showWhiteScreen, setShowWhiteScreen] = useState(false);
+    const [showRedScreen, setShowRedScreen] = useState(false);
+    const { playJillDamage } = useResidentAudio();
 
     const handleSaveAndCloseSettingsModal = (gameState) => {
         setGameStateAndSave(gameState);
@@ -34,11 +37,28 @@ export const ResidentEvilPage = () => {
         }, 1_000);
     }
 
+    const handleSetLife = (isDamage) => {
+        if (gameState.life > 0 && isDamage) {
+            playJillDamage();
+            setGameValue('life', gameState.life - 1);
+            setShowRedScreen(true);
+            setTimeout(() => {
+                setShowRedScreen(false);
+            }, 600);
+        } else if (gameState.life < 4 && !isDamage) {
+            setGameValue('life', gameState.life + 1);
+        }
+    }
+
     return (
         <div className="resident-evil__container">
             {
                 showWhiteScreen &&
                 <div className="resident-evil__white-screen" />
+            }
+            {
+                showRedScreen &&
+                <div className="resident-evil__red-screen" />
             }
             <Modal
                 open={openSettingsModal}
@@ -61,13 +81,13 @@ export const ResidentEvilPage = () => {
                             Condición
                         </div>
                         <div className="resident-evil__life-points-controls-container">
-                            <button onClick={(() => gameState.life > 0 ? setGameValue('life', gameState.life - 1) : null)}>-</button>
+                            <button onClick={() => handleSetLife(true)}>-</button>
                             <div className="resident-evil__life-points-screen">
                                 <div className={`resident-evil__life-status resident-evil__life-status--${currentLifeLabel}`}>
                                     {currentLifeLabel}
                                 </div>
                             </div>
-                            <button onClick={(() => gameState.life < 4 ? setGameValue('life', gameState.life + 1) : null)} disabled={!editMode}>+</button>
+                            <button onClick={() => handleSetLife(false)} disabled={!editMode}>+</button>
                         </div>
                     </div>
                 </div>

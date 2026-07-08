@@ -38,12 +38,19 @@ export const useResidentAudio = () => {
         playAudio(path);
     }
 
+    const playJillDamage = () => {
+        const screamNumber = Math.floor(Math.random() * 3) + 1;
+        const path = `./music/resident evil/jill-damage-${screamNumber}.mp3`;
+        playAudio(path);
+    }
+
     return {
         playOpenInventory,
         playCloseInventory,
         playIntro,
         playItemInteraction,
         playReload,
-        playFallingBullets
+        playFallingBullets,
+        playJillDamage
     }
 }
