@@ -1339,7 +1339,7 @@ export const lstGames = [
         difficulty: 2,
         img: 'odin.webp',
         minutes: 15,
-        new: true,
+        rank: 2
     },
     {
         name: '5 Towers',
@@ -1400,7 +1400,7 @@ export const lstGames = [
         difficulty: 3,
         img: 'sheep-in-disguise.webp',
         minutes: 30,
-        new: true,
+        rank: 3
     },
     {
         name: 'Survive The Island',
@@ -1480,6 +1480,16 @@ export const lstGames = [
         difficulty: 3,
         img: 'labyrinth.webp',
         minutes: 20,
-        new: true
+        rank: 4
+    },
+    {
+        name: 'Pareja de pacotilla',
+        desc: 'Crear la historia de amor más absurda, disparatada y cómica posible combinando tres tipos de cartas.',
+        minPlayers: 2,
+        maxPlayers: 8,
+        difficulty: 1,
+        img: 'pareja-de-pacotilla.webp',
+        minutes: 15,
+        rank: 1
     },
 ]
