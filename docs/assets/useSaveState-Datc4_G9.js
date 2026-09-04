@@ -1,0 +1,1 @@
+const S=t=>({saveState:e=>{localStorage.setItem(t,JSON.stringify(e))},getLoadState:()=>{try{return JSON.parse(localStorage.getItem(t))}catch{return null}},deleteState:()=>{localStorage.removeItem(t)}});export{S as u};

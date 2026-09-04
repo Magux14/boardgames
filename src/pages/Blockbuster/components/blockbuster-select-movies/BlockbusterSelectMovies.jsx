@@ -40,7 +40,7 @@ export const BlockbusterSelectMovies = ({ lstMovies = [], callbackSetSelectedMov
 
                 <div className="blockbuster-select-movies__container">
                     <div className="blockbuster-select-movies__desc-container">
-                        Selecciona 3 películas
+                        Selecciona 3 películas para que tu equipo las adivine, las que NO selecciones las deberá adivinar el equipo contrario.
                         {/* , tu equipo tratará de adivinarlas, las que no selecciones las deberá adivinar el equipo contrario. */}
                     </div>
                     <div className="blockbuster-select-movies__info-left-to-select-container">
