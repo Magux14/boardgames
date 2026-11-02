@@ -111,4 +111,12 @@ $blockbuster-blue: rgb(47, 47, 140);
         justify-content: space-between;
         padding: 10px;
     }
+
+    &__rules-container {
+        display: flex;
+        justify-content: center;
+        color: white;
+        padding: 10px;
+        margin-top: 100px;
+    }
 }

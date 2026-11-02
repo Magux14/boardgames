@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import './phasmophobia-filter-page.scss';
+import { PhasmophobiaRules } from '../phasmophobia-rules/phasmophobia-rules';
 
 export const PhasmophobiaFilterPage = () => {
 
@@ -92,6 +93,9 @@ export const PhasmophobiaFilterPage = () => {
                         <div className="folder-options-container">
                             <div className="empty">
 
+                            </div>
+                            <div className={`folder-option ${folderSelected == 'rules' ? 'folder-selected' : ''} ${cordura == 0 ? 'dead' : ''}`} onClick={(() => setFolderSelected('rules'))}>
+                                Reglas
                             </div>
                             <div className={`folder-option ${folderSelected == 'deseos' ? 'folder-selected' : ''} ${cordura == 0 ? 'dead' : ''}`} onClick={(() => setFolderSelected('deseos'))}>
                                 Deseos
@@ -216,6 +220,11 @@ export const PhasmophobiaFilterPage = () => {
                                         )
                                     }
                                 </div>
+                            }
+
+                             {
+                                folderSelected == 'rules' &&
+                                <PhasmophobiaRules/>
                             }
 
                             {

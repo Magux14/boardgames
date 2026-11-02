@@ -10,6 +10,7 @@ import { useSaveState } from '../../hooks/useSaveState';
 import { ModalConfirm } from '../../components/modal-confirm/ModalConfirm';
 import CachedIcon from '@mui/icons-material/Cached';
 import './blockbuster-page.scss';
+import { BlockbusterRules } from './components/rules/blockbuster-rules';
 
 const defaultShowModals = {
     faceToFace: false,
@@ -29,6 +30,7 @@ export const BlockbusterPage = () => {
 
     const [lastStateWasLoaded, setLastStateWasLoaded] = useState(false);
     const [showModal, setShowModal] = useState(defaultShowModals);
+    const [showRules, setShowRules] = useState(true);
     const [randomMovies, setRandomMovies] = useState([]);
     const [randomThing, setRandomThing] = useState();
     const [selectedMovies, setSelectedMovies] = useState([]);
@@ -185,6 +187,18 @@ export const BlockbusterPage = () => {
             {fontLoaded &&
                 <div className="blockbuster-page">
                     {
+                        showRules &&
+                        <Modal
+                            open={showModal}
+                            className="blockbuster-page__modal-yellow-background"
+                            footer={null}
+                            maskClosable={false}
+                            onCancel={() => setShowRules(false)}
+                        >
+                            <BlockbusterRules />
+                        </Modal>
+                    }
+                    {
                         showModal.faceToFace &&
                         <Modal
                             open={showModal.faceToFace}
@@ -276,6 +290,12 @@ export const BlockbusterPage = () => {
                         <button className="blockbuster-page__button" onClick={handleShowFaceToFace}>Cara a Cara</button>
                         <button className="blockbuster-page__button" onClick={handleShowMovies}>Adivina la película</button>
                         <button className="blockbuster-page__button blockbuster-page__button--danger" onClick={handleShowLastMovies} disabled={!gameState.lastSelectedMovies}>Últimas películas seleccionadas</button>
+                    </div>
+
+
+                    <div className="blockbuster-page__rules-container" onClick={() => setShowRules(true)}>
+                        Reglas
+
                     </div>
                 </div>
             }
