@@ -30,7 +30,7 @@ export const BlockbusterPage = () => {
 
     const [lastStateWasLoaded, setLastStateWasLoaded] = useState(false);
     const [showModal, setShowModal] = useState(defaultShowModals);
-    const [showRules, setShowRules] = useState(true);
+    const [showRules, setShowRules] = useState(false);
     const [randomMovies, setRandomMovies] = useState([]);
     const [randomThing, setRandomThing] = useState();
     const [selectedMovies, setSelectedMovies] = useState([]);
